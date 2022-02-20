@@ -1,5 +1,6 @@
-package Modules;
+package Modules.Users;
 
+import Modules.Users.User;
 import Utils.Enums.Roles;
 
 public class Espritien extends User {
