@@ -1,5 +1,5 @@
 package Utils.Enums;
 
 public enum State {
-    Connected,Disconnected,Disabled,Deleted,Active
+    Connected,Disconnected, Disabled,Deleted,Active
 }

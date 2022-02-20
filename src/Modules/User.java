@@ -1,4 +1,4 @@
-package Modules;
+package Modules.Users;
 
 import Utils.Enums.Roles;
 
