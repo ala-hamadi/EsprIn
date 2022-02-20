@@ -1,14 +1,13 @@
-package Modules.Users;
+package Modules;
 
-import Modules.Users.User;
 import Utils.Enums.Roles;
 
-public class Espritien extends User {
+public class Espritien extends User{
     private String firstName;
     private String lastName;
 
-    protected Espritien(long cinUser, String email, String passwd, String imgUrl, Roles role,String firstName,String lastName) {
-        super(cinUser, email, passwd, imgUrl, role);
+    protected Espritien(long cinUser, String email, String passwd, String imgUrl, Roles role, String firstName, String lastName){
+        super(cinUser,email,passwd,imgUrl,role);
         this.firstName=firstName;
         this.lastName=lastName;
     }
