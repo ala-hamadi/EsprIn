@@ -7,6 +7,8 @@ import Services.AnnouncementService;
 import Utils.Enums.Roles;
 import Utils.Structure.Classe;
 
+import java.util.List;
+
 public class TestMain {
     public static void main(String[] args) {
         /*Admin admin=new Admin(22222211,"test.test@test.tn","helloworld","",Roles.Admin,"testname","testlastame",AdminDepartments.Service_éléve);
@@ -69,5 +71,22 @@ postServices.deletePost(5);
         //commentServices.addCommentToPost(commentPost);
         //commentServices.deleteCommentByPost(commentPost);
        //System.out.println(commentServices.getListCommentByPost(4));
+
+        services.ForumService forumService = services.ForumService.getInstance();
+        services.RespondedService respondedService = services.RespondedService.getInstance();
+        models.Forum forum = new models.Forum(1,"hi","ok ok ",11111111, State.Active);
+        models.Responded responde = new models.Responded(11111111,1,"ok ok");
+        //forum.setContent("salah");
+        //forumService.add(forum);
+        //forumService.update(forum);
+        //forumService.delete(forum);
+        //respondedService.add(responde);
+        System.out.println(forumService.read().toString());
+        responde.setContent("i dont no !");
+        List<models.Responded> respondeds = respondedService.read();
+        models.Responded res = respondeds.get(0);
+        res.setContent("yes yes ! ");
+        //respondedService.update(res);
+        System.out.println(respondeds.toString());
     }
 }
