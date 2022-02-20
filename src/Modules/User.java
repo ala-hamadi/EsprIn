@@ -1,4 +1,4 @@
-package Modules.Users;
+package Modules;
 
 import Utils.Enums.Roles;
 
@@ -55,7 +55,7 @@ public class User {
 
     @Override
     public String toString() {
-        return  "cinUser=" + cinUser +
+        return "cinUser=" + cinUser +
                 ", email='" + email + '\'' +
                 ", passwd='" + passwd + '\'' +
                 ", imgUrl='" + imgUrl + '\'' +

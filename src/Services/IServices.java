@@ -7,4 +7,5 @@ public interface IServices<T> {
     public boolean delete(T t);
     public boolean update(T t);
     public List<T> getList();
+    public T retrive(String i);
 }

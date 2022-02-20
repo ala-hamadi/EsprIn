@@ -1,24 +1,23 @@
-package Modules.Users;
+package Modules;
 
 import Utils.Enums.Domaine;
 import Utils.Enums.Roles;
-import Utils.Structure.Classe;
 
-public class Student extends Espritien {
-    private Classe classe;
+public class Student extends Espritien{
+    private String classe;
     private Domaine domaine;
 
-    public Student(long cinUser, String email, String passwd, String imgUrl, Roles role, String firstName, String lastName,Classe classe,Domaine domaine) {
-        super(cinUser, email, passwd, imgUrl, role, firstName, lastName);
+    public Student(long cinUser, String email, String passwd, String imgUrl, Roles role, String firstName, String lastName, String classe, Domaine domaine){
+        super(cinUser,email,passwd,imgUrl,role,firstName,lastName);
         this.classe=classe;
         this.domaine=domaine;
     }
 
-    public Classe getClasse() {
+    public String getClasse() {
         return classe;
     }
 
-    public void setClasse(Classe classe) {
+    public void setClasse(String classe) {
         this.classe = classe;
     }
 
