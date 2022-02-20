@@ -24,5 +24,5 @@ public class Classe {
     public void setNumclass(int numclass) { this.numclass = numclass; }
 
     @Override
-    public String toString() { return  niveau + " " + specialite  + " " + numclass; }
+    public String toString() { return  niveau+" "+specialite+" "+ numclass; }
 }
