@@ -1,6 +1,6 @@
-package models;
+package Modules;
 
-import utils.Enums.State;
+import Utils.Enums.State;
 
 public class Forum {
     private int idForum;

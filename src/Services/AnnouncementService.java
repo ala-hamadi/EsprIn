@@ -46,7 +46,7 @@ public class AnnouncementService implements IServices<Annoucement> {
     }
 
     @Override
-    public Boolean delete(Annoucement annoucement) {
+    public boolean delete(Annoucement annoucement) {
         try {
             Statement std=connection.createStatement();
             String query = "UPDATE `annoncement` SET `state` = '"+State.Deleted+"' WHERE `annoncement`.`idAnn` = "+annoucement.getIdAnn()+";";
@@ -62,7 +62,7 @@ public class AnnouncementService implements IServices<Annoucement> {
     }
 
     @Override
-    public Boolean update(Annoucement annoucement) {
+    public boolean update(Annoucement annoucement) {
         try{
             Statement std=connection.createStatement();
             String query="";
@@ -117,7 +117,7 @@ public class AnnouncementService implements IServices<Annoucement> {
         return annoucements;
     }
 
-    @Override
+
     public Annoucement retrive(long i) {
         try {
             Statement statement= connection.createStatement();

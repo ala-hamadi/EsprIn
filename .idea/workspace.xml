@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7ffc5b1-8cf4-4e7e-908c-bd7fb8ddff4a" name="Default Changelist" comment="initial commit">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Club.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Professor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modules/Forum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Forum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/AlertServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/AlertServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/AnnouncementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/AnnouncementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ForumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ForumService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/RespondedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/RespondedService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/TestMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +33,72 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="inlay.hints.JAVA" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Test_EsprIN" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Test_EsprIN" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -82,5 +149,11 @@
     <MESSAGE value="CRUD post" />
     <MESSAGE value="initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="461" y="165" key="SettingsEditor" timestamp="1645556934736">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1645556934736" />
   </component>
 </project>

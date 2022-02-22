@@ -53,7 +53,7 @@ public class AlertServices implements IServices<Alert>{
     }
 
     @Override
-    public Boolean delete(Alert alert) {
+    public boolean delete(Alert alert) {
         try {
             Statement std = connection.createStatement();
             String query = "";
@@ -92,7 +92,7 @@ public class AlertServices implements IServices<Alert>{
     }*/
 //Roles.valueOf(rs.getString("role"))
     @Override
-    public Boolean update(Alert alert) {
+    public boolean update(Alert alert) {
         try {
             Statement std = connection.createStatement();
             String query = "";
@@ -147,7 +147,7 @@ public class AlertServices implements IServices<Alert>{
         return alerts;
     }
 
-    @Override
+
     public Alert retrive(long i) {
        try {
            Statement statement=connection.createStatement();

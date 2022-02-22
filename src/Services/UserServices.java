@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserServices implements IServices<User> {
     private Connection connection;
@@ -126,7 +127,7 @@ public class UserServices implements IServices<User> {
         List<User> users = new ArrayList<User>();
         try {
             Statement statement = connection.createStatement();
-            String query = "SELECT * FROM `user`";
+            String query = "SELECT * FROM `user` WHERE `state`<>'Deleted'";
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 switch (Roles.valueOf(resultSet.getString("role"))) {
@@ -172,25 +173,25 @@ public class UserServices implements IServices<User> {
             switch (Roles.valueOf(resultSet.getString("role"))) {
                 case Admin:
                     CurrentUser admin = CurrentUser.getInstance(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Admin, resultSet.getString("firstName"), resultSet.getString("lastName"), AdminDepartments.valueOf(resultSet.getString("departement")));
-                    changeState(admin,State.Connected);
+                    changeState(admin, State.Connected);
                     break;
                 case Club:
                     CurrentUser club = CurrentUser.getInstance(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Club, resultSet.getString("firstName"), resultSet.getString("lastName"), TypeClub.valueOf(resultSet.getString("typeClub")));
-                    changeState(club,State.Connected);
+                    changeState(club, State.Connected);
                     break;
                 case Etudiant:
                     String[] classString = resultSet.getString("class").split(" ");
                     Classe classe = new Classe(Integer.parseInt(classString[0]), classString[1], Integer.parseInt(classString[2]));
-                    CurrentUser student =CurrentUser.getInstance(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Etudiant, resultSet.getString("firstName"), resultSet.getString("lastName"), Domaine.valueOf(resultSet.getString("domaine")),classe);
-                    changeState(student,State.Connected);
+                    CurrentUser student = CurrentUser.getInstance(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Etudiant, resultSet.getString("firstName"), resultSet.getString("lastName"), Domaine.valueOf(resultSet.getString("domaine")), classe);
+                    changeState(student, State.Connected);
                     break;
                 case Professeur:
                     CurrentUser professor = CurrentUser.getInstance(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Professeur, resultSet.getString("firstName"), resultSet.getString("lastName"), Domaine.valueOf(resultSet.getString("domaine")));
-                    changeState(professor,State.Connected);
+                    changeState(professor, State.Connected);
                     break;
                 case Externe:
                     CurrentUser extern = CurrentUser.getInstance(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Externe, resultSet.getString("entrepriseName"), resultSet.getString("localisation"));
-                    changeState(extern ,State.Connected);
+                    changeState(extern, State.Connected);
                     break;
                 default:
                     System.out.println("Error,Role not defined");
@@ -202,22 +203,55 @@ public class UserServices implements IServices<User> {
         }
     }
 
-    public void changeState(CurrentUser user,State state){
+
+    public void changeState(CurrentUser user, State state) {
         try {
             Statement statement = connection.createStatement();
-            String query = "UPDATE `user` SET `state` = '" + state+ "' WHERE `user`.`cinUser` = " + user.getCinUser() + ";";
+            String query = "UPDATE `user` SET `state` = '" + state + "' WHERE `user`.`cinUser` = " + user.getCinUser() + ";";
             statement.executeUpdate(query);
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
     }
-    public void disconnect(){
-        CurrentUser currentUser=CurrentUser.getInstance();
-        changeState(currentUser,State.Disconnected);
+
+    public void disconnect() {
+        CurrentUser currentUser = CurrentUser.getInstance();
+        changeState(currentUser, State.Disconnected);
         currentUser.clearInstance();
         System.out.println(currentUser);
 
     }
-    //public ArrayList<User>
+
+    public List<User> filtreByRole(Roles role) {
+        return this.getList().stream().filter(u -> u.getRole() == role).collect(Collectors.toList());
+    }
+
+    public List<Espritien> searchByFirstName(String name) {
+        return this.getList().stream().map(u -> (Espritien) u).filter(u -> u.getFirstName().contains(name)).collect(Collectors.toList());
+    }
+
+    //region Student
+    public List<User> filtreByClassLevel(int classNum) {
+        List<Student> studentList = this.getList().stream().filter(u -> u.getRole() == Roles.Etudiant).map(u -> (Student) u).collect(Collectors.toList());
+        return studentList.stream().filter(u -> u.getClasse().getNiveau() == classNum).collect(Collectors.toList());
+    }
+
+    public List<User> filtreByClassSpeciality(String spec) {
+        List<Student> studentList = this.getList().stream().filter(u -> u.getRole() == Roles.Etudiant).map(u -> (Student) u).collect(Collectors.toList());
+        return studentList.stream().filter(u -> u.getClasse().getSpecialite().toLowerCase().contains(spec.toLowerCase())).collect(Collectors.toList());
+    }
+    public List<User> filtreByStudentDomaine(Domaine domaine) {
+        List<Student> studentList = this.getList().stream().filter(u -> u.getRole() == Roles.Etudiant).map(u -> (Student) u).collect(Collectors.toList());
+        return studentList.stream().filter(u -> u.getDomaine()==domaine).collect(Collectors.toList());
+    }
+
+    //endregion
+    //region Admin
+    public List<User> filtreByDepartment(AdminDepartments department) {
+        List<Admin> adminList = this.getList().stream().filter(u -> u.getRole() == Roles.Admin).map(u -> (Admin) u).collect(Collectors.toList());
+        return adminList.stream().filter(u -> u.getDepartment() == department).collect(Collectors.toList());
+    }
+    //endregion
+
 
 }

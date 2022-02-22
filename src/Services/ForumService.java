@@ -1,8 +1,8 @@
-package services;
+package Services;
 
-import models.Forum;
-import utils.Enums.State;
-import utils.MyDB;
+import Modules.Forum;
+import Utils.BdConnection;
+import Utils.Enums.State;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -11,12 +11,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ForumService implements IService<Forum> {
+public class ForumService implements IServices<Forum> {
     private Connection connection;
     public static  ForumService instance;
 
     private ForumService() {
-        connection = MyDB.getInstance().getCnx();
+        connection = BdConnection.getInstance().cnx;
     }
     public static ForumService getInstance (){
         if (instance == null)
@@ -39,7 +39,7 @@ public class ForumService implements IService<Forum> {
     }
 
     @Override
-    public List<Forum> read() {
+    public List<Forum> getList() {
         List<Forum> forums = new ArrayList();
 
         try {

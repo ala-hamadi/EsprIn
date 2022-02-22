@@ -1,8 +1,10 @@
-package services;
+package Services;
 
-import models.Forum;
+
+import Services.IServices;
+import Utils.BdConnection;
 import models.Responded;
-import utils.MyDB;
+
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -11,12 +13,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RespondedService implements IService<Responded> {
+public class RespondedService implements IServices<Responded> {
     private Connection connection;
     public static RespondedService instance;
 
     private RespondedService() {
-        connection = MyDB.getInstance().getCnx();
+        connection = BdConnection.getInstance().cnx;
     }
 
     public static RespondedService getInstance (){
@@ -39,7 +41,7 @@ public class RespondedService implements IService<Responded> {
     }
 
     @Override
-    public List<Responded> read() {
+    public List<Responded> getList() {
         List<Responded> respondeds = new ArrayList();
 
         try {
