@@ -29,4 +29,12 @@ public class Student extends Espritien{
     public void setDomaine(Domaine domaine) {
         this.domaine = domaine;
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+ " " +
+                "classe=" + classe +
+                ", domaine=" + domaine +
+                "}\n";
+    }
 }

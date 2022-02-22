@@ -3,6 +3,8 @@ package Utils;
 
 import Modules.Event;
 import Services.EventServices;
+import Services.UserServices;
+import Utils.Enums.Roles;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -22,14 +24,14 @@ public class Main {
 
         //System.out.println("\n "+services.retrive("2505213"));
         //Participate participate= new Participate(15542230 , 2505213);
-
+        /*
         EventServices eventServices=EventServices.getInstance();
-        Timestamp timestamp=new Timestamp(2022,10,30,5,6,0,0);
+        //Timestamp timestamp=new Timestamp(2022,10,30,5,6,0,0);
         Event event=new Event("Hackathon","Hackathon dev mobile", null, timestamp, 10000000);
         List<Event> events=eventServices.getList();
         System.out.println(events);
         eventServices.delete(events.get(2));
-        System.out.println(events);
+        System.out.println(events);*/
 
 
        /* ParticipateServices servicesparticipate = ParticipateServices.getInstance();
@@ -39,6 +41,8 @@ public class Main {
         servicesparticipate.Participate(new Student(10020855, "bairem.khedhri@esprit.tn", "",
                 "", Roles.Etudiant, "Bairem", "Khedhri", null, Domaine.Informatique),events.get(0));
         System.out.println(servicesparticipate.getList());*/
+        UserServices userServices=UserServices.getInstance();
+        System.out.println(userServices.sortById());
 
     }
 }
