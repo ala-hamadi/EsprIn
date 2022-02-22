@@ -219,7 +219,6 @@ public class UserServices implements IServices<User> {
         changeState(currentUser, State.Disconnected);
         currentUser.clearInstance();
         System.out.println(currentUser);
-
     }
 
     public List<User> filtreByRole(Roles role) {
