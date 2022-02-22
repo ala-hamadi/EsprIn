@@ -11,7 +11,7 @@ public class Club extends Espritien{
         this.type=type;
     }
 
-    public TypeClub getType() {
+    public TypeClub getTypeClub() {
         return type;
     }
 

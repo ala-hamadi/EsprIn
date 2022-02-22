@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7ffc5b1-8cf4-4e7e-908c-bd7fb8ddff4a" name="Default Changelist" comment="initial commit" />
+    <list default="true" id="e7ffc5b1-8cf4-4e7e-908c-bd7fb8ddff4a" name="Default Changelist" comment="initial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modules/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modules/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Club.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modules/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Professor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modules/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserServices.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

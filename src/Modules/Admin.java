@@ -1,4 +1,4 @@
-package Modules.Users;
+package Modules;
 
 import Utils.Enums.AdminDepartments;
 import Utils.Enums.Roles;

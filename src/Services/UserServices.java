@@ -1,11 +1,11 @@
 package Services;
 
-import Modules.Users.*;
+
+import Modules.*;
 import Utils.BdConnection;
 import Utils.CurrentUser;
 import Utils.Enums.*;
 import Utils.Structure.Classe;
-import org.jetbrains.annotations.NotNull;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -218,5 +218,6 @@ public class UserServices implements IServices<User> {
         System.out.println(currentUser);
 
     }
+    //public ArrayList<User>
 
 }
