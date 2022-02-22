@@ -1,6 +1,6 @@
 package Utils;
 
-import Modules.Users.*;
+import Modules.*;
 import Utils.Enums.AdminDepartments;
 import Utils.Enums.Domaine;
 import Utils.Enums.Roles;

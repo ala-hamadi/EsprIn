@@ -108,7 +108,7 @@ public class EventServices implements IServices<Event> {
         return events;
     }
 
-    @Override
+
     public Event retrive(String i) {
         try {
             Statement statement = connection.createStatement();
