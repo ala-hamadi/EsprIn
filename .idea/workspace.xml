@@ -7,10 +7,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e7ffc5b1-8cf4-4e7e-908c-bd7fb8ddff4a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Alert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Alert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Annoucement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Annoucement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modules/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modules/Offre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Offre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/AlertServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/AlertServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/AnnouncementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/AnnouncementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EventServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EventServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/OffreServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/OffreServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ParticipateServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ParticipateServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/TestMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +51,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="inlay.hints.JAVA" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Zahar\Desktop\Nouveau dossier (4)\EsprIn" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.TestMain">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Utils.Main" />
       <module name="Test_EsprIN" />
@@ -87,8 +96,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.TestMain" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -107,6 +116,8 @@
       <workItem from="1645564487170" duration="395000" />
       <workItem from="1645566183046" duration="2330000" />
       <workItem from="1645622417995" duration="2855000" />
+      <workItem from="1645648846486" duration="6000" />
+      <workItem from="1645648870652" duration="80000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD post">
       <created>1645392151767</created>

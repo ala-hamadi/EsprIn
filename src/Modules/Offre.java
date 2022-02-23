@@ -3,27 +3,31 @@ package Modules;
 import Utils.Enums.OffreCategorie;
 import Utils.Enums.State;
 
+
 public class Offre {
     private int idOffre;
     private long offerProvider;
     private OffreCategorie category;
-    private String titleOffer, descOffer;
+    private String titleOffer, descOffer, imgOffre;
+
     private State state;
 
-    public Offre(String titleOffer, String descOffer, OffreCategorie category, long offerProvider) {
+    public Offre(OffreCategorie category, String titleOffer, String descOffer, long offerProvider, String imgOffre) {
         this.category = category;
         this.titleOffer = titleOffer;
         this.descOffer = descOffer;
         this.offerProvider = offerProvider;
+        this.imgOffre = imgOffre;
     }
 
-    public Offre(int idOffre, String titleOffer, String descOffer, OffreCategorie category, long offerProvider,State state) {
+    public Offre(int idOffre, String titleOffer, String descOffer, OffreCategorie category, long offerProvider,State state, String imgOffre) {
         this.state=state;
         this.idOffre = idOffre;
         this.offerProvider = offerProvider;
         this.category = category;
         this.titleOffer = titleOffer;
         this.descOffer = descOffer;
+        this.imgOffre = imgOffre;
     }
 
     public OffreCategorie getCategory() {
@@ -62,6 +66,10 @@ public class Offre {
         return idOffre;
     }
 
+    public String getImgOffre() { return imgOffre; }
+
+    public void setImgOffre(String imgOffre) { this.imgOffre = imgOffre; }
+
     @Override
     public String toString() {
         return "Offre{" +
@@ -69,6 +77,7 @@ public class Offre {
                 ", category=" + category +
                 ", titleOffer='" + titleOffer + '\'' +
                 ", descOffer='" + descOffer + '\'' +
+                ", imgOffre='" + imgOffre + '\'' +
                 ", state='" + state + '\'' +
                 '}';
     }
