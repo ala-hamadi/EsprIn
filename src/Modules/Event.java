@@ -2,13 +2,13 @@ package Modules;
 
 import Utils.Enums.State;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 public class Event {
     private int idEvent;
     private  String TitleEvent;
     private String Description;
-    private Timestamp DateEvent;
+    private Date DateEvent;
     private String ImgURL;
     private long idOrganizer;
     private State state;
@@ -43,11 +43,11 @@ public class Event {
         Description = description;
     }
 
-    public Timestamp getDateEvent() {
+    public Date getDateEvent() {
         return DateEvent;
     }
 
-    public void setDateEvent(Timestamp dateEvent) {
+    public void setDateEvent(Date dateEvent) {
         DateEvent = dateEvent;
     }
 
@@ -61,7 +61,7 @@ public class Event {
 
     public State getState() { return state; }
 
-    public Event(String TitleEvent, String Description, String ImgURL, Timestamp DateEvent, long idOrganizer){
+    public Event(String TitleEvent, String Description, String ImgURL, Date DateEvent, long idOrganizer){
        this.TitleEvent=TitleEvent;
         this.Description=Description;
         this.ImgURL=ImgURL;
@@ -70,7 +70,7 @@ public class Event {
     }
 
 
-    public Event(int idEvent, String TitleEvent, String Description,String ImgURL,Timestamp DateEvent, long idOrganizer, State state){
+    public Event(int idEvent, String TitleEvent, String Description,String ImgURL,Date DateEvent, long idOrganizer, State state){
         this.idEvent=idEvent;
         this.TitleEvent=TitleEvent;
         this.Description=Description;
@@ -84,12 +84,12 @@ public class Event {
     @Override
     public String toString() {
         return "idEvent=" + idEvent +
-                ", TitleEvent= " + TitleEvent +
-                ", Description= " + Description +
-                ", DateEvent=" + DateEvent +
-                ", ImgURL= " + ImgURL +
-                ", idOrganizer= " + idOrganizer +
-                ", State " + state +
+                ",  TitleEvent=" + TitleEvent +
+                ",  Description=" + Description +
+                ",  DateEvent=" + DateEvent +
+                ",  ImgURL=" + ImgURL +
+                ",  idOrganizer=" + idOrganizer +
+                ",  State" + state +
                 '\n';
     }
 }

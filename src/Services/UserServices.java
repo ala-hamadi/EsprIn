@@ -68,6 +68,7 @@ public class UserServices implements IServices<User> {
         }
     }
 
+
     @Override
     public boolean delete(User user) {
         try {
@@ -122,6 +123,7 @@ public class UserServices implements IServices<User> {
         return false;
     }
 
+
     @Override
     public List<User> getList() {
         List<User> users = new ArrayList<User>();
@@ -162,7 +164,6 @@ public class UserServices implements IServices<User> {
         }
         return users;
     }
-
     public void login(String email, String passwd) {
         try {
             Statement statement = connection.createStatement();
@@ -226,8 +227,15 @@ public class UserServices implements IServices<User> {
     }
 
     public List<Espritien> searchByFirstName(String name) {
-        return this.getList().stream().map(u -> (Espritien) u)
-                .filter(u -> u.getFirstName().contains(name)).collect(Collectors.toList());
+        try {
+            return this.getList().stream()
+                    .filter(u -> !u.getClass().equals(Extern.class))
+                    .map(u -> (Espritien) u)
+                    .filter(u -> u.getFirstName().contains(name)).collect(Collectors.toList());
+        } catch (Exception e) {
+            System.out.println("errooor");
+        }
+        return null;
     }
 
     public List<User> sortById() {
