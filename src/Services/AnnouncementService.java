@@ -10,10 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class AnnouncementService implements IServices<Annoucement> {
     private Connection connection;
@@ -39,7 +36,7 @@ public class AnnouncementService implements IServices<Annoucement> {
             rs.next();
             Roles role=Roles.valueOf(rs.getString("role"));
             if(role==Roles.Admin){
-                query="INSERT INTO `annoncement`(`subject`, `content`, `destination`, `idSender`,`createdAt`) VALUES ('"+annoucement.getSubjectAnn()+"','"+annoucement.getContentAnn()+"','"+annoucement.getDestAnn()+"','"+annoucement.getIdSender()+"','"+annoucement.getCreatedAt()+"');";
+                query="INSERT INTO `annoncement`(`subject`, `content`, `destination`, `idSender`) VALUES ('"+annoucement.getSubjectAnn()+"','"+annoucement.getContentAnn()+"','"+annoucement.getDestAnn()+"','"+annoucement.getIdSender()+"');";
                 int x= std.executeUpdate(query);
                 System.out.println(x+"row inserted");
             }
@@ -111,7 +108,7 @@ public class AnnouncementService implements IServices<Annoucement> {
             String query="SELECT * FROM `annoncement`WHERE `annoncement`.`state` <> 'Deleted' ;";
             ResultSet rs=statement.executeQuery(query);
             while (rs.next()){
-                Annoucement annoucement=new Annoucement(rs.getInt("idAnn"),rs.getString("subject"),rs.getString("content"),Roles.valueOf(rs.getString("destination")),rs.getInt("idSender"),rs.getDate("createdAt"));
+                Annoucement annoucement=new Annoucement(rs.getInt("idAnn"),rs.getString("subject"),rs.getString("content"),Roles.valueOf(rs.getString("destination")),rs.getInt("idSender"));
                 annoucements.add(annoucement);
             }
         }catch(SQLException exception){
@@ -133,8 +130,8 @@ public class AnnouncementService implements IServices<Annoucement> {
             }else{
 
 
-                Annoucement annoucement=new Annoucement(rs.getInt("idAnn"),rs.getString("subject"),rs.getString("content"),Roles.valueOf(rs.getString("destination")),rs.getInt("idSender"),rs.getDate("createdAt"));
-                return annoucement;
+            Annoucement annoucement=new Annoucement(rs.getInt("idAnn"),rs.getString("subject"),rs.getString("content"),Roles.valueOf(rs.getString("destination")),rs.getInt("idSender"));
+            return annoucement;
             }
         }catch (SQLException exception){
             System.out.println(exception.getMessage());
@@ -142,32 +139,4 @@ public class AnnouncementService implements IServices<Annoucement> {
         System.out.println("mouch mawjoud");
         return null;
     }
-
-
-
-    public List<Annoucement> filterAlertBySubject(String subjectAnn, List<Annoucement> annoucements){
-        return annoucements.stream()
-                .filter(comparator -> comparator.getSubjectAnn().toString().equals(subjectAnn))
-                .collect(Collectors.toList());
-    }
-    public List<Annoucement> filterAlertByDestination(Roles role, List<Annoucement> annoucements){
-        return annoucements.stream()
-                .filter(comparator -> comparator.getDestAnn().toString().equals(role.toString()))
-                .collect(Collectors.toList());
-    }
-
-    public List<Annoucement> sortAnnoucementById() {
-        return this.getList().stream().sorted((o1, o2) -> String.valueOf(o1.getIdAnn())
-                .compareTo(String.valueOf(o1.getIdAnn()))).collect(Collectors.toList());
-    }
-    public List<Annoucement>sortAnnoucementByDate(List<Annoucement>annoucements){
-        Collections.sort(annoucements, new Comparator<Annoucement>() {
-            @Override
-            public int compare(Annoucement o1, Annoucement o2) {
-                return o1.getCreatedAt().compareTo(o2.getCreatedAt());
-            }
-        });
-        return annoucements;
-    }
-
 }

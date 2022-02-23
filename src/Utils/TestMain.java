@@ -12,7 +12,7 @@ import java.util.List;
 
 public class TestMain {
     public static void main(String[] args) {
-        ForumService forumService = ForumService.getInstance();
+      /*  ForumService forumService = ForumService.getInstance();
         ReactedForumServices reactedForumServices = ReactedForumServices.getInstance();
         Forum forum = new Forum(12,"test","un peu de texte ici",11111111, State.Active);
         System.out.println(forumService.getList().toString());;
@@ -49,7 +49,7 @@ public class TestMain {
         System.out.println(service1.filterAlertBySubject("aaaaaaaa",service1.getList()));
         System.out.println(service1.sortAnnoucementById());
         System.out.println(service1.sortAnnoucementByDate(service1.getList()));
-
+*/
 
     }
 }

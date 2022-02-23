@@ -3,24 +3,19 @@ package Modules;
 import Utils.Enums.State;
 import Utils.Structure.Classe;
 
-import java.util.Date;
-
 public class Alert {
     private int idAlert;
     private String contentAlert;
     private Classe destClass;
     private long idSender;
     private State state;
-    private Date createdAt=new Date();
 
-    public Alert(int idAlert, String contentAlert, Classe destClass, long idSender,Date createdAt) {
+    public Alert(int idAlert, String contentAlert, Classe destClass, long idSender) {
         this.idAlert = idAlert;
         this.contentAlert = contentAlert;
         this.destClass = destClass;
         this.idSender= idSender;
         this.state=State.Active;
-        this.createdAt=createdAt;
-
     }
 
     public int getIdAlert() {
@@ -59,25 +54,12 @@ public class Alert {
         this.state = state;
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
     @Override
     public String toString() {
         return "Alert{" +
                 "idAlert=" + idAlert +
                 ", contentAlert='" + contentAlert + '\'' +
                 ", destClass=" + destClass +
-                ", idSender=" + idSender +
-                ", state=" + state +
-                ", createdAt=" + createdAt +
                 '}';
     }
-
 }
-

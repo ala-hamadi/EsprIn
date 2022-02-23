@@ -3,8 +3,6 @@ package Modules;
 import Utils.Enums.Roles;
 import Utils.Enums.State;
 
-import java.util.Date;
-
 public class Annoucement {
     private int idAnn;
     private String subjectAnn;
@@ -12,16 +10,14 @@ public class Annoucement {
     private Roles destAnn;
     private int idSender;
     private State state;
-    private Date createdAt=new Date();
 
-    public Annoucement(int idAnn, String subjectAnn, String contentAnn, Roles destAnn,int idSender,Date createdAt) {
+    public Annoucement(int idAnn, String subjectAnn, String contentAnn, Roles destAnn,int idSender) {
         this.idAnn = idAnn;
         this.subjectAnn = subjectAnn;
         this.contentAnn = contentAnn;
         this.destAnn = destAnn;
         this.idSender=idSender;
         this.state=State.Active;
-        this.createdAt=createdAt;
     }
 
 
@@ -70,14 +66,6 @@ public class Annoucement {
         this.state = state;
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
     @Override
     public String toString() {
         return "Annoucement{" +
@@ -85,9 +73,6 @@ public class Annoucement {
                 ", subjectAnn='" + subjectAnn + '\'' +
                 ", contentAnn='" + contentAnn + '\'' +
                 ", destAnn=" + destAnn +
-                ", idSender=" + idSender +
-                ", state=" + state +
-                ", createdAt=" + createdAt +
                 '}';
     }
 }
