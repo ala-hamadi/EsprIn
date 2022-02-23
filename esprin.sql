@@ -149,7 +149,7 @@ CREATE TABLE `intrest` (
 --
 
 INSERT INTO `intrest` (`IdOffer`, `cinIntrested`) VALUES
-(1, 10020855);
+(17, 55555555);
 
 -- --------------------------------------------------------
 
@@ -183,6 +183,9 @@ DELIMITER ;
 
 --
 -- Structure de la table `offre`
+
+--
+-- Structure de la table `offre`
 --
 
 CREATE TABLE `offre` (
@@ -191,28 +194,20 @@ CREATE TABLE `offre` (
   `titleOffer` varchar(20) NOT NULL,
   `descOffer` text NOT NULL,
   `offerProvider` int(8) NOT NULL,
-  `state` varchar(15) NOT NULL DEFAULT 'Active'
+  `state` varchar(15) NOT NULL DEFAULT 'Active',
+  `imgOffre` text CHARACTER SET swe7 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `offre`
 --
 
-INSERT INTO `offre` (`IdOffer`, `catOffre`, `titleOffer`, `descOffer`, `offerProvider`, `state`) VALUES
-(1, 'Offre_De_Travail', 'mohsen', 'lll', 10020855, 'Deleted'),
-(2, 'Alternance', 'mohsen', 'lll', 10020855, 'Active'),
-(3, 'Alternance', 'mohsen', 'lll', 10020855, 'Active'),
-(4, 'Alternance', 'mohsen', 'lll', 10020855, 'Active'),
-(5, 'Alternance', 'mohsen', 'lll', 10020855, 'Active'),
-(6, 'Alternance', 'mohsen', 'lll', 10020855, 'Active'),
-(7, 'Alternance', 'mohsen', 'lll', 10020855, 'Active'),
-(8, 'Alternance', 'mohsen', 'lll', 10020855, 'Active'),
-(9, 'Alternance', 'mohsen', 'lll', 10020855, 'Active'),
-(10, 'Alternance', 'mohsen', 'lll', 10020855, 'Active'),
-(11, 'Alternance', 'mohsen', 'lll', 10020855, 'Active'),
-(12, 'Alternance', 'mohsen', 'lll', 10020855, 'Active'),
-(13, 'Alternance', 'mohsen', 'lll', 10020855, 'Active'),
-(14, 'Alternance', 'mohsen', 'lll', 10020855, 'Active');
+INSERT INTO `offre` (`IdOffer`, `catOffre`, `titleOffer`, `descOffer`, `offerProvider`, `state`, `imgOffre`) VALUES
+(17, 'Alternance', 'titre', 'desc', 10020855, 'Active', 'img'),
+(18, 'Stage', 'titre1', 'description', 10020855, 'Active', 'image'),
+(19, 'Offre_De_Travail', 'titre2', 'descktop', 10020855, 'Active', 'http'),
+(20, 'Stage', 'titre3', 'desique dur', 10020855, 'Active', 'oh no oh no');
+
 
 -- --------------------------------------------------------
 
