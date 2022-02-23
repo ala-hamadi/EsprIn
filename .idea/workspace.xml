@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ffc5b1-8cf4-4e7e-908c-bd7fb8ddff4a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Services/ReactedForumServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ForumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ForumService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modules/Alert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Alert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modules/Annoucement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Annoucement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/AlertServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/AlertServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/AnnouncementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/AnnouncementService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/TestMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,13 +74,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
