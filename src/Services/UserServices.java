@@ -219,7 +219,6 @@ public class UserServices implements IServices<User> {
         changeState(currentUser, State.Disconnected);
         currentUser.clearInstance();
         System.out.println(currentUser);
-
     }
 
     public List<User> filtreByRole(Roles role) {
@@ -227,25 +226,33 @@ public class UserServices implements IServices<User> {
     }
 
     public List<Espritien> searchByFirstName(String name) {
-        return this.getList().stream().map(u -> (Espritien) u).filter(u -> u.getFirstName().contains(name)).collect(Collectors.toList());
+        return this.getList().stream().map(u -> (Espritien) u)
+                .filter(u -> u.getFirstName().contains(name)).collect(Collectors.toList());
+    }
+
+    public List<User> sortById() {
+        return this.getList().stream().sorted((o1, o2) -> String.valueOf(o1.getCinUser())
+                .compareTo(String.valueOf(o1.getCinUser()))).collect(Collectors.toList());
     }
 
     //region Student
-    public List<User> filtreByClassLevel(int classNum) {
+    public List<Student> filtreByClassLevel(int classNum) {
         List<Student> studentList = this.getList().stream().filter(u -> u.getRole() == Roles.Etudiant).map(u -> (Student) u).collect(Collectors.toList());
         return studentList.stream().filter(u -> u.getClasse().getNiveau() == classNum).collect(Collectors.toList());
     }
 
-    public List<User> filtreByClassSpeciality(String spec) {
+    public List<Student> filtreByClassSpeciality(String spec) {
         List<Student> studentList = this.getList().stream().filter(u -> u.getRole() == Roles.Etudiant).map(u -> (Student) u).collect(Collectors.toList());
         return studentList.stream().filter(u -> u.getClasse().getSpecialite().toLowerCase().contains(spec.toLowerCase())).collect(Collectors.toList());
     }
-    public List<User> filtreByStudentDomaine(Domaine domaine) {
+
+    public List<Student> filtreByStudentDomaine(Domaine domaine) {
         List<Student> studentList = this.getList().stream().filter(u -> u.getRole() == Roles.Etudiant).map(u -> (Student) u).collect(Collectors.toList());
-        return studentList.stream().filter(u -> u.getDomaine()==domaine).collect(Collectors.toList());
+        return studentList.stream().filter(u -> u.getDomaine() == domaine).collect(Collectors.toList());
     }
 
     //endregion
+
     //region Admin
     public List<User> filtreByDepartment(AdminDepartments department) {
         List<Admin> adminList = this.getList().stream().filter(u -> u.getRole() == Roles.Admin).map(u -> (Admin) u).collect(Collectors.toList());

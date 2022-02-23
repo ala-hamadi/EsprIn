@@ -1,5 +1,5 @@
 package Utils.Enums;
 
 public enum  TypeClub {
-    Association , Interne;
+    Association , Interne,Junior_entreprise
 }
