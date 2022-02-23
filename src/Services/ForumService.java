@@ -1,7 +1,11 @@
 package Services;
 
+import Modules.Espritien;
 import Modules.Forum;
+import Modules.Post;
+import Modules.User;
 import Utils.BdConnection;
+import Utils.Enums.Roles;
 import Utils.Enums.State;
 
 import java.sql.Connection;
@@ -9,7 +13,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ForumService implements IServices<Forum> {
     private Connection connection;
@@ -95,5 +102,20 @@ public class ForumService implements IServices<Forum> {
             System.out.println(ex.getMessage());
             return false;
         }
+    }
+    public List<Forum> searchByTitle(String title) {
+        return this.getList()
+                    .stream()
+                    .map(f -> (Forum) f)
+                    .filter(f -> f.getTitle().contains(title))
+                    .collect(Collectors.toList());
+    }
+    public List<Forum> sortForumByid(List<Forum> forums) {
+        Collections.sort(forums, new Comparator<Forum>() {
+            public int compare(Forum o1, Forum o2) {
+                return o1.getTitle().compareTo(o2.getTitle());
+            }
+        });
+        return forums;
     }
 }
