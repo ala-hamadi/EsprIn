@@ -11,7 +11,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AlertServices implements IServices<Alert>{
     private Connection connection;
@@ -36,15 +39,15 @@ public class AlertServices implements IServices<Alert>{
             ResultSet rs = std.executeQuery(query);
 
             rs.next();
-                switch (Roles.valueOf(rs.getString("role"))) {
-                    case Professeur:
-                        query = "INSERT INTO `alert`(`content`, `destClass`, `idSender`, `state`) VALUES ('" + alert.getContentAlert() + "','" + alert.getDestClass() + "','" + alert.getIdSender() + "','" + alert.getState() + "');";
-                        int x = std.executeUpdate(query);
-                        System.out.println(x + "row inserted");
-                        break;
-                    default:
-                        System.out.println("mahouch prof ya haj");
-                }
+            switch (Roles.valueOf(rs.getString("role"))) {
+                case Professeur:
+                    query = "INSERT INTO `alert`(`content`, `destClass`, `idSender`, `state`,`createdAt`) VALUES ('" + alert.getContentAlert() + "','" + alert.getDestClass() + "','" + alert.getIdSender() + "','" + alert.getState() + "','" + alert.getCreatedAt() + "');";
+                    int x = std.executeUpdate(query);
+                    System.out.println(x + "row inserted");
+                    break;
+                default:
+                    System.out.println("mahouch prof ya haj");
+            }
 
 
         }catch (SQLException exception){
@@ -81,15 +84,15 @@ public class AlertServices implements IServices<Alert>{
         return false;
 
     }
-   /* public void changeState(Alert alert, State state){
-        try {
-            Statement statement = connection.createStatement();
-            String query = "UPDATE alert SET state = '" + state+ "' WHERE user.cinUser = " + user.getCinUser() + ";";
-            statement.executeUpdate(query);
-        } catch (SQLException exception) {
-            exception.printStackTrace();
-        }
-    }*/
+    /* public void changeState(Alert alert, State state){
+         try {
+             Statement statement = connection.createStatement();
+             String query = "UPDATE alert SET state = '" + state+ "' WHERE user.cinUser = " + user.getCinUser() + ";";
+             statement.executeUpdate(query);
+         } catch (SQLException exception) {
+             exception.printStackTrace();
+         }
+     }*/
 //Roles.valueOf(rs.getString("role"))
     @Override
     public boolean update(Alert alert) {
@@ -109,7 +112,7 @@ public class AlertServices implements IServices<Alert>{
                 while (rs.next()) {
                     switch (rs.getString("role").toLowerCase()) {
                         case "professeur":
-                            query = "UPDATE `alert` SET `idAlert`='" + alert.getIdAlert() + "',`content`='" + alert.getContentAlert() + "',`destClass`='" + alert.getDestClass() + "',`idSender`='" + alert.getIdSender() + "' WHERE `alert`.`idAlert`=" + alert.getIdAlert() + ";";
+                            query = "UPDATE `alert` SET `content`='" + alert.getContentAlert() + "',`destClass`='" + alert.getDestClass() +  "' WHERE `alert`.`idAlert`=" + alert.getIdAlert() + ";";
                             int x = std.executeUpdate(query);
                             System.out.println(x + "row updated");
                             return true;
@@ -138,7 +141,7 @@ public class AlertServices implements IServices<Alert>{
             ResultSet rs=statement.executeQuery(query);
             while (rs.next()){
                 String[] classe=rs.getString("destClass").split(" ");
-                Alert alert=new Alert(rs.getInt("idAlert"),rs.getString("content"),new Classe(Integer.parseInt(classe[0]),classe[1],Integer.parseInt(classe[2])),rs.getInt("idSender"));
+                Alert alert=new Alert(rs.getInt("idAlert"),rs.getString("content"),new Classe(Integer.parseInt(classe[0]),classe[1],Integer.parseInt(classe[2])),rs.getInt("idSender"),rs.getDate("createdAt"));
                 alerts.add(alert);
             }
         }catch (SQLException exception){
@@ -149,27 +152,47 @@ public class AlertServices implements IServices<Alert>{
 
 
     public Alert retrive(long i) {
-       try {
-           Statement statement=connection.createStatement();
-           String query="";
-           query = "SELECT * FROM `alert` WHERE `alert`.`idAlert`=" + i + ";";
-           ResultSet resultSet= statement.executeQuery(query);
-           resultSet.next();
-           if (State.valueOf(resultSet.getString("state"))==State.Deleted){
-               System.out.println("u cannot show a deleted row");
-               return null;
+        try {
+            Statement statement=connection.createStatement();
+            String query="";
+            query = "SELECT * FROM `alert` WHERE `alert`.`idAlert`=" + i + ";";
+            ResultSet resultSet= statement.executeQuery(query);
+            resultSet.next();
+            if (State.valueOf(resultSet.getString("state"))==State.Deleted){
+                System.out.println("u cannot show a deleted row");
+                return null;
 
-           }else {
-               ResultSet rs = statement.executeQuery(query);
-               rs.next();
-               String[] classe = rs.getString("destClass").split(" ");
-               Alert alert = new Alert(rs.getInt("idAlert"), rs.getString("content"), new Classe(Integer.parseInt(classe[0]), classe[1], Integer.parseInt(classe[2])), rs.getInt("idSender"));
-               return alert;
-           }
-       }catch (SQLException exception){
-           System.out.println(exception.getMessage());
-       }
+            }else {
+                ResultSet rs = statement.executeQuery(query);
+                rs.next();
+                String[] classe = rs.getString("destClass").split(" ");
+                Alert alert = new Alert(rs.getInt("idAlert"), rs.getString("content"), new Classe(Integer.parseInt(classe[0]), classe[1], Integer.parseInt(classe[2])), rs.getInt("idSender"),rs.getDate("createdAt"));
+                return alert;
+            }
+        }catch (SQLException exception){
+            System.out.println(exception.getMessage());
+        }
         System.out.println("mouch mawjoud");
-       return null;
+        return null;
     }
+    public List<Alert> filterAlertByClass(String classeid, List<Alert> alerts){
+        return alerts.stream()
+                .filter(comparator -> comparator.getDestClass().toString().equals(classeid))
+                .collect(Collectors.toList());
+    }
+
+    public List<Alert> sortAlertById() {
+        return this.getList().stream().sorted((o1, o2) -> String.valueOf(o1.getIdAlert())
+                .compareTo(String.valueOf(o1.getIdAlert()))).collect(Collectors.toList());
+    }
+    public List<Alert> sortAlertByDate(List<Alert>alerts){
+        Collections.sort(alerts, new Comparator<Alert>() {
+            public int compare(Alert o1, Alert o2) {
+                return o1.getCreatedAt().compareTo(o2.getCreatedAt());
+            }
+        });
+        return alerts;
+    }
+
 }
+
