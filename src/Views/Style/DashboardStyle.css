@@ -1,0 +1,72 @@
+#exitBtn:hover{
+    -fx-border-color: #853030;
+    -fx-background-color: #750707;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+}
+#exitBtn{
+    -fx-background-color: #f67070;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill: #9f0505;
+}
+#exitBtn:pressed{
+    -fx-background-color: #c61c1c;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+}
+.Btn:hover{
+    -fx-border-color: #853030;
+    -fx-background-color: #750707;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+    -fx-font-family:Lato;
+}
+.Btn{
+    -fx-background-color: #dea6a6;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill: #9f0505;
+    -fx-font-family:Lato;
+}
+.Btn:pressed{
+    -fx-background-color: #c61c1c;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-font-family:Lato;
+}
+.DeleteBtn{
+    -fx-background-color: #f38080;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+    -fx-font-family:Lato;
+    -fx-font-size:19px;
+}
+.DeleteBtn:hover{
+    -fx-border-color: #853030;
+    -fx-background-color: #a43232;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+    -fx-font-family:Lato;
+    -fx-font-size:19px;
+}
+.DeleteBtn:pressed{
+    -fx-border-color: #853030;
+    -fx-background-color: #6e0303;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+    -fx-font-family:Lato;
+    -fx-font-size:19px;
+}
+#refreshBtn{
+    -fx-background-color: transparent;
+}
+#refreshBtn:pressed{
+    -fx-background-radius: 30px;
+    -fx-background-color: #ef6e6e;
+}

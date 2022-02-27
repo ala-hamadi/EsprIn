@@ -97,6 +97,7 @@ public class TestMain {
         System.out.println(service1.filterAlertBySubject("aaaaaaaa",service1.getList()));
         System.out.println(service1.sortAnnoucementById());
         System.out.println(service1.sortAnnoucementByDate(service1.getList()));
+        UserServices userServices=UserServices.getInstance();
 
 
     }
