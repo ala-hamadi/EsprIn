@@ -1,4 +1,4 @@
-package Controllers;
+package Controllers.AdminDashboardControllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

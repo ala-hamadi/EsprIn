@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="1043.0" prefWidth="1452.0" stylesheets="@../Style/DashboardStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AnnounceMenu">
+<AnchorPane prefHeight="1043.0" prefWidth="1452.0" stylesheets="@../Style/DashboardStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminDashboardControllers.AnnounceMenu">
    <children>
       <VBox layoutX="490.0" layoutY="359.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -47,7 +47,7 @@
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="45.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="file:/C:/Users/Bairem/IdeaProjects/Testjava/src/Views/Images/update.png" />
+                              <Image url="@../Images/update.png" />
                            </image>
                         </ImageView>
                      </graphic></Button>

@@ -5,11 +5,35 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="afab44ba-fe32-48c5-85b6-12a971824a6d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Views/Main.java" afterDir="false" />
+    <list default="true" id="afab44ba-fe32-48c5-85b6-12a971824a6d" name="Default Changelist" comment="Dashboard admin">
+      <change afterPath="$PROJECT_DIR$/src/Controllers/ProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AddAnnounceWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AnnounceListViewCell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AnnounceMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/UsersMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AlertServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AlertServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AnnouncementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AnnouncementService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Utils/TestMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Utils/TestMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Cells/AnnounceCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Cells/AnnounceCell.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/AnnounceMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/AnnounceMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/UsersMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/UsersMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddAnnounceWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddAnnounceWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AddAnnounceWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/AddAnnounceWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AnnounceListViewCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/AnnounceListViewCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AnnounceMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/AnnounceMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/UsersMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/UsersMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/AlertServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/AlertServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/AnnouncementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/AnnouncementService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/TestMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/Cells/AnnounceCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Cells/AnnounceCell.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/UI/AnnounceMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/AnnounceMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/UI/UsersMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/UsersMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/UI/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/Windows/AddAnnounceWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/AddAnnounceWindow.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,12 +43,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Bairem &lt;bairemkh@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="feature/crud-post" />
@@ -78,6 +107,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.TestMain" />
@@ -111,6 +153,7 @@
       <workItem from="1645726589545" duration="616000" />
       <workItem from="1645735275279" duration="1827000" />
       <workItem from="1645997131798" duration="1274000" />
+      <workItem from="1645998443252" duration="3213000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD post">
       <created>1645392151767</created>
@@ -133,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645564835117</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Dashboard admin">
+      <created>1645998599495</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1645998599495</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +205,8 @@
     <MESSAGE value="CRUD post" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="all crud" />
-    <option name="LAST_COMMIT_MESSAGE" value="all crud" />
+    <MESSAGE value="Dashboard admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dashboard admin" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1645998301730">
@@ -174,62 +225,68 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2663" y="434" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1645622497956" />
-    <state x="2419" y="108" key="CommitChangelistDialog2" timestamp="1645564834483">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="499" y="104" key="CommitChangelistDialog2" timestamp="1645999270034">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2419" y="108" key="CommitChangelistDialog2/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1645564834483" />
+    <state x="499" y="104" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1645999270034" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1645738354001">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1645738354001" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1645998406030">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1646001540072">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="214" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1645651176547" />
     <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1645624728019" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1645998406030" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1645998406030">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1646001540072" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1646001540072">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="214" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1645651176547" />
     <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1645624728019" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1645998406030" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1645998406030">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1646001540072" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1646001540072">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="214" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1645651176546" />
     <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1645624728019" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1645998406030" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1645998406030">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1646001540072" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1646001540072">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="214" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1645651176547" />
     <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1645624728019" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1645998406030" />
-    <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1645564884235">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1646001540072" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1646001375561">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="363" key="GridCell.Tab.1.bottom/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1645564884235" />
-    <state width="1877" height="363" key="GridCell.Tab.1.center" timestamp="1645564884235">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1646001375561" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1646001375561">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="363" key="GridCell.Tab.1.center/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1645564884235" />
-    <state width="1877" height="363" key="GridCell.Tab.1.left" timestamp="1645564884235">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1646001375561" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1646001375561">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="363" key="GridCell.Tab.1.left/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1645564884235" />
-    <state width="1877" height="363" key="GridCell.Tab.1.right" timestamp="1645564884235">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1646001375561" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1646001375561">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1645564884235" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1646001375561" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1645697805499">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1645697805499" />
-    <state x="2472" y="273" key="Vcs.Push.Dialog.v2" timestamp="1645564856807">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1645998609849">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2472" y="273" key="Vcs.Push.Dialog.v2/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1645564856807" />
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1645998609849" />
     <state x="342" y="140" key="new project wizard" timestamp="1645738378756">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -238,5 +295,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="660" y="267" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1645997357292" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/AnnounceMenu.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

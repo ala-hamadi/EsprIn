@@ -41,7 +41,7 @@ public class AlertServices implements IServices<Alert>{
             rs.next();
             switch (Roles.valueOf(rs.getString("role"))) {
                 case Professeur:
-                    query = "INSERT INTO `alert`(`content`, `destClass`, `idSender`, `state`,`createdAt`) VALUES ('" + alert.getContentAlert() + "','" + alert.getDestClass() + "','" + alert.getIdSender() + "','" + alert.getState() + "','" + alert.getCreatedAt() + "');";
+                    query = "INSERT INTO `alert`(`content`, `destClass`, `idSender`, `state`) VALUES ('" + alert.getContentAlert() + "','" + alert.getDestClass() + "','" + alert.getIdSender() + "','" + alert.getState() + "');";
                     int x = std.executeUpdate(query);
                     System.out.println(x + "row inserted");
                     break;

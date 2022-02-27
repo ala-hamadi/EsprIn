@@ -39,7 +39,7 @@ public class AnnouncementService implements IServices<Annoucement> {
             rs.next();
             Roles role=Roles.valueOf(rs.getString("role"));
             if(role==Roles.Admin){
-                query="INSERT INTO `annoncement`(`subject`, `content`, `destination`, `idSender`,`createdAt`) VALUES ('"+annoucement.getSubjectAnn()+"','"+annoucement.getContentAnn()+"','"+annoucement.getDestAnn()+"','"+annoucement.getIdSender()+"','"+annoucement.getCreatedAt()+"');";
+                query="INSERT INTO `annoncement`(`subject`, `content`, `destination`, `idSender`) VALUES ('"+annoucement.getSubjectAnn()+"','"+annoucement.getContentAnn()+"','"+annoucement.getDestAnn()+"','"+annoucement.getIdSender()+"');";
                 int x= std.executeUpdate(query);
                 System.out.println(x+"row inserted");
             }

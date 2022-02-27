@@ -1,4 +1,4 @@
-package Controllers;
+package Controllers.AdminDashboardControllers;
 
 
 import Modules.Annoucement;
@@ -14,7 +14,7 @@ import java.io.IOException;
 public class AnnounceListViewCell {
     public AnchorPane pane;
     @FXML
-    private Label AnnoucementTitle;
+    private Label announceTitle;
     @FXML
     private Label dateSent;
     @FXML
@@ -22,12 +22,12 @@ public class AnnounceListViewCell {
 
     private Annoucement Annoucement;
 
-    public void AnnoucementDeleted(ActionEvent actionEvent) {
+    public void announceDeleted(ActionEvent actionEvent) {
     }
 
     public void setData(Annoucement Annoucement) {
         this.Annoucement = Annoucement;
-        AnnoucementTitle.setText(Annoucement.getSubjectAnn());
+        announceTitle.setText(Annoucement.getSubjectAnn());
         dateSent.setText(Annoucement.getCreatedAt().toString());
         destination.setText(Annoucement.getDestAnn().name());
     }

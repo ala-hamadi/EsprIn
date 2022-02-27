@@ -1,7 +1,8 @@
-package Controllers;
+package Controllers.AdminDashboardControllers;
 
 
 import Modules.Annoucement;
+import Services.AnnouncementService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,18 +26,14 @@ public class AnnounceMenu implements Initializable {
     @FXML
     public GridPane grid;
     @FXML
-    private ListView<Node> AnnoucementListView;
+    private ListView<Node> announceListView;
     private List<Annoucement> AnnoucementObservableList;
 
 
     public AnnounceMenu() {
-        AnnoucementObservableList = new ArrayList<Annoucement>();
-
-
-
-        AnnoucementListView = new ListView<>();
-
-
+        AnnouncementService announcementService=AnnouncementService.getInstance();
+        AnnoucementObservableList = announcementService.getList();
+        announceListView = new ListView<>();
     }
 
     @Override
@@ -46,12 +43,11 @@ public class AnnounceMenu implements Initializable {
         try {
             for (int i = 0; i < AnnoucementObservableList.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/Views/Cells/AnnoucementCell.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/Views/Cells/AnnounceCell.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
                 AnnounceListViewCell itemController = fxmlLoader.getController();
                 itemController.setData(AnnoucementObservableList.get(i));
-                //grid.add(anchorPane,col,rows++);
-                AnnoucementListView.getItems().add(anchorPane);
+                announceListView.getItems().add(anchorPane);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
