@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 23 fév. 2022 à 22:22
+-- Généré le : dim. 27 fév. 2022 à 23:44
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 7.4.27
 
@@ -31,6 +31,7 @@ CREATE TABLE `alert` (
   `idAlert` int(11) NOT NULL,
   `content` text NOT NULL,
   `destClass` varchar(20) NOT NULL,
+  `createdAt` datetime NOT NULL DEFAULT current_timestamp(),
   `idSender` int(11) NOT NULL,
   `state` varchar(15) NOT NULL DEFAULT 'Active'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -46,6 +47,7 @@ CREATE TABLE `annoncement` (
   `subject` varchar(50) NOT NULL,
   `content` text NOT NULL,
   `destination` varchar(20) NOT NULL,
+  `createdAt` datetime NOT NULL DEFAULT current_timestamp(),
   `idSender` int(11) NOT NULL,
   `state` varchar(15) NOT NULL DEFAULT 'Active'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -54,12 +56,13 @@ CREATE TABLE `annoncement` (
 -- Déchargement des données de la table `annoncement`
 --
 
-INSERT INTO `annoncement` (`idAnn`, `subject`, `content`, `destination`, `idSender`, `state`) VALUES
-(5, 'Rappel 5lass', 'no 5lass no result', 'Etudiant', 10020855, 'Active'),
-(6, 'Rappel 5lass', 'no 5lass no result', 'Etudiant', 10020855, 'Active'),
-(7, 'Rappel 5lass', 'no 5lass no result', 'Etudiant', 10020855, 'Active'),
-(8, 'Rappel 5lass', 'no 5lass no result', 'Etudiant', 10020855, 'Active'),
-(9, 'Rappel 5lass', 'no 5lass no result', 'Etudiant', 10020855, 'Deleted');
+INSERT INTO `annoncement` (`idAnn`, `subject`, `content`, `destination`, `createdAt`, `idSender`, `state`) VALUES
+(5, 'Rappel 5lass', 'no 5lass no result', 'Etudiant', '2022-02-27 23:21:46', 10020855, 'Active'),
+(6, 'Rappel 5lass', 'no 5lass no result', 'Etudiant', '2022-02-27 23:21:46', 10020855, 'Active'),
+(7, 'Rappel 5lass', 'no 5lass no result', 'Etudiant', '2022-02-27 23:21:46', 10020855, 'Active'),
+(8, 'Rappel 5lass', 'no 5lass no result', 'Etudiant', '2022-02-27 23:21:46', 10020855, 'Active'),
+(9, 'Rappel 5lass', 'no 5lass no result', 'Etudiant', '2022-02-27 23:21:46', 10020855, 'Deleted'),
+(10, 'aaaaaaaa', 'no 5lass no result', 'Club', '2022-02-27 23:21:46', 10020855, 'Active');
 
 -- --------------------------------------------------------
 
@@ -149,7 +152,7 @@ CREATE TABLE `intrest` (
 --
 
 INSERT INTO `intrest` (`IdOffer`, `cinIntrested`) VALUES
-(17, 55555555);
+(1, 10020855);
 
 -- --------------------------------------------------------
 
@@ -183,9 +186,6 @@ DELIMITER ;
 
 --
 -- Structure de la table `offre`
-
---
--- Structure de la table `offre`
 --
 
 CREATE TABLE `offre` (
@@ -193,21 +193,30 @@ CREATE TABLE `offre` (
   `catOffre` varchar(20) NOT NULL,
   `titleOffer` varchar(20) NOT NULL,
   `descOffer` text NOT NULL,
+  `imgOffre` text DEFAULT NULL,
   `offerProvider` int(8) NOT NULL,
-  `state` varchar(15) NOT NULL DEFAULT 'Active',
-  `imgOffre` text CHARACTER SET swe7 NOT NULL
+  `state` varchar(15) NOT NULL DEFAULT 'Active'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `offre`
 --
 
-INSERT INTO `offre` (`IdOffer`, `catOffre`, `titleOffer`, `descOffer`, `offerProvider`, `state`, `imgOffre`) VALUES
-(17, 'Alternance', 'titre', 'desc', 10020855, 'Active', 'img'),
-(18, 'Stage', 'titre1', 'description', 10020855, 'Active', 'image'),
-(19, 'Offre_De_Travail', 'titre2', 'descktop', 10020855, 'Active', 'http'),
-(20, 'Stage', 'titre3', 'desique dur', 10020855, 'Active', 'oh no oh no');
-
+INSERT INTO `offre` (`IdOffer`, `catOffre`, `titleOffer`, `descOffer`, `imgOffre`, `offerProvider`, `state`) VALUES
+(1, 'Offre_De_Travail', 'mohsen', 'lll', NULL, 10020855, 'Deleted'),
+(2, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
+(3, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
+(4, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
+(5, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
+(6, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
+(7, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
+(8, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
+(9, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
+(10, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
+(11, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
+(12, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
+(13, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
+(14, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active');
 
 -- --------------------------------------------------------
 
@@ -430,7 +439,7 @@ ALTER TABLE `alert`
 -- AUTO_INCREMENT pour la table `annoncement`
 --
 ALTER TABLE `annoncement`
-  MODIFY `idAnn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idAnn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `event`
