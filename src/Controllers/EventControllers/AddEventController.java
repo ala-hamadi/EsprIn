@@ -94,15 +94,20 @@ public class AddEventController {
 
     @FXML
     void AddEvent(ActionEvent event) {
-        EventServices eventServices= new EventServices();
-        String date = String.valueOf(dateEvent.getValue());
-        Event ev= new Event(EventTitle.getText(),contentEvent.getText(),null, Date.valueOf(date), 10000000);
+        try {
+            EventServices eventServices = EventServices.getInstance();
+            String date = String.valueOf(dateEvent.getValue());
+            Event ev= new Event(EventTitle.getText(),contentEvent.getText(),null, Date.valueOf(date), 10000000);
 
-        eventServices.add(ev);
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Success");
-        alert.setContentText("Event is added successfully!");
-        alert.show();
+            eventServices.add(ev);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setContentText("Event is added successfully!");
+            alert.show();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+
 
 
     }

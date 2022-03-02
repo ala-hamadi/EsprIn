@@ -5,30 +5,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="afab44ba-fe32-48c5-85b6-12a971824a6d" name="Default Changelist" comment="Dashboard admin">
-      <change afterPath="$PROJECT_DIR$/src/Views/Images/Vikings.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/Images/add_new_26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/Images/business_26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/Images/chat_24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/Images/delete_26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/Images/delete_30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/Images/event_24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/Images/exit_26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/Images/home_24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/Images/image_file_add_24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/Images/logo_app.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/Images/microphone_24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/Images/search_24px.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Modules/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Modules/Event.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/EventServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/EventServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/ParticipateServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/ParticipateServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/DashboardStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/DashboardStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EventServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EventServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ParticipateServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ParticipateServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Style/DashboardStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Style/DashboardStyle.css" afterDir="false" />
+    <list default="true" id="afab44ba-fe32-48c5-85b6-12a971824a6d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Controllers/EventControllers/AddEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EventControllers/AddEventController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +150,7 @@
       <workItem from="1645998443252" duration="3213000" />
       <workItem from="1646143831831" duration="12848000" />
       <workItem from="1646224874375" duration="606000" />
-      <workItem from="1646244915640" duration="13387000" />
+      <workItem from="1646244915640" duration="13889000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD post">
       <created>1645392151767</created>
@@ -202,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645998599495</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Event interfaces">
+      <created>1646263429866</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1646263429866</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +210,8 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="all crud" />
     <MESSAGE value="Dashboard admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dashboard admin" />
+    <MESSAGE value="Event interfaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="Event interfaces" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1645998301730">
@@ -245,9 +231,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2663" y="434" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1645622497956" />
-    <state x="499" y="104" key="CommitChangelistDialog2" timestamp="1645999270034">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="399" y="0" width="760" height="824" key="CommitChangelistDialog2" timestamp="1646263427609">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="399" y="0" width="760" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1646263427609" />
     <state x="2419" y="108" key="CommitChangelistDialog2/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1645564834483" />
     <state x="499" y="104" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1645999270034" />
     <state x="592" y="218" key="FileChooserDialogImpl" timestamp="1646253701956">
@@ -303,13 +290,26 @@
     </state>
     <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1645564884235" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1646001375561" />
+    <state x="147" y="64" width="1346" height="695" key="MergeDialog" timestamp="1646263696660">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="147" y="64" width="1346" height="695" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1646263696660" />
+    <state x="407" y="173" key="MultipleFileMergeDialog" timestamp="1646263696670">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="407" y="173" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1646263696670" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1645697805499">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1645697805499" />
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1645998609849">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="544" height="446" key="SwitcherDM" timestamp="1646263836920">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="544" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1646263836920" />
+    <state x="442" y="208" key="Vcs.Push.Dialog.v2" timestamp="1646263458843">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="442" y="208" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1646263458843" />
     <state x="2472" y="273" key="Vcs.Push.Dialog.v2/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1645564856807" />
     <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1645998609849" />
     <state x="342" y="140" key="new project wizard" timestamp="1645738378756">
