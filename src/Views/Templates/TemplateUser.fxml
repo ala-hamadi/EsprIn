@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="Container" stylesheets="@../Style/UserTemplateStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminDashboardControllers.TemplateUser">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="208.0" layoutY="188.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="TOP_RIGHT" prefHeight="15.0" prefWidth="370.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#onDeleteUser" prefHeight="39.0" prefWidth="64.0" text="Button">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/delete.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="316.0" layoutY="10.0" mnemonicParsing="false" onAction="#onBanUser" prefHeight="39.0" prefWidth="64.0" text="Button">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/C:/Users/Bairem/Desktop/Vikings/EsprIN/src/Views/Images/deleteuser.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <Circle fx:id="userAvatar" fill="#1f93ff00" radius="75.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" />
+            <Label fx:id="userFirstName" text="First name" textFill="WHITE">
+               <font>
+                  <Font name="Dosis SemiBold" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="userLastName" layoutX="181.0" layoutY="190.0" text="Last name" textFill="WHITE">
+               <font>
+                  <Font name="Dosis SemiBold" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="userRole" layoutX="183.0" layoutY="260.0" text="role" textFill="WHITE">
+               <font>
+                  <Font name="Dosis SemiBold" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="userCreationDate" layoutX="222.0" layoutY="330.0" text="CreationDate" textFill="WHITE">
+               <font>
+                  <Font name="Dosis SemiBold" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="userState" layoutX="167.0" layoutY="400.0" text="State" textFill="WHITE">
+               <font>
+                  <Font name="Dosis SemiBold" size="30.0" />
+               </font>
+            </Label>
+         </children></VBox>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="10.0" />
+   </padding>
+</AnchorPane>
