@@ -19,12 +19,12 @@ public class UserServices implements IServices<User> {
     private Connection connection;
     private static UserServices instance;
 
-    private UserServices() {
+    private UserServices() throws SQLException{
         BdConnection connect = BdConnection.getInstance();
         this.connection = connect.cnx;
     }
 
-    public static UserServices getInstance() {
+    public static UserServices getInstance() throws SQLException{
         if (instance == null)
             instance = new UserServices();
         return instance;
@@ -133,24 +133,34 @@ public class UserServices implements IServices<User> {
                 switch (Roles.valueOf(resultSet.getString("role"))) {
                     case Admin:
                         Admin admin = new Admin(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Admin, resultSet.getString("firstName"), resultSet.getString("lastName"), AdminDepartments.valueOf(resultSet.getString("departement")));
+                        admin.setState(State.valueOf(resultSet.getString("state")));
+                        admin.setCreatedAt(resultSet.getDate("createdAt"));
                         users.add(admin);
                         break;
                     case Club:
                         Club club = new Club(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Club, resultSet.getString("firstName"), resultSet.getString("lastName"), TypeClub.valueOf(resultSet.getString("typeClub")));
                         users.add(club);
+                        club.setState(State.valueOf(resultSet.getString("state")));
+                        club.setCreatedAt(resultSet.getDate("createdAt"));
                         break;
                     case Etudiant:
                         String[] classString = resultSet.getString("class").split(" ");
                         Classe classe = new Classe(Integer.parseInt(classString[0]), classString[1], Integer.parseInt(classString[2]));
                         Student student = new Student(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Etudiant, resultSet.getString("firstName"), resultSet.getString("lastName"), classe, Domaine.valueOf(resultSet.getString("domaine")));
+                        student.setState(State.valueOf(resultSet.getString("state")));
+                        student.setCreatedAt(resultSet.getDate("createdAt"));
                         users.add(student);
                         break;
                     case Professeur:
                         Professor professor = new Professor(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Professeur, resultSet.getString("firstName"), resultSet.getString("lastName"), Domaine.valueOf(resultSet.getString("domaine")));
+                        professor.setState(State.valueOf(resultSet.getString("state")));
+                        professor.setCreatedAt(resultSet.getDate("createdAt"));
                         users.add(professor);
                         break;
                     case Externe:
                         Extern extern = new Extern(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Externe, resultSet.getString("entrepriseName"), resultSet.getString("localisation"));
+                        extern.setState(State.valueOf(resultSet.getString("state")));
+                        extern.setCreatedAt(resultSet.getDate("createdAt"));
                         users.add(extern);
                         break;
                     default:
@@ -204,6 +214,15 @@ public class UserServices implements IServices<User> {
     }
 
 
+    public void changeState(User user, State state) {
+        try {
+            Statement statement = connection.createStatement();
+            String query = "UPDATE `user` SET `state` = '" + state + "' WHERE `user`.`cinUser` = " + user.getCinUser() + ";";
+            statement.executeUpdate(query);
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+    }
     public void changeState(CurrentUser user, State state) {
         try {
             Statement statement = connection.createStatement();

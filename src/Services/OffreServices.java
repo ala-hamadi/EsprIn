@@ -21,12 +21,12 @@ public class OffreServices implements IServices<Offre> {
     private Connection connection;
     private static OffreServices instance;
 
-    private OffreServices() {
+    private OffreServices() throws SQLException{
         BdConnection connect = BdConnection.getInstance();
         this.connection = connect.cnx;
     }
 
-    public static OffreServices getInstance() {
+    public static OffreServices getInstance() throws SQLException{
         if (instance == null)
             instance = new OffreServices();
         return instance;

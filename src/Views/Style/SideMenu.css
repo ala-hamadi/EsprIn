@@ -19,6 +19,12 @@
     -fx-border-width: 0px 0px 0px 10px;
     -fx-border-color: white;
 }
+.button:focused{
+    -fx-background-color: #EA5448;
+    -fx-text-fill:white;
+    -fx-border-width: 0px 0px 0px 10px;
+    -fx-border-color: white;
+}
 
 .logout{
     -fx-position: absolute;

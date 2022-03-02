@@ -1,6 +1,9 @@
 package Modules;
 
 import Utils.Enums.Roles;
+import Utils.Enums.State;
+
+import java.util.Date;
 
 public class User {
     private long cinUser;
@@ -8,6 +11,8 @@ public class User {
     private String passwd;
     private String imgUrl;
     private Roles role;
+    private Date createdAt;
+    private State state;
 
     public long getCinUser() {
         return cinUser;
@@ -45,12 +50,38 @@ public class User {
         return role;
     }
 
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
     protected User(long cinUser, String email, String passwd, String imgUrl, Roles role) {
         this.cinUser = cinUser;
         this.email = email;
         this.passwd = passwd;
         this.imgUrl = imgUrl;
         this.role = role;
+    }
+
+    public User(long cinUser, String email, String passwd, String imgUrl, Roles role, Date createdAt, State state) {
+        this.cinUser = cinUser;
+        this.email = email;
+        this.passwd = passwd;
+        this.imgUrl = imgUrl;
+        this.role = role;
+        this.createdAt = createdAt;
+        this.state = state;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 
     @Override

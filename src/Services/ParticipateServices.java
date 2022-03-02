@@ -13,16 +13,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ParticipateServices {
+public class ParticipateServices{
     private Connection connection;
     private static ParticipateServices instance;
 
-    private ParticipateServices() {
+    private ParticipateServices() throws SQLException{
         BdConnection connect = BdConnection.getInstance();
         this.connection = connect.cnx;
     }
 
-    public static ParticipateServices getInstance() {
+    public static ParticipateServices getInstance() throws SQLException{
         if (instance == null)
             instance = new ParticipateServices();
         return instance;

@@ -2,6 +2,7 @@ package Services;
 
 import Modules.Annoucement;
 import Utils.BdConnection;
+import Utils.Enums.AnnounceDestination;
 import Utils.Enums.Roles;
 import Utils.Enums.State;
 
@@ -19,11 +20,11 @@ public class AnnouncementService implements IServices<Annoucement> {
     private Connection connection;
     private static AnnouncementService instance;
 
-    private AnnouncementService(){
+    private AnnouncementService() throws SQLException{
         BdConnection connect=BdConnection.getInstance();
         this.connection=connect.cnx;
     }
-    public static AnnouncementService getInstance(){
+    public static AnnouncementService getInstance() throws SQLException{
         if(instance==null)
             instance=new AnnouncementService();
         return instance;
@@ -111,7 +112,7 @@ public class AnnouncementService implements IServices<Annoucement> {
             String query="SELECT * FROM `annoncement`WHERE `annoncement`.`state` <> 'Deleted' ;";
             ResultSet rs=statement.executeQuery(query);
             while (rs.next()){
-                Annoucement annoucement=new Annoucement(rs.getInt("idAnn"),rs.getString("subject"),rs.getString("content"),Roles.valueOf(rs.getString("destination")),rs.getInt("idSender"),rs.getDate("createdAt"));
+                Annoucement annoucement=new Annoucement(rs.getInt("idAnn"),rs.getString("subject"),rs.getString("content"), AnnounceDestination.valueOf(rs.getString("destination")),rs.getInt("idSender"),rs.getDate("createdAt"));
                 annoucements.add(annoucement);
             }
         }catch(SQLException exception){
@@ -133,7 +134,7 @@ public class AnnouncementService implements IServices<Annoucement> {
             }else{
 
 
-                Annoucement annoucement=new Annoucement(rs.getInt("idAnn"),rs.getString("subject"),rs.getString("content"),Roles.valueOf(rs.getString("destination")),rs.getInt("idSender"),rs.getDate("createdAt"));
+                Annoucement annoucement=new Annoucement(rs.getInt("idAnn"),rs.getString("subject"),rs.getString("content"),AnnounceDestination.valueOf(rs.getString("destination")),rs.getInt("idSender"),rs.getDate("createdAt"));
                 return annoucement;
             }
         }catch (SQLException exception){
@@ -147,7 +148,7 @@ public class AnnouncementService implements IServices<Annoucement> {
 
     public List<Annoucement> filterAlertBySubject(String subjectAnn, List<Annoucement> annoucements){
         return annoucements.stream()
-                .filter(comparator -> comparator.getSubjectAnn().toString().equals(subjectAnn))
+                .filter(comparator -> comparator.getSubjectAnn().startsWith(subjectAnn))
                 .collect(Collectors.toList());
     }
     public List<Annoucement> filterAlertByDestination(Roles role, List<Annoucement> annoucements){
@@ -157,7 +158,7 @@ public class AnnouncementService implements IServices<Annoucement> {
     }
 
     public List<Annoucement> sortAnnoucementById() {
-        return this.getList().stream().sorted((o1, o2) -> String.valueOf(o1.getIdAnn())
+        return this.getList().stream().sorted((o1, o2) -> String.valueOf(o2.getIdAnn())
                 .compareTo(String.valueOf(o1.getIdAnn()))).collect(Collectors.toList());
     }
     public List<Annoucement>sortAnnoucementByDate(List<Annoucement>annoucements){

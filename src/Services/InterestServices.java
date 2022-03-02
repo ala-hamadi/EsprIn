@@ -17,12 +17,12 @@ public class InterestServices implements IServices<Interest> {
     private Connection connection;
     private static InterestServices instance;
 
-    private InterestServices() {
+    private InterestServices() throws SQLException {
         BdConnection connect = BdConnection.getInstance();
         this.connection = connect.cnx;
     }
 
-    public static InterestServices getInstance() {
+    public static InterestServices getInstance() throws SQLException{
         if (instance == null)
             instance = new InterestServices();
         return instance;

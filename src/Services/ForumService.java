@@ -22,10 +22,10 @@ public class ForumService implements IServices<Forum> {
     private Connection connection;
     public static  ForumService instance;
 
-    private ForumService() {
+    private ForumService() throws SQLException{
         connection = BdConnection.getInstance().cnx;
     }
-    public static ForumService getInstance (){
+    public static ForumService getInstance() throws SQLException{
         if (instance == null)
             instance = new ForumService();
 
