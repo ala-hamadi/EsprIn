@@ -1,0 +1,298 @@
+#exitBtn:hover{
+    -fx-border-color: #853030;
+    -fx-background-color: #750707;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+}
+#exitBtn{
+    -fx-background-color: #f67070;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill: #9f0505;
+}
+#exitBtn:pressed{
+    -fx-background-color: #c61c1c;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+}
+.Btn:hover{
+    -fx-border-color: #853030;
+    -fx-background-color: #750707;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+    -fx-font-family:Lato;
+}
+.Btn{
+    -fx-background-color: #dea6a6;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill: #9f0505;
+    -fx-font-family:Lato;
+}
+.Btn:pressed{
+    -fx-background-color: #c61c1c;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-font-family:Lato;
+}
+.DeleteBtn{
+    -fx-background-color: #f38080;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+    -fx-font-family:Lato;
+    -fx-font-size:19px;
+}
+.DeleteBtn:hover{
+    -fx-border-color: #853030;
+    -fx-background-color: #a43232;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+    -fx-font-family:Lato;
+    -fx-font-size:19px;
+}
+.DeleteBtn:pressed{
+    -fx-border-color: #853030;
+    -fx-background-color: #6e0303;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+    -fx-font-family:Lato;
+    -fx-font-size:19px;
+}
+#refreshBtn{
+    -fx-background-color: transparent;
+}
+#refreshBtn:pressed{
+    -fx-background-radius: 30px;
+    -fx-background-color: #ef6e6e;
+}
+
+.ParticipateBtn{
+    -fx-background-color: #f38080;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+    -fx-font-family:Roboto;
+    -fx-font-size:19px;
+}
+.ParticipateBtn:hover{
+    -fx-border-color: #853030;
+    -fx-background-color: #a43232;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+    -fx-font-family: Roboto;
+    -fx-font-size:19px;
+}
+.ParticipateBtn:pressed{
+    -fx-border-color: #853030;
+    -fx-background-color: #6e0303;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+    -fx-font-family:Roboto;
+    -fx-font-size:19px;
+}
+
+
+#AddEventBtn{
+    -fx-background-color: #9F9A9A;
+    -fx-background-radius: 30 30 30 30;
+}
+
+#AddEventBtn:hover{
+    -fx-background-color:  #F0E9E9;
+    -fx-background-radius: 30 30 30 30;
+}
+
+#AddEventBtn:pressed {
+    -fx-background-color: #9F9A9A;
+    -fx-background-radius: 30 30 30 30;
+}
+
+
+#PostBtn{
+    -fx-background-color: #FF000030;
+    -fx-border-radius:7;
+    -fx-background-radius:7;
+}
+#PostBtn:hover{
+    -fx-border-color: #800809;
+    -fx-background-color: #800809;
+    -fx-border-radius:7;
+    -fx-background-radius:7;
+}
+
+#PostBtn:pressed {
+    -fx-border-color: #800809;
+    -fx-background-color: #FF000030;
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+}
+
+
+
+#EventBtn{
+    -fx-background-color: #FF000030;
+    -fx-border-radius:7;
+    -fx-background-radius:7;
+}
+#EventBtn:hover{
+    -fx-border-color: #800809;
+    -fx-background-color: #800809;
+    -fx-border-radius:7;
+    -fx-background-radius:7;
+}
+
+#EventBtn:pressed {
+    -fx-border-color: #800809;
+    -fx-background-color: #FF000030;
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+}
+
+
+#ForumBtn{
+    -fx-background-color: #FF000030;
+    -fx-border-radius:7;
+    -fx-background-radius:7;
+}
+#ForumBtn:hover{
+    -fx-border-color: #800809;
+    -fx-background-color: #800809;
+    -fx-border-radius:7;
+    -fx-background-radius:7;
+}
+
+#ForumBtn:pressed {
+    -fx-border-color: #800809;
+    -fx-background-color: #FF000030;
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+}
+
+#OfferBtn{
+    -fx-background-color: #FF000030;
+    -fx-border-radius:7;
+    -fx-background-radius:7;
+}
+#OfferBtn:hover{
+    -fx-border-color: #800809;
+    -fx-background-color: #800809;
+    -fx-border-radius:7;
+    -fx-background-radius:7;
+}
+
+#OfferBtn:pressed {
+    -fx-border-color: #800809;
+    -fx-background-color: #FF000030;
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+}
+
+#AnnounceBtn{
+    -fx-background-color: #FF000030;
+    -fx-border-radius:7;
+    -fx-background-radius:7;
+}
+#AnnounceBtn:hover{
+    -fx-border-color: #800809;
+    -fx-background-color: #800809;
+    -fx-border-radius:7;
+    -fx-background-radius:7;
+}
+
+#AnnounceBtn:pressed {
+    -fx-border-color: #800809;
+    -fx-background-color: #FF000030;
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+}
+
+#AddBtn{
+    -fx-background-color: #FF000030;
+    -fx-border-radius:15;
+    -fx-background-radius:15;
+}
+#AddBtn:hover{
+    -fx-border-color: #800809;
+    -fx-background-color: #800809;
+    -fx-border-radius:15;
+    -fx-background-radius:15;
+}
+
+#AddBtn:pressed {
+    -fx-border-color: #800809;
+    -fx-background-color: #FF000030;
+    -fx-border-radius:15;
+    -fx-background-radius:15;
+}
+
+
+#LogoutBtn{
+    -fx-border-color: #FF0000;
+    -fx-background-color: #ffffff;
+    -fx-border-radius:15;
+    -fx-background-radius:15;
+}
+
+#LogoutBtn:hover {
+    -fx-border-color: #800809;
+    -fx-background-color: #FF000030;
+    -fx-border-radius:15;
+    -fx-background-radius:15;
+}
+
+#LogoutBtn:pressed{
+    -fx-border-color: #FF0000;
+    -fx-background-color: #ffffff;
+    -fx-border-radius:15;
+    -fx-background-radius:15;
+}
+
+
+#SearchBtn{
+    -fx-background-color: #ffffff00;
+    -fx-border-radius:15;
+    -fx-background-radius:15;
+}
+
+#SearchBtn:hover {
+    -fx-background-color: #ff000005;
+    -fx-border-radius:15;
+    -fx-background-radius:15;
+}
+
+#SearchBtn:pressed{
+    -fx-background-color: #ffffff00;
+    -fx-border-radius:15;
+    -fx-background-radius:15;
+}
+
+#imageEvent{
+    -fx-background-position: center;
+}
+
+
+
+#CloseBtn,#AddImgBtn{
+    -fx-background-color: #ffffff00;
+    -fx-border-radius:15;
+    -fx-background-radius:15;
+}
+
+#CloseBtn,#AddImgBtn:hover {
+    -fx-background-color: #ff000005;
+    -fx-border-radius:15;
+    -fx-background-radius:15;
+}
+
+#CloseBtn,#AddImgBtn:pressed{
+    -fx-background-color: #ffffff00;
+    -fx-border-radius:15;
+    -fx-background-radius:15;
+}
