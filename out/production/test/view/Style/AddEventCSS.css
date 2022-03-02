@@ -1,0 +1,25 @@
+.icClose{
+    -fx-fill: red;
+    -fx-border-color: #000000;
+    -fx-border-radius: 15px;
+    -fx-border-width: 2;
+    -fx-border-image-width: 2;
+    -fx-background-radius: 15px;
+}
+.button{
+    -fx-background-color: #9F9A9A;
+    -fx-background-radius: 30 30 30 30;
+}
+
+.button:hover{
+    -fx-background-color:  #F0E9E9;
+    -fx-background-radius: 30 30 30 30;
+}
+
+.button:pressed{
+    -fx-background-color: #9F9A9A;
+    -fx-background-radius: 30 30 30 30;
+}
+
+
+
