@@ -13,7 +13,7 @@ import Utils.BdConnection;
 public class CommentServices implements ICommentServices<CommentPost> {
   private Connection connection;
 
-  public CommentServices() {
+  public CommentServices() throws SQLException{
     BdConnection connect = BdConnection.getInstance();
     this.connection = connect.cnx;
   }

@@ -12,16 +12,16 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParticipateServices {
+public class ParticipateServices{
     private Connection connection;
     private static ParticipateServices instance;
 
-    private ParticipateServices() {
+    private ParticipateServices() throws SQLException{
         BdConnection connect = BdConnection.getInstance();
         this.connection = connect.cnx;
     }
 
-    public static ParticipateServices getInstance() {
+    public static ParticipateServices getInstance() throws SQLException{
         if (instance == null)
             instance = new ParticipateServices();
         return instance;

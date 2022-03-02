@@ -11,16 +11,13 @@ public class BdConnection {
     private static BdConnection instance;
     public Connection cnx;
 
-    private BdConnection() {
-        try {
+    private BdConnection() throws SQLException {
+
             cnx = DriverManager.getConnection(url, user, pwd);
             System.out.println("Connected to Database");
-        } catch (SQLException exception) {
-            System.out.println(exception.getMessage());
-        }
     }
 
-    public static BdConnection getInstance() {
+    public static BdConnection getInstance() throws SQLException {
         if (instance == null)
             instance = new BdConnection();
         return instance;

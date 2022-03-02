@@ -21,7 +21,7 @@ public class PostServices implements IPostServices<Post> {
 
     private Connection connection;
 
-    public PostServices() {
+    public PostServices() throws SQLException{
         BdConnection connect = BdConnection.getInstance();
         this.connection = connect.cnx;
     }

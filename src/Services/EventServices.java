@@ -12,12 +12,12 @@ public class EventServices implements IServices<Event> {
     private Connection connection;
     private static EventServices instance;
 
-    private EventServices() {
+    private EventServices() throws SQLException{
         BdConnection connect = BdConnection.getInstance();
         this.connection = connect.cnx;
     }
 
-    public static EventServices getInstance() {
+    public static EventServices getInstance() throws SQLException{
         if (instance == null)
             instance = new EventServices();
         return instance;

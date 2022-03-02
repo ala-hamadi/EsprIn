@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="1043.0" prefWidth="1452.0" stylesheets="@../Style/DashboardStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminDashboardControllers.AnnounceMenu">
+<AnchorPane prefHeight="1043.0" prefWidth="1452.0" stylesheets="@../Style/DashboardStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminDashboardControllers.Announce.AnnounceMenu">
    <children>
       <VBox layoutX="490.0" layoutY="359.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -26,7 +26,15 @@
                         </ImageView>
                      </graphic></Button>
                </children></Pane>
-            <Pane prefHeight="58.0" prefWidth="1452.0" style="-fx-background-color: white;">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" style="-fx-background-color: white;">
+               <children>
+                  <ComboBox fx:id="choiceBoxFiltre" onAction="#onChangeProp" prefHeight="25.0" prefWidth="230.0" />
+                  <TextField fx:id="searchField" onKeyTyped="#keyTyped" prefWidth="248.0" promptText="Search" styleClass="searchBar">
+                     <font>
+                        <Font size="20.0" />
+                     </font></TextField>
+               </children></HBox>
+            <Pane prefHeight="86.0" prefWidth="1452.0" style="-fx-background-color: white;">
                <children>
                   <Label layoutX="63.0" layoutY="12.0" text="Title">
                      <font>
@@ -43,7 +51,7 @@
                         <Font name="Arial" size="22.0" />
                      </font>
                   </Label>
-                  <Button fx:id="refreshBtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="1315.0" layoutY="3.0" mnemonicParsing="false" text="Button">
+                  <Button fx:id="refreshBtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="1316.0" layoutY="1.0" mnemonicParsing="false" onAction="#refresh" text="Button">
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="45.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -58,7 +66,7 @@
             </Pane>
             <AnchorPane prefHeight="773.0" prefWidth="1452.0">
                <children>
-                  <ListView fx:id="announceListView" styleClass="scroll-bar" stylesheets="@../Style/MenuStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ListView fx:id="announceListView" layoutY="14.0" maxWidth="1452.0" prefHeight="734.0" prefWidth="1452.0" styleClass="scroll-bar" stylesheets="@../Style/MenuStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0" />
                </children>
             </AnchorPane>
          </children>

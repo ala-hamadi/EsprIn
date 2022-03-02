@@ -20,11 +20,11 @@ public class AlertServices implements IServices<Alert>{
     private Connection connection;
     private static AlertServices instance;
 
-    private AlertServices() {
+    private AlertServices() throws SQLException {
         BdConnection connect = BdConnection.getInstance();
         this.connection= connect.cnx;
     }
-    public static AlertServices getInstance(){
+    public static AlertServices getInstance() throws SQLException{
         if (instance==null)
             instance=new AlertServices();
         return instance;

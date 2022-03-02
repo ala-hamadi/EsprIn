@@ -17,11 +17,11 @@ public class RespondedService implements IServices<Responded> {
     private Connection connection;
     public static RespondedService instance;
 
-    private RespondedService() {
+    private RespondedService() throws SQLException{
         connection = BdConnection.getInstance().cnx;
     }
 
-    public static RespondedService getInstance (){
+    public static RespondedService getInstance ()throws SQLException{
         if (instance == null)
             instance = new RespondedService();
 

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<FlowPane prefHeight="693.0" prefWidth="800.0" stylesheets="@../Style/FormsStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminDashboardControllers.AddAnnounceWindow">
+<FlowPane prefHeight="693.0" prefWidth="800.0" stylesheets="@../Style/FormsStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminDashboardControllers.Announce.AddAnnounceWindow">
    <children>
       <BorderPane layoutX="189.0" layoutY="100.0" prefHeight="694.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -40,7 +40,7 @@
                               <Font name="Lato Black" size="18.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="40.0" prefWidth="395.0" promptText="Title" styleClass="text-field">
+                        <TextField fx:id="annTitle" prefHeight="40.0" prefWidth="395.0" promptText="Title" styleClass="text-field">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -50,7 +50,7 @@
                               <Font name="Lato Black" size="18.0" />
                            </font>
                         </Label>
-                        <TextArea prefHeight="200.0" prefWidth="442.0" promptText="Description">
+                        <TextArea fx:id="annDesc" prefHeight="200.0" prefWidth="442.0" promptText="Description">
                            <font>
                               <Font size="16.0" />
                            </font></TextArea>
@@ -62,7 +62,7 @@
                         <ChoiceBox fx:id="destselection" prefHeight="26.0" prefWidth="212.0" />
                         <FlowPane alignment="CENTER_RIGHT" columnHalignment="RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="32.0" prefWidth="312.0" rowValignment="BASELINE" VBox.vgrow="NEVER">
                            <children>
-                              <Button alignment="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="96.0" text="Send" textAlignment="CENTER">
+                              <Button alignment="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#createAnnounce" prefHeight="32.0" prefWidth="96.0" text="Send" textAlignment="CENTER">
                                  <font>
                                     <Font name="Lato Black" size="16.0" />
                                  </font>

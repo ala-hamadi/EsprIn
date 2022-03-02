@@ -1,5 +1,6 @@
 package Modules;
 
+import Utils.Enums.AnnounceDestination;
 import Utils.Enums.Roles;
 import Utils.Enums.State;
 
@@ -9,12 +10,12 @@ public class Annoucement {
     private int idAnn;
     private String subjectAnn;
     private String contentAnn;
-    private Roles destAnn;
+    private AnnounceDestination destAnn;
     private int idSender;
     private State state;
     private Date createdAt=new Date();
 
-    public Annoucement(int idAnn, String subjectAnn, String contentAnn, Roles destAnn,int idSender,Date createdAt) {
+    public Annoucement(int idAnn, String subjectAnn, String contentAnn, AnnounceDestination destAnn,int idSender,Date createdAt) {
         this.idAnn = idAnn;
         this.subjectAnn = subjectAnn;
         this.contentAnn = contentAnn;
@@ -24,7 +25,12 @@ public class Annoucement {
         this.createdAt=createdAt;
     }
 
-
+    public Annoucement(String subjectAnn, String contentAnn, AnnounceDestination destAnn,int idSender) {
+        this.idSender=idSender;
+        this.subjectAnn = subjectAnn;
+        this.contentAnn = contentAnn;
+        this.destAnn = destAnn;
+    }
 
     public int getIdAnn() {
         return idAnn;
@@ -50,11 +56,11 @@ public class Annoucement {
         this.contentAnn = contentAnn;
     }
 
-    public Roles getDestAnn() {
+    public AnnounceDestination getDestAnn() {
         return destAnn;
     }
 
-    public void setDestAnn(Roles destAnn) {
+    public void setDestAnn(AnnounceDestination destAnn) {
         this.destAnn = destAnn;
     }
 

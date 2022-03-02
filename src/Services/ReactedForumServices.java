@@ -11,10 +11,10 @@ public class ReactedForumServices implements ILikeServices<Forum> {
     private Connection connection;
     public static  ReactedForumServices instance;
 
-    private ReactedForumServices() {
+    private ReactedForumServices() throws SQLException{
         connection = BdConnection.getInstance().cnx;
     }
-    public static ReactedForumServices getInstance (){
+    public static ReactedForumServices getInstance ()throws SQLException{
         if (instance == null)
             instance = new ReactedForumServices();
 

@@ -8,11 +8,11 @@ import java.sql.Statement;
 import Modules.LikePost;
 import Utils.BdConnection;
 
-public class LikeServices implements ILikeServices<LikePost> {
+public class LikeServices implements ILikeServices<LikePost>{
 
   private Connection connection;
 
-  public LikeServices() {
+  public LikeServices() throws SQLException {
     BdConnection connect = BdConnection.getInstance();
     this.connection = connect.cnx;
   }

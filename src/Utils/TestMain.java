@@ -6,6 +6,7 @@ import Utils.Enums.*;
 import Utils.Enums.Roles;
 import Utils.Structure.Classe;
 
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -13,14 +14,24 @@ import java.util.List;
 public class TestMain {
     public static void main(String[] args) {
 
-        OffreServices offreServices = OffreServices.getInstance();
+        OffreServices offreServices = null;
+        try {
+            offreServices = OffreServices.getInstance();
+        } catch (SQLException exception) {
+            System.out.println(exception.getMessage());
+        }
         Offre offre = new Offre(1,"titre","desc",OffreCategorie.Alternance,10020855,State.Active,"img");
         Offre offre1 = new Offre(2,"titre1","description",OffreCategorie.Stage,10020855,State.Active,"image");
         Offre offre2 = new Offre(3,"titre2","descktop",OffreCategorie.Offre_De_Travail,10020855,State.Active,"http");
         Offre offre3 = new Offre(4,"titre3","desique dur",OffreCategorie.Stage,10020855,State.Active,"oh no oh no");
         Offre offre4 = new Offre(OffreCategorie.Stage,"titre55","des",10020855,"immmmmg");
 
-        InterestServices interestServices = InterestServices.getInstance();
+        InterestServices interestServices = null;
+        try {
+            interestServices = InterestServices.getInstance();
+        } catch (SQLException exception) {
+            System.out.println(exception.getMessage());
+        }
 
         Interest interest = new Interest(17,55555555);
 
@@ -69,7 +80,12 @@ public class TestMain {
         System.out.println(service1.sortAnnoucementById());
         System.out.println(service1.sortAnnoucementByDate(service1.getList()));
 */
-        AlertServices service=AlertServices.getInstance();
+        AlertServices service= null;
+        try {
+            service = AlertServices.getInstance();
+        } catch (SQLException exception) {
+            System.out.println(exception.getMessage());
+        }
         Classe destclass=new Classe(3,"A",24);
 
         Alert alert1=new Alert(2,"emploitemps",destclass,10020855, Timestamp.valueOf(LocalDateTime.now()));
@@ -84,9 +100,14 @@ public class TestMain {
         // System.out.println(service.sortAlertByDate(service.getList()));
         // System.out.println(service.sortAlertById());
 
-        AnnouncementService service1=AnnouncementService.getInstance();
+        AnnouncementService service1= null;
+        try {
+            service1 = AnnouncementService.getInstance();
+        } catch (SQLException exception) {
+            System.out.println(exception.getMessage());
+        }
 
-        Annoucement annoucement1=new Annoucement(2,"aaaaaaaa","no 5lass no result",Roles.Club,10020855,Timestamp.valueOf(LocalDateTime.now()));
+        Annoucement annoucement1=new Annoucement(2,"aaaaaaaa","no 5lass no result",AnnounceDestination.Clubs,10020855,Timestamp.valueOf(LocalDateTime.now()));
         //service1.add(annoucement);
         //service1.add(annoucement1);
         //service1.delete(annoucement);
@@ -97,7 +118,11 @@ public class TestMain {
         System.out.println(service1.filterAlertBySubject("aaaaaaaa",service1.getList()));
         System.out.println(service1.sortAnnoucementById());*/
         System.out.println(service1.getList());
-        UserServices userServices=UserServices.getInstance();
+        try {
+            UserServices userServices=UserServices.getInstance();
+        } catch (SQLException exception) {
+            System.out.println(exception.getMessage());
+        }
 
 
     }
