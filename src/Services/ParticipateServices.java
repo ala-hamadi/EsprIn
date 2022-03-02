@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ParticipateServices {
     private Connection connection;
@@ -83,4 +84,20 @@ public class ParticipateServices {
         }
         return participates;
     }
+
+
+    public List<Participate> sortByCin(){
+        return this.getList().stream()
+                .sorted((o1,o2) -> String.valueOf(o1.getCinUser())
+                        .compareTo(String.valueOf(o2.getCinUser())))
+                .collect(Collectors.toList());
+    }
+
+    public List<Participate> filterParticipateByEventId(int eventId){
+        return this.getList().stream()
+                .filter(comparator -> comparator.getIdEvent()==eventId)
+                .collect(Collectors.toList());
+    }
+
+
 }

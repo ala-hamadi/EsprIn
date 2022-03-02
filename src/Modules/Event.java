@@ -2,94 +2,108 @@ package Modules;
 
 import Utils.Enums.State;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class Event {
-    private int idEvent;
-    private  String TitleEvent;
-    private String Description;
-    private Timestamp DateEvent;
-    private String ImgURL;
-    private long idOrganizer;
-    private State state;
 
-    public long getIdOrganizer() {
-        return idOrganizer;
-    }
+        private int idEvent;
+        private  String TitleEvent;
+        private String Description;
+        private Date DateEvent;
+        private String ImgURL;
+        private long idOrganizer;
+        private State state;
 
-    public void setIdOrganizer(long idOrganizer) {
-        this.idOrganizer = idOrganizer;
-    }
+        public long getIdOrganizer() {
+            return idOrganizer;
+        }
 
-    public int getIdEvent() {
-        return idEvent;
-    }
+        public void setIdOrganizer(long idOrganizer) {
+            this.idOrganizer = idOrganizer;
+        }
 
-    public void setIdEvent(int idEvent) {
-        this.idEvent = idEvent;
-    }
+        public int getIdEvent() {
+            return idEvent;
+        }
 
-    public String getTitleEvent() {
-        return TitleEvent;
-    }
+        public void setIdEvent(int idEvent) {
+            this.idEvent = idEvent;
+        }
 
-    public void setTitleEvent(String titleEvent) {
-        TitleEvent = titleEvent;
-    }
+        public String getTitleEvent() {
+            return TitleEvent;
+        }
 
-    public String getDescription() { return Description; }
+        public void setTitleEvent(String titleEvent) {
+            TitleEvent = titleEvent;
+        }
 
-    public void setDescription(String description) {
-        Description = description;
-    }
+        public String getDescription() { return Description; }
 
-    public Timestamp getDateEvent() {
-        return DateEvent;
-    }
+        public void setDescription(String description) {
+            Description = description;
+        }
 
-    public void setDateEvent(Timestamp dateEvent) {
-        DateEvent = dateEvent;
-    }
+        public Date getDateEvent() {
+            return DateEvent;
+        }
 
-    public String getImgURL() {
-        return ImgURL;
-    }
+        public void setDateEvent(Date dateEvent) {
+            DateEvent = dateEvent;
+        }
 
-    public void setImgURL(String imgURL) {
-        ImgURL = imgURL;
-    }
+        public String getImgURL() {
+            return ImgURL;
+        }
 
-    public State getState() { return state; }
+        public void setImgURL(String imgURL) {
+            ImgURL = imgURL;
+        }
 
-    public Event(String TitleEvent, String Description, String ImgURL, Timestamp DateEvent, long idOrganizer){
-       this.TitleEvent=TitleEvent;
-        this.Description=Description;
-        this.ImgURL=ImgURL;
-        this.DateEvent=DateEvent;
-        this.idOrganizer= idOrganizer;
-    }
+        public State getState() { return state; }
 
-
-    public Event(int idEvent, String TitleEvent, String Description,String ImgURL,Timestamp DateEvent, long idOrganizer, State state){
-        this.idEvent=idEvent;
+    public Event(String TitleEvent, String Description){
         this.TitleEvent=TitleEvent;
         this.Description=Description;
-        this.ImgURL=ImgURL;
+    }
+
+    public Event(String TitleEvent, String Description,Date DateEvent){
+        this.TitleEvent=TitleEvent;
+        this.Description=Description;
         this.DateEvent=DateEvent;
-        this.idOrganizer= idOrganizer;
-        this.state=state;
     }
 
 
-    @Override
-    public String toString() {
-        return "idEvent=" + idEvent +
-                ", TitleEvent= " + TitleEvent +
-                ", Description= " + Description +
-                ", DateEvent=" + DateEvent +
-                ", ImgURL= " + ImgURL +
-                ", idOrganizer= " + idOrganizer +
-                ", State " + state +
-                '\n';
-    }
+    public Event(String TitleEvent, String Description, String ImgURL, Date DateEvent, long idOrganizer){
+            this.TitleEvent=TitleEvent;
+            this.Description=Description;
+            this.ImgURL=ImgURL;
+            this.DateEvent=DateEvent;
+            this.idOrganizer= idOrganizer;
+        }
+
+
+        public Event(int idEvent, String TitleEvent, String Description,String ImgURL,Date DateEvent, long idOrganizer, State state){
+            this.idEvent=idEvent;
+            this.TitleEvent=TitleEvent;
+            this.Description=Description;
+            this.ImgURL=ImgURL;
+            this.DateEvent=DateEvent;
+            this.idOrganizer= idOrganizer;
+            this.state=state;
+        }
+
+
+        @Override
+        public String toString() {
+            return "idEvent=" + idEvent +
+                    ",  TitleEvent=" + TitleEvent +
+                    ",  Description=" + Description +
+                    ",  DateEvent=" + DateEvent +
+                    ",  ImgURL=" + ImgURL +
+                    ",  idOrganizer=" + idOrganizer +
+                    ",  State" + state +
+                    '\n';
+        }
 }
