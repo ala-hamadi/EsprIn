@@ -36,7 +36,7 @@ public class TemplateUser {
     DeleteListener<User> deleteUserListener;
 
     public void setData(User user,BanUserListener banUserListener,DeleteListener<User> deleteUserListener) {
-        //this.userAvatar.setFill(new ImagePattern(new Image("C:\\Users\\Bairem\\Pictures\\Camera Roll\\WhatsApp Image 2021-03-16 at 20.25.57.jpeg",false)));
+        
         this.user=user;
         if(user.getRole()!= Roles.Externe) {
             Espritien espritien=(Espritien)user;

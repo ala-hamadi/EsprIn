@@ -212,6 +212,42 @@ public class UserServices implements IServices<User> {
             System.out.println("User Not Found");
         }
     }
+    public User retrive(long x) {
+        try {
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM `user` WHERE `cinUser`='" + x + "' ;";
+            ResultSet resultSet = statement.executeQuery(query);
+            resultSet.next();
+
+            switch (Roles.valueOf(resultSet.getString("role"))) {
+                case Admin:
+                    Admin admin = new Admin(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Admin, resultSet.getString("firstName"), resultSet.getString("lastName"), AdminDepartments.valueOf(resultSet.getString("departement")));
+                    return admin;
+                case Club:
+                    Club club = new Club(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Club, resultSet.getString("firstName"), resultSet.getString("lastName"), TypeClub.valueOf(resultSet.getString("typeClub")));
+                    return club;
+                case Etudiant:
+                    String[] classString = resultSet.getString("class").split(" ");
+                    Classe classe = new Classe(Integer.parseInt(classString[0]), classString[1], Integer.parseInt(classString[2]));
+                    Student student = new Student(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Etudiant, resultSet.getString("firstName"), resultSet.getString("lastName"), classe,Domaine.valueOf(resultSet.getString("domaine")));
+                    return student;
+                case Professeur:
+                    Professor professor = new Professor(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Professeur, resultSet.getString("firstName"), resultSet.getString("lastName"), Domaine.valueOf(resultSet.getString("domaine")));
+                    return professor;
+                case Externe:
+                    Extern extern = new Extern(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Externe, resultSet.getString("entrepriseName"), resultSet.getString("localisation"));
+                    return extern;
+                default:
+                    System.out.println("Error,Role not defined");
+                    return null;
+            }
+
+
+        } catch (SQLException exception) {
+            System.out.println("User Not Found");
+        }
+        return null;
+    }
 
 
     public void changeState(User user, State state) {
