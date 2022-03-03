@@ -72,7 +72,7 @@
 }
 
 .ParticipateBtn{
-    -fx-background-color: #f38080;
+    -fx-background-color: #ff0000;
     -fx-border-radius:60;
     -fx-background-radius:60;
     -fx-text-fill:white;
@@ -296,3 +296,4 @@
     -fx-border-radius:15;
     -fx-background-radius:15;
 }
+
