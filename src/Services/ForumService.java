@@ -1,12 +1,8 @@
-package Services;
+package services;
 
-import Modules.Espritien;
-import Modules.Forum;
-import Modules.Post;
-import Modules.User;
 import Utils.BdConnection;
-import Utils.Enums.Roles;
 import Utils.Enums.State;
+import model.Forum;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

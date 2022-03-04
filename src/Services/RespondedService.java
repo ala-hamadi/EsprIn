@@ -1,10 +1,8 @@
-package Services;
+package services;
 
 
-import Services.IServices;
 import Utils.BdConnection;
-import models.Responded;
-
+import model.Responded;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

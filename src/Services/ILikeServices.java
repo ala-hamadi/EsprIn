@@ -1,6 +1,4 @@
-package Services;
-
-import Modules.LikePost;
+package services;
 
 public interface ILikeServices<T>{
 

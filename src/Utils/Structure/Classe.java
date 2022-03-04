@@ -5,7 +5,7 @@ public class Classe {
     private String specialite;
     private int numclass;
 
-    public Classe(int niveau ,String specialite ,int numclass) {
+    public Classe(int niveau , String specialite , int numclass) {
         this.niveau = niveau;
         this.specialite=specialite;
         this.numclass=numclass;
@@ -24,5 +24,7 @@ public class Classe {
     public void setNumclass(int numclass) { this.numclass = numclass; }
 
     @Override
-    public String toString() { return  niveau+" "+specialite+" "+ numclass; }
+    public String toString() { return  niveau + " " + specialite  + " " + numclass; }
+
+
 }
