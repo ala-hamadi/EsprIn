@@ -1,9 +1,8 @@
-package services;
+package Services;
 
 import Modules.Forum;
 import Utils.BdConnection;
 import Utils.Enums.State;
-import model.Forum;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -15,14 +14,14 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ForumService implements services.IServices<Forum> {
+public class ForumService implements IServices<Forum> {
     private Connection connection;
     public static  ForumService instance;
 
-    private ForumService() {
+    private ForumService() throws SQLException {
         connection = BdConnection.getInstance().cnx;
     }
-    public static ForumService getInstance (){
+    public static ForumService getInstance () throws SQLException {
         if (instance == null)
             instance = new ForumService();
 

@@ -5,7 +5,10 @@ public class Classe {
     private String specialite;
     private int numclass;
 
-    public Classe(int niveau ,String specialite ,int numclass) {
+    public Classe() {
+    }
+
+    public Classe(int niveau , String specialite , int numclass) {
         this.niveau = niveau;
         this.specialite=specialite;
         this.numclass=numclass;

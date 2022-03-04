@@ -1,13 +1,15 @@
 package Controllers.Forum;
 
+import java.sql.SQLException;
+
+import Modules.Forum;
+import Services.ReactedForumServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
-import model.Forum;
-import services.ReactedForumServices;
 
 public class ForumCell {
     @FXML
@@ -39,7 +41,7 @@ public class ForumCell {
         forumContent.setText(forum.getContent());
     }
     @FXML
-    void Like(ActionEvent event) {
+    void Like(ActionEvent event) throws SQLException {
         ReactedForumServices reactedForumServices = ReactedForumServices.getInstance();
             reactedForumServices.putLikeToPost(11111111,forum.getIdForum());
 

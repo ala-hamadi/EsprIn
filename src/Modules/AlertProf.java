@@ -5,7 +5,7 @@ import Utils.Structure.Classe;
 
 import java.util.Date;
 
-public class Alert {
+public class AlertProf {
     private int idAlert;
     private String contentAlert;
     private Classe destClass;
@@ -13,7 +13,7 @@ public class Alert {
     private State state;
     private Date createdAt=new Date();
 
-    public Alert(int idAlert, String contentAlert, Classe destClass, long idSender,Date createdAt) {
+    public AlertProf(int idAlert, String contentAlert, Classe destClass, long idSender, Date createdAt) {
         this.idAlert = idAlert;
         this.contentAlert = contentAlert;
         this.destClass = destClass;

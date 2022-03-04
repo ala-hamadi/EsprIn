@@ -1,5 +1,7 @@
 package Controllers.Forum;
 
+import Modules.Forum;
+import Services.ForumService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,11 +14,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import model.Forum;
-import services.ForumService;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -29,7 +30,7 @@ public class ForumMenuController implements Initializable {
     @FXML
     private Button AddForumBtn;
 
-    public ForumMenuController(){
+    public ForumMenuController() throws SQLException {
         ForumService forumService = ForumService.getInstance();
         forumObservableList = new ArrayList<Forum>();
         /*forumObservableList.add(new Forum(1,"title","descriptoon qdhq dqjhqshfjsqhf "));

@@ -55,7 +55,7 @@ public class HomeFXMLController{
     void showAnnounceMenu(ActionEvent announce) {
 
         try {
-            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/AnnounceMenu.fxml"));
+            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/Announcement/AnnounceMenu.fxml"));
             content.getChildren().removeAll();
             content.getChildren().setAll(menu);
         } catch (IOException e) {
@@ -74,7 +74,7 @@ public class HomeFXMLController{
     @FXML
     void AddAlert(ActionEvent event) {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/Views/UI/AddAlert.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("/Views/UI/Announcement/AddAlert.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
             stage.setScene(scene);

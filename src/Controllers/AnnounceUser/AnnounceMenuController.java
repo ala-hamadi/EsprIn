@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 
+
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class AnnounceMenuController implements Initializable {
     public AnnounceMenuController() {
         AnnouncementService announcementService= null;
         try {
-            announcementService = AnnouncementService.getInstance();
+            announcementService = new AnnouncementService();
         } catch (SQLException exception) {
             exception.printStackTrace();
         }

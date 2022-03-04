@@ -3,13 +3,11 @@ package Utils;
 import Modules.*;
 import Services.*;
 import Utils.Enums.*;
-import Utils.Enums.Roles;
 import Utils.Structure.Classe;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.List;
 
 public class TestMain {
     public static void main(String[] args) {
@@ -80,18 +78,18 @@ public class TestMain {
         System.out.println(service1.sortAnnoucementById());
         System.out.println(service1.sortAnnoucementByDate(service1.getList()));
 */
-        AlertServices service= null;
+        AlertProfServices service= null;
         try {
-            service = AlertServices.getInstance();
+            service = AlertProfServices.getInstance();
         } catch (SQLException exception) {
             System.out.println(exception.getMessage());
         }
         Classe destclass=new Classe(3,"A",24);
 
-        Alert alert1=new Alert(2,"emploitemps",destclass,10020855, Timestamp.valueOf(LocalDateTime.now()));
-        Alert alert2=new Alert(6,"mo5",destclass,11111111, Timestamp.valueOf(LocalDateTime.now()));
+        AlertProf alertProf1 =new AlertProf(2,"emploitemps",destclass,10020855, Timestamp.valueOf(LocalDateTime.now()));
+        AlertProf alertProf2 =new AlertProf(6,"mo5",destclass,11111111, Timestamp.valueOf(LocalDateTime.now()));
 
-        service.add(alert1);
+        service.add(alertProf1);
         //service.delete(alert2);
         //service.update(alert2);
         System.out.println(service.getList());
