@@ -1,11 +1,11 @@
 package Controllers.Posts;
 
+import Modules.Post;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
-import model.Post;
 
 public class PostListViewCell {
 

@@ -1,8 +1,11 @@
 package Controllers.Posts;
 
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
+import Modules.Post;
+import Services.PostServices;
 import Utils.Enums.Categories;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -12,9 +15,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import model.Post;
-import services.PostServices;
-
 public class AddPostController {
 
     @FXML
@@ -46,7 +46,7 @@ public class AddPostController {
 
 
 
-    public void AddPost(javafx.event.ActionEvent event) {
+    public void AddPost(javafx.event.ActionEvent event) throws SQLException {
         if (ContentAlert.getText().length()>2){
             PostServices postServices=new PostServices();
             Post post =new Post(2,ContentAlert.getText(),"10000000",0, Timestamp.valueOf(LocalDateTime.now()),"10000000", Categories.Covoiturage);

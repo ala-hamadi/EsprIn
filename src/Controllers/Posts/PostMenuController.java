@@ -1,18 +1,20 @@
 package Controllers.Posts;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import Modules.Post;
+import Services.PostServices;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
-import model.Post;
-import services.PostServices;
+
 
 public class PostMenuController implements Initializable {
 
@@ -21,7 +23,7 @@ public class PostMenuController implements Initializable {
   private ListView<Node> eventListView;
   private List<Post> postList;
 
-  public PostMenuController() {
+  public PostMenuController() throws SQLException {
     PostServices postServices = new PostServices();
 
     postList = new ArrayList<Post>();

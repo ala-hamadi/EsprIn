@@ -1,5 +1,10 @@
 package Controllers.Forum;
 
+import java.sql.SQLException;
+
+import Modules.Forum;
+import Services.ForumService;
+import Utils.Enums.State;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -7,8 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import model.Forum;
-import services.ForumService;
+
 
 public class ForumWinController {
 
@@ -25,7 +29,7 @@ public class ForumWinController {
 
     double x, y;
     @FXML
-    void addForum(ActionEvent event) {
+    void addForum(ActionEvent event) throws SQLException {
         ForumService forumService = ForumService.getInstance();
         if(forumTitle.getText().isEmpty() && forumContent.getText().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -33,7 +37,7 @@ public class ForumWinController {
             alert.setContentText("Forum is not added !");
             alert.show();
         } else {
-            forumService.add(new Forum(1,forumTitle.getText(),forumContent.getText(),11111111));
+            forumService.add(new Forum(1,forumTitle.getText(),forumContent.getText(),11111111, State.Active));
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
