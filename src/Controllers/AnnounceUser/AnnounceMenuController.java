@@ -1,7 +1,7 @@
 package Controllers.AnnounceUser;
 
 import Modules.Annoucement;
-import Services.AnnouncementService;
+import services.AnnouncementService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

@@ -1,7 +1,7 @@
 package Controllers.Forum;
 
 import Modules.Forum;
-import Services.ForumService;
+import services.ForumService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -60,7 +60,7 @@ public class ForumMenuController implements Initializable {
     @FXML
     void addForum(ActionEvent event) {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/view/Windows/AddAnnounceWindow.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("/Views/Windows/AddForumWindow.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
             stage.setScene(scene);

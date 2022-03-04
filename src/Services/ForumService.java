@@ -1,7 +1,7 @@
-package Services;
+package services;
 
 import Modules.Forum;
-import Services.IServices;
+import services.IServices;
 import Utils.BdConnection;
 import Utils.Enums.State;
 
@@ -32,7 +32,7 @@ public class ForumService implements IServices<Forum> {
     @Override
     public void add(Forum p) {
         try {
-            String querry = "INSERT INTO `forum`(`title`, `content`, `idOwner`) VALUES ('" + p.getTitle() + "','" + p.getContent() + "','" + p.getIdOwner() + "')";
+            String querry = "INSERT INTO `forum`(`title`, `content`, `idOwner`,`categorieForum`) VALUES ('" + p.getTitle() + "','" + p.getContent() + "','" + p.getIdOwner() + "','" + p.getCategoryForum() + "')";
             Statement statement = connection.createStatement();
 
             statement.executeUpdate(querry);
@@ -56,8 +56,9 @@ public class ForumService implements IServices<Forum> {
                 Forum forum = new Forum();
                 forum.setIdForum(rs.getInt(1));
                 forum.setTitle(rs.getString("title"));
-                forum.setContent(rs.getString(3));
-                forum.setIdOwner(rs.getInt(4));
+                forum.setContent(rs.getString(4));
+                forum.setCategoryForum(rs.getString(6));
+                forum.setIdOwner(rs.getInt(5));
 
 
                 forums.add(forum);

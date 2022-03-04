@@ -1,7 +1,7 @@
 package Controllers.AdminDashboardControllers.Announce;
 
 import Modules.Annoucement;
-import Services.AnnouncementService;
+import services.AnnouncementService;
 import Utils.Enums.AnnounceDestination;
 import com.sun.istack.internal.NotNull;
 import javafx.event.ActionEvent;

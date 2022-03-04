@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="pane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminDashboardControllers.Announce.AnnounceListViewCell">
+<AnchorPane fx:id="pane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminDashboardControllers.AnnounceListViewCell">
    <children>
       <Pane prefHeight="90.0" prefWidth="1451.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="announceTitle" layoutX="60.0" layoutY="31.0" prefHeight="29.0" prefWidth="456.0" text="Announce title">
+            <Label fx:id="announceTitle" layoutX="77.0" layoutY="31.0" text="Announce title">
                <font>
                   <Font name="Lato Regular" size="23.0" />
                </font>

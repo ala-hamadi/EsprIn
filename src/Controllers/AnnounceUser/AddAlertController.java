@@ -1,7 +1,7 @@
 package Controllers.AnnounceUser;
 
 import Modules.AlertProf;
-import Services.AlertProfServices;
+import services.AlertProfServices;
 import Utils.Structure.Classe;
 import javafx.fxml.FXML;
 import javafx.scene.Node;

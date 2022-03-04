@@ -1,4 +1,4 @@
-package Services;
+package services;
 
 import Modules.Annoucement;
 import Utils.BdConnection;

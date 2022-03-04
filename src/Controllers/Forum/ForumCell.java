@@ -39,6 +39,7 @@ public class ForumCell {
         this.forum = forum;
         forumTitle.setText(forum.getTitle());
         forumContent.setText(forum.getContent());
+        category.setText(forum.getCategoryForum());
     }
     @FXML
     void Like(ActionEvent event) throws SQLException {

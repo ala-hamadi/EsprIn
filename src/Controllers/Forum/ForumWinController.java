@@ -3,7 +3,7 @@ package Controllers.Forum;
 import java.sql.SQLException;
 
 import Modules.Forum;
-import Services.ForumService;
+import services.ForumService;
 import Utils.Enums.State;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,6 +26,8 @@ public class ForumWinController {
 
     @FXML
     private TextField forumTitle;
+    @FXML
+    private TextField forumtag;
 
     double x, y;
     @FXML
@@ -37,7 +39,7 @@ public class ForumWinController {
             alert.setContentText("Forum is not added !");
             alert.show();
         } else {
-            forumService.add(new Forum(1,forumTitle.getText(),forumContent.getText(),11111111, State.Active));
+            forumService.add(new Forum(1,forumTitle.getText(),forumContent.getText(),11111111,forumtag.getText(),State.Active));
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");

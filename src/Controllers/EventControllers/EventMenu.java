@@ -2,7 +2,7 @@ package Controllers.EventControllers;
 
 
 import Modules.Event;
-import Services.EventServices;
+import services.EventServices;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 

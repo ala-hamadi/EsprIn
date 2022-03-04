@@ -86,6 +86,17 @@ public class HomeFXMLController{
 
     }
 
+    @FXML
+    void showForum(ActionEvent event) {
+        try {
+            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/ForumMenu.fxml"));
+            content.getChildren().removeAll();
+            content.getChildren().setAll(menu);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 

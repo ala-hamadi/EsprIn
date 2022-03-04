@@ -1,4 +1,4 @@
-package Services;
+package services;
 
 import Modules.Offre;
 import Utils.BdConnection;

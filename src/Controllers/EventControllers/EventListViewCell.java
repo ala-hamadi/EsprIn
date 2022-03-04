@@ -2,8 +2,8 @@ package Controllers.EventControllers;
 
 import Modules.Club;
 import Modules.User;
-import Services.EventServices;
-import Services.UserServices;
+import services.EventServices;
+import services.UserServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

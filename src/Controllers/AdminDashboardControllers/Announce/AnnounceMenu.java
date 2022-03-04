@@ -3,7 +3,7 @@ package Controllers.AdminDashboardControllers.Announce;
 
 import Controllers.Interfaces.DeleteListener;
 import Modules.Annoucement;
-import Services.AnnouncementService;
+import services.AnnouncementService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

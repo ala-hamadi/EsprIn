@@ -2,7 +2,7 @@ package Controllers.EventControllers;
 
 
 import Modules.Event;
-import Services.EventServices;
+import services.EventServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;

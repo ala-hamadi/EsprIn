@@ -3,7 +3,7 @@ package Controllers.AdminDashboardControllers.User;
 import Controllers.Interfaces.BanUserListener;
 import Controllers.Interfaces.DeleteListener;
 import Modules.User;
-import Services.UserServices;
+import services.UserServices;
 import Utils.Enums.State;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

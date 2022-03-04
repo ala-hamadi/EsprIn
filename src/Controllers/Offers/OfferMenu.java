@@ -1,7 +1,7 @@
 package Controllers.Offers;
 
 import Modules.Offre;
-import Services.OffreServices;
+import services.OffreServices;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

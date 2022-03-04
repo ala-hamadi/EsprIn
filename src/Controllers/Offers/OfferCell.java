@@ -1,8 +1,8 @@
 package Controllers.Offers;
 
 import Modules.Offre;
-import Services.OffreServices;
-import Services.UserServices;
+import services.OffreServices;
+import services.UserServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

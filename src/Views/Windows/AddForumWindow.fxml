@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<FlowPane prefHeight="693.0" prefWidth="800.0" stylesheets="@../Style/FormsStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Forum.ForumWinController">
+<FlowPane prefHeight="693.0" prefWidth="800.0" stylesheets="@../Style/FormsStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Forum.ForumWinController">
    <children>
       <BorderPane layoutX="189.0" layoutY="100.0" prefHeight="694.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -35,34 +44,38 @@
                <content>
                   <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="776.0" spacing="30.0">
                      <children>
-                        <Label text="Announce title*" textFill="#4d4d4d">
+                        <Label text="Forum title*" textFill="#4d4d4d">
                            <font>
                               <Font name="Lato Black" size="18.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="40.0" prefWidth="395.0" promptText="Title" styleClass="text-field">
+                        <TextField fx:id="forumTitle" prefHeight="40.0" prefWidth="395.0" promptText="Title" styleClass="text-field">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </TextField>
-                        <Label layoutX="40.0" layoutY="40.0" text="Description*" textFill="#4d4d4d">
+                        <Label layoutX="40.0" layoutY="40.0" text="Content*" textFill="#4d4d4d">
                            <font>
                               <Font name="Lato Black" size="18.0" />
                            </font>
                         </Label>
-                        <TextArea prefHeight="200.0" prefWidth="442.0" promptText="Description">
+                        <TextArea fx:id="forumContent" prefHeight="200.0" prefWidth="442.0" promptText="Description">
                            <font>
                               <Font size="16.0" />
                            </font></TextArea>
-                        <Label layoutX="40.0" layoutY="163.0" text="Sending to" textFill="#4d4d4d">
+                        <Label layoutX="40.0" layoutY="163.0" text="Tag*" textFill="#4d4d4d">
                            <font>
                               <Font name="Lato Black" size="18.0" />
                            </font>
                         </Label>
-                        <ChoiceBox fx:id="destselection" prefHeight="26.0" prefWidth="212.0" />
+                        <TextField fx:id="forumtag" prefHeight="40.0" prefWidth="395.0" promptText="Title" styleClass="text-field">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
                         <FlowPane alignment="CENTER_RIGHT" columnHalignment="RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="32.0" prefWidth="312.0" rowValignment="BASELINE" VBox.vgrow="NEVER">
                            <children>
-                              <Button alignment="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="96.0" text="Send" textAlignment="CENTER">
+                              <Button fx:id="addForum" alignment="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#addForum" prefHeight="32.0" prefWidth="96.0" text="Send" textAlignment="CENTER">
                                  <font>
                                     <Font name="Lato Black" size="16.0" />
                                  </font>
