@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeFXMLController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeFXMLController">
 
     <children>
         <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -55,7 +55,7 @@
                                         </Button>
                                     </children>
                                 </AnchorPane>
-                                <Button id="PostBtn" fx:id="PostBtn" layoutX="443.0" layoutY="38.0" mnemonicParsing="false" onAction="#showPostMenu" prefHeight="32.0" prefWidth="40.0" stylesheets="@../Style/DashbordStyle.css" AnchorPane.leftAnchor="443.0" AnchorPane.topAnchor="38.0">
+                                <Button id="PostBtn" fx:id="PostBtn" layoutX="443.0" layoutY="38.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="40.0" stylesheets="@../Style/DashbordStyle.css" AnchorPane.leftAnchor="443.0" AnchorPane.topAnchor="38.0">
                                     <graphic>
                                         <ImageView id="PostBtn" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -91,7 +91,7 @@
                                         </ImageView>
                                     </graphic>
                                 </Button>
-                                <Button fx:id="AnnounceBtn" layoutX="763.0" layoutY="38.0" mnemonicParsing="false" stylesheets="@../Style/DashbordStyle.css" AnchorPane.leftAnchor="763.0" AnchorPane.topAnchor="38.0">
+                                <Button fx:id="AnnounceBtn" layoutX="763.0" layoutY="38.0" mnemonicParsing="false" onAction="#showAnnounceMenu" stylesheets="@../Style/DashbordStyle.css" AnchorPane.leftAnchor="763.0" AnchorPane.topAnchor="38.0">
                                     <graphic>
                                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                             <image>

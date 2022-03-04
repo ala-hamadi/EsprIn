@@ -1,7 +1,5 @@
 package controller;
 
-import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +10,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
+import java.io.IOException;
 
 public class HomeFXMLController{
 
@@ -51,18 +51,17 @@ public class HomeFXMLController{
         stage.close();
 
     }
-
     @FXML
-    void showPostMenu(ActionEvent event) {
+    void showAnnounceMenu(ActionEvent announce) {
+
         try {
-            Parent menu = FXMLLoader.load(getClass().getResource("/view/UI/PostMenu.fxml"));
+            Parent menu = FXMLLoader.load(getClass().getResource("/view/UI/AnnounceMenu.fxml"));
             content.getChildren().removeAll();
             content.getChildren().setAll(menu);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
     @FXML
     void showEventMenu(ActionEvent event) {
 }
@@ -75,7 +74,7 @@ public class HomeFXMLController{
     @FXML
     void AddAlert(ActionEvent event) {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/view/UI/AddPost.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("/view/UI/AddAlert.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
             stage.setScene(scene);
