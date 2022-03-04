@@ -16,11 +16,12 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 public class AnnouncementService implements IServices<Annoucement> {
     private Connection connection;
     private static AnnouncementService instance;
 
-    private AnnouncementService() throws SQLException{
+    public AnnouncementService() throws SQLException{
         BdConnection connect=BdConnection.getInstance();
         this.connection=connect.cnx;
     }

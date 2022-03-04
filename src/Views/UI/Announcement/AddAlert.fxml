@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<FlowPane prefHeight="693.0" prefWidth="800.0" stylesheets="@../Style/FormsStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AnnounceUser.AddAlertController">
+<FlowPane prefHeight="693.0" prefWidth="800.0" stylesheets="@../../Style/FormsStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AnnounceUser.AddAlertController">
     <children>
         <BorderPane layoutX="189.0" layoutY="100.0" prefHeight="694.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
@@ -22,7 +22,7 @@
                     <children>
                         <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="753.0" layoutY="22.0" onMouseClicked="#closeWindow" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../Images/closewindow.png" />
+                                <Image url="@../../Images/closewindow.png" />
                             </image>
                         </ImageView>
                         <Label layoutX="81.0" layoutY="20.0" text="Add Alert" textFill="WHITE">
@@ -32,7 +32,7 @@
                         </Label>
                         <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="35.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../Images/Announce.png" />
+                                <Image url="@../../Images/Announce.png" />
                             </image>
                         </ImageView>
                     </children>

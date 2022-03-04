@@ -1,6 +1,7 @@
 package Controllers.AnnounceUser;
 
-import Services.AlertServices;
+import Modules.AlertProf;
+import Services.AlertProfServices;
 import Utils.Structure.Classe;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -49,16 +50,16 @@ public class AddAlertController {
 
     public void AddAlert(javafx.event.ActionEvent event) {
         if ((ContentAlert.getText().length()>2) && (Destination.getText().length()>2)){
-            AlertServices alertServices= null;
+            AlertProfServices alertProfServices = null;
             try {
-                alertServices = AlertServices.getInstance();
+                alertProfServices = AlertProfServices.getInstance();
             } catch (SQLException exception) {
                 exception.printStackTrace();
             }
             Classe classe1=new Classe();
             classe1.setSpecialite(Destination.getText());
             AlertProf alertProf1 =new AlertProf(2,ContentAlert.getText(),classe1,11111111, Timestamp.valueOf(LocalDateTime.now()));
-            alertServices.add(alertProf1);
+            alertProfServices.add(alertProf1);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
             alert.setContentText("Alert is added successfully!");

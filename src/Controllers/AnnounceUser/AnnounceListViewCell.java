@@ -1,11 +1,12 @@
 package Controllers.AnnounceUser;
 
+import Modules.Annoucement;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
-import model.Annoucement;
+import Modules.Annoucement;
 
 public class AnnounceListViewCell {
 

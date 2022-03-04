@@ -1,6 +1,6 @@
 package Services;
 
-import Modules.Alert;
+import Modules.AlertProf;
 import Utils.BdConnection;
 import Utils.Enums.Roles;
 import Utils.Enums.State;
@@ -16,32 +16,32 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class AlertServices implements IServices<Alert>{
+public class AlertProfServices implements IServices<AlertProf> {
     private Connection connection;
-    private static AlertServices instance;
+    private static AlertProfServices instance;
 
-    private AlertServices() throws SQLException {
+    private AlertProfServices() throws SQLException {
         BdConnection connect = BdConnection.getInstance();
         this.connection= connect.cnx;
     }
-    public static AlertServices getInstance() throws SQLException{
+    public static AlertProfServices getInstance() throws SQLException{
         if (instance==null)
-            instance=new AlertServices();
+            instance=new AlertProfServices();
         return instance;
     }
 
     @Override
-    public void add(Alert alert) {
+    public void add(AlertProf alertProf) {
         try {
             Statement std = connection.createStatement();
             String query = "";
-            query = "SELECT * FROM `user` WHERE `user`.`cinUser`=" + alert.getIdSender() + ";";
+            query = "SELECT * FROM `user` WHERE `user`.`cinUser`=" + alertProf.getIdSender() + ";";
             ResultSet rs = std.executeQuery(query);
 
             rs.next();
             switch (Roles.valueOf(rs.getString("role"))) {
                 case Professeur:
-                    query = "INSERT INTO `alert`(`content`, `destClass`, `idSender`, `state`) VALUES ('" + alert.getContentAlert() + "','" + alert.getDestClass() + "','" + alert.getIdSender() + "','" + alert.getState() + "');";
+                    query = "INSERT INTO `alert`(`content`, `destClass`, `idSender`, `state`) VALUES ('" + alertProf.getContentAlert() + "','" + alertProf.getDestClass() + "','" + alertProf.getIdSender() + "','" + alertProf.getState() + "');";
                     int x = std.executeUpdate(query);
                     System.out.println(x + "row inserted");
                     break;
@@ -56,17 +56,17 @@ public class AlertServices implements IServices<Alert>{
     }
 
     @Override
-    public boolean delete(Alert alert) {
+    public boolean delete(AlertProf alertProf) {
         try {
             Statement std = connection.createStatement();
             String query = "";
-            query = "SELECT * FROM `user` WHERE `user`.`cinUser`=" + alert.getIdSender() + ";";
+            query = "SELECT * FROM `user` WHERE `user`.`cinUser`=" + alertProf.getIdSender() + ";";
             ResultSet rs = std.executeQuery(query);
 
             while (rs.next()) {
                 switch (Roles.valueOf(rs.getString("role"))) {
                     case Professeur:
-                        query = "UPDATE alert SET state = '" + State.Deleted+ "' WHERE `alert`.`idAlert`="+alert.getIdAlert()+ ";";
+                        query = "UPDATE alert SET state = '" + State.Deleted+ "' WHERE `alert`.`idAlert`="+ alertProf.getIdAlert()+ ";";
                         int x = std.executeUpdate(query);
                         System.out.println(x + "row deleted");
                         return true;
@@ -95,24 +95,24 @@ public class AlertServices implements IServices<Alert>{
      }*/
 //Roles.valueOf(rs.getString("role"))
     @Override
-    public boolean update(Alert alert) {
+    public boolean update(AlertProf alertProf) {
         try {
             Statement std = connection.createStatement();
             String query = "";
-            query = "SELECT * FROM `alert` WHERE `alert`.`idAlert`=" + alert.getIdAlert() + ";";
+            query = "SELECT * FROM `alert` WHERE `alert`.`idAlert`=" + alertProf.getIdAlert() + ";";
             ResultSet resultSet= std.executeQuery(query);
             resultSet.next();
             if (State.valueOf(resultSet.getString("state"))==State.Deleted){
                 System.out.println("u cannot updated a deleted row");
                 return false;
             }else {
-                query = "SELECT * FROM `user` WHERE `user`.`cinUser`=" + alert.getIdSender() + ";";
+                query = "SELECT * FROM `user` WHERE `user`.`cinUser`=" + alertProf.getIdSender() + ";";
                 ResultSet rs = std.executeQuery(query);
 
                 while (rs.next()) {
                     switch (rs.getString("role").toLowerCase()) {
                         case "professeur":
-                            query = "UPDATE `alert` SET `content`='" + alert.getContentAlert() + "',`destClass`='" + alert.getDestClass() +  "' WHERE `alert`.`idAlert`=" + alert.getIdAlert() + ";";
+                            query = "UPDATE `alert` SET `content`='" + alertProf.getContentAlert() + "',`destClass`='" + alertProf.getDestClass() +  "' WHERE `alert`.`idAlert`=" + alertProf.getIdAlert() + ";";
                             int x = std.executeUpdate(query);
                             System.out.println(x + "row updated");
                             return true;
@@ -133,25 +133,25 @@ public class AlertServices implements IServices<Alert>{
     }
 
     @Override
-    public List<Alert> getList() {
-        List<Alert>alerts=new ArrayList<Alert>();
+    public List<AlertProf> getList() {
+        List<AlertProf> alertProfs =new ArrayList<AlertProf>();
         try {
             Statement statement=connection.createStatement();
             String query="SELECT * FROM `alert` WHERE `alert`.`state` <> 'Deleted' ;";
             ResultSet rs=statement.executeQuery(query);
             while (rs.next()){
                 String[] classe=rs.getString("destClass").split(" ");
-                Alert alert=new Alert(rs.getInt("idAlert"),rs.getString("content"),new Classe(Integer.parseInt(classe[0]),classe[1],Integer.parseInt(classe[2])),rs.getInt("idSender"),rs.getDate("createdAt"));
-                alerts.add(alert);
+                AlertProf alertProf =new AlertProf(rs.getInt("idAlert"),rs.getString("content"),new Classe(Integer.parseInt(classe[0]),classe[1],Integer.parseInt(classe[2])),rs.getInt("idSender"),rs.getDate("createdAt"));
+                alertProfs.add(alertProf);
             }
         }catch (SQLException exception){
             System.out.println(exception.getMessage());
         }
-        return alerts;
+        return alertProfs;
     }
 
 
-    public Alert retrive(long i) {
+    public AlertProf retrive(long i) {
         try {
             Statement statement=connection.createStatement();
             String query="";
@@ -166,8 +166,8 @@ public class AlertServices implements IServices<Alert>{
                 ResultSet rs = statement.executeQuery(query);
                 rs.next();
                 String[] classe = rs.getString("destClass").split(" ");
-                Alert alert = new Alert(rs.getInt("idAlert"), rs.getString("content"), new Classe(Integer.parseInt(classe[0]), classe[1], Integer.parseInt(classe[2])), rs.getInt("idSender"),rs.getDate("createdAt"));
-                return alert;
+                AlertProf alertProf = new AlertProf(rs.getInt("idAlert"), rs.getString("content"), new Classe(Integer.parseInt(classe[0]), classe[1], Integer.parseInt(classe[2])), rs.getInt("idSender"),rs.getDate("createdAt"));
+                return alertProf;
             }
         }catch (SQLException exception){
             System.out.println(exception.getMessage());
@@ -175,23 +175,23 @@ public class AlertServices implements IServices<Alert>{
         System.out.println("mouch mawjoud");
         return null;
     }
-    public List<Alert> filterAlertByClass(String classeid, List<Alert> alerts){
-        return alerts.stream()
+    public List<AlertProf> filterAlertByClass(String classeid, List<AlertProf> alertProfs){
+        return alertProfs.stream()
                 .filter(comparator -> comparator.getDestClass().toString().equals(classeid))
                 .collect(Collectors.toList());
     }
 
-    public List<Alert> sortAlertById() {
+    public List<AlertProf> sortAlertById() {
         return this.getList().stream().sorted((o1, o2) -> String.valueOf(o1.getIdAlert())
                 .compareTo(String.valueOf(o1.getIdAlert()))).collect(Collectors.toList());
     }
-    public List<Alert> sortAlertByDate(List<Alert>alerts){
-        Collections.sort(alerts, new Comparator<Alert>() {
-            public int compare(Alert o1, Alert o2) {
+    public List<AlertProf> sortAlertByDate(List<AlertProf> alertProfs){
+        Collections.sort(alertProfs, new Comparator<AlertProf>() {
+            public int compare(AlertProf o1, AlertProf o2) {
                 return o1.getCreatedAt().compareTo(o2.getCreatedAt());
             }
         });
-        return alerts;
+        return alertProfs;
     }
 
 }
