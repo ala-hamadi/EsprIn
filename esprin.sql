@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 27 fév. 2022 à 23:44
+-- Généré le : ven. 04 mars 2022 à 20:34
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 7.4.27
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `alert` (
   `idAlert` int(11) NOT NULL,
+  `alertTitle` varchar(30) NOT NULL,
   `content` text NOT NULL,
   `destClass` varchar(20) NOT NULL,
   `createdAt` datetime NOT NULL DEFAULT current_timestamp(),
@@ -88,21 +89,24 @@ CREATE TABLE `event` (
   `titleEvent` varchar(20) NOT NULL,
   `contentEvent` text NOT NULL,
   `imgURL` text DEFAULT NULL,
-  `eventDate` datetime NOT NULL,
   `idOrganizer` int(11) NOT NULL,
-  `state` varchar(15) NOT NULL DEFAULT 'Active'
+  `EventLocal` varchar(30) NOT NULL,
+  `nbrParticipant` int(10) NOT NULL,
+  `state` varchar(15) NOT NULL DEFAULT 'Active',
+  `dateDebut` date DEFAULT NULL,
+  `dateFin` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `event`
 --
 
-INSERT INTO `event` (`idEvent`, `titleEvent`, `contentEvent`, `imgURL`, `eventDate`, `idOrganizer`, `state`) VALUES
-(1, 'Hackathon', 'Hackathon dev mobile', NULL, '3922-11-30 05:06:00', 10000000, 'Active'),
-(2, 'Hackathon', 'Hackathon dev mobile', NULL, '3922-11-30 05:06:00', 10000000, 'Active'),
-(3, 'Hackathon', 'Hackathon dev mobile', NULL, '3922-11-30 05:06:00', 10000000, 'Deleted'),
-(4, 'Hackathon', 'Hackathon dev mobile', NULL, '3922-11-30 05:06:00', 10000000, 'Active'),
-(5, 'Hackathon', 'Hackathon dev mobile', NULL, '3922-11-30 05:06:00', 10000000, 'Active');
+INSERT INTO `event` (`idEvent`, `titleEvent`, `contentEvent`, `imgURL`, `idOrganizer`, `EventLocal`, `nbrParticipant`, `state`, `dateDebut`, `dateFin`) VALUES
+(1, 'Hackathon', 'Hackathon dev mobile', NULL, 10000000, '', 0, 'Active', NULL, NULL),
+(2, 'Hackathon', 'Hackathon dev mobile', NULL, 10000000, '', 0, 'Active', NULL, NULL),
+(3, 'Hackathon', 'Hackathon dev mobile', NULL, 10000000, '', 0, 'Deleted', NULL, NULL),
+(4, 'Hackathon', 'Hackathon dev mobile', NULL, 10000000, '', 0, 'Active', NULL, NULL),
+(5, 'Hackathon', 'Hackathon dev mobile', NULL, 10000000, '', 0, 'Active', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -123,9 +127,12 @@ CREATE TABLE `follow` (
 
 CREATE TABLE `forum` (
   `idForum` int(11) NOT NULL,
+  `dateCreation` timestamp NOT NULL DEFAULT current_timestamp(),
   `title` varchar(40) NOT NULL,
   `content` text NOT NULL,
   `idOwner` int(11) NOT NULL,
+  `categorieForum` varchar(20) NOT NULL,
+  `nbrLikesForum` int(10) NOT NULL,
   `state` varchar(15) NOT NULL DEFAULT 'Active'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -133,8 +140,9 @@ CREATE TABLE `forum` (
 -- Déchargement des données de la table `forum`
 --
 
-INSERT INTO `forum` (`idForum`, `title`, `content`, `idOwner`, `state`) VALUES
-(1, 'First forum', 'el PIdev damerli 7iety.\r\nps: youssef tika\r\n', 10020855, 'Active');
+INSERT INTO `forum` (`idForum`, `dateCreation`, `title`, `content`, `idOwner`, `categorieForum`, `nbrLikesForum`, `state`) VALUES
+(1, '2022-03-03 23:00:00', 'First forum', 'el PIdev damerli 7iety.\r\nps: youssef tika\r\n', 10020855, '', 0, 'Active'),
+(5, '2022-03-04 18:49:26', 'title', 'go go power rangers', 10020855, 'Stage', 0, 'Active');
 
 -- --------------------------------------------------------
 
@@ -271,9 +279,25 @@ INSERT INTO `post` (`idPost`, `content`, `mediaURL`, `createdAt`, `categorie`, `
 --
 
 CREATE TABLE `reacted forum` (
-  `cinUser` int(8) NOT NULL,
+  `idCreater` int(8) NOT NULL,
   `idForum` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déclencheurs `reacted forum`
+--
+DELIMITER $$
+CREATE TRIGGER `AddReactForum` BEFORE INSERT ON `reacted forum` FOR EACH ROW update forum
+set nbrLikesForum=nbrLikesForum+1
+where forum.idForum=new.idForum
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `dislikeForum` BEFORE DELETE ON `reacted forum` FOR EACH ROW UPDATE forum
+set nbrLikesForum=nbrLikesForum-1
+where forum.idForum=old.idForum
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -408,7 +432,7 @@ ALTER TABLE `post`
 -- Index pour la table `reacted forum`
 --
 ALTER TABLE `reacted forum`
-  ADD PRIMARY KEY (`cinUser`,`idForum`),
+  ADD PRIMARY KEY (`idCreater`,`idForum`),
   ADD KEY `FK reacted` (`idForum`);
 
 --
@@ -451,7 +475,7 @@ ALTER TABLE `event`
 -- AUTO_INCREMENT pour la table `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `idForum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idForum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `offre`
@@ -545,7 +569,7 @@ ALTER TABLE `post`
 --
 ALTER TABLE `reacted forum`
   ADD CONSTRAINT `FK reacted` FOREIGN KEY (`idForum`) REFERENCES `forum` (`idForum`),
-  ADD CONSTRAINT `FK reacter` FOREIGN KEY (`cinUser`) REFERENCES `user` (`cinUser`);
+  ADD CONSTRAINT `FK reacter` FOREIGN KEY (`idCreater`) REFERENCES `user` (`cinUser`);
 
 --
 -- Contraintes pour la table `responded`
