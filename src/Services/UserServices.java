@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class UserServices implements IServices<User> {
+public class UserServices implements services.IServices<User> {
     private Connection connection;
     private static UserServices instance;
 

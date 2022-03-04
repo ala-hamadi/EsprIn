@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -61,7 +60,7 @@ public class EventMenu implements Initializable {
         try {
             for (int i=0; i< eventList.size(); i++ ){
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/Views/Cells/EventCell.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/Views/Templates/EventCell.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
                 EventListViewCell itemController = fxmlLoader.getController();
                 itemController.setData(eventList.get(i));

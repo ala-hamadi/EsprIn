@@ -97,7 +97,12 @@ public class AddEventController {
     void AddEvent(ActionEvent event) {
         if ((EventTitle.getText().length()>2)&&(contentEvent.getText().length()>2)){
 
-            EventServices eventServices= new EventServices();
+            EventServices eventServices= null;
+            try {
+                eventServices = EventServices.getInstance();
+            } catch (SQLException exception) {
+                exception.printStackTrace();
+            }
             String date = String.valueOf(dateEvent.getValue());
             Event ev= new Event(EventTitle.getText(),contentEvent.getText(),null, Date.valueOf(date), 10000000);
 

@@ -7,13 +7,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1043.0" prefWidth="1452.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Offers.OfferMenu">
+<AnchorPane prefHeight="1043.0" prefWidth="1452.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Posts.PostMenuController">
     <children>
         <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Pane prefHeight="189.0" prefWidth="1452.0">
                     <children>
-                        <Label layoutX="60.0" layoutY="10.0" text="Offers" textFill="RED">
+                        <Label layoutX="60.0" layoutY="10.0" text="Post" textFill="RED">
                             <font>
                                 <Font size="67.0" />
                             </font>
@@ -22,7 +22,7 @@
                 </Pane>
                 <AnchorPane prefHeight="853.0" prefWidth="1452.0">
                     <children>
-                        <ListView fx:id="OfferListView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <ListView fx:id="eventListView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                     </children>
                 </AnchorPane>
             </children>

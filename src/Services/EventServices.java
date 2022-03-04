@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-public class EventServices implements IServices<Event> {
+public class EventServices implements services.IServices<Event> {
     private Connection connection;
     private static EventServices instance;
 

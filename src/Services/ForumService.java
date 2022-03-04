@@ -1,5 +1,6 @@
 package services;
 
+import Modules.Forum;
 import Utils.BdConnection;
 import Utils.Enums.State;
 import model.Forum;
@@ -14,7 +15,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ForumService implements IServices<Forum> {
+public class ForumService implements services.IServices<Forum> {
     private Connection connection;
     public static  ForumService instance;
 

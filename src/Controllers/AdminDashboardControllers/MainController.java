@@ -40,7 +40,7 @@ public class MainController {
 
     public void showUsersMenu(ActionEvent actionEvent) {
         try {
-            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/UsersMenu.fxml"));
+            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/Dashboard/UsersMenu.fxml"));
             content.getChildren().removeAll();
             content.getChildren().setAll(menu);
         } catch (IOException e) {
@@ -51,7 +51,7 @@ public class MainController {
 
     public void showAnnounceMenu(ActionEvent actionEvent) {
         try {
-            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/AnnounceMenu.fxml"));
+            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/Dashboard/AnnounceMenu.fxml"));
             content.getChildren().removeAll();
             content.getChildren().setAll(menu);
         } catch (Exception e) {
