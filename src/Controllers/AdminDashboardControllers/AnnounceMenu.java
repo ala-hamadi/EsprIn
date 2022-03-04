@@ -18,6 +18,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -31,7 +32,12 @@ public class AnnounceMenu implements Initializable {
 
 
     public AnnounceMenu() {
-        AnnouncementService announcementService=AnnouncementService.getInstance();
+        AnnouncementService announcementService= null;
+        try {
+            announcementService = AnnouncementService.getInstance();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         AnnoucementObservableList = announcementService.getList();
         announceListView = new ListView<>();
     }

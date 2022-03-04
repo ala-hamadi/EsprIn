@@ -19,7 +19,7 @@ public class MainEvent extends Application {
    public void start(Stage primaryStage) {
         this.stage = primaryStage;
         try {
-            parent = FXMLLoader.load(getClass().getResource("/Views/UI/HomeTemplate.fxml"));
+            parent = FXMLLoader.load(getClass().getResource("/Views/UI/OfferFXML.fxml"));
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
             System.out.println("erreur");

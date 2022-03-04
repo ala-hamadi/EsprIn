@@ -70,6 +70,108 @@
     -fx-background-radius: 30px;
     -fx-background-color: #ef6e6e;
 }
+.searchBar:focused{
+    -fx-border-radius:0;
+    -fx-background-radius:0;
+    -fx-background-color: #e3cdcd;
+    -fx-border-color: #732020;
+    -fx-text-fill: black;
+}
+
+.searchBar {
+    -fx-border-radius:10;
+    -fx-background-radius:10;
+    -fx-background-color: #eaeaea;
+    -fx-text-fill: black;
+    -fx-font-size: 18px;
+}
+.buttonFiltre{
+    -fx-background-color: #f67070;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill: #9f0505;
+}
+.buttonFiltre:hover{
+    -fx-border-color: #853030;
+    -fx-background-color: #750707;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;}
+
+.buttonFiltre:pressed{
+    -fx-background-color: #c61c1c;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+}
+/*region choice box */
+.choice-box .label {
+    -fx-font-family: Lato;
+    -fx-font-size: 18px;
+    -fx-text-fill: white;
+}
+.choice-box {
+    -fx-background-color: #C10006;
+    -fx-background-radius: 10px;
+    -fx-focus-color: #ae1c1c;
+    -fx-faint-focus-color: #531010;
+    -fx-control-inner-background: #732020;
+    -fx-selection-bar: #531010;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-prompt-text-fill: white;
+}
+.choice-box .menu-item:focused .label{
+    -fx-text-fill: white;
+    -fx-fill: white;
+    -fx-prompt-text-fill: white;
+}
+.choice-box.open-button{
+    -fx-background-color: white;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: white;
+}
+.choice-box .menu-item .label{
+    -fx-text-fill: white;
+    -fx-fill: white;
+    -fx-prompt-text-fill: white;
+}
+.choice-box .context-menu { -fx-background-color: black; }
+.choice-box .arrow { -fx-background-color: white; }
+/*endregion*/
+.combo-box .list-cell
+{
+    -fx-background-color: #c61c1c;
+    -fx-font-size: 18px;
+    -fx-text-fill: white;
+}
+
+.combo-box-popup .list-view
+{
+    -fx-background-color: #c61c1c, red;
+}
+
+.combo-box-popup .list-view .list-cell
+{
+    -fx-background-color: #853030;
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover
+{   -fx-background-color: #f67070;
+    -fx-text-fill: white;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover
+{
+    -fx-background-color: white;
+    -fx-text-fill: -fx-text-inner-color;
+}
+
+.combo-box-base
+{
+    -fx-skin: "com.sun.javafx.scene.control.skin.ComboBoxBaseSkin";
+    -fx-background-color: white, white, white, white;
+}
+
 
 .ParticipateBtn{
     -fx-background-color: #f38080;

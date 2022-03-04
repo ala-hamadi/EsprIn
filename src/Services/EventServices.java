@@ -128,7 +128,12 @@ public class EventServices implements IServices<Event> {
     }
 
     public Club retriveClubByName(String name){
-        UserServices userList=UserServices.getInstance();
+        UserServices userList= null;
+        try {
+            userList = UserServices.getInstance();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         return userList.searchByFirstName(name).stream()
                 .map(x -> (Club) x)
                 .collect(Collectors.toList()).get(0);
