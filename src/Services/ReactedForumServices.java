@@ -1,20 +1,20 @@
-package Services;
+package services;
 
-import Modules.Forum;
 import Utils.BdConnection;
+import model.Forum;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class ReactedForumServices implements ILikeServices<Forum> {
+public class ReactedForumServices implements services.ILikeServices<Forum> {
     private Connection connection;
     public static  ReactedForumServices instance;
 
-    private ReactedForumServices() throws SQLException{
+    private ReactedForumServices() {
         connection = BdConnection.getInstance().cnx;
     }
-    public static ReactedForumServices getInstance ()throws SQLException{
+    public static ReactedForumServices getInstance (){
         if (instance == null)
             instance = new ReactedForumServices();
 

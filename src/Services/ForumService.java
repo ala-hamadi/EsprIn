@@ -1,12 +1,8 @@
-package Services;
+package services;
 
-import Modules.Espritien;
-import Modules.Forum;
-import Modules.Post;
-import Modules.User;
 import Utils.BdConnection;
-import Utils.Enums.Roles;
 import Utils.Enums.State;
+import model.Forum;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -22,10 +18,10 @@ public class ForumService implements IServices<Forum> {
     private Connection connection;
     public static  ForumService instance;
 
-    private ForumService() throws SQLException{
+    private ForumService() {
         connection = BdConnection.getInstance().cnx;
     }
-    public static ForumService getInstance() throws SQLException{
+    public static ForumService getInstance (){
         if (instance == null)
             instance = new ForumService();
 

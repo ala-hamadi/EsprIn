@@ -1,10 +1,8 @@
-package Services;
+package services;
 
 
-import Services.IServices;
 import Utils.BdConnection;
-import models.Responded;
-
+import model.Responded;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -17,11 +15,11 @@ public class RespondedService implements IServices<Responded> {
     private Connection connection;
     public static RespondedService instance;
 
-    private RespondedService() throws SQLException{
+    private RespondedService() {
         connection = BdConnection.getInstance().cnx;
     }
 
-    public static RespondedService getInstance ()throws SQLException{
+    public static RespondedService getInstance (){
         if (instance == null)
             instance = new RespondedService();
 
