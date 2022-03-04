@@ -15,12 +15,12 @@ public class EventServices implements IServices<Event> {
     private Connection connection;
     private static EventServices instance;
 
-    public EventServices() {
+    private EventServices() throws SQLException{
         BdConnection connect = BdConnection.getInstance();
         this.connection = connect.cnx;
     }
 
-    public static EventServices getInstance() {
+    public static EventServices getInstance() throws SQLException{
         if (instance == null)
             instance = new EventServices();
         return instance;
@@ -128,7 +128,12 @@ public class EventServices implements IServices<Event> {
     }
 
     public Club retriveClubByName(String name){
-        UserServices userList=UserServices.getInstance();
+        UserServices userList= null;
+        try {
+            userList = UserServices.getInstance();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         return userList.searchByFirstName(name).stream()
                 .map(x -> (Club) x)
                 .collect(Collectors.toList()).get(0);
