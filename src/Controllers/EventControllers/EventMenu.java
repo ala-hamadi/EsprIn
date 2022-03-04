@@ -47,12 +47,8 @@ public class EventMenu implements Initializable {
         eventListView = new ListView<>();
     }*/
 
-    public EventMenu() {
-        try {
-            eventServices=EventServices.getInstance();
-        } catch (SQLException exception) {
-            exception.printStackTrace();
-        }
+    public EventMenu() throws SQLException {
+        eventServices=EventServices.getInstance();
         eventList = eventServices.getList();
         eventListView = new ListView<>();
         System.out.println(eventList);
