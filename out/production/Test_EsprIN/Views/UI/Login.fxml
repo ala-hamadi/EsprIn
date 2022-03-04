@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
+   <left>
+      <Pane prefHeight="1080.0" prefWidth="1220.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="1112.0" fitWidth="1688.0" layoutX="-419.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/pexels-photo-3184454.jpeg" />
+               </image>
+            </ImageView>
+         </children></Pane>
+   </left>
+   <right>
+      <VBox alignment="TOP_CENTER" prefHeight="1080.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefWidth="700.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/logo_app.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="90.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label text="Login">
+                     <font>
+                        <Font name="Corbel" size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="Welcome to EsprIN" textFill="#6e6e6e">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefWidth="700.0">
+               <children>
+                  <Label text="Email address">
+                     <font>
+                        <Font name="Corbel" size="36.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="40.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="mail" prefHeight="65.0" prefWidth="700.0" promptText="exemple@esprit.tn" styleClass="mail">
+                     <font>
+                        <Font name="Arial" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </TextField>
+                  <Label text="Password">
+                     <font>
+                        <Font name="Corbel" size="36.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="40.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="password" prefHeight="65.0" prefWidth="700.0" promptText="password" styleClass="password">
+                     <font>
+                        <Font name="Corbel" size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+            </VBox>
+            <Button id="LoginBtn" fx:id="LoginBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="599.0" styleClass="loginBtn" stylesheets="@../Style/LoginStyle.css" text="Login" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" />
+               </VBox.margin>
+            </Button>
+            <HBox alignment="TOP_CENTER" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label prefHeight="30.0" text="D'ont have an account ? ">
+                     <font>
+                        <Font name="Corbel" size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="RegisterBtn" alignment="CENTER" mnemonicParsing="false" styleClass="RegisterBtn" stylesheets="@../Style/LoginStyle.css" text="Register" textFill="#ff00001b" underline="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </right>
+   <top>
+      <HBox alignment="CENTER_RIGHT" prefHeight="68.0" prefWidth="1920.0" BorderPane.alignment="CENTER_LEFT">
+         <children>
+            <Button fx:id="exitBtn" mnemonicParsing="false" prefWidth="108.0" styleClass="exitBtn" stylesheets="@../Style/LoginStyle.css" text="Exit">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets right="30.0" />
+         </padding>
+      </HBox>
+   </top>
+</BorderPane>

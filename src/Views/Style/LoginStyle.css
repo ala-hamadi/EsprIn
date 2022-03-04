@@ -1,0 +1,60 @@
+.loginBtn{
+    -fx-background-color:  red;
+    -fx-text-fill:white;
+    -fx-background-radius: 10;
+    -fx-font-size: 20;
+}
+.loginBtn:pressed{
+    -fx-background-color:  red;
+    -fx-text-fill:white;
+    -fx-background-radius: 10;
+    -fx-font-size: 20;
+}
+.loginBtn:hover {
+    -fx-background-color:  #f67070;
+    -fx-text-fill:white;
+    -fx-background-radius: 10;
+    -fx-font-size: 20;
+}
+
+
+.RegisterBtn{
+    -fx-background-color: transparent ;
+    -fx-text-fill:red;
+    -fx-background-radius: 10;
+}
+
+.RegisterBtn:hover{
+    -fx-background-color: #ff000010;
+    -fx-text-fill:red;
+    -fx-background-radius: 20;
+}
+
+.RegisterBtn:pressed{
+    -fx-background-color: transparent ;
+    -fx-text-fill:red;
+    -fx-background-radius: 10;
+}
+
+.label{
+    -fx-font-style: mont;
+}
+
+#exitBtn:hover{
+    -fx-border-color: #853030;
+    -fx-background-color: #750707;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+}
+#exitBtn{
+    -fx-background-color: #f67070;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill: #9f0505;
+}
+#exitBtn:pressed{
+    -fx-background-color: #c61c1c;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+}

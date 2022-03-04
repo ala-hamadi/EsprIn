@@ -86,11 +86,11 @@
                       </Label>
                </children>
             </HBox>
-                <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#EventParticiate" prefHeight="17.0" prefWidth="136.0" styleClass="ParticipateBtn" stylesheets="@../Style/DashboardStyle.css" text="Participate">
-                    <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" top="10.0" />
-                    </VBox.margin>
-                </Button>
+            <HBox prefWidth="200.0">
+               <children>
+                      <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#EventParticiate" prefHeight="17.0" prefWidth="136.0" styleClass="ParticipateBtn" stylesheets="@../Style/DashboardStyle.css" text="Participate" />
+               </children>
+            </HBox>
             </children>
         </VBox>
     </children>
