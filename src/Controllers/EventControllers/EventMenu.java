@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -47,7 +48,11 @@ public class EventMenu implements Initializable {
     }*/
 
     public EventMenu() {
-        eventServices=EventServices.getInstance();
+        try {
+            eventServices=EventServices.getInstance();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
         eventList = eventServices.getList();
         eventListView = new ListView<>();
         System.out.println(eventList);

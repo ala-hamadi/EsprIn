@@ -1,6 +1,7 @@
 package Services;
 
 import Modules.Forum;
+import Services.IServices;
 import Utils.BdConnection;
 import Utils.Enums.State;
 

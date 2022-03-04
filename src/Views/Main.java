@@ -13,7 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Views/UI/HomeTemplate.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Views/UI/Dashboard/DashboardMain.fxml"));
         primaryStage.setTitle("Hello World");
         try {
             Image image = new Image("Views/Images/appicon.png");

@@ -24,7 +24,12 @@ public class PostMenuController implements Initializable {
   private List<Post> postList;
 
   public PostMenuController() throws SQLException {
-    PostServices postServices = new PostServices();
+    PostServices postServices = null;
+    try {
+      postServices = new PostServices();
+    } catch (SQLException exception) {
+      exception.printStackTrace();
+    }
 
     postList = new ArrayList<Post>();
     postList = postServices.getListPosts();
