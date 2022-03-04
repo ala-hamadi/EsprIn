@@ -1,5 +1,6 @@
 package Services;
 
+import Modules.Club;
 import Modules.Event;
 import Utils.BdConnection;
 import Utils.Enums.State;
@@ -7,17 +8,19 @@ import Utils.Enums.State;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 
 public class EventServices implements IServices<Event> {
     private Connection connection;
     private static EventServices instance;
 
-    private EventServices() throws SQLException{
+    public EventServices() {
         BdConnection connect = BdConnection.getInstance();
         this.connection = connect.cnx;
     }
 
-    public static EventServices getInstance() throws SQLException{
+    public static EventServices getInstance() {
         if (instance == null)
             instance = new EventServices();
         return instance;
@@ -29,7 +32,7 @@ public class EventServices implements IServices<Event> {
             statement.setString(1, event.getTitleEvent());
             statement.setString(2, event.getDescription());
             statement.setString(3, event.getImgURL());
-            statement.setTimestamp(4, event.getDateEvent());
+            statement.setDate(4, event.getDateEvent());
             statement.setLong(5, event.getIdOrganizer());
 
 
@@ -97,7 +100,7 @@ public class EventServices implements IServices<Event> {
             String query = "SELECT * FROM `event`";
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
-                Event event = new Event(resultSet.getInt("idEvent"), resultSet.getString("titleEvent"), resultSet.getString("contentEvent"), resultSet.getString("imgURL"), resultSet.getTimestamp("eventDate"), resultSet.getLong("idOrganizer"), State.valueOf(resultSet.getString("state")));
+                Event event = new Event(resultSet.getInt("idEvent"), resultSet.getString("titleEvent"), resultSet.getString("contentEvent"), resultSet.getString("imgURL"), resultSet.getDate("eventDate"), resultSet.getLong("idOrganizer"), State.valueOf(resultSet.getString("state")));
                 events.add(event);
             }
         } catch (SQLException exception) {
@@ -115,7 +118,7 @@ public class EventServices implements IServices<Event> {
             String query = "SELECT * FROM `event` WHERE `idEvent`=" + i + ";";
             ResultSet resultSet = statement.executeQuery(query);
             resultSet.next();
-            Event event = new Event(resultSet.getInt("idEvent"), resultSet.getString("titleEvent"), resultSet.getString("contentEvent"), resultSet.getString("imgURL"), resultSet.getTimestamp("eventDate"), resultSet.getLong("idOrganizer"), State.valueOf(resultSet.getString("state")));
+            Event event = new Event(resultSet.getInt("idEvent"), resultSet.getString("titleEvent"), resultSet.getString("contentEvent"), resultSet.getString("imgURL"), resultSet.getDate("eventDate"), resultSet.getLong("idOrganizer"), State.valueOf(resultSet.getString("state")));
             return event;
         } catch (SQLException exception) {
             exception.printStackTrace();
@@ -123,6 +126,55 @@ public class EventServices implements IServices<Event> {
         }
         return null;
     }
+
+    public Club retriveClubByName(String name){
+        UserServices userList=UserServices.getInstance();
+        return userList.searchByFirstName(name).stream()
+                .map(x -> (Club) x)
+                .collect(Collectors.toList()).get(0);
+    }
+
+    /* Search */
+    public List<Event> searchEventByTitleEvent(String TitleEvent){
+        return this.getList().stream()
+                .filter(comparator -> comparator.getTitleEvent().contains(TitleEvent))
+                .collect(Collectors.toList());
+    }
+
+
+
+    public List<Event> searchEventByOrganizerName(String name){
+        Club club=this.retriveClubByName(name);
+
+
+        return this.getList().stream()
+                .filter(x -> x.getIdOrganizer() == club.getCinUser())
+                .collect(Collectors.toList());
+    }
+
+     public List<Event> sortByEventDate(){
+        return this.getList().stream()
+                .sorted((o1,o2) -> String.valueOf(o1.getDateEvent())
+                .compareTo(String.valueOf(o2.getDateEvent())))
+                .collect(Collectors.toList());
+    }
+
+
+    public List<Event> sortByTitleEvent(){
+        return this.getList().stream()
+                .sorted((o1,o2) -> String.valueOf(o1.getTitleEvent())
+                        .compareTo(String.valueOf(o2.getTitleEvent())))
+                .collect(Collectors.toList());
+    }
+
+    /* Filtre */
+    public List<Event> filterEventByOrganizer(long organizerId){
+        return this.getList().stream()
+                .filter(comparator -> comparator.getIdOrganizer()==organizerId)
+                .collect(Collectors.toList());
+    }
+
+
 
 }
 
