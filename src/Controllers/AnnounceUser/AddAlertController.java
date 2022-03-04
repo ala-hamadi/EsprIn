@@ -1,5 +1,6 @@
 package Controllers.AnnounceUser;
 
+import Modules.AlertProf;
 import Services.AlertServices;
 import Utils.Structure.Classe;
 import javafx.fxml.FXML;

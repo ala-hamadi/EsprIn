@@ -1,15 +1,16 @@
 package Controllers.AnnounceUser;
 
+import Modules.Annoucement;
+import Services.AnnouncementService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
-import model.Annoucement;
-import services.AnnouncementService;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -23,7 +24,12 @@ public class AnnounceMenuController implements Initializable {
     private List<Annoucement> annoucementList;
 
     public AnnounceMenuController() {
-        AnnouncementService announcementService=new AnnouncementService();
+        AnnouncementService announcementService= null;
+        try {
+            announcementService = AnnouncementService.getInstance();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
 
         annoucementList = new ArrayList<Annoucement>();
         //annoucementList.add(new Annoucement(9,"Rappel 5lass","no 5lass no result", Roles.Etudiant,10020855, Timestamp.valueOf(LocalDateTime.now())));
