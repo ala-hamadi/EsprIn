@@ -253,7 +253,7 @@ public class UserServices implements IServices<User> {
     public User login(String email, String passwd) {
         try {
             Statement statement = connection.createStatement();
-            String query = "SELECT * FROM `user` WHERE `email`='" + email + "' AND `passwd`='" + passwd + "' ;";
+            String query = "SELECT * FROM `user` WHERE `email`='" + email + "' AND `passwd`='" + passwd + "' AND `state`<> '"+State.Deleted+"' ;";
             ResultSet resultSet = statement.executeQuery(query);
             resultSet.next();
 
