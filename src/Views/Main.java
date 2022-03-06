@@ -2,6 +2,7 @@ package Views;
 
 import Services.UserServices;
 import Utils.CurrentUser;
+import Utils.Enums.Roles;
 import Utils.RessorcesManager;
 import Utils.UserSerializableData;
 import javafx.application.Application;
@@ -22,10 +23,13 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         String url;
-        if (isUserConnected())
-            url="/Views/UI/HomeTemplate.fxml";
-        else
-            url="/Views/UI/LoginInterface.fxml";
+        if (isUserConnected()) {
+            if (CurrentUser.getInstance().getCurrentUser().getRole().equals(Roles.Admin))
+                url = "/Views/UI/Dashboard/DashboardMain.fxml";
+            else
+                url = "/Views/UI/HomeTemplate.fxml";
+        } else
+            url = "/Views/UI/LoginInterface.fxml";
         Parent root = FXMLLoader.load(getClass().getResource(url));
         primaryStage.setTitle("Hello World");
         try {
@@ -48,9 +52,9 @@ public class Main extends Application {
         launch(args);
     }
 
-    public boolean isUserConnected(){
+    public boolean isUserConnected() {
         try {
-            UserServices userServices=UserServices.getInstance();
+            UserServices userServices = UserServices.getInstance();
             UserSerializableData data = (UserSerializableData) RessorcesManager.load("loggedUser.bin");
             CurrentUser.setInstance(userServices.retrive(data.userId));
             return true;
