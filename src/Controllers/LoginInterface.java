@@ -63,7 +63,11 @@ public class LoginInterface implements Initializable {
                 } catch (IOException e) {
                     System.out.println(e.getMessage());
                 }
-                redirect("/Views/UI/HomeTemplate.fxml");
+                if (CurrentUser.getInstance().getCurrentUser().getRole().equals(Roles.Admin))
+                    redirect("/Views/UI/Dashboard/DashboardMain.fxml");
+                else
+                    redirect("/Views/UI/HomeTemplate.fxml");
+
             }
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Please check you mail or password", ButtonType.CLOSE);
@@ -76,8 +80,7 @@ public class LoginInterface implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         try {
             System.out.println(CurrentUser.getInstance().getCurrentUser());
-        }
-        catch (NullPointerException exception){
+        } catch (NullPointerException exception) {
             System.out.println("No User Found");
         }
 
@@ -86,7 +89,7 @@ public class LoginInterface implements Initializable {
     public void redirect(String url) {
         try {
             Parent parent = FXMLLoader.load(getClass().getResource(url));
-            Stage stage =(Stage) emailAdresse.getScene().getWindow();
+            Stage stage = (Stage) emailAdresse.getScene().getWindow();
             Scene scene = new Scene(parent);
             stage.setScene(scene);
             stage.show();
