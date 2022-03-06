@@ -53,6 +53,7 @@ public class LoginInterface implements Initializable {
     void onLogin(ActionEvent event) {
         if (emailAdresse.getText().matches("[a-z A-Z]+[/.][a-z]+(@esprit.tn)") && (password.getText().length() > 3)) {
             User user = userServices.login(emailAdresse.getText(), password.getText());
+
             if (user != null) {
                 CurrentUser.setInstance(user);
                 userServices.changeState(user, State.Connected);
@@ -69,6 +70,7 @@ public class LoginInterface implements Initializable {
                     redirect("/Views/UI/HomeTemplate.fxml");
 
             }
+
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Please check you mail or password", ButtonType.CLOSE);
             alert.setTitle("Login Error");

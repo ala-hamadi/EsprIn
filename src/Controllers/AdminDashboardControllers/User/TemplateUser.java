@@ -36,7 +36,18 @@ public class TemplateUser {
     DeleteListener<User> deleteUserListener;
 
     public void setData(User user,BanUserListener banUserListener,DeleteListener<User> deleteUserListener) {
-        
+        try{
+            Image image=new Image(user.getImgUrl(),false);
+
+           this.userAvatar.setFill(new ImagePattern(image));
+        }catch (Exception exception){
+            System.out.println(user+"\n");
+            System.out.println(exception.getMessage());
+            Image image=new Image("https://www.jbrhomes.com/wp-content/uploads/blank-avatar.png",false);
+
+            this.userAvatar.setFill(new ImagePattern(image));
+        }
+
         this.user=user;
         if(user.getRole()!= Roles.Externe) {
             Espritien espritien=(Espritien)user;
