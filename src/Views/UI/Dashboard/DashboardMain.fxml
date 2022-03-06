@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../../Style/DashboardStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminDashboardControllers.MainController">
+         <left>
+            <VBox alignment="TOP_CENTER" prefHeight="1080.0" prefWidth="468.0" style="-fx-background-color: #EC3635;" stylesheets="@../../Style/SideMenu.css" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Circle accessibleRole="IMAGE_VIEW" fill="WHITE" radius="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Circle>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Esprit" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Lato Bold" size="22.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Administrator" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Lato Bold" size="22.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="535.0" prefWidth="468.0">
+                     <children>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#showUsersMenu" prefHeight="89.0" prefWidth="498.0" stylesheets="@../../Style/SideMenu.css" text="Users">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Lato Bold" size="22.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="icon" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+                                 <image>
+                                    <Image url="@../../Images/users.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="484.0" stylesheets="@../../Style/SideMenu.css" text="Externs">
+                           <font>
+                              <Font name="Lato Bold" size="22.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="icon1" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+                                 <image>
+                                    <Image url="@../../Images/offers.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="498.0" stylesheets="@../../Style/SideMenu.css" text="Posts">
+                           <font>
+                              <Font name="Lato Bold" size="22.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+                                 <image>
+                                    <Image url="@../../Images/posts.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#showAnnounceMenu" prefHeight="89.0" prefWidth="534.0" stylesheets="@../../Style/SideMenu.css" text="Announces">
+                           <font>
+                              <Font name="Lato Bold" size="22.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="icon111" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+                                 <image>
+                                    <Image url="@../../Images/Announce.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="589.0" stylesheets="@../../Style/SideMenu.css" text="Events">
+                           <font>
+                              <Font name="Lato Bold" size="22.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+                                 <image>
+                                    <Image url="@../../Images/events.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <Button alignment="CENTER" graphicTextGap="20.0" mnemonicParsing="false" text="Logout">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/logout.png" />
+                           </image>
+                           <viewport>
+                              <Rectangle2D />
+                           </viewport>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Lato Bold" size="23.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <top>
+            <GridPane onMouseDragged="#mouseDragged" onMousePressed="#mousePressed" prefHeight="37.0" prefWidth="1908.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="98.0" prefWidth="942.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/appicon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label text="EsprIN Admin Dashboard">
+                           <font>
+                              <Font name="Microsoft YaHei" size="17.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+                  </HBox>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Button fx:id="exitBtn" layoutX="838.0" layoutY="4.0" mnemonicParsing="false" onAction="#exitApp" prefHeight="6.0" prefWidth="108.0" text="Exit">
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font></Button>
+               </children>
+            </Pane>
+               </children>
+            </GridPane>
+         </top>
+   <center>
+      <AnchorPane prefHeight="999.0" prefWidth="1452.0" BorderPane.alignment="CENTER">
+         <StackPane fx:id="content" layoutX="3.0" layoutY="2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      </AnchorPane>
+   </center>
+      </BorderPane>
