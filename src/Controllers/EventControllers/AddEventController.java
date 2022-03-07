@@ -5,6 +5,7 @@ import Modules.Event;
 import Services.EventServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -17,10 +18,12 @@ import javafx.stage.Stage;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
+import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class AddEventController {
+public class AddEventController implements Initializable {
 
     @FXML
     private Button AddEventBtn;
@@ -129,6 +132,8 @@ public class AddEventController {
     }
 
 
-
-
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        System.out.println("entred");
+    }
 }

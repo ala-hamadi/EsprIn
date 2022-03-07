@@ -48,7 +48,7 @@ public class LoginInterface implements Initializable {
 
     @FXML
     void onLogin(ActionEvent event) {
-        if (emailAdresse.getText().matches("[a-z A-Z]+[/.][a-z]+(@esprit.tn)") && (password.getText().length() > 3)) {
+        if (emailAdresse.getText().length()>0 && (password.getText().length() > 3)) {
             User user = userServices.login(emailAdresse.getText(), password.getText());
             System.out.println(user);
             if (user != null) {

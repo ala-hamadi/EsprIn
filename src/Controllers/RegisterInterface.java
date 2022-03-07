@@ -124,7 +124,7 @@ public class RegisterInterface implements Initializable {
     public void onCreateUser(ActionEvent actionEvent) {
         try {
             UserServices userServices = UserServices.getInstance();
-            if ((!emailInput.getText().matches("[a-z A-Z]+[/.][a-z]+(@esprit.tn)"))
+            if ((!emailInput.getText().matches("[a-z A-Z]+[.][a-z]+(@esprit.tn)"))
                     || (firstNameInput.getText().length() <= 2)
                     || (!cinNumberInput.getText().matches("^[0-9]+[0-9]*$"))
                     || (lastNameInput.getText().length() <= 2)
@@ -230,5 +230,9 @@ public class RegisterInterface implements Initializable {
             e.printStackTrace();
         }
 
+    }
+
+    public void backbtn(ActionEvent actionEvent) {
+        redirect("/Views/UI/LoginInterface.fxml");
     }
 }
