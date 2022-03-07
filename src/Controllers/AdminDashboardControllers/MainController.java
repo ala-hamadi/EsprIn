@@ -114,7 +114,7 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Admin admin=(Admin) CurrentUser.getInstance().getCurrentUser();
-        adminAvatar.setFill(new ImagePattern(new Image(admin.getImgUrl(),false)));
+       // adminAvatar.setFill(new ImagePattern(new Image(admin.getImgUrl(),false)));
         adminName.setText(admin.getFirstName());
         adminLastName.setText(admin.getLastName());
         adminNameAndLastName.setText(admin.getFirstName()+" "+admin.getLastName());

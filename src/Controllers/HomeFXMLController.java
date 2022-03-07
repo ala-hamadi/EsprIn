@@ -1,7 +1,10 @@
 package Controllers;
 
+import Modules.Espritien;
+import Modules.Extern;
 import Services.UserServices;
 import Utils.CurrentUser;
+import Utils.Enums.Roles;
 import Utils.Enums.State;
 import Utils.RessorcesManager;
 import Utils.UserSerializableData;
@@ -13,8 +16,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -25,6 +31,8 @@ import java.util.ResourceBundle;
 
 public class HomeFXMLController implements Initializable {
 
+    @FXML
+    public Text profileNameAndLastName;
     @FXML
     private Button exitBtn;
 
@@ -55,6 +63,22 @@ public class HomeFXMLController implements Initializable {
     @FXML
     private StackPane content;
 
+    @FXML
+    private MenuItem eventAddItem;
+
+    @FXML
+    private MenuItem forumAddItem;
+
+    @FXML
+    private MenuItem offreAddItem;
+
+    @FXML
+    private MenuItem postAddItem;
+
+    @FXML
+    private MenuItem alertAddItem;
+
+
     UserServices userServices;
 
     @FXML
@@ -63,6 +87,7 @@ public class HomeFXMLController implements Initializable {
         stage.close();
 
     }
+
     @FXML
     void showAnnounceMenu(ActionEvent announce) {
 
@@ -74,15 +99,17 @@ public class HomeFXMLController implements Initializable {
             e.printStackTrace();
         }
     }
+
     @FXML
     void showEventMenu(ActionEvent event) {
-}
+    }
 
 
     @FXML
     void showSearchList(MouseEvent event) {
 
     }
+
     @FXML
     void AddAlert(ActionEvent event) {
         try {
@@ -116,9 +143,9 @@ public class HomeFXMLController implements Initializable {
         CurrentUser.clearInstance();
         RessorcesManager.delete("loggedUser.bin");
         try {
-            Parent parent =FXMLLoader.load(getClass().getResource("/Views/UI/LoginInterface.fxml"));
-            Stage stage=(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            Scene scene=new Scene(parent);
+            Parent parent = FXMLLoader.load(getClass().getResource("/Views/UI/LoginInterface.fxml"));
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            Scene scene = new Scene(parent);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
@@ -130,9 +157,91 @@ public class HomeFXMLController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            userServices=UserServices.getInstance();
+            userServices = UserServices.getInstance();
+            if(CurrentUser.getInstance().getCurrentUser().getRole().equals(Roles.Externe))
+            {
+                Extern extern=(Extern)CurrentUser.getInstance().getCurrentUser();
+                profileNameAndLastName.setText(extern.getEntrepriseName());
+            }else {
+                Espritien espritien=(Espritien) CurrentUser.getInstance().getCurrentUser();
+                profileNameAndLastName.setText(espritien.getFirstName()+" "+espritien.getLastName());
+            }
+
+            switch (CurrentUser.getInstance().getCurrentUser().getRole()) {
+                case Club:
+                    postAddItem.setVisible(true);
+                    eventAddItem.setVisible(true);
+                    break;
+                case Professeur:
+                    postAddItem.setVisible(true);
+                    alertAddItem.setVisible(true);
+                    forumAddItem.setVisible(true);
+                    break;
+                case Etudiant:
+                    postAddItem.setVisible(true);
+                    forumAddItem.setVisible(true);
+                    break;
+                case Externe:
+                    offreAddItem.setVisible(true);
+
+                    break;
+            }
         } catch (SQLException exception) {
             exception.printStackTrace();
+        }
+    }
+
+    public void AddOffer(ActionEvent actionEvent) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/Views/Windows/AddOffer.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void AddForum(ActionEvent actionEvent) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/Views/Windows/AddForumWindow.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void AddEvent(ActionEvent actionEvent) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/Views/Windows/AddEvent.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void AddPost(ActionEvent actionEvent) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/Views/Windows/AddPost.fxml"));
+            System.out.println(parent);
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 }

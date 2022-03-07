@@ -1,13 +1,16 @@
 package Controllers.Posts;
 
+import java.net.URL;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.ResourceBundle;
 
 import Modules.Post;
 import Services.PostServices;
 import Utils.Enums.Categories;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
@@ -15,7 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-public class AddPostController {
+public class AddPostController implements Initializable {
 
     @FXML
     private TextArea ContentAlert;
@@ -68,5 +71,10 @@ public class AddPostController {
             alert.setContentText("Merci de mettre un titre ou une description valide à l'alerte");
             alert.show();
         }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        System.out.println("in "+location);
     }
 }
