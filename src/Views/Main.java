@@ -1,5 +1,6 @@
 package Views;
 
+import Modules.User;
 import Services.UserServices;
 import Utils.CurrentUser;
 import Utils.Enums.Roles;
@@ -57,6 +58,8 @@ public class Main extends Application {
             UserServices userServices = UserServices.getInstance();
             UserSerializableData data = (UserSerializableData) RessorcesManager.load("loggedUser.bin");
             CurrentUser.setInstance(userServices.retrive(data.userId));
+            User user=CurrentUser.getInstance().getCurrentUser();
+            System.out.println(user);
             return true;
 
         } catch (FileNotFoundException e) {

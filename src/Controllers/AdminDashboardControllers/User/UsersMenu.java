@@ -4,10 +4,15 @@ import Controllers.Interfaces.BanUserListener;
 import Controllers.Interfaces.DeleteListener;
 import Modules.User;
 import Services.UserServices;
+import Utils.Enums.Roles;
 import Utils.Enums.State;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
@@ -19,6 +24,10 @@ import java.util.ResourceBundle;
 public class UsersMenu implements Initializable {
     @FXML
     public GridPane usersGrid;
+    @FXML
+    public ComboBox roleSelector;
+    @FXML
+    public TextField searchBar;
 
     private List<User> userList;
 
@@ -83,5 +92,49 @@ public class UsersMenu implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         bind(userServices.getList());
+        roleSelector.getItems().addAll(new String[]{"Show All","Show Admins","Show Students","Show Clubs","Show Professors","Show Externals"});
+        roleSelector.getSelectionModel().selectFirst();
+    }
+
+    public void onSelection(ActionEvent actionEvent) {
+        List list = userServices.getList();
+        switch ((String) roleSelector.getValue()){
+            case "Show All":
+                System.out.println("all");
+                bind(userServices.getList());
+                break;
+            case "Show Admins":
+                System.out.println("admins");
+                bind(userServices.filtreByRole(Roles.Admin));
+                break;
+            case "Show Students":
+                System.out.println("students");
+                bind(userServices.filtreByRole(Roles.Etudiant));
+                break;
+            case "Show Clubs":
+                System.out.println("clubs");
+                bind(userServices.filtreByRole(Roles.Club));
+                break;
+            case "Show Professors":
+                System.out.println("profs");
+                bind(userServices.filtreByRole(Roles.Professeur));
+                break;
+            case "Show Externals":
+                System.out.println("externals");
+                bind(userServices.filtreByRole(Roles.Externe));
+                break;
+        }
+    }
+
+    public void onUserSearched(KeyEvent keyEvent) {
+        String text = searchBar.getText();
+        System.out.println(text);
+        List list = userServices.getList();
+        List listFiltred = userServices.searchByName(text);
+        if (text == "")
+            bind(userServices.getList());
+        System.out.println(list+"|*****************************************|\n" +
+                listFiltred);
+        bind(listFiltred);
     }
 }

@@ -149,7 +149,7 @@ public class AnnouncementService implements IServices<Annoucement> {
 
     public List<Annoucement> filterAlertBySubject(String subjectAnn, List<Annoucement> annoucements){
         return annoucements.stream()
-                .filter(comparator -> comparator.getSubjectAnn().startsWith(subjectAnn))
+                .filter(comparator -> comparator.getSubjectAnn().toLowerCase().startsWith(subjectAnn.toLowerCase()))
                 .collect(Collectors.toList());
     }
     public List<Annoucement> filterAlertByDestination(Roles role, List<Annoucement> annoucements){
