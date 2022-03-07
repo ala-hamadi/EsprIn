@@ -1,6 +1,5 @@
 package Controllers;
 
-import Modules.Espritien;
 import Modules.User;
 import Services.UserServices;
 import Utils.CurrentUser;
@@ -12,14 +11,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -27,10 +24,10 @@ import java.util.ResourceBundle;
 
 public class LoginInterface implements Initializable {
 
-    @FXML
-    public Label registerNowBtn;
+
     @FXML
     public AnchorPane loginInterface;
+    public Hyperlink registerNow;
     @FXML
     private TextField emailAdresse;
     @FXML
@@ -53,7 +50,7 @@ public class LoginInterface implements Initializable {
     void onLogin(ActionEvent event) {
         if (emailAdresse.getText().matches("[a-z A-Z]+[/.][a-z]+(@esprit.tn)") && (password.getText().length() > 3)) {
             User user = userServices.login(emailAdresse.getText(), password.getText());
-
+            System.out.println(user);
             if (user != null) {
                 CurrentUser.setInstance(user);
                 userServices.changeState(user, State.Connected);
@@ -88,7 +85,7 @@ public class LoginInterface implements Initializable {
 
     }
 
-    public void redirect(String url) {
+    private void redirect(String url) {
         try {
             Parent parent = FXMLLoader.load(getClass().getResource(url));
             Stage stage = (Stage) emailAdresse.getScene().getWindow();
@@ -99,5 +96,9 @@ public class LoginInterface implements Initializable {
             e.printStackTrace();
         }
 
+    }
+
+    public void onRegister(ActionEvent actionEvent) {
+        redirect("/Views/UI/RegisterInterface.fxml");
     }
 }

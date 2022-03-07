@@ -13,7 +13,7 @@
             <AnchorPane prefHeight="1080.0" prefWidth="532.0" stylesheets="@../Style/LoginStyle.css" BorderPane.alignment="CENTER">
                <children>
                   <VBox prefHeight="200.0" prefWidth="100.0" />
-                  <VBox alignment="TOP_CENTER" layoutX="-75.0" layoutY="136.0" spacing="60.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <VBox alignment="TOP_CENTER" layoutX="-75.0" layoutY="136.0" spacing="45.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -54,7 +54,7 @@
                               <PasswordField fx:id="password" />
                            </children>
                         </VBox>
-                        <Button mnemonicParsing="false" onAction="#onLogin" prefHeight="34.0" prefWidth="392.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-text-fill: white; -fx-background-color: E22D1C;" text="LOGIN">
+                        <Button mnemonicParsing="false" onAction="#onLogin" prefHeight="34.0" prefWidth="392.0" styleClass="btn" text="LOGIN">
                            <VBox.margin>
                               <Insets top="60.0" />
                            </VBox.margin>
@@ -69,11 +69,11 @@
                                     <Font name="Lato Regular" size="19.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="registerNowBtn" text="Register now " textFill="#c90e0e">
+                              <Hyperlink fx:id="registerNow" onAction="#onRegister" text="Register now " textFill="#cd2727">
                                  <font>
-                                    <Font name="Lato Regular" size="19.0" />
+                                    <Font name="Lato Regular" size="20.0" />
                                  </font>
-                              </Label>
+                              </Hyperlink>
                            </children>
                         </VBox>
                      </children>

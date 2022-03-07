@@ -6,6 +6,7 @@ import Utils.BdConnection;
 import Utils.CurrentUser;
 import Utils.Enums.*;
 import Utils.Structure.Classe;
+import javafx.scene.control.Alert;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -59,12 +60,15 @@ public class UserServices implements IServices<User> {
                 case Club:
                     final Club club = (Club) user;
                     query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`) VALUES ('" + club.getCinUser() + "', '" + club.getEmail() + "', '" + club.getPasswd() + "', current_timestamp(), '" + club.getImgUrl() + "', '" + club.getFirstName() + "', '" + club.getLastName() + "', NULL, NULL, '" + club.getTypeClub() + "', NULL, NULL, NULL, '" + club.getRole() + "');";
+                    System.out.println(statement.executeUpdate(query) + " Row inserted");
                     break;
                 default:
                     System.out.println("Error,Role not defined");
             }
         } catch (SQLException exception) {
             System.out.println(exception.getMessage());
+            Alert alert=new Alert(Alert.AlertType.ERROR,"Account Already exists");
+            alert.show();
         }
     }
 
@@ -307,6 +311,24 @@ public class UserServices implements IServices<User> {
     public List<Espritien> searchByFirstName(String name) {
         return this.getList().stream().map(u -> (Espritien) u)
                 .filter(u -> u.getFirstName().contains(name)).collect(Collectors.toList());
+    }
+    public List<User> searchByName(String name) {
+        return this.getList().stream().map(u -> {
+            if (u.getRole().equals(Roles.Externe))
+                return (Extern)u;
+            else
+           return  (Espritien) u;
+        })
+                .filter(u -> {
+                    if (u.getRole().equals(Roles.Externe)) {
+                        Extern extern=(Extern)u;
+                        return extern.getEntrepriseName().toLowerCase().startsWith(name.toLowerCase());
+                    }
+                    else {
+                        Espritien espritien=(Espritien)u;
+                        return espritien.getFirstName().toLowerCase().startsWith(name.toLowerCase());
+                    }
+                }).collect(Collectors.toList());
     }
 
     public List<User> sortById() {
