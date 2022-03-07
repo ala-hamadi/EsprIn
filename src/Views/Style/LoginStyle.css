@@ -1,0 +1,63 @@
+.text-field{
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
+    -fx-font-size: 21px;
+    -fx-border-width: 0px;
+}
+.text-field:focused{
+
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, #9f0505, 10, 0.5, 0.0, 0.0);
+    -fx-border-width: 0px;
+    -fx-background-color: white;
+    -fx-font-size: 21px;
+    -fx-border-radius: 0px;
+}
+.combo-box{
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-text-fill:#9f0505 ;
+    -fx-font-size: 18px;
+    -fx-font-family: Lato;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
+}
+.combo-box-base:hover ,.combo-box-base:focused{
+    -fx-effect: dropshadow(gaussian, #9f0505, 10, 0.5, 0.0, 0.0);
+}
+.combo-box .list-view{
+    -fx-background-color: #9f0505;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-family: Lato;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover
+{
+    -fx-background-color: #9f0505;
+    -fx-text-fill: white;
+}
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover
+{
+    -fx-background: black;
+    -fx-background-color: #580101;
+    -fx-text-fill: white;
+}
+.btn{
+    -fx-background-radius: 10px;
+    -fx-border-radius:10px;
+    -fx-text-fill:white;
+    -fx-background-color:#E22D1C;
+    -fx-font-family: "Lato Black";
+    -fx-font-size: 22px;
+
+}
+.btn:pressed{
+    -fx-background-radius: 10px;
+    -fx-border-radius:10px;
+    -fx-text-fill:white;
+    -fx-background-color: #80150b;
+
+}
