@@ -1,0 +1,26 @@
+
+#ParticipateBtn{
+    -fx-background-radius:10;
+    -fx-border-radius: 10;
+    -fx-background-color: #bf0404;
+    -fx-text-fill: white;
+}
+
+
+#ParticipateBtn:hover{
+    -fx-background-radius:10;
+    -fx-border-radius: 10;
+    -fx-background-color:  #ff000085;
+    -fx-border-color: #bf0404;
+    -fx-text-fill: white;
+
+}
+
+#ParticipateBtn:pressed {
+    -fx-background-radius:10;
+    -fx-border-radius: 10;
+    -fx-background-color: #bf0404;
+    -fx-border-color: #bf0404;
+    -fx-text-fill: white;
+
+}

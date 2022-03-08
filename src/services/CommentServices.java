@@ -1,4 +1,4 @@
-package services;
+package Services;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,13 +7,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import Modules.CommentPost;
 import Utils.BdConnection;
-import model.CommentPost;
 
 public class CommentServices implements ICommentServices<CommentPost> {
   private Connection connection;
 
-  public CommentServices() {
+  public CommentServices() throws SQLException{
     BdConnection connect = BdConnection.getInstance();
     this.connection = connect.cnx;
   }

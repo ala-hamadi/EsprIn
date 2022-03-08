@@ -1,4 +1,4 @@
-package services;
+package Services;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,16 +10,20 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import Modules.CommentPost;
+import Modules.LikePost;
+import Modules.Post;
 import Utils.BdConnection;
 import Utils.Enums.Categories;
 import Utils.Enums.State;
-import model.Post;
 
 public class PostServices implements IPostServices<Post> {
 
     private Connection connection;
 
-    public PostServices() {
+
+
+    public PostServices() throws SQLException{
         BdConnection connect = BdConnection.getInstance();
         this.connection = connect.cnx;
     }
@@ -32,7 +36,7 @@ public class PostServices implements IPostServices<Post> {
             String query = "";
             query =
                     "INSERT INTO `post`( `content`, `mediaURL`, `createdAt`, `categorie`, `idOwer`) VALUES ('" + post.getContent() + "', '" + post.getMediaURL()
-                            + "', current_timestamp(), '" + post.getCategories() + "', '" + post.getCreatedBy()
+                            + "', current_timestamp(), '" + post.getCategories() + "', '" + post.getIdOwner()
                             + "');";
             int x = std.executeUpdate(query);
             System.out.println(x + " Row inserted");
@@ -88,9 +92,9 @@ public class PostServices implements IPostServices<Post> {
             String query = "SELECT * FROM `post`";
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
-                if (resultSet.getString("state").equals(State.Active.name())) {
+                if (resultSet.getString("state").equals(State.Deleted.name())) {
                     Post post = new Post(resultSet.getInt("idPost"), resultSet.getString("content"), resultSet.getString("mediaURL"),
-                            resultSet.getInt("likeNum"), resultSet.getDate("createdAt"), resultSet.getString("idOwer"),
+                            resultSet.getInt("likeNum"), resultSet.getDate("createdAt"), resultSet.getInt("idOwer"),
                             Categories.valueOf(resultSet.getString("categorie")));
                     posts.add(post);
                 }
@@ -112,7 +116,7 @@ public class PostServices implements IPostServices<Post> {
             resultSet.next();
 
             Post post = new Post(resultSet.getInt("idPost"), resultSet.getString("content"), resultSet.getString("mediaURL"),
-                    resultSet.getInt("likeNum"), resultSet.getDate("createdAt"), resultSet.getString("createdBy"),
+                    resultSet.getInt("likeNum"), resultSet.getDate("createdAt"), resultSet.getInt("createdBy"),
                     Categories.valueOf(resultSet.getString("categorie")));
 
             return post;

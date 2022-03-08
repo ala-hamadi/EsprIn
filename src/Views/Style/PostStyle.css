@@ -1,0 +1,76 @@
+.Btn{
+    -fx-background-color:  #ffccbc;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-text-fill: #9f0505;
+}
+
+.Btn:hover{
+    -fx-border-color: #853030;
+    -fx-background-color: #ffccbc;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-text-fill: #9f0505;
+}
+#exitBtn:pressed {
+    -fx-background-color: #9f0505;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-text-fill: white;
+}
+
+#CommentBtn{
+    -fx-background-radius:10;
+    -fx-border-radius: 10;
+    -fx-background-color:  #0000ff85;
+    -fx-text-fill: white;
+
+}
+
+
+#CommentBtn:hover{
+    -fx-background-radius:10;
+    -fx-border-radius: 10;
+    -fx-background-color:  #0000ff85;
+    -fx-border-color: #0000ff;
+    -fx-text-fill: white;
+
+}
+
+#CommentBtn:pressed {
+    --fx-background-radius:10;
+    -fx-border-radius: 10;
+    -fx-background-color:  #0000ff;
+    -fx-border-color: #0000ff;
+    -fx-text-fill: white;
+
+}
+
+
+
+#LikeBtn{
+    -fx-background-radius:10;
+    -fx-border-radius: 10;
+    -fx-background-color: #ff000085;
+    -fx-text-fill: white;
+
+}
+
+
+#LikeBtn:hover{
+    -fx-background-radius:10;
+    -fx-border-radius: 10;
+    -fx-background-color:  #ff000085;
+    -fx-border-color: #ff0000;
+    -fx-text-fill: white;
+
+}
+
+#LikeBtn:pressed {
+    -fx-background-radius:10;
+    -fx-border-radius: 10;
+    -fx-background-color:  #ff0000;
+    -fx-border-color: #ff0000;
+    -fx-text-fill: white;
+
+}
