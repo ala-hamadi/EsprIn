@@ -5,6 +5,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
 
 <AnchorPane prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RegisterInterface">
    <children>
@@ -31,18 +32,18 @@
                               </Label>
                            </children>
                         </VBox>
-                        <GridPane alignment="CENTER" hgap="80.0" prefHeight="754.0" prefWidth="1299.0" vgap="30.0">
+                        <GridPane alignment="CENTER" hgap="80.0" prefHeight="751.0" prefWidth="1287.0" vgap="30.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="655.0" minWidth="10.0" prefWidth="650.0" />
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="693.0" minWidth="10.0" prefWidth="649.0" />
                           </columnConstraints>
                           <rowConstraints>
-                            <RowConstraints maxHeight="107.0" minHeight="10.0" prefHeight="107.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="140.0" minHeight="0.0" prefHeight="128.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="244.0" minHeight="10.0" prefHeight="132.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="123.0" minHeight="10.0" prefHeight="123.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="140.0" minHeight="0.0" prefHeight="95.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="244.0" minHeight="10.0" prefHeight="118.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="99.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="116.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
                               <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
@@ -121,7 +122,7 @@
                                     </ComboBox>
                                  </children>
                               </VBox>
-                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#onCreateUser" prefHeight="44.0" prefWidth="255.0" styleClass="btn" text="Create account" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#onCreateUser" prefHeight="44.0" prefWidth="255.0" styleClass="btn" text="Create account" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                               <VBox fx:id="domaineVBox" layoutX="10.0" layoutY="445.0" prefHeight="200.0" prefWidth="610.0" spacing="20.0" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <children>
                                     <Label text="Select your Domaine">
@@ -150,9 +151,9 @@
                                     </ComboBox>
                                  </children>
                               </VBox>
-                              <VBox fx:id="classVbox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0" visible="false" GridPane.rowIndex="4">
+                              <VBox fx:id="classVbox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="55.0" prefWidth="610.0" spacing="20.0" visible="false" GridPane.rowIndex="4">
                                  <children>
-                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                                    <HBox prefHeight="54.0" prefWidth="610.0" spacing="30.0">
                                        <children>
                                           <VBox>
                                              <children>
@@ -202,7 +203,36 @@
                                     </TextField>
                                  </children>
                               </VBox>
-                              <Button alignment="CENTER" layoutX="700.0" layoutY="562.0" mnemonicParsing="false" onAction="#backbtn" prefHeight="44.0" prefWidth="255.0" styleClass="btn" text="Back" GridPane.rowIndex="5" />
+                              <Button alignment="CENTER" layoutX="700.0" layoutY="562.0" mnemonicParsing="false" onAction="#backbtn" prefHeight="65.0" prefWidth="257.0" styleClass="btn" text="Back" GridPane.rowIndex="5" />
+                              <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="141.0" prefWidth="609.0" spacing="20.0">
+                                       <children>
+                                          <AnchorPane prefHeight="150.0" prefWidth="510.0">
+                                             <VBox.margin>
+                                                <Insets left="50.0" right="50.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <WebView fx:id="reCaptcha" disable="true" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="48.0" prefWidth="509.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <TextField fx:id="captchaResponse" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="404.0" />
+                                       </children>
+                                    </VBox>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#refreshCaptcha" style="-fx-background-color: transparent;" text="Button">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Images/update.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
                            </children>
                         </GridPane>
                      </children>

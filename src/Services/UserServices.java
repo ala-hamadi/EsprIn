@@ -32,8 +32,47 @@ public class UserServices implements IServices<User> {
     }
 
     @Override
-    public void add(User user) {
-        try {
+    public void add(User user)  {
+        try{
+            String query = "";
+            Statement statement = connection.createStatement();
+            switch (user.getRole()) {
+                case Admin:
+                    final Admin admin = (Admin) user;
+                    query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `departement`, `role`) VALUES ('" + user.getCinUser() + "', '" + user.getEmail() + "', '" + user.getPasswd() + "', current_timestamp(), '" + admin.getImgUrl() + "', '" + admin.getFirstName() + "', '" + admin.getLastName() + "', '" + admin.getDepartment() + "', '" + admin.getRole() + "');";
+                    System.out.println(statement.executeUpdate(query) + " Row inserted");
+                    break;
+                case Etudiant:
+                    final Student student = (Student) user;
+                    query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`) VALUES ('" + student.getCinUser() + "', '" + student.getEmail() + "', '" + student.getPasswd() + "', current_timestamp(), '" + student.getImgUrl() + "', '" + student.getFirstName() + "', '" + student.getLastName() + "', '" + student.getDomaine() + "', NULL, NULL, '" + student.getClasse().toString() + "', NULL, NULL, '" + student.getRole() + "');";
+                    System.out.println(statement.executeUpdate(query) + " Row inserted");
+                    break;
+                case Professeur:
+                    final Professor professor = (Professor) user;
+                    query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`) VALUES ('" + professor.getCinUser() + "', '" + professor.getEmail() + "', '" + professor.getPasswd() + "', current_timestamp(), '" + professor.getImgUrl() + "', '" + professor.getFirstName() + "', '" + professor.getLastName() + "', '" + professor.getDomaine() + "', NULL, NULL, NULL, NULL, NULL, '" + professor.getRole() + "');";
+                    System.out.println(statement.executeUpdate(query) + " Row inserted");
+                    break;
+                case Externe:
+                    final Extern extern = (Extern) user;
+                    query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`) VALUES ('" + extern.getCinUser() + "', '" + extern.getEmail() + "', '" + extern.getPasswd() + "', current_timestamp(), '" + extern.getImgUrl() + "', NULL, NULL, NULL, NULL, NULL, NULL, '" + extern.getAdresse() + "', '" + extern.getEntrepriseName() + "', '" + extern.getRole() + "');";
+                    System.out.println(statement.executeUpdate(query) + " Row inserted");
+                    break;
+                case Club:
+                    final Club club = (Club) user;
+                    query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`) VALUES ('" + club.getCinUser() + "', '" + club.getEmail() + "', '" + club.getPasswd() + "', current_timestamp(), '" + club.getImgUrl() + "', '" + club.getFirstName() + "', '" + club.getLastName() + "', NULL, NULL, '" + club.getTypeClub() + "', NULL, NULL, NULL, '" + club.getRole() + "');";
+                    System.out.println(statement.executeUpdate(query) + " Row inserted");
+                    break;
+                default:
+                    System.out.println("Error,Role not defined");
+            }} catch (SQLException exception) {
+            System.out.println(exception.getMessage());
+            Alert alert=new Alert(Alert.AlertType.ERROR,"Account Already exists");
+            alert.show();
+        }
+
+    }
+    public boolean addAndcheck(User user)  {
+        try{
             String query = "";
             Statement statement = connection.createStatement();
             switch (user.getRole()) {
@@ -65,11 +104,13 @@ public class UserServices implements IServices<User> {
                 default:
                     System.out.println("Error,Role not defined");
             }
-        } catch (SQLException exception) {
+        return true;} catch (SQLException exception) {
             System.out.println(exception.getMessage());
             Alert alert=new Alert(Alert.AlertType.ERROR,"Account Already exists");
             alert.show();
+            return false;
         }
+
     }
 
     @Override
