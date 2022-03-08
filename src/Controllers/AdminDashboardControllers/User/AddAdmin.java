@@ -88,20 +88,22 @@ public class AddAdmin implements Initializable {
                         , department.getValue()
                 );
 
-                userServices.add(admin);
-                String text=Mailing.generateText(admin);
-                Mailing.sendMail(admin.getEmail(),text,"Registration for EsprIN");
-                try {
-                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    stage.close();
-                } catch (Exception exception) {
-                    System.out.println(exception.getMessage());
-                }
-            }
-            else{
-                Alert alert=new Alert(Alert.AlertType.ERROR,"Cannot add Admin") ;
-                alert.show();
-            }
+               if (userServices.addAndcheck(admin)){
+                   String text=Mailing.generateText(admin);
+                   Mailing.sendMail(admin.getEmail(),text,"Registration for EsprIN");
+                   try {
+                       Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                       stage.close();
+                   } catch (Exception exception) {
+                       System.out.println(exception.getMessage());
+                   }
+               }
+               else{
+                   Alert alert=new Alert(Alert.AlertType.ERROR,"Cannot add Admin") ;
+                   alert.show();
+               }
+               }
+
         } catch (SQLException exception) {
             exception.printStackTrace();
         } catch (Exception exception) {

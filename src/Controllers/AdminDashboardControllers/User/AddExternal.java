@@ -72,20 +72,21 @@ public class AddExternal {
                         , entepriseName.getText()
                         ,entrepriseAdresse.getText()
                         );
-                userServices.add(extern);
-                String text= Mailing.generateText(extern);
-                Mailing.sendMail(extern.getEmail(),text,"Registration for EsprIN");
-                try {
-                    Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                    stage.close();
-                } catch (Exception exception) {
-                    System.out.println(exception.getMessage());
+                if(userServices.addAndcheck(extern)) {
+                    String text= Mailing.generateText(extern);
+                    Mailing.sendMail(extern.getEmail(),text,"Registration for EsprIN");
+                    try {
+                        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                        stage.close();
+                    } catch (Exception exception) {
+                        System.out.println(exception.getMessage());
+                    }
                 }
-            }
-            else{
-                Alert alert=new Alert(Alert.AlertType.ERROR,"Cannot add Extern") ;
-                alert.show();
-            }
+                else{
+                    Alert alert=new Alert(Alert.AlertType.ERROR,"Cannot add Extern") ;
+                    alert.show();
+                }
+                }
         } catch (SQLException exception) {
             exception.printStackTrace();
         } catch (Exception exception) {

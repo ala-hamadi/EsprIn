@@ -10,5 +10,7 @@
     <orderEntry type="library" name="mysql:mysql-connector-java:8.0.27" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="javax.mail" level="project" />
+    <orderEntry type="library" name="javax.json:javax.json-api:1.1.4" level="project" />
+    <orderEntry type="library" name="recaptcha4j-0.0.7" level="project" />
   </component>
 </module>
