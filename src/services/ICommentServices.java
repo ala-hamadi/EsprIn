@@ -1,10 +1,10 @@
-package services;
+package Services;
 
 import java.util.List;
 
-import model.CommentPost;
+import Modules.CommentPost;
 
-public interface ICommentServices<T>{
+public interface ICommentServices <T>{
   public boolean addCommentToPost(T t);
   public boolean deleteCommentByPost(T t);
   public boolean updateCommentByPost(T t);

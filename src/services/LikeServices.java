@@ -1,18 +1,18 @@
-package services;
+package Services;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import Modules.LikePost;
 import Utils.BdConnection;
-import model.LikePost;
 
-public class LikeServices implements ILikeServices<LikePost> {
+public class LikeServices implements ILikeServices<LikePost>{
 
   private Connection connection;
 
-  public LikeServices() {
+  public LikeServices() throws SQLException {
     BdConnection connect = BdConnection.getInstance();
     this.connection = connect.cnx;
   }
@@ -23,6 +23,7 @@ public class LikeServices implements ILikeServices<LikePost> {
       String query1 =
           "INSERT INTO `like`(`likeUser`, `likePost`, `createdAt`) VALUES('" + idUser + "', '" + postId
                + "', current_timestamp());";
+
       int y = statement.executeUpdate(query1);
       System.out.println(y + " Like added");
       return true;

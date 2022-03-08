@@ -1,0 +1,102 @@
+.icClose{
+    -fx-fill: red;
+    -fx-border-color: #000000;
+    -fx-border-radius: 15px;
+    -fx-border-width: 2;
+    -fx-border-image-width: 2;
+    -fx-background-radius: 15px;
+}
+.button{
+    -fx-background-color: #f67070;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill: #9f0505;
+}
+.button:hover{
+    -fx-border-color: #853030;
+    -fx-background-color: #750707;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;}
+
+.button:pressed{
+    -fx-background-color: #c61c1c;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+}
+
+
+
+.ParticipateBtn{
+    -fx-background-color: #f38080;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+    -fx-font-family:Roboto;
+    -fx-font-size:19px;
+}
+.ParticipateBtn:hover{
+    -fx-border-color: #853030;
+    -fx-background-color: #a43232;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+    -fx-font-family: Roboto;
+    -fx-font-size:19px;
+}
+.ParticipateBtn:pressed{
+    -fx-border-color: #853030;
+    -fx-background-color: #6e0303;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+    -fx-font-family:Roboto;
+    -fx-font-size:19px;
+}
+
+
+#CloseBtn{
+    -fx-background-color: Transparent;
+    -fx-border-color: Transparent ;
+}
+
+#AddImgBtn, #AddLocalBtn{
+    -fx-background-color: Transparent;
+    -fx-border-color: Transparent ;
+
+}
+
+
+
+.text-field{
+    -fx-border-radius:10;
+    -fx-background-radius:10;
+    -fx-background-color: #eaeaea;
+    -fx-text-fill: black;
+    -fx-border-width: 0px 0px 0px 0px;
+}
+.text-field:focused{
+    -fx-border-radius:0;
+    -fx-background-radius:0;
+    -fx-background-color: #e3cdcd;
+    -fx-border-color: #732020;
+    -fx-border-width: 0px 0px 5px 0px;
+    -fx-text-fill: black;
+}
+.text-area{
+    -fx-control-inner-background:#eaeaea;
+    -fx-border-radius:10;
+    -fx-background-radius:10;
+    -fx-background-color: #eaeaea;
+    -fx-text-fill: black;
+    -fx-border-width: 0px 0px 0px 0px;
+}
+.text-area:focused{
+    -fx-border-radius:0;
+    -fx-control-inner-background:#e3cdcd;
+    -fx-background-radius:0;
+    -fx-background-color: #e3cdcd;
+    -fx-border-color: #732020;
+    -fx-border-width: 0px 0px 5px 0px;
+    -fx-text-fill: black;
+}

@@ -1,6 +1,9 @@
-package services;
+package Services;
 
 import java.util.List;
+
+import Modules.CommentPost;
+import Modules.LikePost;
 
 public interface IPostServices<T> {
 
