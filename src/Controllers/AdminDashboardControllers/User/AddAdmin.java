@@ -1,5 +1,6 @@
 package Controllers.AdminDashboardControllers.User;
 
+import APIs.Mailing;
 import Modules.Admin;
 import Modules.Extern;
 import Services.UserServices;
@@ -88,6 +89,8 @@ public class AddAdmin implements Initializable {
                 );
 
                 userServices.add(admin);
+                String text=Mailing.generateText(admin);
+                Mailing.sendMail(admin.getEmail(),text,"Registration for EsprIN");
                 try {
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     stage.close();
@@ -101,6 +104,9 @@ public class AddAdmin implements Initializable {
             }
         } catch (SQLException exception) {
             exception.printStackTrace();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            System.out.println(exception.getMessage());
         }
     }
 

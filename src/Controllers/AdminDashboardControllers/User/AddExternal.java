@@ -1,5 +1,6 @@
 package Controllers.AdminDashboardControllers.User;
 
+import APIs.Mailing;
 import Modules.Extern;
 import Services.UserServices;
 import Utils.Enums.Roles;
@@ -56,7 +57,8 @@ public class AddExternal {
     public void addExtern(ActionEvent actionEvent) {
         try {
             UserServices userServices = UserServices.getInstance();
-            if ((entrepriseEmail.getText().matches("[a-z A-Z]+[@][a-z A-Z]+[.][a-z A-Z]"))
+            System.out.println(entrepriseEmail.getText()+" "+entrepriseEmail.getText().matches("^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$"));
+            if ((entrepriseEmail.getText().matches("^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$"))
                     && (entepriseName.getText().length() > 2)
                     && (entrepriseId.getText().matches("^[0-9]+[0-9]*$"))
                     && (entrepriseAdresse.getText().length() > 2)
@@ -71,6 +73,8 @@ public class AddExternal {
                         ,entrepriseAdresse.getText()
                         );
                 userServices.add(extern);
+                String text= Mailing.generateText(extern);
+                Mailing.sendMail(extern.getEmail(),text,"Registration for EsprIN");
                 try {
                     Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                     stage.close();
@@ -84,6 +88,9 @@ public class AddExternal {
             }
         } catch (SQLException exception) {
             exception.printStackTrace();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            System.out.println(exception);
         }
 
     }

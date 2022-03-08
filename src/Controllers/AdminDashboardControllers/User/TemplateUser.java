@@ -57,7 +57,7 @@ public class TemplateUser {
         else {
             Extern extern=(Extern)user;
             this.userFirstName.setText(extern.getEntrepriseName());
-            this.userLastName.setText("");
+            this.userLastName.setText(extern.getAdresse());
         }
         this.userRole.setText(user.getRole().name());
         this.userCreationDate.setText(user.getCreatedAt().toString());
