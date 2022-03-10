@@ -13,7 +13,7 @@
 
 <AnchorPane style="-fx-border-radius: 15; -fx-border-color: grey; -fx-background-radius: 15; -fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Forum.ForumCell">
    <children>
-      <VBox layoutX="10.0" layoutY="10.0" prefHeight="314.0" prefWidth="902.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox layoutX="10.0" layoutY="10.0" onMouseClicked="#viewDetail" prefHeight="314.0" prefWidth="902.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label fx:id="forumTitle" text="Forum title">
                <padding>

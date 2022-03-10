@@ -97,7 +97,15 @@ public class HomeFXMLController{
         }
     }
 
+    public HomeFXMLController() {
 
+    }
 
+    public StackPane getContent() {
+        return content;
+    }
 
+    public void setContent(StackPane content) {
+        this.content = content;
+    }
 }
