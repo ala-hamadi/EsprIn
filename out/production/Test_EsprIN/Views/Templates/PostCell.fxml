@@ -62,6 +62,28 @@
                               <Insets left="10.0" right="10.0" />
                            </padding>
                         </Label>
+                        <HBox alignment="CENTER" prefHeight="66.0" prefWidth="55.0">
+                           <children>
+                             <Button fx:id="ModBtn1" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#ModifyPost" prefHeight="38.0" prefWidth="107.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="Btn">
+                               <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                   <image>
+                                     <Image url="@../Images/edit.png" />
+                                   </image>
+                                 </ImageView>
+                               </graphic>
+                             </Button>
+                             <Button fx:id="DeleteBtn1" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#DeletePost" prefHeight="38.0" prefWidth="107.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="Btn">
+                               <graphic>
+                                 <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                   <image>
+                                     <Image url="@../Images/delete.png" />
+                                   </image>
+                                 </ImageView>
+                               </graphic>
+                             </Button>
+                           </children>
+                        </HBox>
                      </children>
                   </HBox>
                </right>
@@ -95,7 +117,7 @@
                      <graphic>
                         <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="file:/C:/Users/HP/Desktop/pidev/EsprIn-/src/Views/Images/heart_50px.png" />
+                              <Image url="@../Images/heartBlack.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -110,7 +132,7 @@
                      <graphic>
                         <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="file:/C:/Users/HP/Desktop/pidev/EsprIn-/src/Views/Images/comments_50px.png" />
+                             <Image url="@../Images/comments_50px.png" />
                            </image>
                         </ImageView>
                      </graphic>

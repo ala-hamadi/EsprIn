@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 
 import Modules.Post;
 import Services.PostServices;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,6 +23,9 @@ public class PostMenuController implements Initializable {
   @FXML
   private ListView<Node> eventListView;
   private List<Post> postList;
+
+
+
 
   public PostMenuController() throws SQLException {
     PostServices postServices = null;
@@ -54,5 +58,120 @@ public class PostMenuController implements Initializable {
       System.out.println(e.getMessage());
     }
   }
+
+  @FXML
+  void all(ActionEvent event) throws SQLException {
+    PostServices postServices=new PostServices();
+    postList=postServices.getListPosts();
+    eventListView.getItems().clear();
+    try {
+      for (int i = 0; i < postList.size(); i++) {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/Views/Templates/PostCell.fxml"));
+        AnchorPane anchorPane = fxmlLoader.load();
+        PostListViewCell itemController = fxmlLoader.getController();
+        itemController.setData(postList.get(i));
+        eventListView.getItems().add(anchorPane);
+      }
+    } catch (Exception e) {
+      System.out.println(e.getMessage());
+    }
+  }
+
+  @FXML
+  void covoiturage(ActionEvent event) throws SQLException {
+    PostServices postServices=new PostServices();
+    postList=postServices.filterPostByCategory("Covoiturage",postList);
+    eventListView.getItems().clear();
+    try {
+      for (int i = 0; i < postList.size(); i++) {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/Views/Templates/PostCell.fxml"));
+        AnchorPane anchorPane = fxmlLoader.load();
+        PostListViewCell itemController = fxmlLoader.getController();
+        itemController.setData(postList.get(i));
+        eventListView.getItems().add(anchorPane);
+      }
+    } catch (Exception e) {
+      System.out.println(e.getMessage());
+    }
+  }
+
+  @FXML
+  void defaultPost(ActionEvent event) throws SQLException {
+    PostServices postServices=new PostServices();
+    postList=postServices.filterPostByCategory("Default",postList);
+    eventListView.getItems().clear();
+    try {
+      for (int i = 0; i < postList.size(); i++) {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/Views/Templates/PostCell.fxml"));
+        AnchorPane anchorPane = fxmlLoader.load();
+        PostListViewCell itemController = fxmlLoader.getController();
+        itemController.setData(postList.get(i));
+        eventListView.getItems().add(anchorPane);
+      }
+    } catch (Exception e) {
+      System.out.println(e.getMessage());
+    }
+  }
+
+  @FXML
+  void lostandfound(ActionEvent event) throws SQLException {
+    PostServices postServices=new PostServices();
+    postList=postServices.filterPostByCategory("Lost_and_found",postList);
+    eventListView.getItems().clear();
+    try {
+      for (int i = 0; i < postList.size(); i++) {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/Views/Templates/PostCell.fxml"));
+        AnchorPane anchorPane = fxmlLoader.load();
+        PostListViewCell itemController = fxmlLoader.getController();
+        itemController.setData(postList.get(i));
+        eventListView.getItems().add(anchorPane);
+      }
+    } catch (Exception e) {
+      System.out.println(e.getMessage());
+    }
+  }
+
+  @FXML
+  void meme(ActionEvent event) throws SQLException {
+    PostServices postServices=new PostServices();
+    postList=postServices.filterPostByCategory("Meme",postList);
+    eventListView.getItems().clear();
+    try {
+      for (int i = 0; i < postList.size(); i++) {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/Views/Templates/PostCell.fxml"));
+        AnchorPane anchorPane = fxmlLoader.load();
+        PostListViewCell itemController = fxmlLoader.getController();
+        itemController.setData(postList.get(i));
+        eventListView.getItems().add(anchorPane);
+      }
+    } catch (Exception e) {
+      System.out.println(e.getMessage());
+    }
+  }
+
+  @FXML
+  void suggestion(ActionEvent event) throws SQLException {
+    PostServices postServices=new PostServices();
+    postList=postServices.filterPostByCategory("Suggestion",postList);
+    eventListView.getItems().clear();
+    try {
+      for (int i = 0; i < postList.size(); i++) {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/Views/Templates/PostCell.fxml"));
+        AnchorPane anchorPane = fxmlLoader.load();
+        PostListViewCell itemController = fxmlLoader.getController();
+        itemController.setData(postList.get(i));
+        eventListView.getItems().add(anchorPane);
+      }
+    } catch (Exception e) {
+      System.out.println(e.getMessage());
+    }
+  }
+
 
 }

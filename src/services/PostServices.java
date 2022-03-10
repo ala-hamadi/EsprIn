@@ -15,6 +15,7 @@ import Modules.LikePost;
 import Modules.Post;
 import Utils.BdConnection;
 import Utils.Enums.Categories;
+import Utils.Enums.CategoryPost;
 import Utils.Enums.State;
 
 public class PostServices implements IPostServices<Post> {
@@ -92,10 +93,10 @@ public class PostServices implements IPostServices<Post> {
             String query = "SELECT * FROM `post`";
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
-                if (resultSet.getString("state").equals(State.Deleted.name())) {
+                if (resultSet.getString("state").equals(State.Active.name())) {
                     Post post = new Post(resultSet.getInt("idPost"), resultSet.getString("content"), resultSet.getString("mediaURL"),
                             resultSet.getInt("likeNum"), resultSet.getDate("createdAt"), resultSet.getInt("idOwer"),
-                            Categories.valueOf(resultSet.getString("categorie")));
+                            CategoryPost.valueOf(resultSet.getString("categorie")));
                     posts.add(post);
                 }
 
@@ -117,7 +118,7 @@ public class PostServices implements IPostServices<Post> {
 
             Post post = new Post(resultSet.getInt("idPost"), resultSet.getString("content"), resultSet.getString("mediaURL"),
                     resultSet.getInt("likeNum"), resultSet.getDate("createdAt"), resultSet.getInt("createdBy"),
-                    Categories.valueOf(resultSet.getString("categorie")));
+                    CategoryPost.valueOf(resultSet.getString("categorie")));
 
             return post;
 

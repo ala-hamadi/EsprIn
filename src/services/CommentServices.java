@@ -9,6 +9,7 @@ import java.util.List;
 
 import Modules.CommentPost;
 import Utils.BdConnection;
+import Utils.Enums.State;
 
 public class CommentServices implements ICommentServices<CommentPost> {
   private Connection connection;
@@ -24,7 +25,7 @@ public class CommentServices implements ICommentServices<CommentPost> {
       String query = "";
       query =
           "INSERT INTO `commented`(`userWhoCommented`, `postCommented`, `content`,`createdAt`) VALUES ('" + commentPost.getIdUser() + "', '"
-              + commentPost.getIdPost() + "', '" + commentPost.getContent() + "', current_timestamp());";
+              + commentPost.getIdPost() + "', '" + commentPost.getContent() + "', current_timestamp() );";
       int x = std.executeUpdate(query);
       System.out.println(x + " Row inserted");
       return true;
@@ -40,7 +41,7 @@ public class CommentServices implements ICommentServices<CommentPost> {
     try {
       Statement statement = connection.createStatement();
       String query =
-          "DELETE FROM `commented` WHERE `commented`.`postCommented` = " + commentPost.getIdPost() + " AND `liked post`.`userWhoCommented` = "
+          "UPDATE `commented` Set `state` = '" + State.Deleted + "' WHERE `commented`.`postCommented` = " + commentPost.getIdPost() + " AND `commented`.`userWhoCommented` = "
               + commentPost.getIdUser() + " AND `commented`.`createdAt` ='+"+commentPost.getCreatedAt()+"';";
       int x = statement.executeUpdate(query);
       System.out.println(x + " Row Deleted");
@@ -75,10 +76,12 @@ public class CommentServices implements ICommentServices<CommentPost> {
       String query = "SELECT * FROM `commented` WHERE `commented`.`postCommented`= " + idPost + ";";
       ResultSet resultSet = statement.executeQuery(query);
       while (resultSet.next()) {
+        if (resultSet.getString("state").equals(State.Active.name())){
+          CommentPost commentPost = new CommentPost(resultSet.getInt("userWhoCommented"), resultSet.getInt("postCommented"),
+              resultSet.getString("content"), resultSet.getTimestamp("createdAt"));
+          commentPosts.add(commentPost);
+        }
 
-        CommentPost commentPost = new CommentPost(resultSet.getString("userWhoCommented"), resultSet.getInt("postCommented"),
-            resultSet.getString("content"), resultSet.getDate("createdAt"));
-        commentPosts.add(commentPost);
       }
     } catch (SQLException exception) {
       exception.printStackTrace();

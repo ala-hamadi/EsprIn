@@ -21,7 +21,7 @@ public class OffreServices implements IServices<Offre> {
     private Connection connection;
     private static OffreServices instance;
 
-    private OffreServices() throws SQLException{
+    public OffreServices() throws SQLException{
         BdConnection connect = BdConnection.getInstance();
         this.connection = connect.cnx;
     }
@@ -55,7 +55,7 @@ public class OffreServices implements IServices<Offre> {
             Statement statement = connection.createStatement();
             String query = "UPDATE `offre` SET `state`='" + State.Deleted + "' WHERE `offre`.`IdOffer`=" + offre.getIdOffer() + ";";
             int x = statement.executeUpdate(query);
-            System.out.println(x + " row deleted");
+            return true;
         } catch (SQLException exception) {
             System.out.println(exception.getMessage());
         }

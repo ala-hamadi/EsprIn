@@ -1,20 +1,32 @@
 package Controllers.Posts;
 
+import Modules.CommentPost;
 import Modules.Espritien;
 import Modules.Post;
 import Modules.User;
+import Services.CommentServices;
 import Services.LikeServices;
+import Services.PostServices;
 import Services.UserServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PostListViewCell {
@@ -45,7 +57,8 @@ public class PostListViewCell {
 
     @FXML
     private Button CommentBtn;
-
+    @FXML
+    private Button ModBtn1;
     @FXML
     private Label CatPost;
 
@@ -54,16 +67,30 @@ public class PostListViewCell {
     private List<User> userList;
 
     private UserServices userServices;
-
+    @FXML
+    private Button DeleteBtn1;
     @FXML
     void Comment(ActionEvent event) {
-
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/Views/Windows/PostComments.fxml"));
+            Parent parent = fxmlLoader.load();
+            PostCommentsController postCommentsController = fxmlLoader.getController();
+            postCommentsController.setData(post);
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
 
 
-    public void setData(Post post){
+    public void setData(Post post) throws SQLException {
         this.post = post;
 
         try {
@@ -90,7 +117,13 @@ public class PostListViewCell {
         ContentPost.setText(post.getContent());
         CatPost.setText(post.getCategories().name());
         LikeBtn.setText(String.valueOf(post.getLikeNumber()));
-     //   CommentBtn.setText(String.valueOf(post.getCommentNumber()));
+        CommentServices commentServices=new CommentServices();
+        ArrayList<CommentPost> list= (ArrayList<CommentPost>) commentServices.getListCommentByPost(post.getIdPost());
+      CommentBtn.setText(String.valueOf(list.size()));
+        if(10000000!=post.getIdOwner()){
+            DeleteBtn1.setVisible(false);
+            ModBtn1.setVisible(false);
+        }
 
     }
 
@@ -103,16 +136,59 @@ public class PostListViewCell {
             userList = userServices.getList();
             LikeServices likeServices = new LikeServices();
             int idPost= (int) post.getIdPost();
+            if(likeServices.likeExists(idPost,11111111)==0){
+                likeServices.putLikeToPost(11111111,idPost);
+                LikeBtn.setText(String.valueOf(Integer.parseInt(LikeBtn.getText())+1));
 
-            likeServices.putLikeToPost(11111111,idPost);
+            }
+          else{
+                likeServices.putUnLikeToPost(11111111,idPost);
+                LikeBtn.setText(String.valueOf(Integer.parseInt(LikeBtn.getText())-1));
 
-            LikeBtn.setText(LikeBtn.getText()+1);
-
+            }
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
 
 
+    }
+
+    @FXML
+    void DeletePost(ActionEvent event) throws SQLException {
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/Views/Windows/DeletePost.fxml"));
+            Parent parent = fxmlLoader.load();
+            DeletePostController deletePostController = fxmlLoader.getController();
+            deletePostController.setData(post);
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    void ModifyPost(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/Views/Windows/ModifierPost.fxml"));
+            Parent parent = fxmlLoader.load();
+            EditPostController editPostController = fxmlLoader.getController();
+            editPostController.setData(post);
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
