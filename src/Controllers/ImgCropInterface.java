@@ -46,7 +46,7 @@ public class ImgCropInterface implements Initializable {
             UserServices userServices = UserServices.getInstance();
             CropImg.crop(idCircle.getBoundsInParent(), image, imageFile);
             CurrentUser.getInstance().getCurrentUser().setImgUrl(imageFile.getName());
-            userServices.update(CurrentUser.getInstance().getCurrentUser());
+            userServices.updateImg(CurrentUser.getInstance().getCurrentUser());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.close();
         } catch (Exception exception) {
