@@ -166,6 +166,18 @@ public class UserServices implements IServices<User> {
         }
         return false;
     }
+    public boolean updateImg(User user) {
+        try {
+            Statement statement = connection.createStatement();
+            String query = "UPDATE `user` SET `imgURL`='"+user.getImgUrl()+"' WHERE `cinUser`="+user.getCinUser()+";";
+            System.out.println(statement.executeUpdate(query) + " Row updated");
+
+            return true;
+        } catch (SQLException exception) {
+            System.out.println(exception.getMessage());
+        }
+        return false;
+    }
 
     @Override
     public List<User> getList() {

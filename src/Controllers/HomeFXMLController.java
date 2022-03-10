@@ -275,7 +275,9 @@ public class HomeFXMLController implements Initializable {
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
             stage.setScene(scene);
-            stage.initStyle(StageStyle.UNDECORATED);
+            stage.initStyle(StageStyle.DECORATED);
+            stage.sizeToScene();
+            stage.setResizable(false);
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
