@@ -1,7 +1,6 @@
 package Services;
 
 import Modules.Forum;
-import Services.IServices;
 import Utils.BdConnection;
 import Utils.Enums.State;
 
@@ -53,22 +52,25 @@ public class ForumService implements IServices<Forum> {
             ResultSet rs = stm.executeQuery(querry);
 
             while (rs.next()) {
-                Forum forum = new Forum();
-                forum.setIdForum(rs.getInt(1));
-                forum.setTitle(rs.getString("title"));
-                forum.setContent(rs.getString(4));
-                forum.setCategoryForum(rs.getString(6));
-                forum.setIdOwner(rs.getInt(5));
+                if(rs.getString("state").equals(State.Active.name())){
+                    Forum forum = new Forum();
+                    forum.setIdForum(rs.getInt("idForum"));
+                    forum.setCreatedAt(rs.getDate(2));
+                    forum.setTitle(rs.getString("title"));
+                    forum.setContent(rs.getString(4));
+                    forum.setCategoryForum(rs.getString(6));
+                    forum.setNbLikes(rs.getInt("nbrLikesForum"));
+                    forum.setIdOwner(rs.getInt(5));
+                    forums.add(forum);
+                }
 
-
-                forums.add(forum);
             }
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
 
         }
-
+        System.out.println(forums);
         return forums;
     }
 
@@ -90,7 +92,7 @@ public class ForumService implements IServices<Forum> {
     @Override
     public boolean delete(Forum p) {
         try {
-            String querry = "UPDATE `forum` set `state`= '"+ State.Deleted +"' WHERE `state`='" + p.getIdForum() + "'";
+            String querry = "UPDATE `forum` SET `state`= '"+ State.Deleted +"' WHERE `idForum`='" + p.getIdForum() + "'";
             Statement statement = connection.createStatement();
 
             statement.executeUpdate(querry);
@@ -103,10 +105,10 @@ public class ForumService implements IServices<Forum> {
     }
     public List<Forum> searchByTitle(String title) {
         return this.getList()
-            .stream()
-            .map(f -> (Forum) f)
-            .filter(f -> f.getTitle().contains(title))
-            .collect(Collectors.toList());
+                    .stream()
+                    .map(f -> (Forum) f)
+                    .filter(f -> f.getTitle().contains(title))
+                    .collect(Collectors.toList());
     }
     public List<Forum> sortForumByid(List<Forum> forums) {
         Collections.sort(forums, new Comparator<Forum>() {

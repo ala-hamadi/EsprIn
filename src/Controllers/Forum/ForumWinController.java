@@ -1,21 +1,18 @@
 package Controllers.Forum;
 
-import java.sql.SQLException;
-
 import Modules.Forum;
 import Services.ForumService;
+import Utils.CurrentUser;
 import Utils.Enums.State;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+
+import java.sql.SQLException;
 
 
 public class ForumWinController {
@@ -34,6 +31,8 @@ public class ForumWinController {
     private TextField forumtag;
 
     double x, y;
+
+
     @FXML
     void addForum(ActionEvent event) throws SQLException {
         ForumService forumService = ForumService.getInstance();
@@ -43,7 +42,7 @@ public class ForumWinController {
             alert.setContentText("Forum is not added !");
             alert.show();
         } else {
-            forumService.add(new Forum(1,forumTitle.getText(),forumContent.getText(),11111111,forumtag.getText(),State.Active));
+            forumService.add(new Forum(1,forumTitle.getText(),forumContent.getText(), (int) CurrentUser.getInstance().getCurrentUser().getCinUser(),forumtag.getText(),State.Active));
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
@@ -52,6 +51,7 @@ public class ForumWinController {
 
             forumTitle.setText("");
             forumContent.setText("");
+            forumtag.setText("");
         }
 
     }

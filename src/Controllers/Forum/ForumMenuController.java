@@ -1,11 +1,5 @@
 package Controllers.Forum;
 
-import java.io.IOException;
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
 
 import Modules.Forum;
 import Services.ForumService;
@@ -22,6 +16,14 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import javax.security.auth.login.LoginException;
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
 public class ForumMenuController implements Initializable {
     @FXML
     private ListView<Node> forumListView;
@@ -30,7 +32,10 @@ public class ForumMenuController implements Initializable {
     @FXML
     private Button AddForumBtn;
 
-    public ForumMenuController() throws SQLException {
+    public ForumMenuController() throws SQLException  {
+        /*JDA jda = (JDA) JDABuilder.createDefault("OTUwODg1ODA1MTEzNjEwMzEx.Yifbag.lwBKacElXb4VMkV0FzVZx6eufx8").build();
+        jda.addEventListener(new HelloEvent());*/
+
         ForumService forumService = ForumService.getInstance();
         forumObservableList = new ArrayList<Forum>();
         /*forumObservableList.add(new Forum(1,"title","descriptoon qdhq dqjhqshfjsqhf "));

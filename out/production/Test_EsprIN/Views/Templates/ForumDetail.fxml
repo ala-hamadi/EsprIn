@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1360.0" prefWidth="1059.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Forum.ForumDetail">
+   <children>
+      <AnchorPane layoutX="33.0" prefHeight="318.0" prefWidth="929.0" style="-fx-border-radius: 15; -fx-background-radius: 15; -fx-border-color: grey;" AnchorPane.topAnchor="26.0">
+         <children>
+            <VBox prefHeight="314.0" prefWidth="882.0" style="-fx-background-color: transparent;">
+               <children>
+                  <Label fx:id="fTitle" text="Forum title">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="90.0" prefWidth="947.0">
+                     <children>
+                        <Circle fx:id="OrgImage" fill="WHITE" radius="20.0" stroke="BLACK" strokeType="INSIDE">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="15.0" top="10.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <VBox prefHeight="80.0" prefWidth="251.0">
+                           <children>
+                              <Label fx:id="username1" prefHeight="22.0" prefWidth="93.0" text="username">
+                                 <padding>
+                                    <Insets right="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="fdate" prefHeight="7.0" prefWidth="93.0" text="username" textFill="#797979">
+                                 <padding>
+                                    <Insets right="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="15.0" top="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <Pane maxHeight="50.0" prefHeight="50.0" prefWidth="214.0" style="-fx-border-radius: 60; -fx-background-radius: 60; -fx-background-color: black;">
+                           <children>
+                              <Label fx:id="fcategory" layoutX="6.0" layoutY="12.0" text="Category" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="600.0" />
+                           </HBox.margin>
+                        </Pane>
+                     </children>
+                  </HBox>
+                  <Pane prefHeight="56.0" prefWidth="874.0">
+                     <children>
+                        <Text fx:id="fcontent" layoutY="-1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, " wrappingWidth="801.6">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <Pane prefHeight="75.0" prefWidth="600.0">
+                     <children>
+                        <Button fx:id="like" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#like" prefHeight="35.0" prefWidth="100.0" stylesheets="@../Style/FormsStyle.css">
+                           <graphic>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="17.0" fitWidth="17.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Images/heart.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="fnbLikes" layoutX="27.0" layoutY="-5.0" prefHeight="27.0" prefWidth="15.0" text="0">
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="forumTitle11" layoutX="48.0" layoutY="-5.0" prefHeight="12.0" prefWidth="34.0" text="Likes">
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="response" layoutX="136.0" layoutY="25.0" mnemonicParsing="false" onAction="#showResponse" styleClass="buttonR" stylesheets="@../Style/FormsStyle.css" text="Responded">
+                           <graphic>
+                              <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/comment.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <HBox layoutX="33.0" layoutY="379.0" prefHeight="50.0" prefWidth="946.0">
+         <children>
+            <TextField fx:id="content" prefHeight="40.0" prefWidth="814.0" promptText="Add response" styleClass="text-field">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Button fx:id="send" mnemonicParsing="false" onAction="#addResponse" styleClass="buttons" stylesheets="@../Style/FormsStyle.css" text="Send response">
+               <HBox.margin>
+                  <Insets left="25.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <AnchorPane layoutX="33.0" layoutY="473.0" prefHeight="872.0" prefWidth="930.0">
+         <children>
+            <ListView fx:id="responseList" layoutY="9.0" prefWidth="930.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

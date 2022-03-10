@@ -1,14 +1,14 @@
 package Modules;
 
-import java.sql.Date;
-
 import Utils.Enums.State;
+
+import java.sql.Date;
 
 public class Forum {
     private int idForum;
     private String title;
     private String content;
-    private Date createdAt;
+    private Date createdAt ;
     private String categoryForum;
     private int idOwner;
     private int nbLikes;
@@ -18,7 +18,12 @@ public class Forum {
 
     }
 
-    public Forum(int idForum, String title, String content, int idOwner,String categoryForum,State state) {
+    public Forum(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
+
+    public Forum(int idForum, String title, String content, int idOwner, String categoryForum, State state) {
         this.idForum = idForum;
         this.title = title;
         this.content = content;
@@ -104,11 +109,15 @@ public class Forum {
 
     @Override
     public String toString() {
-        return "Forum" +
+        return "Forum{" +
                 "idForum=" + idForum +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
+                ", createdAt=" + createdAt +
+                ", categoryForum='" + categoryForum + '\'' +
                 ", idOwner=" + idOwner +
-                '\n';
+                ", nbLikes=" + nbLikes +
+                ", state=" + state +
+                '}';
     }
 }

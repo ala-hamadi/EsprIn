@@ -1,8 +1,9 @@
 package Services;
 
 
+import Modules.Responded;
 import Utils.BdConnection;
-import Modules.*;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class RespondedService implements IServices<Responded> {
     private Connection connection;
-    public static RespondedService instance;
+    private static RespondedService instance;
 
     private RespondedService() throws SQLException {
         connection = BdConnection.getInstance().cnx;
@@ -65,11 +66,33 @@ public class RespondedService implements IServices<Responded> {
         return respondeds;
     }
 
+    public List<Responded> getListCommentByPost(int idForum) {
+        List<Responded> respondeds = new ArrayList<Responded>();
+        try {
+            Statement stm = connection.createStatement();
+            String querry = "SELECT * FROM `responded` WHERE `idForum`= " + idForum + ";";
+            ResultSet rs = stm.executeQuery(querry);
+            while (rs.next()) {
+                Responded responded = new Responded();
+                responded.setCinUser(rs.getInt(1));
+                responded.setIdForum(rs.getInt(2));
+                responded.setContent(rs.getString(3));
+                responded.setCreatedAt(rs.getTimestamp(4));
+
+                respondeds.add(responded);
+            }
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+            System.out.println(exception.getMessage());
+        }
+        return respondeds;
+    }
+
     @Override
     public boolean update(Responded p) {
 
         try {
-            String querry = "UPDATE `forum` SET `content`='" + p.getContent() + "' WHERE `cinUser`='" + p.getCinUser() + "' AND `idForum`='" + p.getIdForum() + "'AND `createdAt`='" + p.getCreatedAt()+ "'";
+            String querry = "UPDATE `responded` SET `content`='" + p.getContent() + "' WHERE `cinUser`='" + p.getCinUser() + "' AND `idForum`='" + p.getIdForum() + "'AND `createdAt`='" + p.getCreatedAt()+ "'";
             Statement statement = connection.createStatement();
 
             statement.executeUpdate(querry);

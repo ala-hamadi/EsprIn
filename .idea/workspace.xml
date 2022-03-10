@@ -14,19 +14,25 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Views" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Controllers.Forum" />
+      <recent name="Services" />
+      <recent name="Discord" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\alaha\Downloads\EsprIn-login-desktop\src\Controllers" />
-      <recent name="C:\Users\alaha\Downloads\EsprIn-login-desktop\src\Views\Style" />
-      <recent name="C:\Users\alaha\Downloads\EsprIn-login-desktop\src\Views\Windows" />
-      <recent name="C:\Users\alaha\Downloads\EsprIn-login-desktop\src\Views\UI" />
-      <recent name="C:\Users\alaha\Downloads\EsprIn-login-desktop\src\Views\Templates" />
+      <recent name="C:\Users\Mohamed Oueslati\Desktop\Files\Document\esprin\final\EsprIn-final-desktop\EsprIn-final-desktop\src\Views" />
+      <recent name="C:\Users\Mohamed Oueslati\Desktop\Files\Document\esprin\final\EsprIn-final-desktop\EsprIn-final-desktop\src\Views\Templates" />
+      <recent name="C:\Users\Mohamed Oueslati\Desktop\Files\Document\esprin\final\EsprIn-final-desktop\EsprIn-final-desktop\src\Views\Windows" />
+      <recent name="C:\Users\Mohamed Oueslati\Desktop\Files\Document\esprin\final\EsprIn-final-desktop\EsprIn-final-desktop\src\Services" />
+      <recent name="C:\Users\Mohamed Oueslati\Desktop\Files\Document\esprin\final\EsprIn-final-desktop\EsprIn-final-desktop\src\Modules" />
     </key>
   </component>
   <component name="RunManager">
@@ -39,6 +45,17 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -58,10 +75,33 @@
       <option name="presentableId" value="Default" />
       <updated>1646877394255</updated>
       <workItem from="1646877399035" duration="3029000" />
+      <workItem from="1646881899802" duration="1891000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2472" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1646882676361">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2472" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1646882676361" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1646883409387">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1646883409387" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1646883409387">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1646883409387" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1646883409387">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1646883409387" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1646883409387">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1646883409387" />
   </component>
 </project>
