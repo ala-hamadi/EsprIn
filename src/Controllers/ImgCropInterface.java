@@ -4,6 +4,7 @@ import Services.UserServices;
 import Utils.CropImg;
 import Utils.CurrentUser;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -13,8 +14,12 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ImgCropInterface {
+public class ImgCropInterface implements Initializable {
     public ImageView image;
     public Circle idCircle;
     public AnchorPane anchorPane;
@@ -56,5 +61,16 @@ public class ImgCropInterface {
     public void setImage(Image imageImported) {
        this.image.setImage(imageImported);
         System.out.println(image);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        try {
+            image.setImage(new Image(new FileInputStream(imageFile)));
+            System.out.println(image);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
     }
 }
