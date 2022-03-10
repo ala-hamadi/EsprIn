@@ -108,8 +108,15 @@ public class HomeFXMLController implements Initializable {
 
     @FXML
     void showEventMenu(ActionEvent event) {
-    }
+        try {
+            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/EventMenu.fxml"));
+            content.getChildren().removeAll();
+            content.getChildren().setAll(menu);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+    }
 
     @FXML
     void showSearchList(MouseEvent event) {
@@ -159,7 +166,28 @@ public class HomeFXMLController implements Initializable {
         }
     }
 
+    @FXML
+    void showOfferMenu(ActionEvent event) {
+        try {
+            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/Offer/OfferMenu.fxml"));
+            content.getChildren().removeAll();
+            content.getChildren().setAll(menu);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
+    @FXML
+    void showPostMenu(ActionEvent event) {
+        try {
+            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/Post/PostMenu.fxml"));
+            content.getChildren().removeAll();
+            content.getChildren().setAll(menu);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
@@ -275,9 +303,7 @@ public class HomeFXMLController implements Initializable {
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
             stage.setScene(scene);
-            stage.initStyle(StageStyle.DECORATED);
-            stage.sizeToScene();
-            stage.setResizable(false);
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();

@@ -10,7 +10,7 @@
     -fx-border-color: white;
 }
 .button:pressed{
-    -fx-text-fill:#EC3635;
+    -fx-text-fill: #ec3635;
     -fx-background-color:white ;
 }
 .button:selected{

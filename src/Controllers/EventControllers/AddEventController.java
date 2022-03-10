@@ -1,35 +1,53 @@
 package Controllers.EventControllers;
 
 
+import java.sql.Date;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import Modules.Event;
 import Services.EventServices;
+import Utils.CurrentUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.*;
-import javafx.scene.image.Image;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import java.io.File;
-import java.net.URL;
-import java.sql.Date;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
-
-public class AddEventController implements Initializable {
+public class AddEventController {
 
     @FXML
-    private Button AddEventBtn;
+    private Button AddEventBtn11;
+
+    @FXML
+    private ImageView AddImage;
+
+    @FXML
+    private Button AddImgBtn;
+
+    @FXML
+    private Button CloseBtn;
+
+    @FXML
+    private DatePicker EndDate;
+
+    @FXML
+    private TextArea EventLocation;
 
     @FXML
     private TextField EventTitle;
+
+    @FXML
+    private DatePicker StartDate;
 
     @FXML
     private Circle circle;
@@ -38,10 +56,7 @@ public class AddEventController implements Initializable {
     private TextArea contentEvent;
 
     @FXML
-    private DatePicker dateEvent;
-
-    @FXML
-    private ImageView image;
+    private ImageView imgAdd;
 
     @FXML
     private Label labAddEvent;
@@ -56,13 +71,16 @@ public class AddEventController implements Initializable {
     private Label labdate;
 
     @FXML
+    private Label labdate1;
+
+    @FXML
     private Label labimage;
 
     @FXML
-    private Pane pan1;
+    private Label labimage1;
 
     @FXML
-    private ImageView imgAdd;
+    private Pane pan1;
     String s;
 
 
@@ -106,20 +124,36 @@ public class AddEventController implements Initializable {
             } catch (SQLException exception) {
                 exception.printStackTrace();
             }
-            String date = String.valueOf(dateEvent.getValue());
-            Event ev= new Event(EventTitle.getText(),contentEvent.getText(),null, Date.valueOf(date), 10000000);
+            String Sdate = String.valueOf(StartDate.getValue());
+            String Edate = String.valueOf(EndDate.getValue());
+            Event ev= new Event(EventTitle.getText(),contentEvent.getText(), Date.valueOf(Sdate), Date.valueOf(Edate), EventLocation.getText(), CurrentUser
+                .getInstance().getCurrentUser().getCinUser());
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDateTime now = LocalDateTime.now();
+            String date= dtf.format(now);
+            String startDate= String.valueOf(Sdate);
+            String endDate= String.valueOf(Edate);
 
-            eventServices.add(ev);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success");
-            alert.setContentText("Event is added successfully!");
-            alert.show();
+            if ((startDate.compareTo(date)>=0)&&(endDate.compareTo(startDate)>=0)){
 
-            try {
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.close();
-            }catch (Exception exception){
-                System.out.println(exception.getMessage());
+                eventServices.add(ev);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success");
+                alert.setContentText("Event is added successfully!");
+                alert.show();
+                try {
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    stage.close();
+                }catch (Exception exception){
+                    System.out.println(exception.getMessage());
+                }
+
+            }else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Echeec");
+                alert.setContentText("date incorrect!");
+                alert.show();
             }
 
         }else {
@@ -132,8 +166,6 @@ public class AddEventController implements Initializable {
     }
 
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("entred");
-    }
+
+
 }

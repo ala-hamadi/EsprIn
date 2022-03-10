@@ -23,7 +23,7 @@
                <children>
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="753.0" layoutY="22.0" onMouseClicked="#closeWindow" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Icons/closewindow.png" />
+                        <Image url="@../Images/closewindow.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="81.0" layoutY="20.0" text="Add a Announcement" textFill="WHITE">
@@ -33,7 +33,7 @@
                   </Label>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="35.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Icons/Announce.png" />
+                        <Image url="@../Images/Announce.png" />
                      </image>
                   </ImageView>
                </children>

@@ -2,68 +2,126 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<FlowPane prefHeight="693.0" prefWidth="800.0" stylesheets="@../Style/FormsStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Posts.AddPostController">
-    <children>
-        <BorderPane layoutX="189.0" layoutY="100.0" prefHeight="694.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <top>
-                <Pane onMouseDragged="#mouseDragged" onMousePressed="#mousePressed" prefHeight="62.0" prefWidth="600.0" style="-fx-background-color: C10006;" BorderPane.alignment="CENTER">
-                    <children>
-                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="753.0" layoutY="22.0" onMouseClicked="#closeWindow" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../Icons/closewindow.png" />
-                            </image>
-                        </ImageView>
-                        <Label layoutX="81.0" layoutY="20.0" text="Faire un post" textFill="WHITE">
-                            <font>
-                                <Font name="Lato Black" size="18.0" />
-                            </font>
-                        </Label>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="35.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../Icons/Announce.png" />
-                            </image>
-                        </ImageView>
-                    </children>
-                </Pane>
-            </top>
-            <center>
-                <ScrollPane prefHeight="587.0" prefWidth="800.0" BorderPane.alignment="CENTER">
-                    <content>
-                        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="776.0" spacing="30.0">
-                            <children>
-                                <Label layoutX="40.0" layoutY="40.0" text="Content" textFill="#4d4d4d">
-                                    <font>
-                                        <Font name="Lato Black" size="18.0" />
-                                    </font>
-                                </Label>
-                                <TextArea fx:id="ContentAlert" prefHeight="200.0" prefWidth="442.0" promptText="Content">
-                                    <font>
-                                        <Font size="16.0" />
-                                    </font></TextArea>
-                                  <Button alignment="CENTER" defaultButton="true" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#AddPost" prefHeight="32.0" prefWidth="96.0" text="publier" textAlignment="CENTER">
-                                      <font>
-                                          <Font name="Lato Black" size="16.0" />
-                                      </font>
-                                  </Button>
-                            </children>
-                            <padding>
-                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-                            </padding>
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../Style/FormsStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Posts.AddPostController">
+   <children>
+      <Pane prefHeight="80.0" prefWidth="800.0" style="-fx-background-color: #E00203;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="labAddOffer" layoutX="119.0" layoutY="18.0" text="Add New Post" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Bold" size="30.0" />
+               </font>
+            </Label>
+            <Circle fx:id="circle" fill="WHITE" layoutX="72.0" layoutY="40.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+            <Button fx:id="CloseBtn" layoutX="734.0" layoutY="22.0" mnemonicParsing="false" onAction="#CloseWindow" prefHeight="25.0" stylesheets="@../Style/AddEventCSS.css">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/closewindow.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="-14.0" layoutY="130.0" prefHeight="520.0" prefWidth="800.0" style="-fx-background-color: #F0E9E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <Pane style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+               <children>
+                  <VBox prefHeight="480.0" prefWidth="760.0">
+                     <children>
+                        <VBox prefHeight="118.0" prefWidth="760.0">
+                           <children>
+                              <Label fx:id="labDescription" prefHeight="57.0" prefWidth="760.0" text="Description*" textFill="#9f9a9a">
+                                 <font>
+                                    <Font name="Roboto Bold" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="40.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
                         </VBox>
-                    </content></ScrollPane>
-            </center>
-        </BorderPane>
-    </children>
-</FlowPane>
+                        <VBox prefHeight="214.0" prefWidth="760.0">
+                           <children>
+                              <TextField fx:id="contentPost" prefHeight="134.0" prefWidth="699.0" promptText="Content..." style="-fx-background-radius: 15;">
+                                 <VBox.margin>
+                                    <Insets left="30.0" right="30.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="150.0" prefWidth="760.0">
+                           <children>
+                              <Label fx:id="labdate" prefHeight="40.0" prefWidth="760.0" text="Post Categorie*" textFill="#9f9a9a">
+                                 <font>
+                                    <Font name="Roboto Bold" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="40.0" />
+                                 </padding>
+                              </Label>
+                              <ChoiceBox fx:id="catPost" prefHeight="26.0" prefWidth="212.0">
+                                 <VBox.margin>
+                                    <Insets left="35.0" />
+                                 </VBox.margin>
+                              </ChoiceBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="labimage" prefHeight="56.0" prefWidth="760.0" text="Add Image*" textFill="#9f9a9a">
+                                 <font>
+                                    <Font name="Roboto Bold" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="40.0" />
+                                 </padding>
+                              </Label>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Pane fx:id="pan1" prefHeight="90.0" prefWidth="110.0" style="-fx-background-color: #F0E9E9;">
+                                       <HBox.margin>
+                                          <Insets left="40.0" right="10.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <ImageView fx:id="image" fitHeight="27.0" fitWidth="35.0" layoutX="42.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Images/image_file_add_24px.png" />
+                                             </image></ImageView>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </HBox>
+                              <Pane prefHeight="49.0" prefWidth="760.0">
+                                 <children>
+                                    <Button fx:id="AddPostBtn" layoutX="641.0" layoutY="-1.0" mnemonicParsing="false" onAction="#AddPost" prefHeight="30.0" prefWidth="98.0" stylesheets="@../Style/DashboardStyle.css" text="Add" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

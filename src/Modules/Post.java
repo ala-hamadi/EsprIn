@@ -2,7 +2,7 @@ package Modules;
 
 import java.util.Date;
 
-import Utils.Enums.Categories;
+import Utils.Enums.CategoryPost;
 import Utils.Enums.State;
 
 public class Post {
@@ -10,11 +10,17 @@ public class Post {
     private String content;
     private String mediaURL;
     private int likeNumber;
+    private int CommentNumber;
     private Date createdAt;
-    private String createdBy;
-    private Categories categories;
+    private int idOwner;
+    private CategoryPost categories;
     private State state;
 
+    public int getCommentNumber() { return CommentNumber; }
+
+    public void setCommentNumber(int commentNumber) { CommentNumber = commentNumber; }
+
+    public void setState(State state) { this.state = state; }
 
     public long getIdPost() {
         return idPost;
@@ -56,19 +62,19 @@ public class Post {
         this.createdAt = createdAt;
     }
 
-    public String getCreatedBy() {
-        return createdBy;
+    public int getIdOwner() {
+        return idOwner;
     }
 
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
+    public void setIdOwner(int createdBy) {
+        this.idOwner = idOwner;
     }
 
-    public Categories getCategories() {
+    public CategoryPost getCategories() {
         return categories;
     }
 
-    public void setCategories(Categories categories) {
+    public void setCategories(CategoryPost categories) {
         this.categories = categories;
     }
 
@@ -80,13 +86,13 @@ public class Post {
         this.state = status;
     }
 
-    public Post(int idPost, String content, String mediaURL, int likeNumber, Date createdAt, String createdBy, Categories categories) {
+    public Post(int idPost, String content, String mediaURL, int likeNumber, Date createdAt, int idOwner, CategoryPost categories) {
         this.idPost = idPost;
         this.content = content;
         this.mediaURL = mediaURL;
         this.likeNumber = likeNumber;
         this.createdAt = createdAt;
-        this.createdBy = createdBy;
+        this.idOwner = idOwner;
         this.categories = categories;
     }
 
@@ -98,7 +104,7 @@ public class Post {
                 ", mediaURL='" + mediaURL + '\'' +
                 ", likeNumber=" + likeNumber +
                 ", createdAt=" + createdAt +
-                ", createdBy=" + createdBy +
+                ", idOwner=" + idOwner +
                 ", categories=" + categories +
                 '}';
     }

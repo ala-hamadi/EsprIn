@@ -77,8 +77,6 @@
     -fx-faint-focus-color: #531010;
     -fx-control-inner-background: #732020;
     -fx-selection-bar: #531010;
-    -fx-prompt-text-fill: white;
-    -fx-font-size: 18px;
 }
 .choice-box .menu-item:focused .label{
     -fx-text-fill: white;

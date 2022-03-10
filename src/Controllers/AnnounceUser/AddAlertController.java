@@ -1,37 +1,50 @@
 package Controllers.AnnounceUser;
 
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 import Modules.AlertProf;
 import Services.AlertProfServices;
+import Utils.CurrentUser;
 import Utils.Structure.Classe;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-
 public class AddAlertController {
+
+
+    @FXML
+    private TextField TitleAlert;
 
     @FXML
     private TextArea ContentAlert;
 
     @FXML
-    private TextArea Destination;
-    double x, y;
+    private TextArea niveau;
+
     @FXML
-    public void mouseDragged(javafx.scene.input.MouseEvent mouseEvent) {
+    private TextArea specialite;
+
+    @FXML
+    private TextArea numclass;
+    double x, y;
+
+    @FXML
+    public void mouseDragged(MouseEvent mouseEvent) {
         Stage stage = (Stage) ((Pane) mouseEvent.getSource()).getScene().getWindow();
         stage.setX(mouseEvent.getScreenX() - x);
         stage.setY(mouseEvent.getScreenY() - y);
     }
     @FXML
-    public void mousePressed(javafx.scene.input.MouseEvent mouseEvent) {
+    public void mousePressed(MouseEvent mouseEvent) {
         x = mouseEvent.getSceneX();
         y = mouseEvent.getSceneY();
     }
@@ -49,7 +62,7 @@ public class AddAlertController {
 
 
     public void AddAlert(javafx.event.ActionEvent event) {
-        if ((ContentAlert.getText().length()>2) && (Destination.getText().length()>2)){
+        if ((ContentAlert.getText().length()>2) && (niveau.getText()!="")&&(specialite.getText()!="")&&(numclass.getText()!="")){
             AlertProfServices alertProfServices = null;
             try {
                 alertProfServices = AlertProfServices.getInstance();
@@ -57,8 +70,11 @@ public class AddAlertController {
                 exception.printStackTrace();
             }
             Classe classe1=new Classe();
-            classe1.setSpecialite(Destination.getText());
-            AlertProf alertProf1 =new AlertProf(2,ContentAlert.getText(),classe1,11111111, Timestamp.valueOf(LocalDateTime.now()));
+            classe1.setNiveau(Integer.parseInt(niveau.getText()));
+            classe1.setSpecialite(specialite.getText());
+            classe1.setNumclass(Integer.parseInt(numclass.getText()));
+
+            AlertProf alertProf1 =new AlertProf(TitleAlert.getText(), ContentAlert.getText(),classe1, CurrentUser.getInstance().getCurrentUser().getCinUser(), Timestamp.valueOf(LocalDateTime.now()));
             alertProfServices.add(alertProf1);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");

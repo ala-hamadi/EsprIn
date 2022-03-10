@@ -11,9 +11,9 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" style="-fx-border-color: #7e7e7e; -fx-border-radius: 15; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Offers.OfferCell">
+<AnchorPane fx:id="pane" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Offers.OfferCell">
     <children>
-        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: #7e7e7e;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="10.0">
             <children>
                 <HBox prefWidth="200.0">
                     <children>
@@ -22,7 +22,7 @@
                                 <Insets bottom="10.0" left="15.0" top="10.0" />
                             </HBox.margin>
                         </Circle>
-                        <Label fx:id="OrgName" text="OfferProvider">
+                        <Label fx:id="ProvName" text="OfferProvider">
                             <padding>
                                 <Insets right="10.0" />
                             </padding>
@@ -33,6 +33,24 @@
                                 <Insets bottom="10.0" left="20.0" top="10.0" />
                             </HBox.margin>
                         </Label>
+                    <Button fx:id="DeleteBtn1" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#DeleteOffer" prefHeight="38.0" prefWidth="0.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="Btn">
+                        <graphic>
+                            <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../Images/delete.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="ModBtn1" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#ModifyOffer" prefHeight="38.0" prefWidth="0.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="Btn">
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../Images/edit.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
                     </children>
                 </HBox>
                 <Label fx:id="TitleOffer" text="Title">
@@ -48,7 +66,7 @@
                 </Label>
                 <ImageView fx:id="imageOffer" fitHeight="279.0" fitWidth="340.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../../../../Nouveau dossier (2)/Testjava/src/Views/Images/Vikings.png" />
+                        <Image url="file:/C:/Users/HP/Desktop/pidev/EsprIn-/src/Views/Images/Opp.jpg" />
                     </image>
                     <VBox.margin>
                         <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
@@ -73,7 +91,7 @@
                         <Insets bottom="5.0" left="200.0" right="2.0" top="5.0" />
                     </VBox.margin>
                 </Label>
-                <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#OfferParticiate" prefHeight="17.0" prefWidth="136.0" styleClass="ParticipateBtn" stylesheets="@../Style/DashbordStyle.css" text="Interested">
+                <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#offerinterested" prefHeight="17.0" prefWidth="136.0" styleClass="ParticipateBtn" stylesheets="@../Style/DashbordStyle.css" text="Interested">
                     <VBox.margin>
                         <Insets bottom="10.0" left="10.0" top="10.0" />
                     </VBox.margin>

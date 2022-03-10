@@ -2,17 +2,20 @@ package Modules;
 
 import java.util.Date;
 
+import Utils.Enums.State;
+
 public class CommentPost {
-  private String idUser;
+  private int idUser;
   private int idPost;
   private String content;
   private Date createdAt;
+  private State state;
 
-  public String getIdUser() {
+  public int getIdUser() {
     return idUser;
   }
 
-  public void setIdUser(String idUser) {
+  public void setIdUser(int idUser) {
     this.idUser = idUser;
   }
 
@@ -40,13 +43,27 @@ public class CommentPost {
     this.createdAt = createdAt;
   }
 
-  public CommentPost(String idUser, int idPost, String content, Date createdAt) {
+  public State getState() {
+    return state;
+  }
+
+  public void setState(State state) {
+    this.state = state;
+  }
+
+  public CommentPost(int idUser, int idPost, String content, Date createdAt, State state) {
+    this.idUser = idUser;
+    this.idPost = idPost;
+    this.content = content;
+    this.createdAt = createdAt;
+    this.state = state;
+  }
+  public CommentPost(int idUser, int idPost, String content, Date createdAt) {
     this.idUser = idUser;
     this.idPost = idPost;
     this.content = content;
     this.createdAt = createdAt;
   }
-
   @Override
   public String toString() {
     return "CommentPost{" +

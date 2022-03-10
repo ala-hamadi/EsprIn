@@ -1,14 +1,13 @@
 package Controllers.EventControllers;
 
-import Modules.Event;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.control.ListView;
-
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import Modules.Event;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ListView;
 
 public class ParticipateListController  implements Initializable {
     @FXML

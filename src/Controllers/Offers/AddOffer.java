@@ -1,18 +1,27 @@
 package Controllers.Offers;
 
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+
+import Modules.Offre;
 import Services.OffreServices;
+import Utils.CurrentUser;
+import Utils.Enums.OffreCategorie;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
-
-import java.net.URL;
-import java.util.ResourceBundle;
+import javafx.stage.Stage;
 
 public class AddOffer implements Initializable {
 
@@ -23,7 +32,7 @@ public class AddOffer implements Initializable {
     private TextField OfferTitle;
 
     @FXML
-    private ComboBox<?> categorie;
+    private ChoiceBox<OffreCategorie> catOffre;
 
     @FXML
     private Circle circle;
@@ -52,11 +61,56 @@ public class AddOffer implements Initializable {
     @FXML
     private Pane pan1;
 
+
     private OffreServices offreServices;
+    private OffreCategorie[] categories = OffreCategorie.values();
 
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
+    public void closeWindow(MouseEvent mouseEvent) {
+        try {
+            Stage stage = (Stage) ((ImageView) mouseEvent.getSource()).getScene().getWindow();
+            stage.close();
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
+        }
     }
+
+
+
+        @Override
+    public void initialize(URL location, ResourceBundle resources) {
+            catOffre.getItems().addAll(categories);
+            catOffre.setValue(categories[0]);
+    }
+
+
+    public void createOffre(ActionEvent actionEvent) {
+        if ((OfferTitle.getText() != null) && (contentOffer.getText() != null) ) {
+            try {
+                offreServices = OffreServices.getInstance();
+            } catch (SQLException exception) {
+                exception.printStackTrace();
+            }
+
+
+            Offre offre = new Offre(OfferTitle.getText(), contentOffer.getText(), catOffre.getValue(), CurrentUser.getInstance().getCurrentUser().getCinUser());
+            offreServices.add(offre);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setContentText("Offer is added successfully!");
+            alert.show();
+
+            try {
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.close();
+            } catch (Exception exception) {
+                System.out.println(exception.getMessage());
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur");
+            alert.setContentText("Merci de mettre un titre ou une description valide de Offre");
+            alert.show();
+        }
+    }
+
 }

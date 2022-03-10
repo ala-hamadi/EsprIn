@@ -1,69 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" style="-fx-border-color: #7e7e7e; -fx-border-radius: 15; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Posts.PostListViewCell">
+<AnchorPane fx:id="pane" prefWidth="600.0" stylesheets="@../Style/PostStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Posts.PostListViewCell">
     <children>
-        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox alignment="CENTER" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: #7e7e7e;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="10.0">
             <children>
-                <HBox prefWidth="200.0">
-                    <children>
-                        <Circle fx:id="OrgImage" fill="WHITE" radius="20.0" stroke="BLACK" strokeType="INSIDE">
-                            <HBox.margin>
-                                <Insets bottom="10.0" left="15.0" top="10.0" />
-                            </HBox.margin>
-                        </Circle>
-                        <Label fx:id="TitleAnn" text="Announce Subject">
-                            <padding>
-                                <Insets right="10.0" />
-                            </padding>
-                            <font>
-                                <Font name="System Bold" size="19.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets bottom="10.0" left="20.0" top="10.0" />
-                            </HBox.margin>
+            <BorderPane>
+               <left>
+                      <HBox alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
+                          <children>
+                              <Circle fx:id="OrgImage" fill="WHITE" radius="20.0" stroke="BLACK" strokeType="INSIDE">
+                                  <HBox.margin>
+                                      <Insets bottom="10.0" left="15.0" top="10.0" />
+                                  </HBox.margin>
+                              </Circle>
+                        <VBox>
+                           <children>
+                                    <Label fx:id="UserName" text="User Name">
+                                        <padding>
+                                            <Insets left="5.0" right="10.0" top="15.0" />
+                                        </padding>
+                                        <font>
+                                            <Font name="System Bold" size="19.0" />
+                                        </font>
+                                    </Label>
+                                  <Label fx:id="CreatedAt" text="Date">
+                                      <font>
+                                          <Font size="15.0" />
+                                      </font>
+                                      <VBox.margin>
+                                          <Insets left="20.0" />
+                                      </VBox.margin>
+                                  </Label>
+                           </children>
+                        </VBox>
+                          </children>
+                      </HBox>
+               </left>
+               <right>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="66.0" BorderPane.alignment="CENTER_RIGHT">
+                     <children>
+                        <Label fx:id="CatPost" prefHeight="30.0" style="-fx-background-color: red; -fx-background-radius: 15; -fx-border-radius: 15;" text="Category" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
                         </Label>
-                    </children>
-                </HBox>
-                <Label fx:id="DestAn" text="Destination">
-                    <padding>
-                        <Insets top="10.0" />
-                    </padding>
-                    <font>
-                        <Font name="System Bold" size="18.0" />
-                    </font>
-                    <VBox.margin>
-                        <Insets bottom="10.0" left="30.0" top="10.0" />
-                    </VBox.margin>
-                </Label>
-                <ImageView fx:id="imageEvent" fitHeight="279.0" fitWidth="340.0" pickOnBounds="true" preserveRatio="true">
+                        <HBox alignment="CENTER" prefHeight="66.0" prefWidth="55.0">
+                           <children>
+                             <Button fx:id="ModBtn1" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#ModifyPost" prefHeight="38.0" prefWidth="107.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="Btn">
+                               <graphic>
+                                 <ImageView fitHeight="20.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                   <image>
+                                     <Image url="@../Images/edit.png" />
+                                   </image>
+                                 </ImageView>
+                               </graphic>
+                             </Button>
+                             <Button fx:id="DeleteBtn1" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#DeletePost" prefHeight="38.0" prefWidth="107.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="Btn">
+                               <graphic>
+                                 <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                   <image>
+                                     <Image url="@../Images/delete.png" />
+                                   </image>
+                                 </ImageView>
+                               </graphic>
+                             </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </right>
+            </BorderPane>
+                <ImageView fx:id="imagePost" fitHeight="279.0" fitWidth="340.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../../../test%20eya/src/view/Images/Logo_ESPRIT_Ariana.png" />
+                        <Image url="@../Images/1640986411845-_1_.png" />
                     </image>
                     <VBox.margin>
                         <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
                     </VBox.margin>
                 </ImageView>
-                <Label fx:id="ContentAnn" text="Content..." wrapText="true">
-                    <padding>
-                        <Insets left="10.0" right="10.0" />
-                    </padding>
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                    <VBox.margin>
-                        <Insets left="10.0" right="10.0" top="10.0" />
-                    </VBox.margin>
-                </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                      <Label fx:id="ContentPost" text="Content..." wrapText="true">
+                          <padding>
+                              <Insets left="10.0" right="10.0" />
+                          </padding>
+                          <font>
+                              <Font size="16.0" />
+                          </font>
+                      </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="200.0">
+               <children>
+                  <Button fx:id="LikeBtn" mnemonicParsing="false" onAction="#Like" prefHeight="30.0" prefWidth="120.0" text="Like" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/heartBlack.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="CommentBtn" mnemonicParsing="false" onAction="#Comment" prefHeight="30.0" prefWidth="120.0" text="Comment" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                             <Image url="@../Images/comments_50px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
             </children>
         </VBox>
     </children>

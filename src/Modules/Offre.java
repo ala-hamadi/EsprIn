@@ -20,6 +20,13 @@ public class Offre {
         this.imgOffre = imgOffre;
     }
 
+    public Offre( String titleOffer, String descOffer, OffreCategorie category, long offerProvider) {
+       this.offerProvider = offerProvider;
+        this.category = category;
+        this.titleOffer = titleOffer;
+        this.descOffer = descOffer;
+    }
+
     public Offre(int idOffre, String titleOffer, String descOffer, OffreCategorie category, long offerProvider,State state, String imgOffre) {
         this.state=state;
         this.idOffre = idOffre;
@@ -28,6 +35,14 @@ public class Offre {
         this.titleOffer = titleOffer;
         this.descOffer = descOffer;
         this.imgOffre = imgOffre;
+    }
+
+    public int getIdOffre() {
+        return idOffre;
+    }
+
+    public void setIdOffre(int idOffre) {
+        this.idOffre = idOffre;
     }
 
     public OffreCategorie getCategory() {

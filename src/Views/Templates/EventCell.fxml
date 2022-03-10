@@ -6,17 +6,17 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" prefWidth="400.0" style="-fx-border-color: #7e7e7e; -fx-border-radius: 15; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EventControllers.EventListViewCell">
-
-    <children>
-        <VBox alignment="CENTER" prefWidth="400.0" style="-fx-background-radius: 15; -fx-border-radius: 15;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
-            <children>
-                <HBox prefWidth="200.0">
+<AnchorPane prefWidth="600.0" stylesheets="@../Style/EventStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EventControllers.EventListViewCell">
+   <children>
+      <BorderPane prefWidth="400.0" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="10.0">
+         <top>
+                <HBox prefWidth="200.0" BorderPane.alignment="CENTER">
                     <children>
                         <Circle fx:id="OrgImage" fill="WHITE" radius="20.0" stroke="BLACK" strokeType="INSIDE">
                             <HBox.margin>
@@ -34,66 +34,135 @@
                                 <Insets bottom="10.0" left="20.0" top="10.0" />
                             </HBox.margin>
                         </Label>
+                 <Button fx:id="ModBtn1" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#ModifyEvent" prefHeight="38.0" prefWidth="41.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="Btn">
+                   <graphic>
+                     <ImageView fitHeight="20.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                         <Image url="@../Images/edit.png" />
+                       </image>
+                     </ImageView>
+                   </graphic>
+                 </Button>
+                 <Button fx:id="DeleteBtn1" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#DeleteEvent" prefHeight="38.0" prefWidth="24.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="Btn">
+                   <graphic>
+                     <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                         <Image url="@../Images/delete.png" />
+                       </image>
+                     </ImageView>
+                   </graphic>
+                 </Button>
                     </children>
                 </HBox>
-            <HBox alignment="CENTER_LEFT">
-               <children>
-                      <Label fx:id="TitleEvent" text="Title">
-                          <padding>
-                              <Insets bottom="5.0" left="10.0" top="5.0" />
-                          </padding>
-                          <font>
-                              <Font name="System Bold" size="20.0" />
-                          </font>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                      </Label>
-               </children>
-            </HBox>
-                <ImageView fx:id="imageEvent" fitHeight="279.0" fitWidth="340.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Icons/Vikings.png" />
-                    </image>
-                    <VBox.margin>
-                        <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
-                    </VBox.margin>
-                </ImageView>
-            <HBox prefWidth="400.0">
-               <children>
-                      <Label fx:id="ContentEvent" text="Conteent..." wrapText="true">
-                          <padding>
+         </top>
+         <center>
+              <VBox alignment="CENTER" prefWidth="400.0" style="-fx-background-radius: 15; -fx-border-radius: 15;" BorderPane.alignment="CENTER">
+                  <children>
+                  <AnchorPane>
+                     <children>
+                            <Label fx:id="TitleEvent" text="Title" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="0.0">
+                                <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                </padding>
+                                <font>
+                                    <Font name="System Bold" size="20.0" />
+                                </font>
+                            </Label>
+                        <HBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fitHeight="22.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/marker_48px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="Localisation" text="Localisation">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+                      <ImageView fx:id="imageEvent" fitHeight="279.0" fitWidth="340.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../Images/Vikings.png" />
+                          </image>
+                          <VBox.margin>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+                          </VBox.margin>
+                      </ImageView>
+                  <HBox prefWidth="400.0">
+                     <children>
+                            <Label fx:id="ContentEvent" text="Conteent..." wrapText="true">
+                                <padding>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                </padding>
+                                <font>
+                                    <Font size="20.0" />
+                                </font>
+                           <HBox.margin>
+                              <Insets left="30.0" right="30.0" />
+                           </HBox.margin>
+                            </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                            <Label fx:id="StartDate" text="StartDate">
+                                <font>
+                                    <Font size="23.0" />
+                                </font>
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
+                           </HBox.margin>
+                           <padding>
                               <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                          </padding>
-                          <font>
-                              <Font size="20.0" />
-                          </font>
-                      </Label>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_RIGHT">
+                           </padding>
+                            </Label>
+                        <Label fx:id="EndDate" text="EndDate">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  </children>
+              </VBox>
+         </center>
+         <bottom>
+            <HBox alignment="CENTER_RIGHT" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                      <Label fx:id="DateEvent" text="DateEvent">
-                          <font>
-                              <Font size="24.0" />
-                          </font>
+                      <Button fx:id="ParticipateBtn" graphicTextGap="15.0" mnemonicParsing="false" onAction="#EventParticipate" prefHeight="40.0" styleClass="ParticipateBtn" text="Participate" textFill="WHITE">
                      <HBox.margin>
-                        <Insets right="20.0" />
+                        <Insets bottom="10.0" right="30.0" top="10.0" />
                      </HBox.margin>
+                     <graphic>
+                        <Label fx:id="ParticipateNb" text="0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
                      <padding>
-                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                        <Insets left="20.0" right="20.0" />
                      </padding>
-                      </Label>
+                  </Button>
                </children>
             </HBox>
-            <HBox prefWidth="200.0">
-               <children>
-                      <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#EventParticiate" prefHeight="17.0" prefWidth="136.0" styleClass="ParticipateBtn" stylesheets="@../Style/DashboardStyle.css" text="Participate" />
-               </children>
-            </HBox>
-            </children>
-        </VBox>
-    </children>
-
-
+         </bottom>
+      </BorderPane>
+   </children>
 </AnchorPane>

@@ -26,7 +26,6 @@ public class CropImg {
         parameters.setViewport(new Rectangle2D(bounds.getMinX(), bounds.getMinY(), width, height));
         WritableImage wi = new WritableImage(width, height);
         image.snapshot(parameters, wi);
-        System.out.println(image.snapshot(parameters, wi));
         BufferedImage bufImageARGB = SwingFXUtils.fromFXImage(wi, null);
         BufferedImage bufImageRGB = new BufferedImage(bufImageARGB.getWidth(), bufImageARGB.getHeight(), BufferedImage.OPAQUE);
         Graphics2D graphics = bufImageRGB.createGraphics();
@@ -34,11 +33,12 @@ public class CropImg {
 
         try {
 
-            ImageIO.write(bufImageRGB, "jpg", new File("/Img/",imageFile.getName()));
+            ImageIO.write(bufImageRGB, "jpg", new File("/Img/"+imageFile.getName()));
 
             System.out.println("Image saved ");
 
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println(e.getMessage());
         }
 

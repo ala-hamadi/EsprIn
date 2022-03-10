@@ -15,6 +15,7 @@ import Modules.LikePost;
 import Modules.Post;
 import Utils.BdConnection;
 import Utils.Enums.Categories;
+import Utils.Enums.CategoryPost;
 import Utils.Enums.State;
 
 public class PostServices implements IPostServices<Post> {
@@ -35,9 +36,9 @@ public class PostServices implements IPostServices<Post> {
             Statement std = connection.createStatement();
             String query = "";
             query =
-                    "INSERT INTO `post`( `content`, `mediaURL`, `createdAt`, `categorie`, `idOwer`) VALUES ('" + post.getContent() + "', '" + post.getMediaURL()
-                            + "', current_timestamp(), '" + post.getCategories() + "', '" + post.getCreatedBy()
-                            + "');";
+                "INSERT INTO `post`( `content`, `mediaURL`, `createdAt`, `categorie`, `idOwer`) VALUES ('" + post.getContent() + "', '" + post.getMediaURL()
+                    + "', current_timestamp(), '" + post.getCategories() + "', '" + post.getIdOwner()
+                    + "');";
             int x = std.executeUpdate(query);
             System.out.println(x + " Row inserted");
             return true;
@@ -73,8 +74,8 @@ public class PostServices implements IPostServices<Post> {
         try {
             Statement statement = connection.createStatement();
             String query =
-                    "UPDATE `post` SET `content` = '" + post.getContent() + "', `mediaURL` = '" + post.getMediaURL() + "' WHERE `post`.`idPost` = " + post
-                            .getIdPost() + ";";
+                "UPDATE `post` SET `content` = '" + post.getContent() + "', `mediaURL` = '" + post.getMediaURL() + "' WHERE `post`.`idPost` = " + post
+                    .getIdPost() + ";";
             int x = statement.executeUpdate(query);
             System.out.println(x + " Row updated");
             return true;
@@ -92,10 +93,10 @@ public class PostServices implements IPostServices<Post> {
             String query = "SELECT * FROM `post`";
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
-                if (resultSet.getString("state").equals(State.Deleted.name())) {
+                if (resultSet.getString("state").equals(State.Active.name())) {
                     Post post = new Post(resultSet.getInt("idPost"), resultSet.getString("content"), resultSet.getString("mediaURL"),
-                            resultSet.getInt("likeNum"), resultSet.getDate("createdAt"), resultSet.getString("idOwer"),
-                            Categories.valueOf(resultSet.getString("categorie")));
+                        resultSet.getInt("likeNum"), resultSet.getDate("createdAt"), resultSet.getInt("idOwer"),
+                        CategoryPost.valueOf(resultSet.getString("categorie")));
                     posts.add(post);
                 }
 
@@ -116,8 +117,8 @@ public class PostServices implements IPostServices<Post> {
             resultSet.next();
 
             Post post = new Post(resultSet.getInt("idPost"), resultSet.getString("content"), resultSet.getString("mediaURL"),
-                    resultSet.getInt("likeNum"), resultSet.getDate("createdAt"), resultSet.getString("createdBy"),
-                    Categories.valueOf(resultSet.getString("categorie")));
+                resultSet.getInt("likeNum"), resultSet.getDate("createdAt"), resultSet.getInt("createdBy"),
+                CategoryPost.valueOf(resultSet.getString("categorie")));
 
             return post;
 
@@ -129,9 +130,9 @@ public class PostServices implements IPostServices<Post> {
 
     public List<Post> filterPostByCategory(String x, List<Post> posts) {
         return posts
-                .stream()
-                .filter(c -> c.getCategories().toString().equals(x))
-                .collect(Collectors.toList());
+            .stream()
+            .filter(c -> c.getCategories().toString().equals(x))
+            .collect(Collectors.toList());
     }
 
     public List<Post> sortPostByDate(List<Post> posts) {

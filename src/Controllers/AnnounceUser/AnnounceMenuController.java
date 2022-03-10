@@ -1,6 +1,13 @@
 package Controllers.AnnounceUser;
 
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import Modules.AlertProf;
 import Modules.Annoucement;
+import Services.AlertProfServices;
 import Services.AnnouncementService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,13 +16,6 @@ import javafx.scene.Node;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 
-
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
-
 public class AnnounceMenuController implements Initializable {
 
 
@@ -23,24 +23,21 @@ public class AnnounceMenuController implements Initializable {
     @FXML
     private ListView<Node>  eventListView;
     private List<Annoucement> annoucementList;
+    private List<AlertProf> alertProfList;
+    AlertProfServices alertProfServices;
+    AnnouncementService announcementService;
 
-    public AnnounceMenuController() {
-        AnnouncementService announcementService= null;
-        try {
-            announcementService = new AnnouncementService();
-        } catch (SQLException exception) {
-            exception.printStackTrace();
-        }
+    public AnnounceMenuController() throws SQLException {
+        announcementService= AnnouncementService.getInstance();
+        annoucementList = announcementService.getList();
 
-        annoucementList = new ArrayList<Annoucement>();
-        //annoucementList.add(new Annoucement(9,"Rappel 5lass","no 5lass no result", Roles.Etudiant,10020855, Timestamp.valueOf(LocalDateTime.now())));
-        //annoucementList.add(new Annoucement(10,"Rappel 5lass","no 5lass no result",Roles.Etudiant,10020855,Timestamp.valueOf(LocalDateTime.now())));
-        //annoucementList.add(new Annoucement(11,"Rappel 5lass","no 5lass no result",Roles.Etudiant,10020855,Timestamp.valueOf(LocalDateTime.now())));
-        annoucementList=announcementService.getList();
-       eventListView = new ListView<>();
-       
+        alertProfServices= AlertProfServices.getInstance();
+        alertProfList = alertProfServices.getList();
 
+        eventListView = new ListView<>();
+        System.out.println(annoucementList);
     }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
@@ -57,6 +54,26 @@ public class AnnounceMenuController implements Initializable {
             System.out.println(e.getMessage());
         }
     }
+
+
+    /*
+    public AnnounceMenuController() {
+        AnnouncementService announcementService= null;
+        try {
+            announcementService = new AnnouncementService();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+
+        annoucementList = new ArrayList<Annoucement>();
+        //annoucementList.add(new Annoucement(9,"Rappel 5lass","no 5lass no result", Roles.Etudiant,10020855, Timestamp.valueOf(LocalDateTime.now())));
+        //annoucementList.add(new Annoucement(10,"Rappel 5lass","no 5lass no result",Roles.Etudiant,10020855,Timestamp.valueOf(LocalDateTime.now())));
+        //annoucementList.add(new Annoucement(11,"Rappel 5lass","no 5lass no result",Roles.Etudiant,10020855,Timestamp.valueOf(LocalDateTime.now())));
+        annoucementList=announcementService.getList();
+        eventListView = new ListView<>();
+
+
+    }*/
 
 
 

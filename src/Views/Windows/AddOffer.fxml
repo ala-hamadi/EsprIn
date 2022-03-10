@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Offers.AddOffer">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../Style/FormsStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Offers.AddOffer">
    <children>
       <Pane prefHeight="80.0" prefWidth="800.0" style="-fx-background-color: #E00203;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -17,9 +24,10 @@
                </font>
             </Label>
             <Circle fx:id="circle" fill="WHITE" layoutX="72.0" layoutY="40.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
-            <ImageView fitHeight="38.0" fitWidth="27.0" layoutX="741.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
-
-            </ImageView>
+            <ImageView accessibleRole="BUTTON" fitHeight="38.0" fitWidth="27.0" layoutX="741.0" layoutY="27.0" onDragDetected="#closeWindow" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/closewindow.png" />
+               </image></ImageView>
          </children>
       </Pane>
       <AnchorPane layoutX="-14.0" layoutY="130.0" prefHeight="520.0" prefWidth="800.0" style="-fx-background-color: #F0E9E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
@@ -75,10 +83,11 @@
                                     <Insets left="40.0" />
                                  </padding>
                               </Label>
-                              <ComboBox fx:id="categorie" prefWidth="150.0">
+                              <ChoiceBox fx:id="catOffre" prefHeight="26.0" prefWidth="212.0">
                                  <VBox.margin>
-                                    <Insets left="200.0" right="30.0" />
-                                 </VBox.margin></ComboBox>
+                                    <Insets left="35.0" />
+                                 </VBox.margin>
+                              </ChoiceBox>
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
@@ -99,15 +108,16 @@
                                        </HBox.margin>
                                        <children>
                                           <ImageView fx:id="image" fitHeight="27.0" fitWidth="35.0" layoutX="42.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
-
-                                          </ImageView>
+                                             <image>
+                                                <Image url="@../Images/image_file_add_24px.png" />
+                                             </image></ImageView>
                                        </children>
                                     </Pane>
                                  </children>
                               </HBox>
                               <Pane prefHeight="49.0" prefWidth="760.0">
                                  <children>
-                                    <Button fx:id="AddOfferBtn" layoutX="641.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="98.0" stylesheets="@../Style/DashboardStyle.css" text="Add" />
+                                    <Button fx:id="AddOfferBtn" layoutX="641.0" layoutY="-1.0" mnemonicParsing="false" onAction="#AddPost" prefHeight="30.0" prefWidth="98.0" stylesheets="@../Style/DashboardStyle.css" text="Add" />
                                  </children>
                                  <VBox.margin>
                                     <Insets />

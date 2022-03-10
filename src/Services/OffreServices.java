@@ -21,7 +21,7 @@ public class OffreServices implements IServices<Offre> {
     private Connection connection;
     private static OffreServices instance;
 
-    private OffreServices() throws SQLException{
+    public OffreServices() throws SQLException{
         BdConnection connect = BdConnection.getInstance();
         this.connection = connect.cnx;
     }
@@ -35,7 +35,7 @@ public class OffreServices implements IServices<Offre> {
     @Override
     public void add(Offre offre) {
         try {
-            String query = "INSERT INTO `offre`(`offerProvider`, `titleOffer`, `descOffer`, `catOffre`, `imgOffre`) VALUES ('" + offre.getOfferProvider() + "','" + offre.getTitleOffer() + "','" + offre.getDescOffer() + "','" + offre.getCategory() + "', '"+ offre.getImgOffre() +"')";
+            String query = "INSERT INTO `offre`(`offerProvider`, `titleOffer`, `descOffer`, `catOffre`) VALUES ('" + offre.getOfferProvider() + "','" + offre.getTitleOffer() + "','" + offre.getDescOffer() + "','" + offre.getCategory() + "')";
             Statement stm = connection.createStatement();
             stm.executeUpdate(query);
             System.out.println("Added");
@@ -55,7 +55,7 @@ public class OffreServices implements IServices<Offre> {
             Statement statement = connection.createStatement();
             String query = "UPDATE `offre` SET `state`='" + State.Deleted + "' WHERE `offre`.`IdOffer`=" + offre.getIdOffer() + ";";
             int x = statement.executeUpdate(query);
-            System.out.println(x + " row deleted");
+            return true;
         } catch (SQLException exception) {
             System.out.println(exception.getMessage());
         }
@@ -127,38 +127,38 @@ public class OffreServices implements IServices<Offre> {
 
     public List<Offre> sort_categorie() {
         return this.getList().stream().sorted((o1, o2) -> String.valueOf(o1.getCategory())
-                .compareTo(String.valueOf(o2.getDescOffer()))).collect(Collectors.toList());
+            .compareTo(String.valueOf(o2.getDescOffer()))).collect(Collectors.toList());
     }
 
     public List<Offre> sort_titre() {
         return this.getList().stream().sorted((o1, o2) -> String.valueOf(o1.getTitleOffer())
-                .compareTo(String.valueOf(o2.getTitleOffer()))).collect(Collectors.toList());
+            .compareTo(String.valueOf(o2.getTitleOffer()))).collect(Collectors.toList());
     }
 
 
     public List<Offre> recherche_title_id_categorie(String title, int id, OffreCategorie cat) {
-       return this.getList()
-                .stream()
-                .filter(o -> Objects.equals(o.getTitleOffer(), title))
-                .filter(o -> Objects.equals(o.getIdOffer(), id))
-               .filter(o -> Objects.equals(o.getCategory(), cat))
-               .collect(Collectors.toList());
+        return this.getList()
+            .stream()
+            .filter(o -> Objects.equals(o.getTitleOffer(), title))
+            .filter(o -> Objects.equals(o.getIdOffer(), id))
+            .filter(o -> Objects.equals(o.getCategory(), cat))
+            .collect(Collectors.toList());
 
     }
 
     public List<Offre> recherche_title(String title) {
         return this.getList()
-                .stream()
-                .filter(o -> Objects.equals(o.getTitleOffer(), title))
-                .collect(Collectors.toList());
+            .stream()
+            .filter(o -> Objects.equals(o.getTitleOffer(), title))
+            .collect(Collectors.toList());
 
     }
 
     public List<Offre> recherche(String stage, int i, OffreCategorie cat) {
         return this.getList()
-                .stream()
-                .filter(o -> Objects.equals(o.getCategory(), cat))
-                .collect(Collectors.toList());
+            .stream()
+            .filter(o -> Objects.equals(o.getCategory(), cat))
+            .collect(Collectors.toList());
 
     }
 }

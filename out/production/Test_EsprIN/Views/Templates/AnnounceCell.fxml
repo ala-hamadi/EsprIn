@@ -1,77 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" style="-fx-border-color: #7e7e7e; -fx-border-radius: 15; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AnnounceUser.AnnounceListViewCell">
+<AnchorPane fx:id="pane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AnnounceUser.AnnounceListViewCell">
     <children>
-        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox alignment="CENTER" style="-fx-border-color: #7e7e7e; -fx-background-radius: 15; -fx-border-radius: 15;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="10.0">
             <children>
-                <HBox prefWidth="200.0">
-                    <children>
-                        <Circle fx:id="OrgImage" fill="WHITE" radius="20.0" stroke="BLACK" strokeType="INSIDE">
-                            <HBox.margin>
-                                <Insets bottom="10.0" left="15.0" top="10.0" />
-                            </HBox.margin>
-                        </Circle>
-                        <Label fx:id="TitleAnn" text="Announce Subject">
-                            <padding>
-                                <Insets right="10.0" />
-                            </padding>
-                            <font>
-                                <Font name="System Bold" size="27.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets bottom="10.0" left="20.0" top="10.0" />
-                            </HBox.margin>
-                        </Label>
-                    </children>
-                </HBox>
-                <Label fx:id="DestAn" text="Destination">
-                    <padding>
-                        <Insets top="10.0" />
-                    </padding>
-                    <font>
-                        <Font name="System Bold" size="18.0" />
-                    </font>
-                    <VBox.margin>
-                        <Insets bottom="10.0" left="30.0" top="10.0" />
-                    </VBox.margin>
-                </Label>
+            <BorderPane>
+               <left>
+                      <HBox BorderPane.alignment="CENTER">
+                          <children>
+                              <Circle fx:id="OrgImage" fill="WHITE" radius="20.0" stroke="BLACK" strokeType="INSIDE">
+                                  <HBox.margin>
+                                      <Insets bottom="10.0" left="15.0" top="10.0" />
+                                  </HBox.margin>
+                              </Circle>
+                        <VBox>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="20.0" top="10.0" />
+                           </HBox.margin>
+                           <children>
+                                    <Label fx:id="AdminName" text="Admin Name">
+                                        <padding>
+                                            <Insets right="10.0" />
+                                        </padding>
+                                        <font>
+                                            <Font name="System Bold" size="19.0" />
+                                        </font>
+                                    </Label>
+                                  <Label fx:id="DateAnn" text="DateAn">
+                                      <font>
+                                          <Font size="15.0" />
+                                      </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                                  </Label>
+                           </children>
+                        </VBox>
+                          </children>
+                      </HBox>
+               </left>
+               <right>
+                  <HBox BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../Images/qr_code_64px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </right>
+               <bottom>
+                      <Label fx:id="TitleAnn" text="Announce Subject" BorderPane.alignment="CENTER_LEFT">
+                          <padding>
+                              <Insets top="10.0" />
+                          </padding>
+                          <font>
+                              <Font name="System Bold" size="18.0" />
+                          </font>
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" left="10.0" />
+                     </BorderPane.margin>
+                      </Label>
+               </bottom>
+            </BorderPane>
                 <ImageView fx:id="imageEvent" fitHeight="279.0" fitWidth="340.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../../../test%20eya/src/view/Images/Logo_ESPRIT_Ariana.png" />
+                        <Image url="file:/C:/Users/HP/Desktop/pidev/EsprIn-/src/Views/Images/Logo.png" />
                     </image>
                     <VBox.margin>
                         <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
                     </VBox.margin>
                 </ImageView>
-                <Label fx:id="ContentAnn" text="Content...">
-                    <padding>
-                        <Insets left="10.0" right="10.0" />
-                    </padding>
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                    <VBox.margin>
-                        <Insets left="10.0" right="10.0" top="10.0" />
-                    </VBox.margin>
-                </Label>
-                <Label fx:id="DateAnn" text="DateAn">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <VBox.margin>
-                        <Insets bottom="5.0" left="200.0" right="2.0" top="5.0" />
-                    </VBox.margin>
-                </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                      <Label fx:id="ContentAnn" text="Content..." wrapText="true">
+                          <padding>
+                              <Insets left="10.0" right="10.0" />
+                          </padding>
+                          <font>
+                              <Font size="18.0" />
+                          </font>
+                      </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <Button fx:id="downloadPDF" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/C:/Users/HP/Desktop/pidev/EsprIn-/src/Views/Images/export_pdf_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
             </children>
         </VBox>
     </children>

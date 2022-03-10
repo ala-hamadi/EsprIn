@@ -1,109 +1,132 @@
 package Modules;
 
-import Utils.Enums.State;
-
 import java.sql.Date;
-import java.sql.Timestamp;
+
+import Utils.Enums.State;
 
 public class Event {
 
-        private int idEvent;
-        private  String TitleEvent;
-        private String Description;
-        private Date DateEvent;
-        private String ImgURL;
-        private long idOrganizer;
-        private State state;
+    private int idEvent;
+    private  String TitleEvent;
+    private String Description;
+    private Date DateDebut;
+    private Date DateFin;
+    private String EventLocal;
+    private String ImgURL;
+    private long idOrganizer;
+    private State state;
+    private int nbrParticipant;
 
-        public long getIdOrganizer() {
-            return idOrganizer;
-        }
 
-        public void setIdOrganizer(long idOrganizer) {
-            this.idOrganizer = idOrganizer;
-        }
 
-        public int getIdEvent() {
-            return idEvent;
-        }
+    public int getNbrParticipant() { return nbrParticipant; }
 
-        public void setIdEvent(int idEvent) {
-            this.idEvent = idEvent;
-        }
+    public void setNbrParticipant(int nbrParticipant) { this.nbrParticipant = nbrParticipant; }
 
-        public String getTitleEvent() {
-            return TitleEvent;
-        }
+    public Date getDateDebut() { return DateDebut; }
 
-        public void setTitleEvent(String titleEvent) {
-            TitleEvent = titleEvent;
-        }
+    public void setDateDebut(Date dateDebut) { DateDebut = dateDebut; }
 
-        public String getDescription() { return Description; }
+    public Date getDateFin() { return DateFin; }
 
-        public void setDescription(String description) {
-            Description = description;
-        }
+    public void setDateFin(Date dateFin) { DateFin = dateFin; }
 
-        public Date getDateEvent() {
-            return DateEvent;
-        }
+    public String getEventLocal() { return EventLocal; }
 
-        public void setDateEvent(Date dateEvent) {
-            DateEvent = dateEvent;
-        }
+    public void setEventLocal(String eventLocal) { EventLocal = eventLocal; }
 
-        public String getImgURL() {
-            return ImgURL;
-        }
+    public void setState(State state) { this.state = state; }
 
-        public void setImgURL(String imgURL) {
-            ImgURL = imgURL;
-        }
+    public long getIdOrganizer() {
+        return idOrganizer;
+    }
 
-        public State getState() { return state; }
+    public void setIdOrganizer(long idOrganizer) {
+        this.idOrganizer = idOrganizer;
+    }
+
+    public int getIdEvent() {
+        return idEvent;
+    }
+
+    public void setIdEvent(int idEvent) {
+        this.idEvent = idEvent;
+    }
+
+    public String getTitleEvent() {
+        return TitleEvent;
+    }
+
+    public void setTitleEvent(String titleEvent) {
+        TitleEvent = titleEvent;
+    }
+
+    public String getDescription() { return Description; }
+
+    public void setDescription(String description) {
+        Description = description;
+    }
+
+
+    public String getImgURL() {
+        return ImgURL;
+    }
+
+    public void setImgURL(String imgURL) {
+        ImgURL = imgURL;
+    }
+
+    public State getState() { return state; }
 
     public Event(String TitleEvent, String Description){
         this.TitleEvent=TitleEvent;
         this.Description=Description;
     }
 
-    public Event(String TitleEvent, String Description,Date DateEvent){
+    public Event(String TitleEvent, String Description,Date DateDebut, Date DateFin, String EventLocal, long idOrganizer){
         this.TitleEvent=TitleEvent;
         this.Description=Description;
-        this.DateEvent=DateEvent;
+        this.DateDebut=DateDebut;
+        this.DateFin=DateFin;
+        this.EventLocal= EventLocal;
+        this.idOrganizer= idOrganizer;
     }
 
 
-    public Event(String TitleEvent, String Description, String ImgURL, Date DateEvent, long idOrganizer){
-            this.TitleEvent=TitleEvent;
-            this.Description=Description;
-            this.ImgURL=ImgURL;
-            this.DateEvent=DateEvent;
-            this.idOrganizer= idOrganizer;
-        }
+    public Event(String TitleEvent, String Description, String ImgURL, Date DateDebut, Date DateFin,String EventLocal, long idOrganizer){
+        this.TitleEvent=TitleEvent;
+        this.Description=Description;
+        this.ImgURL=ImgURL;
+        this.DateDebut=DateDebut;
+        this.DateFin=DateFin;
+        this.EventLocal=EventLocal;
+        this.idOrganizer= idOrganizer;
+    }
+
+    public Event(int idEvent, String TitleEvent, String Description, String ImgURL, Date DateDebut, Date DateFin,String EventLocal, long idOrganizer, State state, int nbrParticipant){
+        this.idEvent=idEvent;
+        this.TitleEvent=TitleEvent;
+        this.Description=Description;
+        this.ImgURL=ImgURL;
+        this.DateDebut=DateDebut;
+        this.DateFin=DateFin;
+        this.EventLocal=EventLocal;
+        this.idOrganizer= idOrganizer;
+        this.nbrParticipant= nbrParticipant;
+    }
 
 
-        public Event(int idEvent, String TitleEvent, String Description,String ImgURL,Date DateEvent, long idOrganizer, State state){
-            this.idEvent=idEvent;
-            this.TitleEvent=TitleEvent;
-            this.Description=Description;
-            this.ImgURL=ImgURL;
-            this.DateEvent=DateEvent;
-            this.idOrganizer= idOrganizer;
-            this.state=state;
-        }
-
-
-        @Override
-        public String toString() {
-            return "idEvent=" + idEvent +
-                    ",  TitleEvent=" + TitleEvent +
-                    ",  Description=" + Description +
-                    ",  DateEvent=" + DateEvent +
-                    ",  ImgURL=" + ImgURL +
-                    ",  idOrganizer=" + idOrganizer +
-                    ",  State" + state +
-                    '\n';
-        }
+    @Override
+    public String toString() {
+        return "idEvent=" + idEvent +
+                ",  TitleEvent=" + TitleEvent +
+                ",  Description=" + Description +
+                ",  DateDebut=" + DateDebut +
+                ",  DateFin=" + DateFin +
+                ",  Localisation=" + EventLocal +
+                ",  ImgURL=" + ImgURL +
+                ",  idOrganizer=" + idOrganizer +
+                ",  State" + state +
+                '\n';
+    }
 }

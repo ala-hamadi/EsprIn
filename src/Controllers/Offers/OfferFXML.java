@@ -1,5 +1,7 @@
 package Controllers.Offers;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,8 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
-import java.io.IOException;
 
 public class OfferFXML {
 
@@ -57,7 +57,7 @@ public class OfferFXML {
     @FXML
     public void addOffer(ActionEvent event){
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/Views/UI/Offer/AddOffer.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("/Views/Windows/AddOffer.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
             stage.setScene(scene);

@@ -28,12 +28,13 @@ public class ParticipateServices{
     }
 
 
-    public void Participate(Espritien espritien, Event event) {
+
+    public void ParticipateToEvent(int idUser,int eventId) {
         try {
             Statement statement = connection.createStatement();
             String query = "INSERT INTO `participate` (`cinUser` ,`idEvent` ) VALUES( '"
-                    + espritien.getCinUser() + "' , '"
-                    + event.getIdEvent() + "');";
+                + idUser + "' , '"
+                + eventId + "');";
 
             int x = statement.executeUpdate(query);
             System.out.println(x + " Row inserted");
@@ -83,4 +84,17 @@ public class ParticipateServices{
         }
         return participates;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

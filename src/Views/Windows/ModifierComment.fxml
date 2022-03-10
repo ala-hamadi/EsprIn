@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="383.0" prefWidth="800.0" stylesheets="@../Style/FormsStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Posts.EditCommentController">
+   <children>
+      <Pane prefHeight="80.0" prefWidth="800.0" style="-fx-background-color: #E00203;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="labAddOffer" layoutX="119.0" layoutY="18.0" text="Edit Comment" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Bold" size="30.0" />
+               </font>
+            </Label>
+            <Circle fx:id="circle" fill="WHITE" layoutX="72.0" layoutY="40.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+            <Button fx:id="CloseBtn" layoutX="734.0" layoutY="22.0" mnemonicParsing="false" onAction="#CloseWindow" prefHeight="25.0" stylesheets="@../Style/AddEventCSS.css">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/closewindow.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="-14.0" layoutY="130.0" prefHeight="434.0" prefWidth="800.0" style="-fx-background-color: #F0E9E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <Pane prefHeight="392.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="108.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+               <children>
+                  <VBox prefHeight="300.0" prefWidth="760.0">
+                     <children>
+                        <VBox prefHeight="53.0" prefWidth="760.0">
+                           <children>
+                              <Label fx:id="labDescription" prefHeight="57.0" prefWidth="760.0" text="Comment" textFill="#9f9a9a">
+                                 <font>
+                                    <Font name="Roboto Bold" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="40.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="158.0" prefWidth="760.0">
+                           <children>
+                              <TextField fx:id="contentComment" prefHeight="112.0" prefWidth="699.0" promptText="Content..." style="-fx-background-radius: 15;">
+                                 <VBox.margin>
+                                    <Insets left="30.0" right="30.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="42.0" prefWidth="760.0">
+                           <children>
+                              <Pane prefHeight="49.0" prefWidth="760.0">
+                                 <children>
+                                    <Button fx:id="AddPostBtn" layoutX="641.0" layoutY="-1.0" mnemonicParsing="false" onAction="#EditComment" prefHeight="30.0" prefWidth="98.0" stylesheets="@../Style/DashboardStyle.css" text="Edit" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
