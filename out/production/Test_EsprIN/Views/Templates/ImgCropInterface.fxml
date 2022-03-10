@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ImgCropInterface">
+    <children>
+        <ImageView fx:id="image" fitHeight="500.0" fitWidth="500.0" layoutX="151.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <Circle fx:id="idCircle" fill="#1f93ff00" layoutX="250.0" layoutY="230.0" onMouseDragged="#mouseDragged" onMousePressed="#mousePressed" radius="150.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="4.0" />
+        <Button layoutX="454.0" layoutY="437.0" mnemonicParsing="false" onAction="#onCrop" text="Crop" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+            <font>
+                <Font name="Berlin Sans FB" size="25.0" />
+            </font>
+        </Button>
+    </children>
+
+</AnchorPane>
