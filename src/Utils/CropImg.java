@@ -33,8 +33,8 @@ public class CropImg {
         graphics.drawImage(bufImageARGB, 0, 0, null);
 
         try {
-
-            ImageIO.write(bufImageRGB, "jpg", new File("/Img/",imageFile.getName()));
+            System.out.println(System.getProperty("user.dir"));
+            ImageIO.write(bufImageRGB, "jpg", new File(System.getProperty("user.dir")+"\\src\\Img\\"+imageFile.getName()));
 
             System.out.println("Image saved ");
 

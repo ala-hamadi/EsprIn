@@ -6,6 +6,7 @@ import Utils.CurrentUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -49,6 +50,7 @@ public class ImgCropInterface implements Initializable {
             userServices.updateImg(CurrentUser.getInstance().getCurrentUser());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.close();
+            Alert alert=new Alert(Alert.AlertType.CONFIRMATION,"Your image is up to date , you will notice changes when entering a new session");
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
         }

@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27563c28-2ae5-43e7-a204-a97d18986a2a" name="Default Changelist" comment="add crud">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Img/orenda.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loggedUser.bin" beforeDir="false" afterPath="$PROJECT_DIR$/loggedUser.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/HomeFXMLController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/HomeFXMLController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/HomeFXMLController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/HomeFXMLController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/ImgCropInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/ImgCropInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Utils/CropImg.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Utils/CropImg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/HomeTemplate.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/HomeTemplate.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/HomeFXMLController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/HomeFXMLController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ImgCropInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ImgCropInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/CropImg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/CropImg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/UI/HomeTemplate.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/HomeTemplate.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +27,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/final-desktop" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -40,14 +54,8 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Pidev\src\Views\Windows" />
-      <recent name="D:\Pidev\src\Views\Templates" />
-      <recent name="C:\Users\HP\Desktop\pidev\EsprIn-\src\Views\Images" />
-      <recent name="C:\Users\HP\Desktop\pidev\EsprIn-\src\Views\UI" />
-      <recent name="C:\Users\HP\Desktop\pidev\EsprIn-login-\src\Views\Images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Bairem\Desktop\Vikings\EsprIN\src\Img" />
       <recent name="D:\Pidev\src\Views\Windows" />
       <recent name="C:\Users\HP\Desktop\pidev\EsprIn-\src\Views\Windows" />
       <recent name="C:\Users\HP\Desktop\pidev\EsprIn-\src\Controllers\AnnounceUser" />
@@ -55,6 +63,13 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Controllers.Posts" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Pidev\src\Views\Windows" />
+      <recent name="D:\Pidev\src\Views\Templates" />
+      <recent name="C:\Users\HP\Desktop\pidev\EsprIn-\src\Views\Images" />
+      <recent name="C:\Users\HP\Desktop\pidev\EsprIn-\src\Views\UI" />
+      <recent name="C:\Users\HP\Desktop\pidev\EsprIn-login-\src\Views\Images" />
     </key>
   </component>
   <component name="RunManager">
@@ -67,6 +82,17 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -135,6 +161,40 @@
     <MESSAGE value="add crud" />
     <option name="LAST_COMMIT_MESSAGE" value="add crud" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="585" y="95" key="CommitChangelistDialog2" timestamp="1646880740367">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="585" y="95" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1646880740367" />
+    <state width="1877" height="256" key="GridCell.Tab.0.bottom" timestamp="1646882539141">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="256" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1646882539140" />
+    <state width="1877" height="256" key="GridCell.Tab.0.center" timestamp="1646882539140">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="256" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1646882539140" />
+    <state width="1877" height="256" key="GridCell.Tab.0.left" timestamp="1646882539140">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="256" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1646882539140" />
+    <state width="1877" height="256" key="GridCell.Tab.0.right" timestamp="1646882539140">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="256" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1646882539140" />
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1646880757900">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1646880757900" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1646880795603">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1646880795603" />
+    <state x="807" y="425" key="git4idea.rebase.GitUnstructuredEditor" timestamp="1646880760169">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="807" y="425" key="git4idea.rebase.GitUnstructuredEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1646880760169" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -185,5 +245,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/EsprIN$Main.ic" NAME="Main Coverage Results" MODIFIED="1646047412664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Utils.*</FILTER>
+    </SUITE>
   </component>
 </project>

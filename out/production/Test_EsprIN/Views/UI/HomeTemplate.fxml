@@ -155,7 +155,7 @@
                                  </ImageView>
                              </graphic>
                          </MenuButton>
-                        <Circle fill="#1f93ff00" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fx:id="userAvatar2" fill="#1f93ff00" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
                      </children>
                      <padding>
                         <Insets left="20.0" right="20.0" />

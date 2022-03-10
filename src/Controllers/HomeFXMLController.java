@@ -39,6 +39,7 @@ public class HomeFXMLController implements Initializable {
     @FXML
     public Text profileNameAndLastName;
     public Circle userAvatar;
+    public Circle userAvatar2;
     @FXML
     private Button exitBtn;
 
@@ -169,6 +170,7 @@ public class HomeFXMLController implements Initializable {
                 if(!CurrentUser.getInstance().getCurrentUser().getImgUrl().equals("")) {
                     image = new Image("/Img/" + CurrentUser.getInstance().getCurrentUser().getImgUrl(), false);
                     userAvatar.setFill(new ImagePattern(image));
+                    userAvatar2.setFill(new ImagePattern(image));
                 }
             }catch (Exception exception){
                 System.out.println(exception.getMessage());
