@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 04 mars 2022 à 20:34
+-- Généré le : jeu. 10 mars 2022 à 06:13
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 7.4.27
 
@@ -58,12 +58,12 @@ CREATE TABLE `annoncement` (
 --
 
 INSERT INTO `annoncement` (`idAnn`, `subject`, `content`, `destination`, `createdAt`, `idSender`, `state`) VALUES
-(5, 'Rappel 5lass', 'no 5lass no result', 'Etudiant', '2022-02-27 23:21:46', 10020855, 'Active'),
-(6, 'Rappel 5lass', 'no 5lass no result', 'Etudiant', '2022-02-27 23:21:46', 10020855, 'Active'),
-(7, 'Rappel 5lass', 'no 5lass no result', 'Etudiant', '2022-02-27 23:21:46', 10020855, 'Active'),
-(8, 'Rappel 5lass', 'no 5lass no result', 'Etudiant', '2022-02-27 23:21:46', 10020855, 'Active'),
-(9, 'Rappel 5lass', 'no 5lass no result', 'Etudiant', '2022-02-27 23:21:46', 10020855, 'Deleted'),
-(10, 'aaaaaaaa', 'no 5lass no result', 'Club', '2022-02-27 23:21:46', 10020855, 'Active');
+(5, 'Rappel 5lass', 'no 5lass no result', 'Etudiants', '2022-02-27 23:21:46', 10020855, 'Active'),
+(6, 'Rappel 5lass', 'no 5lass no result', 'Etudiants', '2022-02-27 23:21:46', 10020855, 'Active'),
+(7, 'Rappel 5lass', 'no 5lass no result', 'Etudiants', '2022-02-27 23:21:46', 10020855, 'Active'),
+(8, 'Rappel 5lass', 'no 5lass no result', 'Etudiants', '2022-02-27 23:21:46', 10020855, 'Active'),
+(9, 'Rappel 5lass', 'no 5lass no result', 'Etudiants', '2022-02-27 23:21:46', 10020855, 'Deleted'),
+(10, 'aaaaaaaa', 'no 5lass no result', 'Clubs', '2022-02-27 23:21:46', 10020855, 'Active');
 
 -- --------------------------------------------------------
 
@@ -75,7 +75,8 @@ CREATE TABLE `commented` (
   `userWhoCommented` int(11) NOT NULL,
   `postCommented` int(11) NOT NULL,
   `content` text NOT NULL,
-  `createdAt` datetime NOT NULL DEFAULT current_timestamp()
+  `createdAt` datetime NOT NULL DEFAULT current_timestamp(),
+  `state` text NOT NULL DEFAULT 'Active'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -91,22 +92,11 @@ CREATE TABLE `event` (
   `imgURL` text DEFAULT NULL,
   `idOrganizer` int(11) NOT NULL,
   `EventLocal` varchar(30) NOT NULL,
-  `nbrParticipant` int(10) NOT NULL,
+  `nbrParticipant` int(10) NOT NULL DEFAULT 0,
   `state` varchar(15) NOT NULL DEFAULT 'Active',
   `dateDebut` date DEFAULT NULL,
   `dateFin` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `event`
---
-
-INSERT INTO `event` (`idEvent`, `titleEvent`, `contentEvent`, `imgURL`, `idOrganizer`, `EventLocal`, `nbrParticipant`, `state`, `dateDebut`, `dateFin`) VALUES
-(1, 'Hackathon', 'Hackathon dev mobile', NULL, 10000000, '', 0, 'Active', NULL, NULL),
-(2, 'Hackathon', 'Hackathon dev mobile', NULL, 10000000, '', 0, 'Active', NULL, NULL),
-(3, 'Hackathon', 'Hackathon dev mobile', NULL, 10000000, '', 0, 'Deleted', NULL, NULL),
-(4, 'Hackathon', 'Hackathon dev mobile', NULL, 10000000, '', 0, 'Active', NULL, NULL),
-(5, 'Hackathon', 'Hackathon dev mobile', NULL, 10000000, '', 0, 'Active', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -155,13 +145,6 @@ CREATE TABLE `intrest` (
   `cinIntrested` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `intrest`
---
-
-INSERT INTO `intrest` (`IdOffer`, `cinIntrested`) VALUES
-(1, 10020855);
-
 -- --------------------------------------------------------
 
 --
@@ -178,13 +161,13 @@ CREATE TABLE `like` (
 -- Déclencheurs `like`
 --
 DELIMITER $$
-CREATE TRIGGER `addLike` BEFORE INSERT ON `like` FOR EACH ROW UPDATE post 
+CREATE TRIGGER `addLike` BEFORE INSERT ON `like` FOR EACH ROW UPDATE post
 set likeNum=likeNum+1
 where post.idPost=new.likePost
 $$
 DELIMITER ;
 DELIMITER $$
-CREATE TRIGGER `dislike` BEFORE DELETE ON `like` FOR EACH ROW UPDATE post 
+CREATE TRIGGER `dislike` BEFORE DELETE ON `like` FOR EACH ROW UPDATE post
 set likeNum=likeNum-1
 where post.idPost=old.likePost
 $$
@@ -238,11 +221,20 @@ CREATE TABLE `participate` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `participate`
+-- Déclencheurs `participate`
 --
-
-INSERT INTO `participate` (`cinUser`, `idEvent`) VALUES
-(10020855, 1);
+DELIMITER $$
+CREATE TRIGGER `addParticipate` BEFORE INSERT ON `participate` FOR EACH ROW UPDATE event
+set nbrParticipant= nbrParticipant+1
+where event.idEvent=new.idEvent
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `unParticipate` BEFORE DELETE ON `participate` FOR EACH ROW UPDATE event
+set nbrParticipant= nbrParticipant-1
+where event.idEvent=old.idEvent
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -260,17 +252,6 @@ CREATE TABLE `post` (
   `idOwer` int(11) NOT NULL,
   `state` varchar(15) NOT NULL DEFAULT 'Active'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `post`
---
-
-INSERT INTO `post` (`idPost`, `content`, `mediaURL`, `createdAt`, `categorie`, `likeNum`, `idOwer`, `state`) VALUES
-(2, 'adb el slem', 'wwwxxxx.', '2022-02-19 19:33:07', 'Covoiturage', 0, 10000000, 'Deleted'),
-(3, 'test post', 'wwwxxxx.', '2022-02-19 19:33:35', 'Covoiturage', 0, 10000000, 'Active'),
-(4, 'test post', 'wwwxxxx.', '2022-02-19 19:34:07', 'Covoiturage', 0, 10000000, 'Active'),
-(5, 'test post', 'wwwxxxx.', '2022-02-19 19:34:54', 'Covoiturage', 0, 10000000, 'Deleted'),
-(6, 'test post', 'wwwxxxx.', '2022-02-19 19:35:09', 'Covoiturage', 0, 10000000, 'Active');
 
 -- --------------------------------------------------------
 
@@ -320,10 +301,10 @@ CREATE TABLE `responded` (
 
 CREATE TABLE `user` (
   `cinUser` int(8) NOT NULL,
-  `email` varchar(30) NOT NULL CHECK (`email` like '%@%.%'),
-  `passwd` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `passwd` varchar(50) NOT NULL,
   `createdAt` datetime NOT NULL DEFAULT current_timestamp(),
-  `imgURL` text NOT NULL,
+  `imgURL` text NOT NULL DEFAULT 'https://www.jbrhomes.com/wp-content/uploads/blank-avatar.png',
   `firstName` varchar(20) DEFAULT NULL,
   `lastName` varchar(20) DEFAULT NULL,
   `domaine` varchar(30) DEFAULT NULL,
@@ -341,11 +322,15 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`, `state`) VALUES
-(10000000, 'test.test@test.com', 'hello', '2022-02-14 10:25:42', 'clubImg', 'Orenda', 'Junior Entreprise', NULL, NULL, 'Junior_entreprise', NULL, NULL, NULL, 'Club', 'Disconnected'),
-(10020855, 'bairem.khedhri@esprit.tn', 'bairem1111', '2022-02-11 20:11:24', 'https://scontent.ftun1-2.fna.fbcdn.net/v/t39.30808-6/272684591_4777980965613182_3886000276045516308_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=d8M8Fib7ksoAX_2iqEa&tn=uvaTFBdxAtYlt109&_nc_ht=scontent.ftun1-2.fna&oh=00_AT83jpvkfurx2M9D9oBKDTLnMdpPIPX6nJyaK1bpHF_4bQ&oe=620AAA93', 'bairem', 'khedhri', NULL, 'Financier', NULL, NULL, NULL, NULL, 'Admin', 'Disconnected'),
-(11111111, 'etudiant.student@esprit.tn', 'etudiant1', '2022-02-14 08:59:09', 'dd', 'etudiant 1', 'student', 'Informatique', NULL, NULL, '3 A 25', NULL, NULL, 'Etudiant', 'Disconnected'),
-(15542230, 'vermeg@gmail.com', 'bairem1111', '2022-02-14 10:15:30', 'c', NULL, NULL, NULL, NULL, NULL, NULL, 'Lac,Tunis', 'Vermeg', 'Externe', 'Disconnected'),
-(55555555, 'student.student@test.tn', 'helloworld', '2022-02-17 08:54:39', 'null', 'testname', 'testlastame', 'Business', NULL, NULL, '3 A 25', NULL, NULL, 'Etudiant', 'Disconnected');
+(112255, 'eya.kasmi@esprit.tn', 'eya123', '2022-03-08 23:36:32', '218348982_2897646333833314_7097512158331654748_n.jpg', 'eya', 'kasmi', 'Informatique', NULL, NULL, NULL, NULL, NULL, 'Professeur', 'Disconnected'),
+(1010101, 'enactus.esprit@esprit.tn', 'hello123', '2022-03-07 01:10:25', 'og.jpg', 'enactus', 'esprit', NULL, NULL, 'Association', NULL, NULL, NULL, 'Club', 'Disconnected'),
+(10000000, 'orenda.je@esprit.tn', 'hello', '2022-02-14 10:25:42', 'orenda.jpg', 'Orenda', 'Junior Entreprise', NULL, NULL, 'Junior_entreprise', NULL, NULL, NULL, 'Club', 'Disconnected'),
+(10020855, 'bairem.khedhri@esprit.tn', 'bairem1111', '2022-02-11 20:11:24', '264822482_959189045008835_8249503408997441961_n.jpg', 'bairem', 'khedhri', NULL, 'Financier', NULL, NULL, NULL, NULL, 'Admin', 'Disconnected'),
+(15542230, 'vermeg@gmail.com', 'bairem1111', '2022-02-14 10:15:30', 'Vermeg_Logo.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 'Lac,Tunis', 'Vermeg', 'Externe', 'Disconnected'),
+(20202020, 'TalanHr@talan.tn', 'talan123', '2022-03-07 11:26:40', 'logo-talan.png', NULL, NULL, NULL, NULL, NULL, NULL, 'lac, Tunis', 'talan', 'Externe', 'Connected'),
+(25451120, 'ala.hamadi@esprit.tn', 'test123', '2022-03-09 00:00:55', '', 'Ala', 'Hamadi', 'Informatique', NULL, NULL, '3 A 25', NULL, NULL, 'Etudiant', 'Disconnected'),
+(25453121, 'firas.belhadjamor@esprit.tn', 'welcomefiras11', '2022-03-08 15:33:54', '', 'Firas', 'BelhadjAmor', NULL, 'Stage', NULL, NULL, NULL, NULL, 'Admin', 'Deleted'),
+(98765432, 'isamm.aloui@esprit.tn', '123456', '2022-03-06 03:30:25', '', 'isamm', 'aloui', 'Business', NULL, NULL, '3 BI 4', NULL, NULL, 'Etudiant', 'Disconnected');
 
 --
 -- Index pour les tables déchargées
@@ -425,8 +410,7 @@ ALTER TABLE `participate`
 -- Index pour la table `post`
 --
 ALTER TABLE `post`
-  ADD PRIMARY KEY (`idPost`),
-  ADD KEY `FK Post owner` (`idOwer`);
+  ADD PRIMARY KEY (`idPost`);
 
 --
 -- Index pour la table `reacted forum`
@@ -457,19 +441,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `alert`
 --
 ALTER TABLE `alert`
-  MODIFY `idAlert` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAlert` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `annoncement`
 --
 ALTER TABLE `annoncement`
-  MODIFY `idAnn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idAnn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `event`
 --
 ALTER TABLE `event`
-  MODIFY `idEvent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idEvent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `forum`
@@ -481,13 +465,13 @@ ALTER TABLE `forum`
 -- AUTO_INCREMENT pour la table `offre`
 --
 ALTER TABLE `offre`
-  MODIFY `IdOffer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `IdOffer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT pour la table `post`
 --
 ALTER TABLE `post`
-  MODIFY `idPost` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idPost` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Contraintes pour les tables déchargées
