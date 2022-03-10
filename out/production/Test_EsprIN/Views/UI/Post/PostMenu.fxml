@@ -9,9 +9,9 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="1043.0" prefWidth="1452.0" stylesheets="@../../Style/PostStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Posts.PostMenuController">
-    <children>
-        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <children>
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#all" prefHeight="38.0" styleClass="Btn" text="All" textFill="#dc0d0d">
@@ -62,17 +62,22 @@
                         <Font size="25.0" />
                      </font>
                   </Button>
+                  <Button mnemonicParsing="false" onAction="#seeWeather" prefHeight="52.0" prefWidth="186.0" styleClass="Btn" text="See weather">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Button>
                </children>
                <VBox.margin>
                   <Insets />
                </VBox.margin>
             </HBox>
-                <AnchorPane prefHeight="853.0" prefWidth="1452.0">
-                    <children>
-                        <ListView fx:id="eventListView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                    </children>
-                </AnchorPane>
-            </children>
-        </VBox>
-    </children>
+            <AnchorPane prefHeight="853.0" prefWidth="1452.0">
+               <children>
+                  <ListView fx:id="eventListView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>

@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class BdConnection {
-    private final String url = "jdbc:mysql://localhost:3306/esprin";
+    private final String url = "jdbc:mysql://localhost:3308/esprin";
     private final String user = "root";
     private final String pwd = "";
     private static BdConnection instance;

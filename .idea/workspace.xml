@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4f3256f-a8c8-4f1a-9a61-c981b5235af1" name="Default Changelist" comment="" />
+    <list default="true" id="d4f3256f-a8c8-4f1a-9a61-c981b5235af1" name="Default Changelist" comment="Merge 2">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/ant_1_8_21.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/twilio_8_9_0_javadoc1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Offre.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Offre.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_EsprIN.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Test_EsprIN.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loggedUser.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/Posts/PostMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/Posts/PostMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Utils/BdConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Utils/BdConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Cells/AnnounceCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Cells/AnnounceCell.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/AddEventCSS.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/AddEventCSS.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/DashboardStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/DashboardStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/FormsStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/FormsStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/LoginStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/LoginStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/MenuStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/MenuStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/SideMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/SideMenu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/UserTemplateStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/UserTemplateStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/ImgCropInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/ImgCropInterface.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/TemplateUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/TemplateUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/AnnounceMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/AnnounceMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/UsersMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/UsersMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/EventMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/EventMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/HomeTemplate.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/HomeTemplate.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/LoginInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/LoginInterface.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Post/PostMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Post/PostMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/RegisterInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/RegisterInterface.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddExternal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddExternal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/Posts/PostMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Posts/PostMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/BdConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/BdConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/UI/Post/PostMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Post/PostMenu.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +47,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="26Armpvcw2GqMgDSq1LGiYj7jqC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -25,28 +60,31 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/twilio-8.9.0-jar-with-dependencies.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Views/UI/Post" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Zahar\Desktop\EsprIn-final-desktop\src\Views\Icons" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Controllers.Forum" />
-      <recent name="Services" />
-      <recent name="Discord" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Pidev\src\Views\UI\Post" />
       <recent name="C:\Users\Mohamed Oueslati\Desktop\Files\Document\esprin\final\EsprIn-final-desktop\EsprIn-final-desktop\src\Views" />
       <recent name="C:\Users\Mohamed Oueslati\Desktop\Files\Document\esprin\final\EsprIn-final-desktop\EsprIn-final-desktop\src\Views\Templates" />
       <recent name="C:\Users\Mohamed Oueslati\Desktop\Files\Document\esprin\final\EsprIn-final-desktop\EsprIn-final-desktop\src\Views\Windows" />
       <recent name="C:\Users\Mohamed Oueslati\Desktop\Files\Document\esprin\final\EsprIn-final-desktop\EsprIn-final-desktop\src\Services" />
-      <recent name="C:\Users\Mohamed Oueslati\Desktop\Files\Document\esprin\final\EsprIn-final-desktop\EsprIn-final-desktop\src\Modules" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Pidev\src\Views\Windows" />
+      <recent name="C:\Users\Zahar\Desktop\EsprIn-final-desktop\src\Views\Icons" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="APIs" />
+      <recent name="Controllers.Forum" />
+      <recent name="Services" />
+      <recent name="Discord" />
     </key>
   </component>
   <component name="RunManager">
@@ -63,15 +101,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -94,47 +130,84 @@
       <workItem from="1646881899802" duration="1891000" />
       <workItem from="1646884604783" duration="3201000" />
     </task>
+    <task id="LOCAL-00001" summary="Merge 2">
+      <created>1646881752339</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1646881752339</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="0" y="0" key="#Project_Structure" timestamp="1646884691052">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="0" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1646884691052" />
-    <state x="2472" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1646882676361">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2472" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1646882676361" />
-    <state x="512" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1646885177157">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="512" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1646885177157" />
-    <state x="224" y="154" key="FileChooserDialogImpl" timestamp="1646884681862">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="224" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1646884681862" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1646887854452">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646887854452" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1646883409387" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1646887854452">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1646887854452" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1646883409387" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1646887854451">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1646887854451" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1646883409387" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1646887854452">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1646887854452" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1646883409387" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge 2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Services/UserServices.java</url>
+          <line>226</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Services/UserServices.java</url>
+          <line>229</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Services/UserServices.java</url>
+          <line>235</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controllers/Offers/OfferCell.java</url>
+          <line>114</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controllers/Offers/OfferCell.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controllers/Offers/OfferCell.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controllers/Offers/OfferMenu.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controllers/Offers/OfferCell.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controllers/Offers/OfferCell.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
