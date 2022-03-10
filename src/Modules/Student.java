@@ -1,11 +1,11 @@
 package Modules;
 
+import java.util.Date;
+
 import Utils.Enums.Domaine;
 import Utils.Enums.Roles;
 import Utils.Enums.State;
 import Utils.Structure.Classe;
-
-import java.util.Date;
 
 public class Student extends Espritien{
     private Classe classe;

@@ -10,29 +10,29 @@
 
 <AnchorPane prefHeight="1043.0" prefWidth="1452.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EventControllers.EventMenu">
     <children>
-      <Separator prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0" />
+        <Separator prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0" />
         <VBox style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
             <children>
-                  <Label text="Events">
-                      <font>
-                          <Font name="Segoe UI Emoji" size="40.0" />
-                      </font>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets bottom="30.0" left="100.0" top="30.0" />
-               </VBox.margin>
-                  </Label>
+                <Label text="Events">
+                    <font>
+                        <Font name="Segoe UI Emoji" size="40.0" />
+                    </font>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                    <VBox.margin>
+                        <Insets bottom="30.0" left="100.0" top="30.0" />
+                    </VBox.margin>
+                </Label>
                 <AnchorPane prefHeight="853.0" prefWidth="1452.0">
                     <children>
                         <ListView fx:id="eventListView" prefHeight="200.0" prefWidth="200.0" stylesheets="@../Style/DashboardStyle.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                     </children>
                 </AnchorPane>
             </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
         </VBox>
     </children>
 </AnchorPane>

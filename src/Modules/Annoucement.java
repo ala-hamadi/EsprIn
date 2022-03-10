@@ -1,10 +1,9 @@
 package Modules;
 
-import Utils.Enums.AnnounceDestination;
-import Utils.Enums.Roles;
-import Utils.Enums.State;
-
 import java.util.Date;
+
+import Utils.Enums.AnnounceDestination;
+import Utils.Enums.State;
 
 public class Annoucement {
     private int idAnn;

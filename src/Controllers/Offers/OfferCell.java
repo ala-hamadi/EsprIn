@@ -1,13 +1,15 @@
 package Controllers.Offers;
 
-import Controllers.EventControllers.EditEventController;
-import Modules.Espritien;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
 import Modules.Extern;
 import Modules.Offre;
 import Modules.User;
-import Services.EventServices;
 import Services.OffreServices;
 import Services.UserServices;
+import Utils.CurrentUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,16 +18,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.List;
 
 public class OfferCell {
 
@@ -83,10 +80,10 @@ public class OfferCell {
             ContentOffer.setText(offre.getDescOffer());
             OfferCategorie.setText(offre.getCategory().name());
 
-//            if(10000000!=offre.getOfferProvider()){
-//                DeleteBtn1.setVisible(false);
-//                ModBtn1.setVisible(false);
-//            }
+            if(CurrentUser.getInstance().getCurrentUser().getCinUser()!=offre.getOfferProvider()){
+                DeleteBtn1.setVisible(false);
+                ModBtn1.setVisible(false);
+            }
 
         } catch (SQLException exception) {
             exception.printStackTrace();

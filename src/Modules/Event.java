@@ -1,9 +1,8 @@
 package Modules;
 
-import Utils.Enums.State;
-
 import java.sql.Date;
-import java.sql.Timestamp;
+
+import Utils.Enums.State;
 
 public class Event {
 

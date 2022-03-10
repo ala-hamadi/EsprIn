@@ -33,8 +33,8 @@ public class ParticipateServices{
         try {
             Statement statement = connection.createStatement();
             String query = "INSERT INTO `participate` (`cinUser` ,`idEvent` ) VALUES( '"
-                    + idUser + "' , '"
-                    + eventId + "');";
+                + idUser + "' , '"
+                + eventId + "');";
 
             int x = statement.executeUpdate(query);
             System.out.println(x + " Row inserted");

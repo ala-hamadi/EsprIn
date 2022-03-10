@@ -1,9 +1,14 @@
 package Controllers;
 
+import Modules.Espritien;
+import Modules.Extern;
 import Services.UserServices;
+import Utils.CropImg;
 import Utils.CurrentUser;
+import Utils.Enums.Roles;
 import Utils.Enums.State;
 import Utils.RessorcesManager;
+import Utils.UserSerializableData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,11 +17,18 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -25,7 +37,16 @@ import java.util.ResourceBundle;
 public class HomeFXMLController implements Initializable {
 
     @FXML
-    private Button AnnounceBtn;
+    public Text profileNameAndLastName;
+    public Circle userAvatar;
+    @FXML
+    private Button exitBtn;
+
+    @FXML
+    private Button SearchBtn;
+
+    @FXML
+    private Button PostBtn;
 
     @FXML
     private Button EventBtn;
@@ -34,25 +55,34 @@ public class HomeFXMLController implements Initializable {
     private Button ForumBtn;
 
     @FXML
-    private Button LogoutBtn;
-
-    @FXML
     private Button OfferBtn;
 
     @FXML
-    private Button PostBtn;
+    private Button AnnounceBtn;
+
+    @FXML
+    private Button AddBtn;
+
+    @FXML
+    private Button LogoutBtn;
 
     @FXML
     private StackPane content;
 
     @FXML
-    private Button exitBtn;
+    private MenuItem eventAddItem;
 
     @FXML
-    private Button SearchBtn;
+    private MenuItem forumAddItem;
 
     @FXML
-    private Button AddBtn;
+    private MenuItem offreAddItem;
+
+    @FXML
+    private MenuItem postAddItem;
+
+    @FXML
+    private MenuItem alertAddItem;
 
 
     UserServices userServices;
@@ -63,7 +93,6 @@ public class HomeFXMLController implements Initializable {
         stage.close();
 
     }
-
 
     @FXML
     void showAnnounceMenu(ActionEvent announce) {
@@ -90,11 +119,48 @@ public class HomeFXMLController implements Initializable {
     }
 
     @FXML
-    void showForumMenu(ActionEvent event) {
+    void showSearchList(MouseEvent event) {
+
+    }
+
+    @FXML
+    void AddAlert(ActionEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/Views/UI/Announcement/AddAlert.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    void showForum(ActionEvent event) {
         try {
             Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/ForumMenu.fxml"));
             content.getChildren().removeAll();
             content.getChildren().setAll(menu);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void logout(ActionEvent actionEvent) {
+        System.out.println(CurrentUser.getInstance().getCurrentUser());
+        userServices.changeState(CurrentUser.getInstance().getCurrentUser(), State.Disconnected);
+        CurrentUser.clearInstance();
+        RessorcesManager.delete("loggedUser.bin");
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/Views/UI/LoginInterface.fxml"));
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            Scene scene = new Scene(parent);
+            stage.setScene(scene);
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -122,79 +188,54 @@ public class HomeFXMLController implements Initializable {
         }
 
     }
-
-
-    @FXML
-    void showSearchList(MouseEvent event) {
-
-    }
-
-
-    @FXML
-    void Add(ActionEvent event) {
-
-    }
-
-    @FXML
-    void AddAlert(ActionEvent event) {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/Views/Windows/AddAlert.fxml"));
-            Scene scene = new Scene(parent);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+            userServices = UserServices.getInstance();
+            try{
+                Image image;
+                if(!CurrentUser.getInstance().getCurrentUser().getImgUrl().equals("")) {
+                    image = new Image("/Img/" + CurrentUser.getInstance().getCurrentUser().getImgUrl(), false);
+                    userAvatar.setFill(new ImagePattern(image));
+                }
+            }catch (Exception exception){
+                System.out.println(exception.getMessage());
+            }
+
+            if(CurrentUser.getInstance().getCurrentUser().getRole().equals(Roles.Externe))
+            {
+                Extern extern=(Extern)CurrentUser.getInstance().getCurrentUser();
+                profileNameAndLastName.setText(extern.getEntrepriseName());
+            }else {
+                Espritien espritien=(Espritien) CurrentUser.getInstance().getCurrentUser();
+                profileNameAndLastName.setText(espritien.getFirstName()+" "+espritien.getLastName());
+            }
+
+            switch (CurrentUser.getInstance().getCurrentUser().getRole()) {
+                case Club:
+                    postAddItem.setVisible(true);
+                    eventAddItem.setVisible(true);
+                    break;
+                case Professeur:
+                    postAddItem.setVisible(true);
+                    alertAddItem.setVisible(true);
+                    forumAddItem.setVisible(true);
+                    break;
+                case Etudiant:
+                    postAddItem.setVisible(true);
+                    forumAddItem.setVisible(true);
+                    break;
+                case Externe:
+                    offreAddItem.setVisible(true);
+
+                    break;
+            }
+        } catch (SQLException exception) {
+            exception.printStackTrace();
         }
     }
 
-    @FXML
-    void AddAnnounce(ActionEvent event) {
-        try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/Views/Windows/AddAnnounceWindow.fxml"));
-            Scene scene = new Scene(parent);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    void AddEvent(ActionEvent event) {
-        try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/Views/Windows/AddEvent.fxml"));
-            Scene scene = new Scene(parent);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    @FXML
-    void AddForum(ActionEvent event) {
-        try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/Views/Windows/AddForumWindow.fxml"));
-            Scene scene = new Scene(parent);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    @FXML
-    void AddOffer(ActionEvent event) {
+    public void AddOffer(ActionEvent actionEvent) {
         try {
             Parent parent = FXMLLoader.load(getClass().getResource("/Views/Windows/AddOffer.fxml"));
             Scene scene = new Scene(parent);
@@ -205,13 +246,11 @@ public class HomeFXMLController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
-    @FXML
-    void AddPost(ActionEvent event) {
+    public void AddForum(ActionEvent actionEvent) {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/Views/Windows/AddPost.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("/Views/Windows/AddForumWindow.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
             stage.setScene(scene);
@@ -220,40 +259,56 @@ public class HomeFXMLController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
-
-
-
-
-    public void logout(ActionEvent actionEvent) {
-        System.out.println(CurrentUser.getInstance().getCurrentUser());
-        userServices.changeState(CurrentUser.getInstance().getCurrentUser(), State.Disconnected);
-        CurrentUser.clearInstance();
-        RessorcesManager.delete("loggedUser.bin");
+    public void AddEvent(ActionEvent actionEvent) {
         try {
-            Parent parent =FXMLLoader.load(getClass().getResource("/Views/UI/LoginInterface.fxml"));
-            Stage stage=(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            Scene scene=new Scene(parent);
+            Parent parent = FXMLLoader.load(getClass().getResource("/Views/Windows/AddEvent.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
             stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void AddPost(ActionEvent actionEvent) {
         try {
-            userServices=UserServices.getInstance();
-        } catch (SQLException exception) {
-            exception.printStackTrace();
+            Parent parent = FXMLLoader.load(getClass().getResource("/Views/Windows/AddPost.fxml"));
+            System.out.println(parent);
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
+    public void addPic(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Templates/ImgCropInterface.fxml"));
+            Parent parent=loader.load();
+            ImgCropInterface imgCropInterface=loader.getController();
+            File file=CropImg.importImg();
+            Image image=CropImg.fileToImage(file);
+            System.out.println(file);
+            System.out.println(image);
+            imgCropInterface.setImageFile(file);
+            imgCropInterface.setImage(image);
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e);
+        }
 
-
-
+    }
 }

@@ -6,6 +6,7 @@ import Utils.BdConnection;
 import Utils.CurrentUser;
 import Utils.Enums.*;
 import Utils.Structure.Classe;
+import javafx.scene.control.Alert;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -31,8 +32,8 @@ public class UserServices implements IServices<User> {
     }
 
     @Override
-    public void add(User user) {
-        try {
+    public void add(User user)  {
+        try{
             String query = "";
             Statement statement = connection.createStatement();
             switch (user.getRole()) {
@@ -59,13 +60,57 @@ public class UserServices implements IServices<User> {
                 case Club:
                     final Club club = (Club) user;
                     query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`) VALUES ('" + club.getCinUser() + "', '" + club.getEmail() + "', '" + club.getPasswd() + "', current_timestamp(), '" + club.getImgUrl() + "', '" + club.getFirstName() + "', '" + club.getLastName() + "', NULL, NULL, '" + club.getTypeClub() + "', NULL, NULL, NULL, '" + club.getRole() + "');";
+                    System.out.println(statement.executeUpdate(query) + " Row inserted");
+                    break;
+                default:
+                    System.out.println("Error,Role not defined");
+            }} catch (SQLException exception) {
+            System.out.println(exception.getMessage());
+            Alert alert=new Alert(Alert.AlertType.ERROR,"Account Already exists");
+            alert.show();
+        }
+
+    }
+    public boolean addAndcheck(User user)  {
+        try{
+            String query = "";
+            Statement statement = connection.createStatement();
+            switch (user.getRole()) {
+                case Admin:
+                    final Admin admin = (Admin) user;
+                    query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `departement`, `role`) VALUES ('" + user.getCinUser() + "', '" + user.getEmail() + "', '" + user.getPasswd() + "', current_timestamp(), '" + admin.getImgUrl() + "', '" + admin.getFirstName() + "', '" + admin.getLastName() + "', '" + admin.getDepartment() + "', '" + admin.getRole() + "');";
+                    System.out.println(statement.executeUpdate(query) + " Row inserted");
+                    break;
+                case Etudiant:
+                    final Student student = (Student) user;
+                    query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`) VALUES ('" + student.getCinUser() + "', '" + student.getEmail() + "', '" + student.getPasswd() + "', current_timestamp(), '" + student.getImgUrl() + "', '" + student.getFirstName() + "', '" + student.getLastName() + "', '" + student.getDomaine() + "', NULL, NULL, '" + student.getClasse().toString() + "', NULL, NULL, '" + student.getRole() + "');";
+                    System.out.println(statement.executeUpdate(query) + " Row inserted");
+                    break;
+                case Professeur:
+                    final Professor professor = (Professor) user;
+                    query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`) VALUES ('" + professor.getCinUser() + "', '" + professor.getEmail() + "', '" + professor.getPasswd() + "', current_timestamp(), '" + professor.getImgUrl() + "', '" + professor.getFirstName() + "', '" + professor.getLastName() + "', '" + professor.getDomaine() + "', NULL, NULL, NULL, NULL, NULL, '" + professor.getRole() + "');";
+                    System.out.println(statement.executeUpdate(query) + " Row inserted");
+                    break;
+                case Externe:
+                    final Extern extern = (Extern) user;
+                    query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`) VALUES ('" + extern.getCinUser() + "', '" + extern.getEmail() + "', '" + extern.getPasswd() + "', current_timestamp(), '" + extern.getImgUrl() + "', NULL, NULL, NULL, NULL, NULL, NULL, '" + extern.getAdresse() + "', '" + extern.getEntrepriseName() + "', '" + extern.getRole() + "');";
+                    System.out.println(statement.executeUpdate(query) + " Row inserted");
+                    break;
+                case Club:
+                    final Club club = (Club) user;
+                    query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`) VALUES ('" + club.getCinUser() + "', '" + club.getEmail() + "', '" + club.getPasswd() + "', current_timestamp(), '" + club.getImgUrl() + "', '" + club.getFirstName() + "', '" + club.getLastName() + "', NULL, NULL, '" + club.getTypeClub() + "', NULL, NULL, NULL, '" + club.getRole() + "');";
+                    System.out.println(statement.executeUpdate(query) + " Row inserted");
                     break;
                 default:
                     System.out.println("Error,Role not defined");
             }
-        } catch (SQLException exception) {
+        return true;} catch (SQLException exception) {
             System.out.println(exception.getMessage());
+            Alert alert=new Alert(Alert.AlertType.ERROR,"Account Already exists");
+            alert.show();
+            return false;
         }
+
     }
 
     @Override
@@ -94,7 +139,7 @@ public class UserServices implements IServices<User> {
                     break;
                 case Etudiant:
                     final Student student = (Student) user;
-                    query = "UPDATE `user` SET `firstName` = '" + student.getFirstName() + "', `lastName` = '" + student.getLastName() + "', `email` = '" + student.getEmail() + "', `passwd` = '" + student.getPasswd() + "', `imgURL` = '" + student.getImgUrl() + "', `domaine` = '" + student.getDomaine() + "' `class`='" + student.getClasse().toString() + "' WHERE `user`.`cinUser` = " + student.getCinUser() + ";";
+                    query = "UPDATE `user` SET `firstName` = '" + student.getFirstName() + "', `lastName` = '" + student.getLastName() + "', `email` = '" + student.getEmail() + "', `passwd` = '" + student.getPasswd() + "', `imgURL` = '" + student.getImgUrl() + "', `domaine` = '" + student.getDomaine() + "' `class`= '" + student.getClasse().toString() + "' WHERE `user`.`cinUser` = " + student.getCinUser() + ";";
                     System.out.println(statement.executeUpdate(query) + " Row updated");
                     break;
                 case Club:
@@ -308,8 +353,24 @@ public class UserServices implements IServices<User> {
         return this.getList().stream().map(u -> (Espritien) u)
                 .filter(u -> u.getFirstName().contains(name)).collect(Collectors.toList());
     }
-
-
+    public List<User> searchByName(String name) {
+        return this.getList().stream().map(u -> {
+            if (u.getRole().equals(Roles.Externe))
+                return (Extern)u;
+            else
+           return  (Espritien) u;
+        })
+                .filter(u -> {
+                    if (u.getRole().equals(Roles.Externe)) {
+                        Extern extern=(Extern)u;
+                        return extern.getEntrepriseName().toLowerCase().startsWith(name.toLowerCase());
+                    }
+                    else {
+                        Espritien espritien=(Espritien)u;
+                        return espritien.getFirstName().toLowerCase().startsWith(name.toLowerCase());
+                    }
+                }).collect(Collectors.toList());
+    }
 
     public List<User> sortById() {
         return this.getList().stream().sorted((o1, o2) -> String.valueOf(o1.getCinUser())

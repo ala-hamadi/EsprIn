@@ -36,7 +36,7 @@ public class TemplateUser {
     DeleteListener<User> deleteUserListener;
 
     public void setData(User user,BanUserListener banUserListener,DeleteListener<User> deleteUserListener) {
-        try{
+        /*try{
             Image image=new Image(user.getImgUrl(),false);
 
            this.userAvatar.setFill(new ImagePattern(image));
@@ -46,7 +46,7 @@ public class TemplateUser {
             Image image=new Image("https://www.jbrhomes.com/wp-content/uploads/blank-avatar.png",false);
 
             this.userAvatar.setFill(new ImagePattern(image));
-        }
+        }*/
 
         this.user=user;
         if(user.getRole()!= Roles.Externe) {
@@ -57,7 +57,7 @@ public class TemplateUser {
         else {
             Extern extern=(Extern)user;
             this.userFirstName.setText(extern.getEntrepriseName());
-            this.userLastName.setText("");
+            this.userLastName.setText(extern.getAdresse());
         }
         this.userRole.setText(user.getRole().name());
         this.userCreationDate.setText(user.getCreatedAt().toString());

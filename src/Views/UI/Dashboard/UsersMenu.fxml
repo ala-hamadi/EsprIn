@@ -18,8 +18,17 @@
                </children></Pane>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
                <children>
-                  <ComboBox prefWidth="150.0" />
-                  <TextField fx:id="searchBar" promptText="Search user" styleClass="searchBar" />
+                  <ComboBox fx:id="roleSelector" onAction="#onSelection" prefHeight="39.0" prefWidth="206.0" />
+                  <TextField fx:id="searchBar" onKeyTyped="#onUserSearched" promptText="Search user" styleClass="searchBar" />
+                  <MenuButton mnemonicParsing="false" prefHeight="35.0" prefWidth="159.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" text="Add User" textFill="#cd2121">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#addExternal" text="Add External" />
+                      <MenuItem mnemonicParsing="false" onAction="#addAdmin" text="Add Admin" />
+                    </items>
+                     <font>
+                        <Font name="Lato Bold" size="18.0" />
+                     </font>
+                  </MenuButton>
                </children>
             </HBox>
             <ScrollPane prefHeight="911.0" prefWidth="1452.0">

@@ -127,38 +127,38 @@ public class OffreServices implements IServices<Offre> {
 
     public List<Offre> sort_categorie() {
         return this.getList().stream().sorted((o1, o2) -> String.valueOf(o1.getCategory())
-                .compareTo(String.valueOf(o2.getDescOffer()))).collect(Collectors.toList());
+            .compareTo(String.valueOf(o2.getDescOffer()))).collect(Collectors.toList());
     }
 
     public List<Offre> sort_titre() {
         return this.getList().stream().sorted((o1, o2) -> String.valueOf(o1.getTitleOffer())
-                .compareTo(String.valueOf(o2.getTitleOffer()))).collect(Collectors.toList());
+            .compareTo(String.valueOf(o2.getTitleOffer()))).collect(Collectors.toList());
     }
 
 
     public List<Offre> recherche_title_id_categorie(String title, int id, OffreCategorie cat) {
-       return this.getList()
-                .stream()
-                .filter(o -> Objects.equals(o.getTitleOffer(), title))
-                .filter(o -> Objects.equals(o.getIdOffer(), id))
-               .filter(o -> Objects.equals(o.getCategory(), cat))
-               .collect(Collectors.toList());
+        return this.getList()
+            .stream()
+            .filter(o -> Objects.equals(o.getTitleOffer(), title))
+            .filter(o -> Objects.equals(o.getIdOffer(), id))
+            .filter(o -> Objects.equals(o.getCategory(), cat))
+            .collect(Collectors.toList());
 
     }
 
     public List<Offre> recherche_title(String title) {
         return this.getList()
-                .stream()
-                .filter(o -> Objects.equals(o.getTitleOffer(), title))
-                .collect(Collectors.toList());
+            .stream()
+            .filter(o -> Objects.equals(o.getTitleOffer(), title))
+            .collect(Collectors.toList());
 
     }
 
     public List<Offre> recherche(String stage, int i, OffreCategorie cat) {
         return this.getList()
-                .stream()
-                .filter(o -> Objects.equals(o.getCategory(), cat))
-                .collect(Collectors.toList());
+            .stream()
+            .filter(o -> Objects.equals(o.getCategory(), cat))
+            .collect(Collectors.toList());
 
     }
 }

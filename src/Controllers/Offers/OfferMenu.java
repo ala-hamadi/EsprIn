@@ -1,5 +1,10 @@
 package Controllers.Offers;
 
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.ResourceBundle;
+
 import Modules.Offre;
 import Services.OffreServices;
 import javafx.fxml.FXML;
@@ -7,11 +12,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
-
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.ResourceBundle;
 
 public class OfferMenu implements Initializable {
 

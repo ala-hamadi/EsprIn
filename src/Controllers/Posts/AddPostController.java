@@ -8,7 +8,7 @@ import java.util.ResourceBundle;
 
 import Modules.Post;
 import Services.PostServices;
-import Utils.Enums.Categories;
+import Utils.CurrentUser;
 import Utils.Enums.CategoryPost;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,6 +24,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+
 public class AddPostController implements Initializable {
 
     @FXML
@@ -80,10 +81,12 @@ public class AddPostController implements Initializable {
 
 
     @FXML
-    public void AddPost(javafx.event.ActionEvent event) throws SQLException {
+    public void AddPost(ActionEvent event) throws SQLException {
+
         if (contentPost.getText().length()>2){
             PostServices postServices=new PostServices();
-            Post post =new Post(2,contentPost.getText(),"https://vivreaberlin.com/wp-content/uploads/2015/07/4455_a6b402d1c41e.jpg.",0, Timestamp.valueOf(LocalDateTime.now()),10000000,catPost.getValue());
+            Post post =new Post(2,contentPost.getText(),"https://vivreaberlin.com/wp-content/uploads/2015/07/4455_a6b402d1c41e.jpg.",0, Timestamp.valueOf(LocalDateTime.now()),
+                (int) CurrentUser.getInstance().getCurrentUser().getCinUser(),catPost.getValue());
             postServices.addPost(post);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");

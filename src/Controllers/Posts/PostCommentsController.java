@@ -9,11 +9,9 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import Modules.CommentPost;
-import Modules.Forum;
 import Modules.Post;
-import Modules.Responded;
 import Services.CommentServices;
-import Services.RespondedService;
+import Utils.CurrentUser;
 import Utils.Enums.State;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -102,7 +100,7 @@ public class PostCommentsController implements Initializable {
             alert.setContentText("Forum is not added !");
             alert.show();
         } else {
-            commentServices.addCommentToPost(new CommentPost(11111111,id,content.getText(), Timestamp.valueOf(LocalDateTime.now()), State.Active));
+            commentServices.addCommentToPost(new CommentPost((int) CurrentUser.getInstance().getCurrentUser().getCinUser(),id,content.getText(), Timestamp.valueOf(LocalDateTime.now()), State.Active));
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");

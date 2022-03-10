@@ -25,7 +25,7 @@ public class ReactedForumServices implements ILikeServices<Forum> {
         try {
             Statement statement = connection.createStatement();
             String query1 =
-                    "INSERT INTO `reacted forum`(`cinUser`, `idForum`) VALUES('" + idUser + "', '" + idForum + "');";
+                "INSERT INTO `reacted forum`(`cinUser`, `idForum`) VALUES('" + idUser + "', '" + idForum + "');";
             int y = statement.executeUpdate(query1);
             System.out.println(y + " Like added");
             return true;
@@ -42,8 +42,8 @@ public class ReactedForumServices implements ILikeServices<Forum> {
             Statement statement = connection.createStatement();
 
             String query1 =
-                    "DELETE FROM `reacted forum` WHERE `cinUser` = " + idUser + " AND `idForum` = " + idForum
-                            + ";";
+                "DELETE FROM `reacted forum` WHERE `cinUser` = " + idUser + " AND `idForum` = " + idForum
+                    + ";";
             int y = statement.executeUpdate(query1);
             System.out.println(y + " Like deleted");
             return true;

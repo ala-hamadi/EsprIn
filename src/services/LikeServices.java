@@ -22,7 +22,7 @@ public class LikeServices implements ILikeServices<LikePost>{
       Statement statement = connection.createStatement();
       String query1 =
           "INSERT INTO `like`(`likeUser`, `likePost`, `createdAt`) VALUES('" + idUser + "', '" + postId
-               + "', current_timestamp());";
+              + "', current_timestamp());";
 
       int y = statement.executeUpdate(query1);
       System.out.println(y + " Like added");

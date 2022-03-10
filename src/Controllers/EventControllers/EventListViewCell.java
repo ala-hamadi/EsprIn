@@ -1,15 +1,16 @@
 package Controllers.EventControllers;
 
-import Controllers.Posts.DeletePostController;
-import Controllers.Posts.EditPostController;
-import Modules.Club;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
 import Modules.Espritien;
+import Modules.Event;
 import Modules.User;
-import Services.CommentServices;
 import Services.EventServices;
-import Services.LikeServices;
 import Services.ParticipateServices;
 import Services.UserServices;
+import Utils.CurrentUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,25 +19,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
-import Modules.Event;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
-import javax.swing.*;
-
-import java.io.IOException;
-import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class EventListViewCell {
     @FXML
@@ -117,7 +105,7 @@ public class EventListViewCell {
         Localisation.setText(event.getEventLocal());
 
         ParticipateNb.setText(String.valueOf(event.getNbrParticipant()));
-        if(10000000!=event.getIdOrganizer()){
+        if(CurrentUser.getInstance().getCurrentUser().getCinUser()!=event.getIdOrganizer()){
             DeleteBtn1.setVisible(false);
             ModBtn1.setVisible(false);
         }
@@ -131,7 +119,7 @@ public class EventListViewCell {
             ParticipateServices participateServices = ParticipateServices.getInstance();
             int idEvent= this.event.getIdEvent();
             System.out.println(event);
-            participateServices.ParticipateToEvent(10000000,idEvent);
+            participateServices.ParticipateToEvent((int) CurrentUser.getInstance().getCurrentUser().getCinUser(),idEvent);
 
             int nbPartic = Integer.parseInt(ParticipateNb.getText())+1;
             ParticipateNb.setText(String.valueOf(nbPartic));

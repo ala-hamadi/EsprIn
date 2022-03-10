@@ -1,13 +1,9 @@
 package Controllers.Posts;
 
 import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 import Modules.CommentPost;
-import Modules.Post;
 import Services.CommentServices;
-import Services.PostServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
