@@ -43,6 +43,8 @@ public class MainController implements Initializable {
     public Circle adminAvatar;
     @FXML
     private Button exitBtn;
+    @FXML
+    private Button SMSBtn;
     private double x, y;
     UserServices userServices;
 
@@ -95,6 +97,20 @@ public class MainController implements Initializable {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+
+    @FXML
+    void showSMS(ActionEvent event) {
+
+        try {
+            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/Dashboard/SMS.fxml"));
+            content.getChildren().removeAll();
+            content.getChildren().setAll(menu);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 
     public void onLogout(ActionEvent actionEvent) {

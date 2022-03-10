@@ -273,3 +273,21 @@
 .menuBtn{
     -fx-background-color:#FFCCBC;
 }
+
+#interesstedBtn{
+    -fx-border-color: #853030;
+    -fx-background-color: lightgreen;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+    -fx-font-family:Lato;
+}
+
+#excelBtn{
+    -fx-border-color: #853030;
+    -fx-background-color: green;
+    -fx-border-radius:60;
+    -fx-background-radius:60;
+    -fx-text-fill:white;
+    -fx-font-family:Lato;
+}

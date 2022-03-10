@@ -12,5 +12,7 @@
     <orderEntry type="library" name="javax.mail" level="project" />
     <orderEntry type="library" name="javax.json:javax.json-api:1.1.4" level="project" />
     <orderEntry type="library" name="recaptcha4j-0.0.7" level="project" />
+    <orderEntry type="library" name="ant-1.8.2" level="project" />
+    <orderEntry type="library" name="twilio-8.9.0-javadoc" level="project" />
   </component>
 </module>

@@ -91,11 +91,8 @@
                         <Insets bottom="5.0" left="200.0" right="2.0" top="5.0" />
                     </VBox.margin>
                 </Label>
-                <Button graphicTextGap="15.0" mnemonicParsing="false" onAction="#offerinterested" prefHeight="17.0" prefWidth="136.0" styleClass="ParticipateBtn" stylesheets="@../Style/DashbordStyle.css" text="Interested">
-                    <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" top="10.0" />
-                    </VBox.margin>
-                </Button>
+            <Button fx:id="interesstedBtn" graphicTextGap="15.0" mnemonicParsing="false" onAction="#OfferParticiate" prefHeight="17.0" prefWidth="136.0" styleClass="ParticipateBtn" stylesheets="@../../../../bairem/EsprIN/src/Views/Style/DashbordStyle.css" text="Interested" />
+            <Button fx:id="noInterestBtn" mnemonicParsing="false" onAction="#desinterestOffer" prefHeight="35.0" prefWidth="143.0" styleClass="ParticipateBtn" stylesheets="@../../../../bairem/EsprIN/src/Views/Style/DashbordStyle.css" text="Uninterested" textFill="WHITE" />
             </children>
         </VBox>
     </children>

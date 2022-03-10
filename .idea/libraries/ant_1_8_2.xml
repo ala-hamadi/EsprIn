@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="ant-1.8.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Nouveau dossier (2)/ant-1.8.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Nouveau dossier (2)/ant-launcher-1.8.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Nouveau dossier (2)/commons-codec-1.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Nouveau dossier (2)/commons-collections4-4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Nouveau dossier (2)/commons-compress-1.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Nouveau dossier (2)/commons-math3-3.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Nouveau dossier (2)/curvesapi-1.06.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Nouveau dossier (2)/poi-4.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Nouveau dossier (2)/poi-excelant-4.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Nouveau dossier (2)/poi-ooxml-4.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Nouveau dossier (2)/poi-ooxml-schemas-4.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Nouveau dossier (2)/SparseBitSet-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Nouveau dossier (2)/xmlbeans-3.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

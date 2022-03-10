@@ -5,8 +5,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 import Modules.Extern;
+import Modules.Interest;
 import Modules.Offre;
 import Modules.User;
+import Services.InterestServices;
 import Services.OffreServices;
 import Services.UserServices;
 import Utils.CurrentUser;
@@ -61,7 +63,28 @@ public class OfferCell {
     private Button ModBtn1;
 
     @FXML
-    public void offerinterested(ActionEvent actionEvent) {
+    private Button interesstedBtn;
+
+    @FXML
+    private Button noInterestBtn;
+
+    @FXML
+    public void OfferParticiate(ActionEvent actionEvent) {
+        InterestServices interestServices= null;
+        try {
+            interestServices = InterestServices.getInstance();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+        Interest interest= new Interest(offre.getIdOffer(), (int) CurrentUser.getInstance().getCurrentUser().getCinUser());
+
+
+
+        interestServices.add(interest);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setContentText("interest is added successfully!");
+        alert.show();
     }
 
     public void setData(Offre offre){
@@ -80,10 +103,10 @@ public class OfferCell {
             ContentOffer.setText(offre.getDescOffer());
             OfferCategorie.setText(offre.getCategory().name());
 
-            if(CurrentUser.getInstance().getCurrentUser().getCinUser()!=offre.getOfferProvider()){
+         /*   if(CurrentUser.getInstance().getCurrentUser().getCinUser()!=offre.getOfferProvider()){
                 DeleteBtn1.setVisible(false);
                 ModBtn1.setVisible(false);
-            }
+            }*/
 
         } catch (SQLException exception) {
             exception.printStackTrace();
@@ -136,6 +159,28 @@ public class OfferCell {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void desinterestOffer(ActionEvent event) {
+
+        InterestServices interestServices= null;
+        try {
+            interestServices = InterestServices.getInstance();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+        Interest interest= new Interest(offre.getIdOffer(), (int) CurrentUser.getInstance().getCurrentUser().getCinUser());
+
+
+
+        interestServices.delete(interest);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setContentText("interest is deleted successfully!");
+        alert.show();
+
+
     }
 
 }
