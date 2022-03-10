@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="pane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminDashboardControllers.Announce.AnnounceListViewCell">
+   <children>
+      <Pane prefHeight="90.0" prefWidth="1451.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="announceTitle" layoutX="77.0" layoutY="31.0" text="Announce title">
+               <font>
+                  <Font name="Lato Regular" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="dateSent" layoutX="572.0" layoutY="31.0" text="Date sent">
+               <font>
+                  <Font name="Lato Regular" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="destination" layoutX="811.0" layoutY="31.0" text="Destination">
+               <font>
+                  <Font name="Lato Regular" size="23.0" />
+               </font>
+            </Label>
+            <Button graphicTextGap="15.0" layoutX="1280.0" layoutY="25.0" mnemonicParsing="false" onAction="#announceDeleted" prefHeight="42.0" prefWidth="125.0" styleClass="DeleteBtn" stylesheets="@../Style/DashboardStyle.css" text="Delete">
+               <font>
+                  <Font name="Lato Bold" size="19.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/delete.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Separator layoutY="-1.0" prefHeight="3.0" prefWidth="1451.0" />
+         </children></Pane>
+   </children>
+</AnchorPane>

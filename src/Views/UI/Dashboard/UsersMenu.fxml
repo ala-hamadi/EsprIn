@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="1043.0" prefWidth="1452.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminDashboardControllers.User.UsersMenu">
+   <children>
+      <VBox layoutX="272.0" layoutY="117.0" prefHeight="200.0" prefWidth="100.0" stylesheets="@../../Style/DashboardStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="134.0" prefWidth="1452.0">
+               <children>
+                  <Label layoutX="87.0" layoutY="33.0" text="Users">
+                     <font>
+                        <Font name="Lato Bold" size="53.0" />
+                     </font></Label>
+               </children></Pane>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+               <children>
+                  <ComboBox fx:id="roleSelector" onAction="#onSelection" prefHeight="39.0" prefWidth="206.0" />
+                  <TextField fx:id="searchBar" onKeyTyped="#onUserSearched" promptText="Search user" styleClass="searchBar" />
+                  <MenuButton mnemonicParsing="false" prefHeight="35.0" prefWidth="159.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" text="Add User" textFill="#cd2121">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#addExternal" text="Add External" />
+                      <MenuItem mnemonicParsing="false" onAction="#addAdmin" text="Add Admin" />
+                    </items>
+                     <font>
+                        <Font name="Lato Bold" size="18.0" />
+                     </font>
+                  </MenuButton>
+               </children>
+            </HBox>
+            <ScrollPane prefHeight="911.0" prefWidth="1452.0">
+               <content>
+                  <GridPane fx:id="usersGrid" hgap="20.0" prefWidth="1451.0" vgap="40.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </GridPane>
+               </content></ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

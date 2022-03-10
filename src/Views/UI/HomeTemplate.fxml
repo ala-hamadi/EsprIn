@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.HomeFXMLController">
+
+    <children>
+        <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <right>
+                <AnchorPane prefHeight="994.0" prefWidth="503.0" BorderPane.alignment="CENTER">
+                    <children>
+                  <VBox alignment="TOP_CENTER" layoutX="100.0" layoutY="37.0" spacing="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" spacing="30.0">
+                           <children>
+                                    <Circle fx:id="userAvatar" fill="WHITE" radius="62.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Text fx:id="profileNameAndLastName" strokeType="OUTSIDE" strokeWidth="0.0" text="Foulen Ben Foulen">
+                                        <font>
+                                            <Font name="Lato Black" size="35.0" />
+                                        </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                         <Button graphicTextGap="10.0" mnemonicParsing="false" onAction="#addPic" styleClass="btn" stylesheets="@../Style/LoginStyle.css" text="Update Your Picture" GridPane.rowIndex="5">
+                             <graphic>
+                                 <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" styleClass="btn">
+                                     <image>
+                                         <Image url="@../Icons/add.png" />
+                                     </image>
+                                 </ImageView>
+                             </graphic></Button>
+                              <Button fx:id="LogoutBtn" mnemonicParsing="false" onAction="#logout" prefHeight="21.0" prefWidth="154.0" styleClass="Btn" stylesheets="@../Style/DashbordStyle.css" text="Sign out" textFill="#ff0000">
+                                  <graphic>
+                                      <ImageView fitHeight="18.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                              <Image url="@../Icons/exit_26px.png" />
+                                          </image>
+                                      </ImageView>
+                                  </graphic>
+                                  <font>
+                                      <Font size="23.0" />
+                                  </font>
+                              </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </padding>
+                  </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                    </children>
+                </AnchorPane>
+            </right>
+            <center>
+                <AnchorPane BorderPane.alignment="CENTER">
+                    <children>
+                        <StackPane fx:id="content" layoutX="47.0" layoutY="-9.0" stylesheets="@../Style/DashbordStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                    </children>
+                </AnchorPane>
+            </center>
+         <top>
+            <GridPane alignment="CENTER" prefHeight="82.0" prefWidth="1921.0" stylesheets="@../Style/DashbordStyle.css" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1426.0" minWidth="10.0" prefWidth="1418.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="954.0" minWidth="10.0" prefWidth="502.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="50.0">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/appicon.png" />
+                           </image>
+                        </ImageView>
+                        <TextField prefHeight="35.0" prefWidth="303.0" promptText="search..." style="-fx-background-radius: 10; -fx-border-radius: 10;">
+                           <font>
+                              <Font name="Lato Regular" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="38.0" prefWidth="107.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="Btn" text="Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icons/home_24px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="543.0" layoutY="41.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="107.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="Btn" text="Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icons/event_24px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="700.0" layoutY="41.0" mnemonicParsing="false" onAction="#showForum" prefHeight="38.0" prefWidth="107.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="Btn" text="Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icons/chat_24px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="857.0" layoutY="41.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="107.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="Btn" text="Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icons/business_26px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" layoutX="1014.0" layoutY="41.0" mnemonicParsing="false" onAction="#showAnnounceMenu" prefHeight="38.0" prefWidth="107.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="Btn" text="Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icons/microphone_24px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1">
+                     <children>
+                         <MenuButton mnemonicParsing="false" prefHeight="38.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="menuBtn" text="Add" textFill="#b51f1f">
+                             <items>
+                                 <MenuItem fx:id="postAddItem" mnemonicParsing="false" onAction="#AddPost" text="Add Post" visible="false" />
+                                 <MenuItem fx:id="eventAddItem" mnemonicParsing="false" onAction="#AddEvent" text="Add Event" visible="false" />
+                                 <MenuItem fx:id="forumAddItem" mnemonicParsing="false" onAction="#AddForum" text="Add Forum" visible="false" />
+                                 <MenuItem fx:id="alertAddItem" mnemonicParsing="false" onAction="#AddAlert" text="Add Alert" visible="false" />
+                                 <MenuItem fx:id="offreAddItem" mnemonicParsing="false" onAction="#AddOffer" text="Add Offer" visible="false" />
+                             </items>
+                             <font>
+                                 <Font size="19.0" />
+                             </font>
+                             <graphic>
+                                 <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                     <image>
+                                         <Image url="@../Icons/add_new_26px.png" />
+                                     </image>
+                                 </ImageView>
+                             </graphic>
+                         </MenuButton>
+                        <Circle fill="#1f93ff00" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </GridPane>
+         </top>
+        </BorderPane>
+    </children>
+</AnchorPane>
