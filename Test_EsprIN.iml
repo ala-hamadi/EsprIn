@@ -17,5 +17,7 @@
     <orderEntry type="library" name="json-simple-1.1" level="project" />
     <orderEntry type="library" name="twilio-8.9.0-javadoc1" level="project" />
     <orderEntry type="library" name="ant-1.8.21" level="project" />
+    <orderEntry type="library" name="zxing-1.7-javase" level="project" />
+    <orderEntry type="library" name="zxing-core-2.0" level="project" />
   </component>
 </module>
