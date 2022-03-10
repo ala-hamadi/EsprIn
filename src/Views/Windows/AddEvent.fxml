@@ -30,7 +30,7 @@
                <graphic>
                       <ImageView fitHeight="38.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/closewindow.png" />
+                        <Image url="@../Icons/closewindow.png" />
                      </image>
                       </ImageView>
                </graphic>
@@ -123,7 +123,7 @@
                                              <graphic>
                                                               <ImageView fx:id="AddImage" fitHeight="27.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../Images/image_file_add_24px.png" />
+                                                      <Image url="@../Icons/image_file_add_24px.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>

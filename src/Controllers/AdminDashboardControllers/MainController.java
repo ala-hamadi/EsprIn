@@ -6,6 +6,7 @@ import Services.UserServices;
 import Utils.CurrentUser;
 import Utils.Enums.State;
 import Utils.RessorcesManager;
+import com.sun.jndi.toolkit.url.UrlUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +25,7 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -114,7 +116,15 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Admin admin=(Admin) CurrentUser.getInstance().getCurrentUser();
-       // adminAvatar.setFill(new ImagePattern(new Image(admin.getImgUrl(),false)));
+        try {
+            String url ="/Img/"+admin.getImgUrl();
+            Image image=new Image(url,false);
+            adminAvatar.setFill(new ImagePattern(image));
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+
         adminName.setText(admin.getFirstName());
         adminLastName.setText(admin.getLastName());
         adminNameAndLastName.setText(admin.getFirstName()+" "+admin.getLastName());

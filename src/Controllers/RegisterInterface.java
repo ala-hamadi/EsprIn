@@ -6,6 +6,7 @@ import Modules.Club;
 import Modules.Professor;
 import Modules.Student;
 import Services.UserServices;
+import Utils.CropImg;
 import Utils.CurrentUser;
 import Utils.Enums.Domaine;
 import Utils.Enums.Roles;
@@ -28,6 +29,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -331,4 +333,6 @@ public class RegisterInterface implements Initializable {
                 "</body>\n" +
                 "</html>");
     }
+
+
 }

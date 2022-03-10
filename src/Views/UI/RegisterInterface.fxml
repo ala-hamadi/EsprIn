@@ -16,7 +16,7 @@
                   <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
                </BorderPane.margin>
                <children>
-                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="100.0" stylesheets="@../Style/LoginStyle.css">
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="50.0" stylesheets="@../Style/LoginStyle.css">
                      <children>
                         <VBox alignment="CENTER">
                            <children>
@@ -32,7 +32,7 @@
                               </Label>
                            </children>
                         </VBox>
-                        <GridPane alignment="CENTER" hgap="80.0" prefHeight="751.0" prefWidth="1287.0" vgap="30.0">
+                        <GridPane alignment="CENTER" hgap="80.0" prefHeight="751.0" prefWidth="1199.0" vgap="30.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="655.0" minWidth="10.0" prefWidth="650.0" />
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="693.0" minWidth="10.0" prefWidth="649.0" />
@@ -42,11 +42,11 @@
                             <RowConstraints maxHeight="140.0" minHeight="0.0" prefHeight="95.0" vgrow="SOMETIMES" />
                             <RowConstraints maxHeight="244.0" minHeight="10.0" prefHeight="118.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="99.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="116.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="121.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                              <VBox alignment="CENTER_LEFT" prefHeight="188.0" prefWidth="560.0" spacing="20.0">
                                  <children>
                                     <Label text="First name">
                                        <font>
@@ -203,7 +203,6 @@
                                     </TextField>
                                  </children>
                               </VBox>
-                              <Button alignment="CENTER" layoutX="700.0" layoutY="562.0" mnemonicParsing="false" onAction="#backbtn" prefHeight="65.0" prefWidth="257.0" styleClass="btn" text="Back" GridPane.rowIndex="5" />
                               <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="141.0" prefWidth="609.0" spacing="20.0">
@@ -226,13 +225,15 @@
                                        <graphic>
                                           <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../Images/update.png" />
+                                                <Image url="@../Icons/update.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
                                     </Button>
                                  </children>
                               </HBox>
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#backbtn" prefHeight="65.0" prefWidth="257.0" styleClass="btn" stylesheets="@../Style/LoginStyle.css" text="Back" GridPane.rowIndex="5" />
+                              
                            </children>
                         </GridPane>
                      </children>
@@ -245,7 +246,7 @@
                <children>
                   <ImageView fitHeight="1080.0" fitWidth="735.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-313.0" AnchorPane.topAnchor="0.0">
                      <image>
-                        <Image url="file:/C:/Users/Bairem/Desktop/Vikings/EsprIN/src/Views/Images/register.jpg" />
+                        <Image url="file:/C:/Users/Bairem/Desktop/Vikings/EsprIN/src/Views/Icons/register.jpg" />
                      </image>
                   </ImageView>
                </children>

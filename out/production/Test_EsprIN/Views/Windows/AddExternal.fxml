@@ -14,7 +14,7 @@
                <children>
                   <ImageView fitWidth="20.0" layoutX="753.0" layoutY="22.0" onMouseClicked="#closeWindow" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/closewindow.png" />
+                        <Image url="@../Icons/closewindow.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="87.0" layoutY="17.0" text="Add a External" textFill="WHITE">
@@ -24,7 +24,7 @@
                   </Label>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="35.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/offers.png" />
+                        <Image url="@../Icons/offers.png" />
                      </image>
                   </ImageView>
                </children>
