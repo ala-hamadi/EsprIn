@@ -1,5 +1,12 @@
 package Controllers.Forum;
 
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
 import Modules.Forum;
 import Services.ForumService;
 import javafx.event.ActionEvent;
@@ -14,13 +21,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
-import java.io.IOException;
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
 
 public class ForumMenuController implements Initializable {
     @FXML

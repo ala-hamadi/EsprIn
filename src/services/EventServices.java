@@ -85,12 +85,12 @@ public class EventServices implements IServices<Event> {
         try {
             Statement statement = connection.createStatement();
             String query = "UPDATE `event` SET `titleEvent` = '" + event.getTitleEvent()
-                    + "', `contentEvent` = '" + event.getDescription()
-                    + "', `imgURL` = '" + event.getImgURL()
-                    + "', `EventLocal` = '" + event.getEventLocal()
-                    + "', `dateDebut` = '" + event.getDateDebut()
-                    + "', `dateFin` = '" + event.getDateFin()
-                    + "' WHERE `idEvent` = '" + event.getIdEvent() + "';";
+                + "', `contentEvent` = '" + event.getDescription()
+                + "', `imgURL` = '" + event.getImgURL()
+                + "', `EventLocal` = '" + event.getEventLocal()
+                + "', `dateDebut` = '" + event.getDateDebut()
+                + "', `dateFin` = '" + event.getDateFin()
+                + "' WHERE `idEvent` = '" + event.getIdEvent() + "';";
             int x = statement.executeUpdate(query);
             System.out.println(x + " Row updated");
             return true;
@@ -113,15 +113,15 @@ public class EventServices implements IServices<Event> {
             while (resultSet.next()) {
                 if (resultSet.getString("state").equals(State.Active.name())){
                     Event event = new Event(resultSet.getInt("idEvent"),
-                            resultSet.getString("titleEvent"),
-                            resultSet.getString("contentEvent"),
-                            resultSet.getString("imgURL"),
-                            resultSet.getDate("dateDebut"),
-                            resultSet.getDate("dateFin"),
-                            resultSet.getString("EventLocal"),
-                            resultSet.getLong("idOrganizer"),
-                            State.valueOf(resultSet.getString("state")),
-                            resultSet.getInt("nbrParticipant"));
+                        resultSet.getString("titleEvent"),
+                        resultSet.getString("contentEvent"),
+                        resultSet.getString("imgURL"),
+                        resultSet.getDate("dateDebut"),
+                        resultSet.getDate("dateFin"),
+                        resultSet.getString("EventLocal"),
+                        resultSet.getLong("idOrganizer"),
+                        State.valueOf(resultSet.getString("state")),
+                        resultSet.getInt("nbrParticipant"));
                     events.add(event);
                 }
 
@@ -158,15 +158,15 @@ public class EventServices implements IServices<Event> {
             throwables.printStackTrace();
         }
         return userList.searchByFirstName(name).stream()
-                .map(x -> (Club) x)
-                .collect(Collectors.toList()).get(0);
+            .map(x -> (Club) x)
+            .collect(Collectors.toList()).get(0);
     }
 
     /* Search */
     public List<Event> searchEventByTitleEvent(String TitleEvent){
         return this.getList().stream()
-                .filter(comparator -> comparator.getTitleEvent().contains(TitleEvent))
-                .collect(Collectors.toList());
+            .filter(comparator -> comparator.getTitleEvent().contains(TitleEvent))
+            .collect(Collectors.toList());
     }
 
 
@@ -176,30 +176,30 @@ public class EventServices implements IServices<Event> {
 
 
         return this.getList().stream()
-                .filter(x -> x.getIdOrganizer() == club.getCinUser())
-                .collect(Collectors.toList());
+            .filter(x -> x.getIdOrganizer() == club.getCinUser())
+            .collect(Collectors.toList());
     }
 
     public List<Event> sortByEventDate(){
         return this.getList().stream()
-                .sorted((o1,o2) -> String.valueOf(o1.getDateDebut())
-                        .compareTo(String.valueOf(o2.getDateDebut())))
-                .collect(Collectors.toList());
+            .sorted((o1,o2) -> String.valueOf(o1.getDateDebut())
+                .compareTo(String.valueOf(o2.getDateDebut())))
+            .collect(Collectors.toList());
     }
 
 
     public List<Event> sortByTitleEvent(){
         return this.getList().stream()
-                .sorted((o1,o2) -> String.valueOf(o1.getTitleEvent())
-                        .compareTo(String.valueOf(o2.getTitleEvent())))
-                .collect(Collectors.toList());
+            .sorted((o1,o2) -> String.valueOf(o1.getTitleEvent())
+                .compareTo(String.valueOf(o2.getTitleEvent())))
+            .collect(Collectors.toList());
     }
 
     /* Filtre */
     public List<Event> filterEventByOrganizer(long organizerId){
         return this.getList().stream()
-                .filter(comparator -> comparator.getIdOrganizer()==organizerId)
-                .collect(Collectors.toList());
+            .filter(comparator -> comparator.getIdOrganizer()==organizerId)
+            .collect(Collectors.toList());
     }
 
 

@@ -1,20 +1,23 @@
 package Controllers.Posts;
 
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import Modules.CommentPost;
 import Modules.Espritien;
 import Modules.Post;
 import Modules.User;
 import Services.CommentServices;
 import Services.LikeServices;
-import Services.PostServices;
 import Services.UserServices;
+import Utils.CurrentUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -23,11 +26,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class PostListViewCell {
 
@@ -120,7 +118,7 @@ public class PostListViewCell {
         CommentServices commentServices=new CommentServices();
         ArrayList<CommentPost> list= (ArrayList<CommentPost>) commentServices.getListCommentByPost(post.getIdPost());
       CommentBtn.setText(String.valueOf(list.size()));
-        if(10000000!=post.getIdOwner()){
+        if(CurrentUser.getInstance().getCurrentUser().getCinUser()!=post.getIdOwner()){
             DeleteBtn1.setVisible(false);
             ModBtn1.setVisible(false);
         }

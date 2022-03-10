@@ -4,9 +4,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import Modules.CommentPost;
-import Modules.Responded;
 import Services.CommentServices;
-import Services.PostServices;
+import Utils.CurrentUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,7 +36,7 @@ public class CommentCell {
         this.comment = comment;
 
         content.setText(comment.getContent());
-        if(10000000!=comment.getIdUser()){
+        if(CurrentUser.getInstance().getCurrentUser().getCinUser()!=comment.getIdUser()){
             DeleteBtn1.setVisible(false);
             ModBtn1.setVisible(false);
 

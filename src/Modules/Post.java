@@ -2,7 +2,6 @@ package Modules;
 
 import java.util.Date;
 
-import Utils.Enums.Categories;
 import Utils.Enums.CategoryPost;
 import Utils.Enums.State;
 

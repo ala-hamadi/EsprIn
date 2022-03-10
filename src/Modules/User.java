@@ -1,9 +1,9 @@
 package Modules;
 
+import java.util.Date;
+
 import Utils.Enums.Roles;
 import Utils.Enums.State;
-
-import java.util.Date;
 
 public class User {
     private long cinUser;

@@ -2,14 +2,12 @@ package Controllers.EventControllers;
 
 import java.sql.Date;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import Modules.Event;
-import Modules.Post;
 import Services.EventServices;
-import Services.PostServices;
+import Utils.CurrentUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -106,7 +104,8 @@ public class EditEventController {
       }
       String Sdate = String.valueOf(StartDate.getValue());
       String Edate = String.valueOf(EndDate.getValue());
-      Event ev= new Event( EventTitle.getText(),contentEvent.getText(),"https://media.timeout.com/images/105658195/image.jpg", Date.valueOf(Sdate), Date.valueOf(Edate), EventLocation.getText(), 10000000);
+      Event ev= new Event( EventTitle.getText(),contentEvent.getText(),"https://media.timeout.com/images/105658195/image.jpg", Date.valueOf(Sdate), Date.valueOf(Edate), EventLocation.getText(), CurrentUser
+          .getInstance().getCurrentUser().getCinUser());
       ev.setIdEvent(event.getIdEvent());
       DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
       LocalDateTime now = LocalDateTime.now();

@@ -2,14 +2,11 @@ package Controllers.Offers;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.ResourceBundle;
 
-import Modules.Event;
 import Modules.Offre;
-import Modules.User;
 import Services.OffreServices;
-import Services.UserServices;
+import Utils.CurrentUser;
 import Utils.Enums.OffreCategorie;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,7 +19,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
@@ -82,7 +78,7 @@ public class EditOfferController implements Initializable {
       }
 
 
-      Offre offreMod = new Offre(OfferTitle.getText(), contentOffer.getText(), catOffre.getValue(), 15542230);
+      Offre offreMod = new Offre(OfferTitle.getText(), contentOffer.getText(), catOffre.getValue(), CurrentUser.getInstance().getCurrentUser().getCinUser());
       offreMod.setIdOffre(offre.getIdOffer());
       offreServices.update(offreMod);
       Alert alert = new Alert(Alert.AlertType.INFORMATION);

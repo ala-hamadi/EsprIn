@@ -1,9 +1,9 @@
 package Modules;
 
+import java.util.Date;
+
 import Utils.Enums.State;
 import Utils.Structure.Classe;
-
-import java.util.Date;
 
 public class AlertProf {
     private int idAlert;

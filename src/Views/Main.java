@@ -1,5 +1,6 @@
 package Views;
 
+import Modules.User;
 import Services.UserServices;
 import Utils.CurrentUser;
 import Utils.Enums.Roles;
@@ -20,8 +21,8 @@ import java.sql.SQLException;
 public class Main extends Application {
     double x, y;
 
-   /*  @Override
-     public void start(Stage primaryStage) throws Exception {
+    @Override
+    public void start(Stage primaryStage) throws Exception {
         String url;
         if (isUserConnected()) {
             if (CurrentUser.getInstance().getCurrentUser().getRole().equals(Roles.Admin))
@@ -33,7 +34,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource(url));
         primaryStage.setTitle("Hello World");
         try {
-            Image image = new Image("Views/Images/appicon.png");
+            Image image = new Image("Views/Icons/appicon.png");
             primaryStage.getIcons().add(image);
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
@@ -45,24 +46,8 @@ public class Main extends Application {
         primaryStage.initStyle(StageStyle.DECORATED);
         primaryStage.setScene(new Scene(root, 1080, 720));
         primaryStage.show();
-    }*/
-
-            Parent parent;
-           Stage stage;
-    @Override
-    public void start(Stage primaryStage) {
-        this.stage = primaryStage;
-        try {
-            parent = FXMLLoader.load(getClass().getResource("/Views/UI/HomeTemplate.fxml"));
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-            System.out.println("erreur");
-        }
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.setTitle("Add and Show Persons");
-        stage.show();
     }
+
 
     public static void main(String[] args) {
         launch(args);
@@ -73,6 +58,8 @@ public class Main extends Application {
             UserServices userServices = UserServices.getInstance();
             UserSerializableData data = (UserSerializableData) RessorcesManager.load("loggedUser.bin");
             CurrentUser.setInstance(userServices.retrive(data.userId));
+            User user=CurrentUser.getInstance().getCurrentUser();
+            System.out.println(user);
             return true;
 
         } catch (FileNotFoundException e) {

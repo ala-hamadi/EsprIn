@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 
 import Modules.Post;
 import Services.PostServices;
+import Utils.CurrentUser;
 import Utils.Enums.CategoryPost;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +17,6 @@ import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -47,7 +47,8 @@ public class EditPostController  implements Initializable {
   void EditPost(ActionEvent event) throws SQLException {
     if (contentPost.getText().length()>2){
       PostServices postServices=new PostServices();
-      Post postMod =new Post((int) post.getIdPost(),contentPost.getText(),"https://vivreaberlin.com/wp-content/uploads/2015/07/4455_a6b402d1c41e.jpg.",post.getLikeNumber(), Timestamp.valueOf(LocalDateTime.now()),10000000,catPost.getValue());
+      Post postMod =new Post((int) post.getIdPost(),contentPost.getText(),"https://vivreaberlin.com/wp-content/uploads/2015/07/4455_a6b402d1c41e.jpg.",post.getLikeNumber(), Timestamp.valueOf(LocalDateTime.now()),
+          (int) CurrentUser.getInstance().getCurrentUser().getCinUser(),catPost.getValue());
       postServices.updatePost(postMod);
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setTitle("Success");

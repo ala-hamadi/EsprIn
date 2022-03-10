@@ -1,28 +1,27 @@
 package Controllers.Offers;
 
-import Modules.Annoucement;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+
 import Modules.Offre;
-import Services.AnnouncementService;
-import Services.EventServices;
 import Services.OffreServices;
-import Services.UserServices;
-import Utils.Enums.AnnounceDestination;
+import Utils.CurrentUser;
 import Utils.Enums.OffreCategorie;
-import Utils.Structure.Classe;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
 
 public class AddOffer implements Initializable {
 
@@ -93,7 +92,7 @@ public class AddOffer implements Initializable {
             }
 
 
-            Offre offre = new Offre(OfferTitle.getText(), contentOffer.getText(), catOffre.getValue(), 10020855);
+            Offre offre = new Offre(OfferTitle.getText(), contentOffer.getText(), catOffre.getValue(), CurrentUser.getInstance().getCurrentUser().getCinUser());
             offreServices.add(offre);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");

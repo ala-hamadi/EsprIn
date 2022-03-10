@@ -103,10 +103,10 @@ public class ForumService implements IServices<Forum> {
     }
     public List<Forum> searchByTitle(String title) {
         return this.getList()
-                    .stream()
-                    .map(f -> (Forum) f)
-                    .filter(f -> f.getTitle().contains(title))
-                    .collect(Collectors.toList());
+            .stream()
+            .map(f -> (Forum) f)
+            .filter(f -> f.getTitle().contains(title))
+            .collect(Collectors.toList());
     }
     public List<Forum> sortForumByid(List<Forum> forums) {
         Collections.sort(forums, new Comparator<Forum>() {
