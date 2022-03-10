@@ -54,7 +54,7 @@
                            <graphic>
                               <ImageView fx:id="icon" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
                                  <image>
-                                    <Image url="@../../Images/users.png" />
+                                    <Image url="@../../Icons/users.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -69,7 +69,7 @@
                            <graphic>
                               <ImageView fx:id="icon1" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
                                  <image>
-                                    <Image url="@../../Images/offers.png" />
+                                    <Image url="@../../Icons/offers.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -87,7 +87,7 @@
                            <graphic>
                               <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
                                  <image>
-                                    <Image url="@../../Images/posts.png" />
+                                    <Image url="@../../Icons/posts.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -105,7 +105,7 @@
                            <graphic>
                               <ImageView fx:id="icon111" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
                                  <image>
-                                    <Image url="@../../Images/Announce.png" />
+                                    <Image url="@../../Icons/Announce.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -123,7 +123,7 @@
                            <graphic>
                               <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
                                  <image>
-                                    <Image url="@../../Images/events.png" />
+                                    <Image url="@../../Icons/events.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -143,7 +143,7 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../Images/logout.png" />
+                              <Image url="@../../Icons/logout.png" />
                            </image>
                            <viewport>
                               <Rectangle2D />
@@ -174,7 +174,7 @@
                      <children>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../Images/appicon.png" />
+                              <Image url="@../../Icons/appicon.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="30.0" />
@@ -226,7 +226,7 @@
                      </VBox>
                      <ImageView fitHeight="600.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../Images/logo%20esprin%201000x1000.png" />
+                           <Image url="@../../Icons/logo%20esprin%201000x1000.png" />
                         </image>
                      </ImageView>
                   </children>

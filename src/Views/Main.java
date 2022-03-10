@@ -34,7 +34,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource(url));
         primaryStage.setTitle("Hello World");
         try {
-            Image image = new Image("Views/Images/appicon.png");
+            Image image = new Image("Views/Icons/appicon.png");
             primaryStage.getIcons().add(image);
         } catch (Exception exception) {
             System.out.println(exception.getMessage());

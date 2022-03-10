@@ -17,7 +17,7 @@
                      <children>
                         <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Images/appicon.png" />
+                              <Image url="@../Icons/appicon.png" />
                            </image>
                         </ImageView>
                         <Label contentDisplay="CENTER" text="LOGIN" textAlignment="CENTER">
@@ -89,7 +89,7 @@
                <children>
                   <ImageView fitHeight="1132.0" fitWidth="1625.0" layoutX="-237.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.91015625" AnchorPane.leftAnchor="-237.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
                      <image>
-                        <Image url="@../Images/loginimage.jpg" />
+                        <Image url="@../Icons/loginimage.jpg" />
                      </image>
                   </ImageView>
                </children>

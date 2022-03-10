@@ -14,11 +14,11 @@
             <right>
                 <AnchorPane prefHeight="994.0" prefWidth="503.0" BorderPane.alignment="CENTER">
                     <children>
-                  <VBox alignment="TOP_CENTER" layoutX="100.0" layoutY="37.0" spacing="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <VBox alignment="TOP_CENTER" layoutX="100.0" layoutY="37.0" spacing="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <VBox alignment="TOP_CENTER" spacing="30.0">
                            <children>
-                                    <Circle fill="WHITE" radius="62.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Circle fx:id="userAvatar" fill="WHITE" radius="62.0" stroke="BLACK" strokeType="INSIDE" />
                                     <Text fx:id="profileNameAndLastName" strokeType="OUTSIDE" strokeWidth="0.0" text="Foulen Ben Foulen">
                                         <font>
                                             <Font name="Lato Black" size="35.0" />
@@ -26,11 +26,19 @@
                               </Text>
                            </children>
                         </VBox>
+                         <Button graphicTextGap="10.0" mnemonicParsing="false" onAction="#addPic" styleClass="btn" stylesheets="@../Style/LoginStyle.css" text="Update Your Picture" GridPane.rowIndex="5">
+                             <graphic>
+                                 <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" styleClass="btn">
+                                     <image>
+                                         <Image url="@../Icons/add.png" />
+                                     </image>
+                                 </ImageView>
+                             </graphic></Button>
                               <Button fx:id="LogoutBtn" mnemonicParsing="false" onAction="#logout" prefHeight="21.0" prefWidth="154.0" styleClass="Btn" stylesheets="@../Style/DashbordStyle.css" text="Sign out" textFill="#ff0000">
                                   <graphic>
                                       <ImageView fitHeight="18.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                                           <image>
-                                              <Image url="@../Images/exit_26px.png" />
+                                              <Image url="@../Icons/exit_26px.png" />
                                           </image>
                                       </ImageView>
                                   </graphic>
@@ -68,7 +76,7 @@
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Images/appicon.png" />
+                              <Image url="@../Icons/appicon.png" />
                            </image>
                         </ImageView>
                         <TextField prefHeight="35.0" prefWidth="303.0" promptText="search..." style="-fx-background-radius: 10; -fx-border-radius: 10;">
@@ -80,7 +88,7 @@
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../Images/home_24px.png" />
+                                    <Image url="@../Icons/home_24px.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -89,7 +97,7 @@
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../Images/event_24px.png" />
+                                    <Image url="@../Icons/event_24px.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -98,7 +106,7 @@
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../Images/chat_24px.png" />
+                                    <Image url="@../Icons/chat_24px.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -107,7 +115,7 @@
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../Images/business_26px.png" />
+                                    <Image url="@../Icons/business_26px.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -116,7 +124,7 @@
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../Images/microphone_24px.png" />
+                                    <Image url="@../Icons/microphone_24px.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -142,7 +150,7 @@
                              <graphic>
                                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                      <image>
-                                         <Image url="@../Images/add_new_26px.png" />
+                                         <Image url="@../Icons/add_new_26px.png" />
                                      </image>
                                  </ImageView>
                              </graphic>

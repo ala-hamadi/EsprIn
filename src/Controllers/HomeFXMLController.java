@@ -3,6 +3,7 @@ package Controllers;
 import Modules.Espritien;
 import Modules.Extern;
 import Services.UserServices;
+import Utils.CropImg;
 import Utils.CurrentUser;
 import Utils.Enums.Roles;
 import Utils.Enums.State;
@@ -18,12 +19,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -33,6 +38,7 @@ public class HomeFXMLController implements Initializable {
 
     @FXML
     public Text profileNameAndLastName;
+    public Circle userAvatar;
     @FXML
     private Button exitBtn;
 
@@ -158,6 +164,16 @@ public class HomeFXMLController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         try {
             userServices = UserServices.getInstance();
+            try{
+                Image image;
+                if(!CurrentUser.getInstance().getCurrentUser().getImgUrl().equals("")) {
+                    image = new Image("/Img/" + CurrentUser.getInstance().getCurrentUser().getImgUrl(), false);
+                    userAvatar.setFill(new ImagePattern(image));
+                }
+            }catch (Exception exception){
+                System.out.println(exception.getMessage());
+            }
+
             if(CurrentUser.getInstance().getCurrentUser().getRole().equals(Roles.Externe))
             {
                 Extern extern=(Extern)CurrentUser.getInstance().getCurrentUser();
@@ -243,5 +259,28 @@ public class HomeFXMLController implements Initializable {
             e.printStackTrace();
             System.out.println(e.getMessage());
         }
+    }
+
+    public void addPic(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Templates/ImgCropInterface.fxml"));
+            Parent parent=loader.load();
+            ImgCropInterface imgCropInterface=loader.getController();
+            File file=CropImg.importImg();
+            Image image=CropImg.fileToImage(file);
+            System.out.println(file);
+            System.out.println(image);
+            imgCropInterface.setImageFile(file);
+            imgCropInterface.setImage(image);
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e);
+        }
+
     }
 }

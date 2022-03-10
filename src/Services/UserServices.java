@@ -139,7 +139,7 @@ public class UserServices implements IServices<User> {
                     break;
                 case Etudiant:
                     final Student student = (Student) user;
-                    query = "UPDATE `user` SET `firstName` = '" + student.getFirstName() + "', `lastName` = '" + student.getLastName() + "', `email` = '" + student.getEmail() + "', `passwd` = '" + student.getPasswd() + "', `imgURL` = '" + student.getImgUrl() + "', `domaine` = '" + student.getDomaine() + "' `class`='" + student.getClasse().toString() + "' WHERE `user`.`cinUser` = " + student.getCinUser() + ";";
+                    query = "UPDATE `user` SET `firstName` = '" + student.getFirstName() + "', `lastName` = '" + student.getLastName() + "', `email` = '" + student.getEmail() + "', `passwd` = '" + student.getPasswd() + "', `imgURL` = '" + student.getImgUrl() + "', `domaine` = '" + student.getDomaine() + "' `class`= '" + student.getClasse().toString() + "' WHERE `user`.`cinUser` = " + student.getCinUser() + ";";
                     System.out.println(statement.executeUpdate(query) + " Row updated");
                     break;
                 case Club:
