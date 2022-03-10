@@ -29,9 +29,9 @@ public class LikeServices implements ILikeServices<LikePost>{
       return true;
 
     } catch (SQLException exception) {
-      System.out.println(exception.getMessage());
+      return false;
     }
-    return false;
+
   }
 
   @Override
@@ -60,6 +60,24 @@ public class LikeServices implements ILikeServices<LikePost>{
       resultSet.next();
 
       return resultSet.getInt("likeNum");
+
+    } catch (SQLException exception) {
+      System.out.println(exception.getMessage());
+    }
+    return 0;
+  }
+
+
+  @Override
+  public long likeExists(long idPost,long idUser) {
+    try {
+      Statement statement = connection.createStatement();
+      String query = "SELECT `like`.`likePost` FROM `like` WHERE `likePost`=" + idPost + " AND `like`.`likeUser` = " + idUser
+          + ";";
+      ResultSet resultSet = statement.executeQuery(query);
+      resultSet.next();
+
+      return resultSet.getInt("likePost");
 
     } catch (SQLException exception) {
       System.out.println(exception.getMessage());

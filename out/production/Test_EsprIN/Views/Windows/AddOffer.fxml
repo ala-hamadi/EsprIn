@@ -117,7 +117,7 @@
                               </HBox>
                               <Pane prefHeight="49.0" prefWidth="760.0">
                                  <children>
-                                    <Button fx:id="AddOfferBtn" layoutX="641.0" layoutY="-1.0" mnemonicParsing="false" onAction="#createOffre" prefHeight="30.0" prefWidth="98.0" stylesheets="@../Style/DashboardStyle.css" text="Add" />
+                                    <Button fx:id="AddOfferBtn" layoutX="641.0" layoutY="-1.0" mnemonicParsing="false" onAction="#AddPost" prefHeight="30.0" prefWidth="98.0" stylesheets="@../Style/DashboardStyle.css" text="Add" />
                                  </children>
                                  <VBox.margin>
                                     <Insets />

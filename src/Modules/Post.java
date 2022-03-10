@@ -3,6 +3,7 @@ package Modules;
 import java.util.Date;
 
 import Utils.Enums.Categories;
+import Utils.Enums.CategoryPost;
 import Utils.Enums.State;
 
 public class Post {
@@ -13,7 +14,7 @@ public class Post {
     private int CommentNumber;
     private Date createdAt;
     private int idOwner;
-    private Categories categories;
+    private CategoryPost categories;
     private State state;
 
     public int getCommentNumber() { return CommentNumber; }
@@ -70,11 +71,11 @@ public class Post {
         this.idOwner = idOwner;
     }
 
-    public Categories getCategories() {
+    public CategoryPost getCategories() {
         return categories;
     }
 
-    public void setCategories(Categories categories) {
+    public void setCategories(CategoryPost categories) {
         this.categories = categories;
     }
 
@@ -86,7 +87,7 @@ public class Post {
         this.state = status;
     }
 
-    public Post(int idPost, String content, String mediaURL, int likeNumber, Date createdAt, int idOwner, Categories categories) {
+    public Post(int idPost, String content, String mediaURL, int likeNumber, Date createdAt, int idOwner, CategoryPost categories) {
         this.idPost = idPost;
         this.content = content;
         this.mediaURL = mediaURL;

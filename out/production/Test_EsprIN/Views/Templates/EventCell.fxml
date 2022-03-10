@@ -34,6 +34,24 @@
                                 <Insets bottom="10.0" left="20.0" top="10.0" />
                             </HBox.margin>
                         </Label>
+                 <Button fx:id="ModBtn1" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#ModifyEvent" prefHeight="38.0" prefWidth="41.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="Btn">
+                   <graphic>
+                     <ImageView fitHeight="20.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                         <Image url="@../Images/edit.png" />
+                       </image>
+                     </ImageView>
+                   </graphic>
+                 </Button>
+                 <Button fx:id="DeleteBtn1" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#DeleteEvent" prefHeight="38.0" prefWidth="24.0" style="-fx-background-color: FFCCBC; -fx-background-radius: 10; -fx-border-radius: 10;" styleClass="Btn">
+                   <graphic>
+                     <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                         <Image url="@../Images/delete.png" />
+                       </image>
+                     </ImageView>
+                   </graphic>
+                 </Button>
                     </children>
                 </HBox>
          </top>

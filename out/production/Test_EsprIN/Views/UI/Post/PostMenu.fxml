@@ -14,7 +14,7 @@
             <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="38.0" styleClass="Btn" text="All" textFill="#dc0d0d">
+                  <Button mnemonicParsing="false" onAction="#all" prefHeight="38.0" styleClass="Btn" text="All" textFill="#dc0d0d">
                      <HBox.margin>
                         <Insets left="10.0" right="20.0" />
                      </HBox.margin>
@@ -22,7 +22,7 @@
                         <Font size="25.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="38.0" styleClass="Btn" text="Lost_and_Found" textFill="#dc0d0d">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#lostandfound" prefHeight="38.0" styleClass="Btn" text="Lost_and_Found" textFill="#dc0d0d">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
@@ -30,7 +30,7 @@
                         <Font size="25.0" />
                      </font>
                   </Button>
-                  <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" prefHeight="38.0" styleClass="Btn" text="Covoiturage" textFill="#dc0d0d">
+                  <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#covoiturage" prefHeight="38.0" styleClass="Btn" text="Covoiturage" textFill="#dc0d0d">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
@@ -38,7 +38,7 @@
                         <Font size="25.0" />
                      </font>
                   </Button>
-                  <Button layoutX="114.0" layoutY="10.0" mnemonicParsing="false" prefHeight="38.0" styleClass="Btn" text="Meme" textFill="#dc0d0d">
+                  <Button layoutX="114.0" layoutY="10.0" mnemonicParsing="false" onAction="#meme" prefHeight="38.0" styleClass="Btn" text="Meme" textFill="#dc0d0d">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
@@ -46,7 +46,7 @@
                         <Font size="25.0" />
                      </font>
                   </Button>
-                  <Button layoutX="166.0" layoutY="10.0" mnemonicParsing="false" prefHeight="38.0" styleClass="Btn" text="Suggestion" textFill="#dc0d0d">
+                  <Button layoutX="166.0" layoutY="10.0" mnemonicParsing="false" onAction="#suggestion" prefHeight="38.0" styleClass="Btn" text="Suggestion" textFill="#dc0d0d">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
@@ -54,7 +54,7 @@
                         <Font size="25.0" />
                      </font>
                   </Button>
-                  <Button layoutX="272.0" layoutY="10.0" mnemonicParsing="false" prefHeight="38.0" styleClass="Btn" text="Default" textFill="#dc0d0d">
+                  <Button layoutX="272.0" layoutY="10.0" mnemonicParsing="false" onAction="#defaultPost" prefHeight="38.0" styleClass="Btn" text="Default" textFill="#dc0d0d">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>

@@ -18,6 +18,8 @@ public class Event {
     private State state;
     private int nbrParticipant;
 
+
+
     public int getNbrParticipant() { return nbrParticipant; }
 
     public void setNbrParticipant(int nbrParticipant) { this.nbrParticipant = nbrParticipant; }

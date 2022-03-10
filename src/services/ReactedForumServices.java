@@ -57,4 +57,9 @@ public class ReactedForumServices implements ILikeServices<Forum> {
     public long numberOfLikesByPost(long id) {
         return 0;
     }
+
+    @Override
+    public long likeExists(long id1, long id2) {
+        return 0;
+    }
 }

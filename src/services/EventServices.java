@@ -17,7 +17,7 @@ public class EventServices implements IServices<Event> {
     private Connection connection;
     private static EventServices instance;
 
-    private EventServices() throws SQLException{
+    public EventServices() throws SQLException{
         BdConnection connect = BdConnection.getInstance();
         this.connection = connect.cnx;
     }

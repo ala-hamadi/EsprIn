@@ -37,6 +37,14 @@ public class Offre {
         this.imgOffre = imgOffre;
     }
 
+    public int getIdOffre() {
+        return idOffre;
+    }
+
+    public void setIdOffre(int idOffre) {
+        this.idOffre = idOffre;
+    }
+
     public OffreCategorie getCategory() {
         return category;
     }
