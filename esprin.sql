@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 10 mars 2022 à 06:13
+-- Généré le : jeu. 10 mars 2022 à 07:11
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 7.4.27
 
@@ -58,12 +58,12 @@ CREATE TABLE `annoncement` (
 --
 
 INSERT INTO `annoncement` (`idAnn`, `subject`, `content`, `destination`, `createdAt`, `idSender`, `state`) VALUES
-(5, 'Rappel 5lass', 'no 5lass no result', 'Etudiants', '2022-02-27 23:21:46', 10020855, 'Active'),
-(6, 'Rappel 5lass', 'no 5lass no result', 'Etudiants', '2022-02-27 23:21:46', 10020855, 'Active'),
-(7, 'Rappel 5lass', 'no 5lass no result', 'Etudiants', '2022-02-27 23:21:46', 10020855, 'Active'),
-(8, 'Rappel 5lass', 'no 5lass no result', 'Etudiants', '2022-02-27 23:21:46', 10020855, 'Active'),
-(9, 'Rappel 5lass', 'no 5lass no result', 'Etudiants', '2022-02-27 23:21:46', 10020855, 'Deleted'),
-(10, 'aaaaaaaa', 'no 5lass no result', 'Clubs', '2022-02-27 23:21:46', 10020855, 'Active');
+(5, 'weekly checkout', 'this is a simple weekly checkout', 'Etudiants', '2022-02-27 23:21:46', 10020855, 'Active'),
+(6, 'schedule for this week', 'dear Students, this is the schedule for this week', 'Etudiants', '2022-02-27 23:21:46', 10020855, 'Active'),
+(7, 'weekly checkout', 'this is a simple weekly checkout', 'Etudiants', '2022-02-27 23:21:46', 10020855, 'Active'),
+(8, 'schedule for this week', 'dear Students, this is the schedule for this week', 'Etudiants', '2022-02-27 23:21:46', 10020855, 'Active'),
+(9, 'weekly checkout', 'this is a simple weekly checkout', 'Etudiants', '2022-02-27 23:21:46', 10020855, 'Deleted'),
+(10, 'Request Room A12', 'we inform you that room A12 is available Wednesday after noon', 'Clubs', '2022-02-27 23:21:46', 10020855, 'Active');
 
 -- --------------------------------------------------------
 
@@ -98,6 +98,15 @@ CREATE TABLE `event` (
   `dateFin` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Déchargement des données de la table `event`
+--
+
+INSERT INTO `event` (`idEvent`, `titleEvent`, `contentEvent`, `imgURL`, `idOrganizer`, `EventLocal`, `nbrParticipant`, `state`, `dateDebut`, `dateFin`) VALUES
+(2, 'We Change hackathon', 'we\'re honored to welcome you to our new event !!!', 'https://media.timeout.com/images/105658195/image.jpg', 10000000, 'Lac 1', 0, 'Deleted', NULL, NULL),
+(3, 'Orenda Tformi 3.0', 'we\'re going to do great training sessions in different specialties, so? what are you waiting for?', 'https://media.timeout.com/images/105658195/image.jpg', 10000000, 'Manouba', 0, 'Deleted', NULL, NULL),
+(6, 'Training session', 'we are happy to organize a new video editing training session hosted by bairem khedhri', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Tent_camping_along_the_Sulayr_trail_in_La_Taha%2C_Sierra_Nevada_National_Park_%28DSCF5147%29.jpg/1200px-Tent_camping_along_the_Sulayr_trail_in_La_Taha%2C_Sierra_Nevada_National_Park_%28DSCF5147%29.jpg', 1010101, 'Ariana', 0, 'Active', '2022-03-09', '2022-03-11');
+
 -- --------------------------------------------------------
 
 --
@@ -131,8 +140,8 @@ CREATE TABLE `forum` (
 --
 
 INSERT INTO `forum` (`idForum`, `dateCreation`, `title`, `content`, `idOwner`, `categorieForum`, `nbrLikesForum`, `state`) VALUES
-(1, '2022-03-03 23:00:00', 'First forum', 'el PIdev damerli 7iety.\r\nps: youssef tika\r\n', 10020855, '', 0, 'Active'),
-(5, '2022-03-04 18:49:26', 'title', 'go go power rangers', 10020855, 'Stage', 0, 'Active');
+(1, '2022-03-03 23:00:00', 'How can i code better ?', 'i find coding very hard !!! any tips ?', 10020855, 'Stage', 2, 'Active'),
+(5, '2022-03-04 18:49:26', 'is esprit a great place to study ?', 'i\'m looking for the better institues here , any suggestions ?', 10020855, 'Stage', 3, 'Active');
 
 -- --------------------------------------------------------
 
@@ -189,26 +198,6 @@ CREATE TABLE `offre` (
   `state` varchar(15) NOT NULL DEFAULT 'Active'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `offre`
---
-
-INSERT INTO `offre` (`IdOffer`, `catOffre`, `titleOffer`, `descOffer`, `imgOffre`, `offerProvider`, `state`) VALUES
-(1, 'Offre_De_Travail', 'mohsen', 'lll', NULL, 10020855, 'Deleted'),
-(2, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
-(3, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
-(4, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
-(5, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
-(6, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
-(7, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
-(8, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
-(9, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
-(10, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
-(11, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
-(12, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
-(13, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active'),
-(14, 'Alternance', 'mohsen', 'lll', NULL, 10020855, 'Active');
-
 -- --------------------------------------------------------
 
 --
@@ -253,6 +242,14 @@ CREATE TABLE `post` (
   `state` varchar(15) NOT NULL DEFAULT 'Active'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Déchargement des données de la table `post`
+--
+
+INSERT INTO `post` (`idPost`, `content`, `mediaURL`, `createdAt`, `categorie`, `likeNum`, `idOwer`, `state`) VALUES
+(10, 'just Enjoying my time here !!!', 'https://media.istockphoto.com/photos/close-up-young-smiling-man-in-casual-clothes-posing-isolated-on-blue-picture-id1270987867?k=20&m=1270987867&s=612x612&w=0&h=lX9Y1qUxtWOa0W0Mc-SvNta00UH0-sgJQItkxfwE4uU=', '2022-03-10 06:28:56', 'Default', 0, 98765432, 'Active'),
+(11, 'hahahaha lol', 'https://media-assets-03.thedrum.com/cache/images/thedrum-prod/s3-news-tmp-349138-meme7--default--1050.png', '2022-03-10 06:32:21', 'Meme', 0, 112255, 'Active');
+
 -- --------------------------------------------------------
 
 --
@@ -263,6 +260,17 @@ CREATE TABLE `reacted forum` (
   `idCreater` int(8) NOT NULL,
   `idForum` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `reacted forum`
+--
+
+INSERT INTO `reacted forum` (`idCreater`, `idForum`) VALUES
+(1010101, 5),
+(10000000, 1),
+(10020855, 5),
+(25451120, 1),
+(98765432, 5);
 
 --
 -- Déclencheurs `reacted forum`
@@ -292,6 +300,14 @@ CREATE TABLE `responded` (
   `content` text NOT NULL,
   `createdAt` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `responded`
+--
+
+INSERT INTO `responded` (`cinUser`, `idForum`, `content`, `createdAt`) VALUES
+(10000000, 5, 'yes !! ,it\'s a wonderful place ', '2022-03-10 06:27:32'),
+(25453121, 1, 'drink some coffee , relax and you\'ll be fine', '2022-03-10 06:22:57');
 
 -- --------------------------------------------------------
 
@@ -327,10 +343,10 @@ INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstN
 (10000000, 'orenda.je@esprit.tn', 'hello', '2022-02-14 10:25:42', 'orenda.jpg', 'Orenda', 'Junior Entreprise', NULL, NULL, 'Junior_entreprise', NULL, NULL, NULL, 'Club', 'Disconnected'),
 (10020855, 'bairem.khedhri@esprit.tn', 'bairem1111', '2022-02-11 20:11:24', '264822482_959189045008835_8249503408997441961_n.jpg', 'bairem', 'khedhri', NULL, 'Financier', NULL, NULL, NULL, NULL, 'Admin', 'Disconnected'),
 (15542230, 'vermeg@gmail.com', 'bairem1111', '2022-02-14 10:15:30', 'Vermeg_Logo.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 'Lac,Tunis', 'Vermeg', 'Externe', 'Disconnected'),
-(20202020, 'TalanHr@talan.tn', 'talan123', '2022-03-07 11:26:40', 'logo-talan.png', NULL, NULL, NULL, NULL, NULL, NULL, 'lac, Tunis', 'talan', 'Externe', 'Connected'),
-(25451120, 'ala.hamadi@esprit.tn', 'test123', '2022-03-09 00:00:55', '', 'Ala', 'Hamadi', 'Informatique', NULL, NULL, '3 A 25', NULL, NULL, 'Etudiant', 'Disconnected'),
+(20202020, 'TalanHr@talan.tn', 'talan123', '2022-03-07 11:26:40', 'logo-talan.png', NULL, NULL, NULL, NULL, NULL, NULL, 'lac, Tunis', 'talan', 'Externe', 'Disconnected'),
+(25451120, 'ala.hamadi@esprit.tn', 'test123', '2022-03-09 00:00:55', 'medali.jpg', 'Ala', 'Hamadi', 'Informatique', NULL, NULL, '3 A 25', NULL, NULL, 'Etudiant', 'Disconnected'),
 (25453121, 'firas.belhadjamor@esprit.tn', 'welcomefiras11', '2022-03-08 15:33:54', '', 'Firas', 'BelhadjAmor', NULL, 'Stage', NULL, NULL, NULL, NULL, 'Admin', 'Deleted'),
-(98765432, 'isamm.aloui@esprit.tn', '123456', '2022-03-06 03:30:25', '', 'isamm', 'aloui', 'Business', NULL, NULL, '3 BI 4', NULL, NULL, 'Etudiant', 'Disconnected');
+(98765432, 'isamm.aloui@esprit.tn', '123456', '2022-03-06 03:30:25', 'luismolinero190917934.jpg', 'isamm', 'aloui', 'Business', NULL, NULL, '3 BI 4', NULL, NULL, 'Etudiant', 'Disconnected');
 
 --
 -- Index pour les tables déchargées
@@ -471,7 +487,7 @@ ALTER TABLE `offre`
 -- AUTO_INCREMENT pour la table `post`
 --
 ALTER TABLE `post`
-  MODIFY `idPost` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idPost` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Contraintes pour les tables déchargées
