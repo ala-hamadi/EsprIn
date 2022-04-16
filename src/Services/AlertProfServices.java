@@ -1,6 +1,7 @@
 package Services;
 
 import Modules.AlertProf;
+import Modules.Annoucement;
 import Utils.BdConnection;
 import Utils.Enums.Roles;
 import Utils.Enums.State;
@@ -20,7 +21,7 @@ public class AlertProfServices implements IServices<AlertProf> {
     private Connection connection;
     private static AlertProfServices instance;
 
-    private AlertProfServices() throws SQLException {
+    public AlertProfServices() throws SQLException {
         BdConnection connect = BdConnection.getInstance();
         this.connection= connect.cnx;
     }
@@ -41,7 +42,7 @@ public class AlertProfServices implements IServices<AlertProf> {
             rs.next();
             switch (Roles.valueOf(rs.getString("role"))) {
                 case Professeur:
-                    query = "INSERT INTO `alert`(`alertTitle`, `content`, `destClass`, `idSender`, createdAt) VALUES ('" + alertProf.getTitle() + "','" + alertProf.getContentAlert() + "','" + alertProf.getDestClass() + "','" + alertProf.getIdSender() + "','" + alertProf.getCreatedAt() + "');";
+                    query = "INSERT INTO `alert`(`alertTitle`,`content`, `destClass`, `idSender`, `state`) VALUES ('"+alertProf.getTitle()+"','"+ alertProf.getContentAlert() + "','" + alertProf.getDestClass() + "','" + alertProf.getIdSender() + "','" + alertProf.getState() + "');";
                     int x = std.executeUpdate(query);
                     System.out.println(x + "row inserted");
                     break;
@@ -93,7 +94,7 @@ public class AlertProfServices implements IServices<AlertProf> {
              exception.printStackTrace();
          }
      }*/
-    //Roles.valueOf(rs.getString("role"))
+//Roles.valueOf(rs.getString("role"))
     @Override
     public boolean update(AlertProf alertProf) {
         try {
@@ -166,7 +167,7 @@ public class AlertProfServices implements IServices<AlertProf> {
                 ResultSet rs = statement.executeQuery(query);
                 rs.next();
                 String[] classe = rs.getString("destClass").split(" ");
-                AlertProf alertProf = new AlertProf(rs.getInt("idAlert"),rs.getString("alertTitle"), rs.getString("content"), new Classe(Integer.parseInt(classe[0]), classe[1], Integer.parseInt(classe[2])), rs.getInt("idSender"),rs.getDate("createdAt"));
+                AlertProf alertProf = new AlertProf(rs.getInt("idAlert"), rs.getString("alertTitle"),rs.getString("content"), new Classe(Integer.parseInt(classe[0]), classe[1], Integer.parseInt(classe[2])), rs.getInt("idSender"),rs.getDate("createdAt"));
                 return alertProf;
             }
         }catch (SQLException exception){
@@ -177,13 +178,19 @@ public class AlertProfServices implements IServices<AlertProf> {
     }
     public List<AlertProf> filterAlertByClass(String classeid, List<AlertProf> alertProfs){
         return alertProfs.stream()
-            .filter(comparator -> comparator.getDestClass().toString().equals(classeid))
-            .collect(Collectors.toList());
+                .filter(comparator -> comparator.getDestClass().toString().equals(classeid))
+                .collect(Collectors.toList());
+    }
+
+    public List<AlertProf> filterAlertByTitle(String title, List<AlertProf> annoucements){
+        return annoucements.stream()
+                .filter(comparator -> comparator.getTitle().startsWith(title))
+                .collect(Collectors.toList());
     }
 
     public List<AlertProf> sortAlertById() {
         return this.getList().stream().sorted((o1, o2) -> String.valueOf(o1.getIdAlert())
-            .compareTo(String.valueOf(o1.getIdAlert()))).collect(Collectors.toList());
+                .compareTo(String.valueOf(o1.getIdAlert()))).collect(Collectors.toList());
     }
     public List<AlertProf> sortAlertByDate(List<AlertProf> alertProfs){
         Collections.sort(alertProfs, new Comparator<AlertProf>() {

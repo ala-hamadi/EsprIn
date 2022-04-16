@@ -134,13 +134,13 @@ public class PostListViewCell {
             userList = userServices.getList();
             LikeServices likeServices = new LikeServices();
             int idPost= (int) post.getIdPost();
-            if(likeServices.likeExists(idPost,11111111)==0){
-                likeServices.putLikeToPost(11111111,idPost);
+            if(likeServices.likeExists(idPost,CurrentUser.getInstance().getCurrentUser().getCinUser())==0){
+                likeServices.putLikeToPost((int) CurrentUser.getInstance().getCurrentUser().getCinUser(),idPost);
                 LikeBtn.setText(String.valueOf(Integer.parseInt(LikeBtn.getText())+1));
 
             }
           else{
-                likeServices.putUnLikeToPost(11111111,idPost);
+                likeServices.putUnLikeToPost((int) CurrentUser.getInstance().getCurrentUser().getCinUser(),idPost);
                 LikeBtn.setText(String.valueOf(Integer.parseInt(LikeBtn.getText())-1));
 
             }

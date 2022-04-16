@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1043.0" prefWidth="1452.0" stylesheets="@../../Style/DashboardStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminDashboardControllers.Offer.OfferMenu">
+    <children>
+        <VBox layoutX="490.0" layoutY="359.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Pane prefHeight="163.0" prefWidth="1452.0" style="-fx-background-color: white;">
+                    <children>
+                        <Label layoutX="60.0" layoutY="21.0" text="Offers">
+                            <font>
+                                <Font name="Lato Bold" size="67.0" />
+                            </font>
+                        </Label>
+                    </children></Pane>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" style="-fx-background-color: white;">
+                    <children>
+                        <ComboBox fx:id="choiceBoxFiltre" onAction="#onChangeProp" prefHeight="25.0" prefWidth="230.0" />
+                        <TextField fx:id="searchField" onKeyTyped="#keyTyped" prefWidth="248.0" promptText="Search" styleClass="searchBar">
+                            <font>
+                                <Font size="20.0" />
+                            </font></TextField>
+                    </children></HBox>
+                <Pane prefHeight="86.0" prefWidth="1452.0" style="-fx-background-color: white;">
+                    <children>
+                        <Label layoutX="63.0" layoutY="12.0" text="Provider">
+                            <font>
+                                <Font name="Arial" size="22.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="540.0" layoutY="12.0" text="Title">
+                            <font>
+                                <Font name="Arial" size="22.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="780.0" layoutY="12.0" text="Category">
+                            <font>
+                                <Font name="Arial" size="22.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="refreshBtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="1316.0" layoutY="1.0" mnemonicParsing="false" onAction="#refresh" text="Button">
+                            <graphic>
+                                <ImageView fitHeight="45.0" fitWidth="45.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../Icons/update.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic></Button>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="50.0" />
+                    </VBox.margin>
+                </Pane>
+                <AnchorPane prefHeight="773.0" prefWidth="1452.0">
+                    <children>
+                        <ListView fx:id="OfferListView" layoutY="14.0" maxWidth="1452.0" prefHeight="734.0" prefWidth="1452.0" styleClass="scroll-bar" stylesheets="@../../Style/MenuStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

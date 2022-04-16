@@ -19,5 +19,6 @@
     <orderEntry type="library" name="ant-1.8.21" level="project" />
     <orderEntry type="library" name="zxing-1.7-javase" level="project" />
     <orderEntry type="library" name="zxing-core-2.0" level="project" />
+    <orderEntry type="library" name="zxing-1.7-javase1" level="project" />
   </component>
 </module>

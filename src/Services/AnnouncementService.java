@@ -149,18 +149,18 @@ public class AnnouncementService implements IServices<Annoucement> {
 
     public List<Annoucement> filterAlertBySubject(String subjectAnn, List<Annoucement> annoucements){
         return annoucements.stream()
-            .filter(comparator -> comparator.getSubjectAnn().startsWith(subjectAnn))
-            .collect(Collectors.toList());
+                .filter(comparator -> comparator.getSubjectAnn().startsWith(subjectAnn))
+                .collect(Collectors.toList());
     }
-    public List<Annoucement> filterAlertByDestination(Roles role, List<Annoucement> annoucements){
+    public List<Annoucement> filterAnnounceByDestination(Roles role, List<Annoucement> annoucements){
         return annoucements.stream()
-            .filter(comparator -> comparator.getDestAnn().toString().equals(role.toString()))
-            .collect(Collectors.toList());
+                .filter(comparator -> comparator.getDestAnn().toString().equals(role.toString()))
+                .collect(Collectors.toList());
     }
 
     public List<Annoucement> sortAnnoucementById() {
         return this.getList().stream().sorted((o1, o2) -> String.valueOf(o2.getIdAnn())
-            .compareTo(String.valueOf(o1.getIdAnn()))).collect(Collectors.toList());
+                .compareTo(String.valueOf(o1.getIdAnn()))).collect(Collectors.toList());
     }
     public List<Annoucement>sortAnnoucementByDate(List<Annoucement>annoucements){
         Collections.sort(annoucements, new Comparator<Annoucement>() {

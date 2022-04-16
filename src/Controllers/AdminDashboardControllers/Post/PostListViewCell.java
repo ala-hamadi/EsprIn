@@ -42,7 +42,7 @@ public class PostListViewCell {
             UserServices userServices=UserServices.getInstance();
             this.deleteListener=deleteListener;
             this.post=post;
-            Espritien espritien=(Espritien) userServices.retrive(post.getCreatedBy());
+            Espritien espritien=(Espritien) userServices.retrive(post.getIdOwner());
             PostOwner.setText(espritien.getFirstName()+" "+espritien.getLastName());
             CreatedAt.setText(post.getCreatedAt().toString());
             Category.setText(post.getCategories().toString());

@@ -6,7 +6,6 @@ import Services.UserServices;
 import Utils.CurrentUser;
 import Utils.Enums.State;
 import Utils.RessorcesManager;
-import com.sun.jndi.toolkit.url.UrlUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,7 +24,6 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -43,8 +41,6 @@ public class MainController implements Initializable {
     public Circle adminAvatar;
     @FXML
     private Button exitBtn;
-    @FXML
-    private Button SMSBtn;
     private double x, y;
     UserServices userServices;
 
@@ -89,6 +85,8 @@ public class MainController implements Initializable {
 
     }
 
+
+
     public void showAnnounceMenu(ActionEvent actionEvent) {
         try {
             Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/Dashboard/AnnounceMenu.fxml"));
@@ -98,13 +96,59 @@ public class MainController implements Initializable {
             System.out.println(e.getMessage());
         }
     }
+    @FXML
+    void showAlertsMenu(ActionEvent event) {
+        try {
+            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/Dashboard/AlertMenu.fxml"));
+            content.getChildren().removeAll();
+            content.getChildren().setAll(menu);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
 
 
     @FXML
-    void showSMS(ActionEvent event) {
-
+    void showEventsMenu(ActionEvent event) {
         try {
-            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/Dashboard/SMS.fxml"));
+            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/Dashboard/EventMenu.fxml"));
+            content.getChildren().removeAll();
+            content.getChildren().setAll(menu);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    @FXML
+    void showForumsMenu(ActionEvent event) {
+        try {
+            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/Dashboard/ForumMenu.fxml"));
+            content.getChildren().removeAll();
+            content.getChildren().setAll(menu);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    @FXML
+    void showOffersMenu(ActionEvent event) {
+        try {
+            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/Dashboard/OfferMenu.fxml"));
+            content.getChildren().removeAll();
+            content.getChildren().setAll(menu);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    @FXML
+    void showPostsMenu(ActionEvent event) {
+        try {
+            Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/Dashboard/PostMenu.fxml"));
             content.getChildren().removeAll();
             content.getChildren().setAll(menu);
         } catch (Exception e) {
@@ -132,15 +176,7 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Admin admin=(Admin) CurrentUser.getInstance().getCurrentUser();
-        try {
-            String url ="/Img/"+admin.getImgUrl();
-            Image image=new Image(url,false);
-            adminAvatar.setFill(new ImagePattern(image));
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
-        }
-
+       // adminAvatar.setFill(new ImagePattern(new Image(admin.getImgUrl(),false)));
         adminName.setText(admin.getFirstName());
         adminLastName.setText(admin.getLastName());
         adminNameAndLastName.setText(admin.getFirstName()+" "+admin.getLastName());

@@ -1,247 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4f3256f-a8c8-4f1a-9a61-c981b5235af1" name="Default Changelist" comment="Merge 2">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Pidev.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pidev.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4a2956ab-d2c7-482f-aeb8-ee245668a2e5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4a2956ab-d2c7-482f-aeb8-ee245668a2e5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4a2956ab-d2c7-482f-aeb8-ee245668a2e5/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4a2956ab-d2c7-482f-aeb8-ee245668a2e5/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa664fd4-45f5-4b93-bba9-d39df8dd91ff.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fa664fd4-45f5-4b93-bba9-d39df8dd91ff.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa664fd4-45f5-4b93-bba9-d39df8dd91ff/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fa664fd4-45f5-4b93-bba9-d39df8dd91ff/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ant_1_8_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ant_1_8_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ant_1_8_21.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ant_1_8_21.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/javax_json_javax_json_api_1_1_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/javax_json_javax_json_api_1_1_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/javax_mail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/javax_mail.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_8_0_27.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_8_0_27.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/recaptcha4j_0_0_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/recaptcha4j_0_0_7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/twilio_8_9_0_javadoc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/twilio_8_9_0_javadoc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/twilio_8_9_0_javadoc1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/twilio_8_9_0_javadoc1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="d4f3256f-a8c8-4f1a-9a61-c981b5235af1" name="Default Changelist" comment="Merge 2.1">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/zxing_1_7_javase1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test EsprIN.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Test EsprIN.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test_EsprIN.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Test_EsprIN.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Cells/AnnounceCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Cells/AnnounceCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/AddEventCSS.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/AddEventCSS.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/DashboardStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/DashboardStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/DashbordStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/DashbordStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/EventStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/EventStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/FormsStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/FormsStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/LoginStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/LoginStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/MenuStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/MenuStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/PostStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/PostStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/SideMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/SideMenu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/UserTemplateStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Style/UserTemplateStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/AlertCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/AlertCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/AnnounceCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/AnnounceCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/CommentCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/CommentCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/EventCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/EventCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/ForumCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/ForumCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/ForumDetail.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/ForumDetail.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/ImgCropInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/ImgCropInterface.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/OfferCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/OfferCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/ParticipateCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/ParticipateCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/PostCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/PostCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/ResponseCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/ResponseCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/TemplateUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/TemplateUser.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Announcement/AddAlert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Announcement/AddAlert.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Announcement/AnnounceMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Announcement/AnnounceMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AnnounceUser/AddAlertController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AnnounceUser/AddAlertController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AnnounceUser/AnnounceListViewCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AnnounceUser/AnnounceListViewCell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AnnounceUser/AnnounceMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AnnounceUser/AnnounceMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/Posts/PostListViewCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/Posts/PostListViewCell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Modules/AlertProf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Modules/AlertProf.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Modules/Annoucement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Modules/Annoucement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AlertProfServices$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AlertProfServices$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AlertProfServices$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AlertProfServices$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AlertProfServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AlertProfServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AnnouncementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AnnouncementService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Utils/Enums/AnnounceDestination.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Utils/Enums/AnnounceDestination.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/AnnounceMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/AnnounceMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/DashboardMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/DashboardMain.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/SMS.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/SMS.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/UsersMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/UsersMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/EventMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/EventMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/ForumMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/ForumMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/HomeTemplate.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/HomeTemplate.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/LoginInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/LoginInterface.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Offer/AddOffer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Offer/AddOffer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Offer/OfferMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Offer/OfferMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Post/AddPost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Post/AddPost.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Post/PostMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Post/PostMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/RegisterInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/RegisterInterface.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddAdmin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddAlert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddAlert.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddAnnounceWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddAnnounceWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddEvent.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddExternal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddExternal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddForumWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddForumWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddOffer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddOffer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddPost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddPost.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/DeletePost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/DeletePost.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/ModifierComment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/ModifierComment.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/ModifierEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/ModifierEvent.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/ModifierOffer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/ModifierOffer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/ModifierPost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/ModifierPost.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/PostComments.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/PostComments.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/UpdateForum.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/UpdateForum.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/UpdateResponse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/UpdateResponse.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/primary.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/APIs/APIConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/APIs/APIConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/APIs/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/APIs/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/APIs/Captcha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/APIs/Captcha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/APIs/CaptchaGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/APIs/CaptchaGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/APIs/Mailing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/APIs/Mailing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/APIs/PrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/APIs/PrimaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/APIs/SMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/APIs/SMS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Announce/AddAnnounceWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Announce/AnnounceListViewCell.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Announce/AnnounceMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/MainController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/User/AddAdmin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/User/AddExternal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/User/TemplateUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/User/UsersMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AnnounceUser/AddAlertController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AnnounceUser/AnnounceListViewCell.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AnnounceUser/AnnounceMenuController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/EventControllers/AddEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EventControllers/AddEventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/EventControllers/EditEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EventControllers/EditEventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/EventControllers/EventListViewCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EventControllers/EventListViewCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/EventControllers/EventMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EventControllers/EventMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/EventControllers/HomeTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EventControllers/HomeTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/EventControllers/ParticipateCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EventControllers/ParticipateCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/EventControllers/ParticipateListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EventControllers/ParticipateListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Forum/ForumCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Forum/ForumCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Forum/ForumDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Forum/ForumDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Forum/ForumMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Forum/ForumMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Forum/ForumWinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Forum/ForumWinController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Forum/UpdateForumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Forum/UpdateForumController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/HomeFXMLController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/HomeFXMLController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ImgCropInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ImgCropInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Interfaces/BanUserListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Interfaces/BanUserListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Interfaces/DeleteListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Interfaces/DeleteListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/LoginInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/LoginInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Offers/AddOffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Offers/AddOffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Offers/EditOfferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Offers/EditOfferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Offers/OfferCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Offers/OfferCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Offers/OfferFXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Offers/OfferFXML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Offers/OfferMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Offers/OfferMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Posts/AddPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Posts/AddPostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Posts/CommentCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Posts/CommentCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Posts/DeletePostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Posts/DeletePostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Posts/EditCommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Posts/EditCommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Posts/EditPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Posts/EditPostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Posts/PostCommentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Posts/PostCommentsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/APIs/Dyanamic_QR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/APIs/Dyanamic_QR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Event/EventListViewCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Event/EventListViewCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Post/PostListViewCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Post/PostListViewCell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/Posts/PostListViewCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Posts/PostListViewCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Posts/PostMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Posts/PostMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/RegisterInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/RegisterInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Response/ResponseCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Response/ResponseCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Response/UpdateResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Response/UpdateResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modules/AlertProf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/AlertProf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modules/Annoucement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Annoucement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Club.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/CommentPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/CommentPost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Espritien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Espritien.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Extern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Extern.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Forum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Forum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Interest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Interest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/LikePost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/LikePost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Offre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Offre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Participate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Participate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Professor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Responded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Responded.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/AlertProfServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/AlertProfServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/AlertProfServices.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/AnnouncementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/AnnouncementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/CommentServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/CommentServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EventServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EventServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ForumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ForumService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ICommentServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ICommentServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ILikeServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ILikeServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/IPostServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/IPostServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/IServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/IServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/InterestServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/InterestServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/LikeServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/LikeServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/OffreServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/OffreServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ParticipateServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ParticipateServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/PostServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/PostServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ReactedForumServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ReactedForumServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/RespondedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/RespondedService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/BdConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/BdConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/CropImg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/CropImg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/CurrentUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/CurrentUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Enums/AdminDepartments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Enums/AdminDepartments.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils/Enums/AnnounceDestination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Enums/AnnounceDestination.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Enums/Categories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Enums/Categories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Enums/CategoryPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Enums/CategoryPost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Enums/Domaine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Enums/Domaine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Enums/OffreCategorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Enums/OffreCategorie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Enums/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Enums/Roles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Enums/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Enums/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Enums/TypeClub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Enums/TypeClub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/RessorcesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/RessorcesManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Structure/Classe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Structure/Classe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/TestMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/UserSerializableData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/UserSerializableData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Cells/AnnounceCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Cells/AnnounceCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Style/AddEventCSS.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Style/AddEventCSS.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Style/DashboardStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Style/DashboardStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Style/DashbordStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Style/DashbordStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Style/EventStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Style/EventStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Style/FormsStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Style/FormsStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Style/LoginStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Style/LoginStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Style/MenuStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Style/MenuStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Style/PostStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Style/PostStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Style/SideMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Style/SideMenu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Style/UserTemplateStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Style/UserTemplateStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Templates/AlertCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Templates/AlertCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Templates/AnnounceCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Templates/AnnounceCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Templates/CommentCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Templates/CommentCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Templates/EventCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Templates/EventCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Templates/ForumCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Templates/ForumCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Templates/ForumDetail.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Templates/ForumDetail.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Templates/ImgCropInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Templates/ImgCropInterface.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Templates/OfferCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Templates/OfferCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Templates/ParticipateCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Templates/ParticipateCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Templates/PostCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Templates/PostCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Templates/ResponseCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Templates/ResponseCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Templates/TemplateUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Templates/TemplateUser.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/Announcement/AddAlert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Announcement/AddAlert.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/Announcement/AnnounceMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Announcement/AnnounceMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/UI/Dashboard/AnnounceMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Dashboard/AnnounceMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/UI/Dashboard/DashboardMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Dashboard/DashboardMain.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/Dashboard/SMS.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Dashboard/SMS.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/UI/Dashboard/UsersMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Dashboard/UsersMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/EventMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/EventMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/ForumMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/ForumMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/HomeTemplate.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/HomeTemplate.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/LoginInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/LoginInterface.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/Offer/AddOffer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Offer/AddOffer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/Offer/OfferMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Offer/OfferMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/Post/AddPost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Post/AddPost.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/Post/PostMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Post/PostMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/RegisterInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/RegisterInterface.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/AddAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/AddAdmin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/AddAlert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/AddAlert.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/AddAnnounceWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/AddAnnounceWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/AddEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/AddEvent.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/AddExternal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/AddExternal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/AddForumWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/AddForumWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/AddOffer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/AddOffer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/AddPost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/AddPost.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/DeletePost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/DeletePost.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/ModifierComment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/ModifierComment.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/ModifierEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/ModifierEvent.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/ModifierOffer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/ModifierOffer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/ModifierPost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/ModifierPost.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/PostComments.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/PostComments.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/UpdateForum.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/UpdateForum.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/UpdateResponse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/UpdateResponse.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/primary.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,12 +63,19 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Jar file QR PDF/zxing-core-2.0.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Pidev\src\Controllers\AdminDashboardControllers" />
+      <recent name="D:\Pidev\src\Views\UI\Dashboard" />
+      <recent name="D:\Pidev\src\Modules" />
+      <recent name="D:\Pidev\src\Services" />
+      <recent name="D:\Pidev\src\Views\UI\Post" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Pidev\src\Views\Windows" />
       <recent name="C:\Users\Zahar\Desktop\EsprIn-final-desktop\src\Views\Icons" />
@@ -288,15 +86,21 @@
       <recent name="Services" />
       <recent name="Discord" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Dell\OneDrive\Desktop\final\EsprIn-final-desktop\src\Views\Cells" />
-      <recent name="C:\Users\Dell\OneDrive\Desktop\final\EsprIn-final-desktop\src\Controllers\AnnounceUser" />
-      <recent name="C:\Users\Dell\OneDrive\Desktop\final\EsprIn-final-desktop\src\Controllers\AdminDashboardControllers" />
-      <recent name="D:\Pidev\src\Views\UI\Post" />
-      <recent name="C:\Users\Mohamed Oueslati\Desktop\Files\Document\esprin\final\EsprIn-final-desktop\EsprIn-final-desktop\src\Views" />
-    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Dyanamic_QR" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="APIs.Dyanamic_QR" />
+      <module name="Test_EsprIN" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="APIs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Views.Main" />
       <module name="Test_EsprIN" />
@@ -313,6 +117,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Dyanamic_QR" />
       </list>
     </recent_temporary>
   </component>
@@ -327,8 +132,7 @@
       <workItem from="1646877399035" duration="3029000" />
       <workItem from="1646881899802" duration="1891000" />
       <workItem from="1646884604783" duration="3201000" />
-      <workItem from="1646894207654" duration="575000" />
-      <workItem from="1646895004548" duration="27000" />
+      <workItem from="1647614594043" duration="1262000" />
     </task>
     <task id="LOCAL-00001" summary="Merge 2">
       <created>1646881752339</created>
@@ -337,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646881752339</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Merge 2.1">
+      <created>1646892061238</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646892061238</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,21 +168,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge 2" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="813" y="312" key="DetectedRootsChooserDialog" timestamp="1646894751076">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="813" y="312" key="DetectedRootsChooserDialog/0.0.1536.834@0.0.1536.834" timestamp="1646894751076" />
-    <state x="722" y="158" key="FileChooserDialogImpl" timestamp="1646894776075">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="722" y="158" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1646894776075" />
-    <state x="498" y="0" key="SettingsEditor" timestamp="1646894782351">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="498" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1646894782351" />
+    <MESSAGE value="Merge 2.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge 2.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -420,6 +218,11 @@
           <url>file://$PROJECT_DIR$/src/Controllers/Offers/OfferCell.java</url>
           <line>100</line>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Views/Main.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

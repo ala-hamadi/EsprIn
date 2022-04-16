@@ -73,7 +73,7 @@
                               <Insets left="50.0" />
                            </padding>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="484.0" stylesheets="@../../Style/SideMenu.css" text="Externs">
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#showOffersMenu" prefHeight="89.0" prefWidth="484.0" stylesheets="@../../Style/SideMenu.css" text="Offers">
                            <font>
                               <Font name="Lato Bold" size="22.0" />
                            </font>
@@ -91,7 +91,7 @@
                               <Insets top="20.0" />
                            </VBox.margin>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="498.0" stylesheets="@../../Style/SideMenu.css" text="Posts">
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#showPostsMenu" prefHeight="89.0" prefWidth="498.0" stylesheets="@../../Style/SideMenu.css" text="Posts">
                            <font>
                               <Font name="Lato Bold" size="22.0" />
                            </font>
@@ -127,7 +127,22 @@
                               <Insets top="20.0" />
                            </VBox.margin>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="589.0" stylesheets="@../../Style/SideMenu.css" text="Events">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="10.0" layoutY="339.0" mnemonicParsing="false" onAction="#showAlertsMenu" prefHeight="89.0" prefWidth="534.0" stylesheets="@../../Style/SideMenu.css" text="Alerts">
+                     <font>
+                        <Font name="Lato Bold" size="22.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="icon1111" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+                           <image>
+                              <Image url="@../../Icons/Announce.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#showEventsMenu" prefHeight="89.0" prefWidth="589.0" stylesheets="@../../Style/SideMenu.css" text="Events">
                            <font>
                               <Font name="Lato Bold" size="22.0" />
                            </font>
@@ -145,14 +160,14 @@
                               <Insets bottom="20.0" top="20.0" />
                            </VBox.margin>
                         </Button>
-                  <Button fx:id="SMSBtn" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#showSMS" prefHeight="89.0" prefWidth="589.0" stylesheets="@../../../../../bairem/EsprIN/src/Views/Style/SideMenu.css" text="SMS">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="10.0" layoutY="455.0" mnemonicParsing="false" onAction="#showForumsMenu" prefHeight="89.0" prefWidth="589.0" stylesheets="@../../Style/SideMenu.css" text="Forums">
                      <font>
                         <Font name="Lato Bold" size="22.0" />
                      </font>
                      <graphic>
-                        <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
                            <image>
-                              <Image url="@../../Icons/icons8_sms_64px.png" />
+                              <Image url="@../../Icons/events.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -250,11 +265,6 @@
                            </Label>
                         </children>
                      </VBox>
-                     <ImageView fitHeight="600.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@../../Icons/logo%20esprin%201000x1000.png" />
-                        </image>
-                     </ImageView>
                   </children>
                </VBox>
             </children></StackPane>

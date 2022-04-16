@@ -40,7 +40,7 @@ public class EventListViewCell {
             this.evenement=evenement;
             Espritien espritien=(Espritien) userServices.retrive(evenement.getIdOrganizer());
             eventTitle.setText(evenement.getTitleEvent());
-            eventDate.setText(evenement.getDateEventDeb().toString());
+            eventDate.setText(evenement.getDateDebut().toString());
             eventOrganizer.setText(espritien.getFirstName()+" "+espritien.getLastName());
 
         } catch (SQLException exception) {
