@@ -202,7 +202,7 @@ public class HomeFXMLController implements Initializable {
                 System.out.println(exception.getMessage());
             }
 
-            if(CurrentUser.getInstance().getCurrentUser().getRole().equals(Roles.Externe))
+            if(CurrentUser.getInstance().getCurrentUser().getRole().equals(Roles.Extern))
             {
                 Extern extern=(Extern)CurrentUser.getInstance().getCurrentUser();
                 profileNameAndLastName.setText(extern.getEntrepriseName());
@@ -216,16 +216,16 @@ public class HomeFXMLController implements Initializable {
                     postAddItem.setVisible(true);
                     eventAddItem.setVisible(true);
                     break;
-                case Professeur:
+                case Professor:
                     postAddItem.setVisible(true);
                     alertAddItem.setVisible(true);
                     forumAddItem.setVisible(true);
                     break;
-                case Etudiant:
+                case Student:
                     postAddItem.setVisible(true);
                     forumAddItem.setVisible(true);
                     break;
-                case Externe:
+                case Extern:
                     offreAddItem.setVisible(true);
 
                     break;

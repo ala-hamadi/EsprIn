@@ -42,17 +42,17 @@ public class UserServices implements IServices<User> {
                     query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `departement`, `role`) VALUES ('" + user.getCinUser() + "', '" + user.getEmail() + "', '" + user.getPasswd() + "', current_timestamp(), '" + admin.getImgUrl() + "', '" + admin.getFirstName() + "', '" + admin.getLastName() + "', '" + admin.getDepartment() + "', '" + admin.getRole() + "');";
                     System.out.println(statement.executeUpdate(query) + " Row inserted");
                     break;
-                case Etudiant:
+                case Student:
                     final Student student = (Student) user;
                     query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`) VALUES ('" + student.getCinUser() + "', '" + student.getEmail() + "', '" + student.getPasswd() + "', current_timestamp(), '" + student.getImgUrl() + "', '" + student.getFirstName() + "', '" + student.getLastName() + "', '" + student.getDomaine() + "', NULL, NULL, '" + student.getClasse().toString() + "', NULL, NULL, '" + student.getRole() + "');";
                     System.out.println(statement.executeUpdate(query) + " Row inserted");
                     break;
-                case Professeur:
+                case Professor:
                     final Professor professor = (Professor) user;
                     query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`) VALUES ('" + professor.getCinUser() + "', '" + professor.getEmail() + "', '" + professor.getPasswd() + "', current_timestamp(), '" + professor.getImgUrl() + "', '" + professor.getFirstName() + "', '" + professor.getLastName() + "', '" + professor.getDomaine() + "', NULL, NULL, NULL, NULL, NULL, '" + professor.getRole() + "');";
                     System.out.println(statement.executeUpdate(query) + " Row inserted");
                     break;
-                case Externe:
+                case Extern:
                     final Extern extern = (Extern) user;
                     query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`) VALUES ('" + extern.getCinUser() + "', '" + extern.getEmail() + "', '" + extern.getPasswd() + "', current_timestamp(), '" + extern.getImgUrl() + "', NULL, NULL, NULL, NULL, NULL, NULL, '" + extern.getAdresse() + "', '" + extern.getEntrepriseName() + "', '" + extern.getRole() + "');";
                     System.out.println(statement.executeUpdate(query) + " Row inserted");
@@ -81,17 +81,17 @@ public class UserServices implements IServices<User> {
                     query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `departement`, `role`) VALUES ('" + user.getCinUser() + "', '" + user.getEmail() + "', '" + user.getPasswd() + "', current_timestamp(), '" + admin.getImgUrl() + "', '" + admin.getFirstName() + "', '" + admin.getLastName() + "', '" + admin.getDepartment() + "', '" + admin.getRole() + "');";
                     System.out.println(statement.executeUpdate(query) + " Row inserted");
                     break;
-                case Etudiant:
+                case Student:
                     final Student student = (Student) user;
                     query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`) VALUES ('" + student.getCinUser() + "', '" + student.getEmail() + "', '" + student.getPasswd() + "', current_timestamp(), '" + student.getImgUrl() + "', '" + student.getFirstName() + "', '" + student.getLastName() + "', '" + student.getDomaine() + "', NULL, NULL, '" + student.getClasse().toString() + "', NULL, NULL, '" + student.getRole() + "');";
                     System.out.println(statement.executeUpdate(query) + " Row inserted");
                     break;
-                case Professeur:
+                case Professor:
                     final Professor professor = (Professor) user;
                     query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`) VALUES ('" + professor.getCinUser() + "', '" + professor.getEmail() + "', '" + professor.getPasswd() + "', current_timestamp(), '" + professor.getImgUrl() + "', '" + professor.getFirstName() + "', '" + professor.getLastName() + "', '" + professor.getDomaine() + "', NULL, NULL, NULL, NULL, NULL, '" + professor.getRole() + "');";
                     System.out.println(statement.executeUpdate(query) + " Row inserted");
                     break;
-                case Externe:
+                case Extern:
                     final Extern extern = (Extern) user;
                     query = "INSERT INTO `user` (`cinUser`, `email`, `passwd`, `createdAt`, `imgURL`, `firstName`, `lastName`, `domaine`, `departement`, `typeClub`, `class`, `localisation`, `entrepriseName`, `role`) VALUES ('" + extern.getCinUser() + "', '" + extern.getEmail() + "', '" + extern.getPasswd() + "', current_timestamp(), '" + extern.getImgUrl() + "', NULL, NULL, NULL, NULL, NULL, NULL, '" + extern.getAdresse() + "', '" + extern.getEntrepriseName() + "', '" + extern.getRole() + "');";
                     System.out.println(statement.executeUpdate(query) + " Row inserted");
@@ -137,7 +137,7 @@ public class UserServices implements IServices<User> {
                     query = "UPDATE `user` SET `firstName` = '" + admin.getFirstName() + "', `lastName` = '" + admin.getLastName() + "', `email` = '" + admin.getEmail() + "', `passwd` = '" + admin.getPasswd() + "', `imgURL` = '" + admin.getImgUrl() + "', `departement` = '" + admin.getDepartment() + "' WHERE `user`.`cinUser` = " + admin.getCinUser() + ";";
                     System.out.println(statement.executeUpdate(query) + " Row updated");
                     break;
-                case Etudiant:
+                case Student:
                     final Student student = (Student) user;
                     query = "UPDATE `user` SET `firstName` = '" + student.getFirstName() + "', `lastName` = '" + student.getLastName() + "', `email` = '" + student.getEmail() + "', `passwd` = '" + student.getPasswd() + "', `imgURL` = '" + student.getImgUrl() + "', `domaine` = '" + student.getDomaine() + "' `class`= '" + student.getClasse().toString() + "' WHERE `user`.`cinUser` = " + student.getCinUser() + ";";
                     System.out.println(statement.executeUpdate(query) + " Row updated");
@@ -147,12 +147,12 @@ public class UserServices implements IServices<User> {
                     query = "UPDATE `user` SET `firstName` = '" + club.getFirstName() + "', `lastName` = '" + club.getLastName() + "', `email` = '" + club.getEmail() + "', `passwd` = '" + club.getPasswd() + "', `imgURL` = '" + club.getImgUrl() + "', `typeClub` = '" + club.getTypeClub() + "' WHERE `user`.`cinUser` = " + club.getCinUser() + ";";
                     System.out.println(statement.executeUpdate(query) + " Row updated");
                     break;
-                case Professeur:
+                case Professor:
                     final Professor professor = (Professor) user;
                     query = "UPDATE `user` SET `firstName` = '" + professor.getFirstName() + "', `lastName` = '" + professor.getLastName() + "', `email` = '" + professor.getEmail() + "', `passwd` = '" + professor.getPasswd() + "', `imgURL` = '" + professor.getImgUrl() + "', `domaine` = '" + professor.getDomaine() + "' WHERE `user`.`cinUser` = " + professor.getCinUser() + ";";
                     System.out.println(statement.executeUpdate(query) + " Row updated");
                     break;
-                case Externe:
+                case Extern:
                     final Extern extern = (Extern) user;
                     query = "UPDATE `user` SET `entrepriseName` = '" + extern.getEntrepriseName() + "', `email` = '" + extern.getEmail() + "', `passwd` = '" + extern.getPasswd() + "', `imgURL` = '" + extern.getImgUrl() + "', `localisation` = '" + extern.getAdresse() + "' WHERE `user`.`cinUser` = " + extern.getCinUser() + ";";
                     System.out.println(statement.executeUpdate(query) + " Row updated");
@@ -188,22 +188,22 @@ public class UserServices implements IServices<User> {
                         club.setState(State.valueOf(resultSet.getString("state")));
                         club.setCreatedAt(resultSet.getDate("createdAt"));
                         break;
-                    case Etudiant:
+                    case Student:
                         String[] classString = resultSet.getString("class").split(" ");
                         Classe classe = new Classe(Integer.parseInt(classString[0]), classString[1], Integer.parseInt(classString[2]));
-                        Student student = new Student(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Etudiant, resultSet.getString("firstName"), resultSet.getString("lastName"), classe, Domaine.valueOf(resultSet.getString("domaine")));
+                        Student student = new Student(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Student, resultSet.getString("firstName"), resultSet.getString("lastName"), classe, Domaine.valueOf(resultSet.getString("domaine")));
                         student.setState(State.valueOf(resultSet.getString("state")));
                         student.setCreatedAt(resultSet.getDate("createdAt"));
                         users.add(student);
                         break;
-                    case Professeur:
-                        Professor professor = new Professor(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Professeur, resultSet.getString("firstName"), resultSet.getString("lastName"), Domaine.valueOf(resultSet.getString("domaine")));
+                    case Professor:
+                        Professor professor = new Professor(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Professor, resultSet.getString("firstName"), resultSet.getString("lastName"), Domaine.valueOf(resultSet.getString("domaine")));
                         professor.setState(State.valueOf(resultSet.getString("state")));
                         professor.setCreatedAt(resultSet.getDate("createdAt"));
                         users.add(professor);
                         break;
-                    case Externe:
-                        Extern extern = new Extern(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Externe, resultSet.getString("entrepriseName"), resultSet.getString("localisation"));
+                    case Extern:
+                        Extern extern = new Extern(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Extern, resultSet.getString("entrepriseName"), resultSet.getString("localisation"));
                         extern.setState(State.valueOf(resultSet.getString("state")));
                         extern.setCreatedAt(resultSet.getDate("createdAt"));
                         users.add(extern);
@@ -272,16 +272,16 @@ public class UserServices implements IServices<User> {
                 case Club:
                     Club club = new Club(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Club, resultSet.getString("firstName"), resultSet.getString("lastName"), TypeClub.valueOf(resultSet.getString("typeClub")));
                     return club;
-                case Etudiant:
+                case Student:
                     String[] classString = resultSet.getString("class").split(" ");
                     Classe classe = new Classe(Integer.parseInt(classString[0]), classString[1], Integer.parseInt(classString[2]));
-                    Student student = new Student(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Etudiant, resultSet.getString("firstName"), resultSet.getString("lastName"), classe, Domaine.valueOf(resultSet.getString("domaine")));
+                    Student student = new Student(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Student, resultSet.getString("firstName"), resultSet.getString("lastName"), classe, Domaine.valueOf(resultSet.getString("domaine")));
                     return student;
-                case Professeur:
-                    Professor professor = new Professor(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Professeur, resultSet.getString("firstName"), resultSet.getString("lastName"), Domaine.valueOf(resultSet.getString("domaine")));
+                case Professor:
+                    Professor professor = new Professor(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Professor, resultSet.getString("firstName"), resultSet.getString("lastName"), Domaine.valueOf(resultSet.getString("domaine")));
                     return professor;
-                case Externe:
-                    Extern extern = new Extern(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Externe, resultSet.getString("entrepriseName"), resultSet.getString("localisation"));
+                case Extern:
+                    Extern extern = new Extern(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Extern, resultSet.getString("entrepriseName"), resultSet.getString("localisation"));
                     return extern;
                 default:
                     System.out.println("Error,Role not defined");
@@ -309,16 +309,16 @@ public class UserServices implements IServices<User> {
                 case Club:
                     Club club = new Club(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Club, resultSet.getString("firstName"), resultSet.getString("lastName"), TypeClub.valueOf(resultSet.getString("typeClub")));
                     return club;
-                case Etudiant:
+                case Student:
                     String[] classString = resultSet.getString("class").split(" ");
                     Classe classe = new Classe(Integer.parseInt(classString[0]), classString[1], Integer.parseInt(classString[2]));
-                    Student student = new Student(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Etudiant, resultSet.getString("firstName"), resultSet.getString("lastName"), classe, Domaine.valueOf(resultSet.getString("domaine")));
+                    Student student = new Student(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Student, resultSet.getString("firstName"), resultSet.getString("lastName"), classe, Domaine.valueOf(resultSet.getString("domaine")));
                     return student;
-                case Professeur:
-                    Professor professor = new Professor(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Professeur, resultSet.getString("firstName"), resultSet.getString("lastName"), Domaine.valueOf(resultSet.getString("domaine")));
+                case Professor:
+                    Professor professor = new Professor(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Professor, resultSet.getString("firstName"), resultSet.getString("lastName"), Domaine.valueOf(resultSet.getString("domaine")));
                     return professor;
-                case Externe:
-                    Extern extern = new Extern(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Externe, resultSet.getString("entrepriseName"), resultSet.getString("localisation"));
+                case Extern:
+                    Extern extern = new Extern(resultSet.getInt("cinUser"), resultSet.getString("email"), resultSet.getString("passwd"), resultSet.getString("imgURL"), Roles.Extern, resultSet.getString("entrepriseName"), resultSet.getString("localisation"));
                     return extern;
                 default:
                     System.out.println("Error,Role not defined");
@@ -355,13 +355,13 @@ public class UserServices implements IServices<User> {
     }
     public List<User> searchByName(String name) {
         return this.getList().stream().map(u -> {
-            if (u.getRole().equals(Roles.Externe))
+            if (u.getRole().equals(Roles.Extern))
                 return (Extern)u;
             else
            return  (Espritien) u;
         })
                 .filter(u -> {
-                    if (u.getRole().equals(Roles.Externe)) {
+                    if (u.getRole().equals(Roles.Extern)) {
                         Extern extern=(Extern)u;
                         return extern.getEntrepriseName().toLowerCase().startsWith(name.toLowerCase());
                     }
@@ -379,17 +379,17 @@ public class UserServices implements IServices<User> {
 
     //region Student
     public List<Student> filtreByClassLevel(int classNum) {
-        List<Student> studentList = this.getList().stream().filter(u -> u.getRole() == Roles.Etudiant).map(u -> (Student) u).collect(Collectors.toList());
+        List<Student> studentList = this.getList().stream().filter(u -> u.getRole() == Roles.Student).map(u -> (Student) u).collect(Collectors.toList());
         return studentList.stream().filter(u -> u.getClasse().getNiveau() == classNum).collect(Collectors.toList());
     }
 
     public List<Student> filtreByClassSpeciality(String spec) {
-        List<Student> studentList = this.getList().stream().filter(u -> u.getRole() == Roles.Etudiant).map(u -> (Student) u).collect(Collectors.toList());
+        List<Student> studentList = this.getList().stream().filter(u -> u.getRole() == Roles.Student).map(u -> (Student) u).collect(Collectors.toList());
         return studentList.stream().filter(u -> u.getClasse().getSpecialite().toLowerCase().contains(spec.toLowerCase())).collect(Collectors.toList());
     }
 
     public List<Student> filtreByStudentDomaine(Domaine domaine) {
-        List<Student> studentList = this.getList().stream().filter(u -> u.getRole() == Roles.Etudiant).map(u -> (Student) u).collect(Collectors.toList());
+        List<Student> studentList = this.getList().stream().filter(u -> u.getRole() == Roles.Student).map(u -> (Student) u).collect(Collectors.toList());
         return studentList.stream().filter(u -> u.getDomaine() == domaine).collect(Collectors.toList());
     }
 

@@ -41,7 +41,7 @@ public class AlertProfServices implements IServices<AlertProf> {
 
             rs.next();
             switch (Roles.valueOf(rs.getString("role"))) {
-                case Professeur:
+                case Professor:
                     query = "INSERT INTO `alert`(`alertTitle`,`content`, `destClass`, `idSender`, `state`) VALUES ('"+alertProf.getTitle()+"','"+ alertProf.getContentAlert() + "','" + alertProf.getDestClass() + "','" + alertProf.getIdSender() + "','" + alertProf.getState() + "');";
                     int x = std.executeUpdate(query);
                     System.out.println(x + "row inserted");
@@ -66,7 +66,7 @@ public class AlertProfServices implements IServices<AlertProf> {
 
             while (rs.next()) {
                 switch (Roles.valueOf(rs.getString("role"))) {
-                    case Professeur:
+                    case Professor:
                         query = "UPDATE alert SET state = '" + State.Deleted+ "' WHERE `alert`.`idAlert`="+ alertProf.getIdAlert()+ ";";
                         int x = std.executeUpdate(query);
                         System.out.println(x + "row deleted");

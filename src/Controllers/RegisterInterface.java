@@ -106,7 +106,7 @@ public class RegisterInterface implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        roleSelection.getItems().addAll(new Roles[]{Roles.Etudiant, Roles.Club, Roles.Professeur});
+        roleSelection.getItems().addAll(new Roles[]{Roles.Student, Roles.Club, Roles.Professor});
         clubTypeSelection.getItems().addAll(TypeClub.values());
         domaineSelection.getItems().addAll(Domaine.values());
         clubTypeSelection.getSelectionModel().selectFirst();
@@ -158,12 +158,12 @@ public class RegisterInterface implements Initializable {
                 domaineVBox.setVisible(false);
                 classVbox.setVisible(false);
                 break;
-            case Professeur:
+            case Professor:
                 typeClubVBox.setVisible(false);
                 domaineVBox.setVisible(true);
                 classVbox.setVisible(false);
                 break;
-            case Etudiant:
+            case Student:
                 typeClubVBox.setVisible(false);
                 domaineVBox.setVisible(true);
                 classVbox.setVisible(true);
@@ -187,7 +187,7 @@ public class RegisterInterface implements Initializable {
             ) {
                 System.out.println("chbik?");
                 switch (roleSelection.getValue()) {
-                    case Etudiant:
+                    case Student:
                         if ((!domaineSelection.getValue().equals(null))
                                 && (!classLvl.getText().equals(null))
                                 && (!classNum.getText().equals(null))
@@ -197,7 +197,7 @@ public class RegisterInterface implements Initializable {
                                     , emailInput.getText()
                                     , passwordInput.getText()
                                     , ""
-                                    , Roles.Etudiant
+                                    , Roles.Student
                                     , firstNameInput.getText()
                                     , lastNameInput.getText()
                                     , new Classe(Integer.parseInt(classLvl.getText()), classSoec.getText(), Integer.parseInt(classNum.getText()))
@@ -216,14 +216,14 @@ public class RegisterInterface implements Initializable {
                             }
                         }
                         break;
-                    case Professeur:
+                    case Professor:
                         if (!domaineSelection.getValue().equals(null)) {
                             Professor professor = new Professor(
                                     Long.parseLong(cinNumberInput.getText())
                                     , emailInput.getText()
                                     , passwordInput.getText()
                                     , ""
-                                    , Roles.Professeur
+                                    , Roles.Professor
                                     , firstNameInput.getText()
                                     , lastNameInput.getText()
                                     , domaineSelection.getValue()

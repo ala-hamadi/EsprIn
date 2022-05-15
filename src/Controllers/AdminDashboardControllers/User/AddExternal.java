@@ -68,7 +68,7 @@ public class AddExternal {
                         , entrepriseEmail.getText()
                         , entreprisePassword.getText()
                         ,""
-                        , Roles.Externe
+                        , Roles.Extern
                         , entepriseName.getText()
                         ,entrepriseAdresse.getText()
                         );

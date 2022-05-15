@@ -1,38 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4f3256f-a8c8-4f1a-9a61-c981b5235af1" name="Default Changelist" comment="Merge 2.1">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/zxing_1_7_javase1.xml" afterDir="false" />
+    <list default="true" id="d4f3256f-a8c8-4f1a-9a61-c981b5235af1" name="Default Changelist" comment="16/04">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test_EsprIN.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Test_EsprIN.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AnnounceUser/AddAlertController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AnnounceUser/AddAlertController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AnnounceUser/AnnounceListViewCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AnnounceUser/AnnounceListViewCell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AnnounceUser/AnnounceMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AnnounceUser/AnnounceMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/Posts/PostListViewCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/Posts/PostListViewCell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Modules/AlertProf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Modules/AlertProf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Modules/Annoucement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Modules/Annoucement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AlertProfServices$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AlertProfServices$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AlertProfServices$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AlertProfServices$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AlertProfServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AlertProfServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AnnouncementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AnnouncementService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Utils/Enums/AnnounceDestination.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Utils/Enums/AnnounceDestination.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/AnnounceMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/AnnounceMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/DashboardMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/DashboardMain.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/UsersMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Dashboard/UsersMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/APIs/Dyanamic_QR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/APIs/Dyanamic_QR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Event/EventListViewCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Event/EventListViewCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Post/PostListViewCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Post/PostListViewCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Posts/PostListViewCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Posts/PostListViewCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/AlertProf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/AlertProf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Annoucement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Annoucement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/AlertProfServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/AnnouncementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/AnnouncementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Enums/AnnounceDestination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Enums/AnnounceDestination.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/Dashboard/AnnounceMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Dashboard/AnnounceMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/Dashboard/DashboardMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Dashboard/DashboardMain.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/Dashboard/UsersMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Dashboard/UsersMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loggedUser.bin" beforeDir="false" afterPath="$PROJECT_DIR$/loggedUser.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/User/AddExternal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/User/AddExternal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/User/TemplateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/User/TemplateUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/User/UsersMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/User/UsersMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/HomeFXMLController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/HomeFXMLController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/RegisterInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/RegisterInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/AlertProfServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/AlertProfServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/Enums/AdminDepartments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Enums/AdminDepartments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/Enums/Domaine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Enums/Domaine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/Enums/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Enums/Roles.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +45,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -133,6 +115,12 @@
       <workItem from="1646881899802" duration="1891000" />
       <workItem from="1646884604783" duration="3201000" />
       <workItem from="1647614594043" duration="1262000" />
+      <workItem from="1650068189289" duration="700000" />
+      <workItem from="1651009331820" duration="4238000" />
+      <workItem from="1651053082833" duration="3890000" />
+      <workItem from="1651328717305" duration="938000" />
+      <workItem from="1651965108928" duration="289000" />
+      <workItem from="1652607478866" duration="2228000" />
     </task>
     <task id="LOCAL-00001" summary="Merge 2">
       <created>1646881752339</created>
@@ -148,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646892061238</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="16/04">
+      <created>1650068272996</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1650068272996</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +164,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge 2" />
     <MESSAGE value="Merge 2.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge 2.1" />
+    <MESSAGE value="16/04" />
+    <option name="LAST_COMMIT_MESSAGE" value="16/04" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -114,7 +114,7 @@ public class UsersMenu implements Initializable {
                 break;
             case "Show Students":
                 System.out.println("students");
-                bind(userServices.filtreByRole(Roles.Etudiant));
+                bind(userServices.filtreByRole(Roles.Student));
                 break;
             case "Show Clubs":
                 System.out.println("clubs");
@@ -122,11 +122,11 @@ public class UsersMenu implements Initializable {
                 break;
             case "Show Professors":
                 System.out.println("profs");
-                bind(userServices.filtreByRole(Roles.Professeur));
+                bind(userServices.filtreByRole(Roles.Professor));
                 break;
             case "Show Externals":
                 System.out.println("externals");
-                bind(userServices.filtreByRole(Roles.Externe));
+                bind(userServices.filtreByRole(Roles.Extern));
                 break;
         }
     }

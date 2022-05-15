@@ -49,7 +49,7 @@ public class TemplateUser {
         }*/
 
         this.user=user;
-        if(user.getRole()!= Roles.Externe) {
+        if(user.getRole()!= Roles.Extern) {
             Espritien espritien=(Espritien)user;
             this.userFirstName.setText(espritien.getFirstName());
             this.userLastName.setText(espritien.getLastName());

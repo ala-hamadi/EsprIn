@@ -1,5 +1,5 @@
 package Utils.Enums;
 
 public enum Roles {
-    Admin, Etudiant, Externe, Professeur, Club
+    Admin, Student, Extern, Professor, Club
 }
