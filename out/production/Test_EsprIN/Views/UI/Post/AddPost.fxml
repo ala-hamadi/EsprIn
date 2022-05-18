@@ -20,7 +20,7 @@
             <top>
                 <Pane onMouseDragged="#mouseDragged" onMousePressed="#mousePressed" prefHeight="62.0" prefWidth="600.0" style="-fx-background-color: C10006;" BorderPane.alignment="CENTER">
                     <children>
-                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="753.0" layoutY="22.0" onMouseClicked="#closeWindow" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="closeWindow" fitHeight="20.0" fitWidth="20.0" layoutX="753.0" layoutY="22.0" onMouseClicked="#CloseWindow" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../Icons/closewindow.png" />
                             </image>

@@ -80,12 +80,12 @@
                </bottom>
             </BorderPane>
                 <ImageView fx:id="imageEvent" fitHeight="279.0" fitWidth="340.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="file:/C:/Users/HP/Desktop/pidev/EsprIn-/src/Views/Images/Logo.png" />
-                    </image>
                     <VBox.margin>
                         <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
                     </VBox.margin>
+               <image>
+                  <Image url="@../Images/appicon.png" />
+               </image>
                 </ImageView>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
@@ -106,11 +106,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                      <graphic>
-                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="file:/C:/Users/HP/Desktop/pidev/EsprIn-/src/Views/Images/export_pdf_48px.png" />
-                           </image>
-                        </ImageView>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic>
                   </Button>
                </children>
