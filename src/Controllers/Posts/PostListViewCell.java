@@ -100,28 +100,30 @@ public class PostListViewCell {
             String firstname= user.getFirstName();
             String lastname= user.getLastName();
             UserName.setText(firstname + " " + lastname);
+            if(post.getMediaURL()!=null) {
+                //Image image = new Image(post.getMediaURL());
+                Image image = new Image("Views/Icons/appicon.png");
+                imagePost.setImage(image);
+            }
+            // UserName.setText("foulen");
+            CreatedAt.setText(post.getCreatedAt().toString());
+            ContentPost.setText(post.getContent());
+            CatPost.setText(post.getCategories().name());
+            LikeBtn.setText(String.valueOf(post.getLikeNumber()));
+            CommentServices commentServices=new CommentServices();
+            ArrayList<CommentPost> list= (ArrayList<CommentPost>) commentServices.getListCommentByPost(post.getIdPost());
+            CommentBtn.setText(String.valueOf(list.size()));
+            if(CurrentUser.getInstance().getCurrentUser().getCinUser()!=post.getIdOwner()){
+                DeleteBtn1.setVisible(false);
+                ModBtn1.setVisible(false);
+            }
 
-        } catch (SQLException exception) {
-            exception.printStackTrace();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
         }
 
 
-        if(post.getMediaURL()!=null) {
-            Image image = new Image(post.getMediaURL());
-            imagePost.setImage(image);
-        }
-       // UserName.setText("foulen");
-        CreatedAt.setText(post.getCreatedAt().toString());
-        ContentPost.setText(post.getContent());
-        CatPost.setText(post.getCategories().name());
-        LikeBtn.setText(String.valueOf(post.getLikeNumber()));
-        CommentServices commentServices=new CommentServices();
-        ArrayList<CommentPost> list= (ArrayList<CommentPost>) commentServices.getListCommentByPost(post.getIdPost());
-      CommentBtn.setText(String.valueOf(list.size()));
-        if(CurrentUser.getInstance().getCurrentUser().getCinUser()!=post.getIdOwner()){
-            DeleteBtn1.setVisible(false);
-            ModBtn1.setVisible(false);
-        }
+
 
     }
 

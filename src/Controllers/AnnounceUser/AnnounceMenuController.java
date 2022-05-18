@@ -22,32 +22,31 @@ public class AnnounceMenuController implements Initializable {
 
 
     @FXML
-    private ListView<Node>  announceListView;
-    @FXML
-    private ListView<Node> alertListView;
+    private ListView<Node>  announcetListView;
 
-    private List<AlertProf> alertProfList;
+
+    //private List<AlertProf> alertProfList;
     private List<Annoucement> annoucementList;
 
     public AnnounceMenuController() {
         AnnouncementService announcementService= null;
-        AlertProfServices alertProfServices=null;
+        //AlertProfServices alertProfServices=null;
         try {
             announcementService = new AnnouncementService();
-            alertProfServices=new AlertProfServices();
+           // alertProfServices=new AlertProfServices();
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
 
         annoucementList = new ArrayList<Annoucement>();
-        alertProfList=new ArrayList<AlertProf>();
+       // alertProfList=new ArrayList<AlertProf>();
         //annoucementList.add(new Annoucement(9,"Rappel 5lass","no 5lass no result", Roles.Etudiant,10020855, Timestamp.valueOf(LocalDateTime.now())));
         //annoucementList.add(new Annoucement(10,"Rappel 5lass","no 5lass no result",Roles.Etudiant,10020855,Timestamp.valueOf(LocalDateTime.now())));
         //annoucementList.add(new Annoucement(11,"Rappel 5lass","no 5lass no result",Roles.Etudiant,10020855,Timestamp.valueOf(LocalDateTime.now())));
         annoucementList=announcementService.getList();
-        alertProfList=alertProfServices.getList();
-        announceListView = new ListView<>();
-        alertListView=new ListView<>();
+      //  alertProfList=alertProfServices.getList();
+        announcetListView = new ListView<>();
+       // alertListView=new ListView<>();
 
        
 
@@ -55,47 +54,16 @@ public class AnnounceMenuController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            int i=0;
-            int j=0;
 
-            while (i< annoucementList.size()||i< alertProfList.size()){
-                if (i< annoucementList.size()) {
-                    FXMLLoader fxmlLoader1 = new FXMLLoader();
-                    fxmlLoader1.setLocation(getClass().getResource("/Views/Templates/AnnounceCell.fxml"));
-                    AnchorPane anchorPane1 = fxmlLoader1.load();
-                    AnnounceListViewCell itemController1 = fxmlLoader1.getController();
-                    itemController1.setData(annoucementList.get(i));
-                    announceListView.getItems().add(anchorPane1);
-                    i++;
-                }
-                if (i< alertProfList.size()) {
-                    FXMLLoader fxmlLoader = new FXMLLoader();
-                    fxmlLoader.setLocation(getClass().getResource("/Views/Templates/AlertCell.fxml"));
-                    AnchorPane anchorPane = fxmlLoader.load();
-                    AlertListViewCell itemController = fxmlLoader.getController();
-                    itemController.setData(alertProfList.get(i));
-                    announceListView.getItems().add(anchorPane);
-                    j++;
-                }
-            }
-            /*for (int i = 0; i< annoucementList.size(); i++ ){
+
+            for (int i = 0; i< annoucementList.size(); i++ ) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/Views/Templates/AnnounceCell.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
                 AnnounceListViewCell itemController = fxmlLoader.getController();
                 itemController.setData(annoucementList.get(i));
-                announceListView.getItems().add(anchorPane);
-
+                announcetListView.getItems().add(anchorPane);
             }
-           for (int i = 0; i< alertProfList.size(); i++ ){
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/Views/Templates/AlertCell.fxml"));
-                AnchorPane anchorPane = fxmlLoader.load();
-                AlertListViewCell itemController = fxmlLoader.getController();
-                itemController.setData(alertProfList.get(i));
-                announceListView.getItems().add(anchorPane);
-
-            }*/
 
         } catch (Exception e) {
             System.out.println(e.getMessage());

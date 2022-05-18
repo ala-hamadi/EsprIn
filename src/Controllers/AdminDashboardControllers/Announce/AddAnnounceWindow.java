@@ -2,6 +2,7 @@ package Controllers.AdminDashboardControllers.Announce;
 
 import Modules.Annoucement;
 import Services.AnnouncementService;
+import Utils.CurrentUser;
 import Utils.Enums.AnnounceDestination;
 import com.sun.istack.internal.NotNull;
 import javafx.event.ActionEvent;
@@ -75,7 +76,7 @@ public class AddAnnounceWindow implements Initializable {
 
     public void createAnnounce(ActionEvent actionEvent) {
         if ((annTitle.getText() != null) && (annDesc.getText() != null) && (annTitle.getText().length() > 4) && (annDesc.getText().length() > 6)) {
-            Annoucement annoucement = new Annoucement(annTitle.getText(), annDesc.getText(), destselection.getValue(), 10020855);
+            Annoucement annoucement = new Annoucement(annTitle.getText(), annDesc.getText(), destselection.getValue(), (int) CurrentUser.getInstance().getCurrentUser().getCinUser());
             announcementService.add(annoucement);
             try {
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

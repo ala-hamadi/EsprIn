@@ -88,27 +88,29 @@ public class EventListViewCell {
             String firstname= user.getFirstName();
             String lastname= user.getLastName();
             OrgName.setText(firstname + " " + lastname);
+            if(event.getImgURL()!=null){
+                //Image image= new Image(event.getImgURL());
+                Image image = new Image("Views/Icons/appicon.png");
+                imageEvent.setImage(image);
+            }
+
+            TitleEvent.setText(event.getTitleEvent());
+            ContentEvent.setText(event.getDescription());
+            StartDate.setText(String.valueOf(event.getDateDebut()));
+            EndDate.setText(String.valueOf(event.getDateFin()));
+            Localisation.setText(event.getEventLocal());
+
+            ParticipateNb.setText(String.valueOf(event.getNbrParticipant()));
+            if(CurrentUser.getInstance().getCurrentUser().getCinUser()!=event.getIdOrganizer()){
+                DeleteBtn1.setVisible(false);
+                ModBtn1.setVisible(false);
+            }
 
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
 
-        if(event.getImgURL()!=null){
-            Image image= new Image(event.getImgURL());
-            imageEvent.setImage(image);
-        }
 
-        TitleEvent.setText(event.getTitleEvent());
-        ContentEvent.setText(event.getDescription());
-        StartDate.setText(String.valueOf(event.getDateDebut()));
-        EndDate.setText(String.valueOf(event.getDateFin()));
-        Localisation.setText(event.getEventLocal());
-
-        ParticipateNb.setText(String.valueOf(event.getNbrParticipant()));
-        if(CurrentUser.getInstance().getCurrentUser().getCinUser()!=event.getIdOrganizer()){
-            DeleteBtn1.setVisible(false);
-            ModBtn1.setVisible(false);
-        }
     }
 
     @FXML

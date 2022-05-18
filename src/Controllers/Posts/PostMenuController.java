@@ -26,7 +26,7 @@ public class PostMenuController implements Initializable {
 
 
   @FXML
-  private ListView<Node> eventListView;
+  private ListView<Node> postListView;
   private List<Post> postList;
 
 
@@ -43,20 +43,21 @@ public class PostMenuController implements Initializable {
     postList = new ArrayList<Post>();
     postList = postServices.getListPosts();
     System.out.println(postList);
-    eventListView = new ListView<>();
+    postListView = new ListView<>();
 
   }
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     try {
+
       for (int i = 0; i < postList.size(); i++) {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/Views/Templates/PostCell.fxml"));
         AnchorPane anchorPane = fxmlLoader.load();
         PostListViewCell itemController = fxmlLoader.getController();
         itemController.setData(postList.get(i));
-        eventListView.getItems().add(anchorPane);
+        postListView.getItems().add(anchorPane);
 
       }
     } catch (Exception e) {
@@ -68,7 +69,7 @@ public class PostMenuController implements Initializable {
   void all(ActionEvent event) throws SQLException {
     PostServices postServices=new PostServices();
     postList=postServices.getListPosts();
-    eventListView.getItems().clear();
+    postListView.getItems().clear();
     try {
       for (int i = 0; i < postList.size(); i++) {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -76,7 +77,7 @@ public class PostMenuController implements Initializable {
         AnchorPane anchorPane = fxmlLoader.load();
         PostListViewCell itemController = fxmlLoader.getController();
         itemController.setData(postList.get(i));
-        eventListView.getItems().add(anchorPane);
+        postListView.getItems().add(anchorPane);
       }
     } catch (Exception e) {
       System.out.println(e.getMessage());
@@ -87,7 +88,7 @@ public class PostMenuController implements Initializable {
   void covoiturage(ActionEvent event) throws SQLException {
     PostServices postServices=new PostServices();
     postList=postServices.filterPostByCategory("Covoiturage",postList);
-    eventListView.getItems().clear();
+    postListView.getItems().clear();
     try {
       for (int i = 0; i < postList.size(); i++) {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -95,7 +96,7 @@ public class PostMenuController implements Initializable {
         AnchorPane anchorPane = fxmlLoader.load();
         PostListViewCell itemController = fxmlLoader.getController();
         itemController.setData(postList.get(i));
-        eventListView.getItems().add(anchorPane);
+        postListView.getItems().add(anchorPane);
       }
     } catch (Exception e) {
       System.out.println(e.getMessage());
@@ -106,7 +107,7 @@ public class PostMenuController implements Initializable {
   void defaultPost(ActionEvent event) throws SQLException {
     PostServices postServices=new PostServices();
     postList=postServices.filterPostByCategory("Default",postList);
-    eventListView.getItems().clear();
+    postListView.getItems().clear();
     try {
       for (int i = 0; i < postList.size(); i++) {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -114,7 +115,7 @@ public class PostMenuController implements Initializable {
         AnchorPane anchorPane = fxmlLoader.load();
         PostListViewCell itemController = fxmlLoader.getController();
         itemController.setData(postList.get(i));
-        eventListView.getItems().add(anchorPane);
+        postListView.getItems().add(anchorPane);
       }
     } catch (Exception e) {
       System.out.println(e.getMessage());
@@ -125,7 +126,7 @@ public class PostMenuController implements Initializable {
   void lostandfound(ActionEvent event) throws SQLException {
     PostServices postServices=new PostServices();
     postList=postServices.filterPostByCategory("Lost_and_found",postList);
-    eventListView.getItems().clear();
+    postListView.getItems().clear();
     try {
       for (int i = 0; i < postList.size(); i++) {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -133,7 +134,7 @@ public class PostMenuController implements Initializable {
         AnchorPane anchorPane = fxmlLoader.load();
         PostListViewCell itemController = fxmlLoader.getController();
         itemController.setData(postList.get(i));
-        eventListView.getItems().add(anchorPane);
+        postListView.getItems().add(anchorPane);
       }
     } catch (Exception e) {
       System.out.println(e.getMessage());
@@ -144,7 +145,7 @@ public class PostMenuController implements Initializable {
   void meme(ActionEvent event) throws SQLException {
     PostServices postServices=new PostServices();
     postList=postServices.filterPostByCategory("Meme",postList);
-    eventListView.getItems().clear();
+    postListView.getItems().clear();
     try {
       for (int i = 0; i < postList.size(); i++) {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -152,7 +153,7 @@ public class PostMenuController implements Initializable {
         AnchorPane anchorPane = fxmlLoader.load();
         PostListViewCell itemController = fxmlLoader.getController();
         itemController.setData(postList.get(i));
-        eventListView.getItems().add(anchorPane);
+        postListView.getItems().add(anchorPane);
       }
     } catch (Exception e) {
       System.out.println(e.getMessage());
@@ -163,7 +164,7 @@ public class PostMenuController implements Initializable {
   void suggestion(ActionEvent event) throws SQLException {
     PostServices postServices=new PostServices();
     postList=postServices.filterPostByCategory("Suggestion",postList);
-    eventListView.getItems().clear();
+    postListView.getItems().clear();
     try {
       for (int i = 0; i < postList.size(); i++) {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -171,7 +172,7 @@ public class PostMenuController implements Initializable {
         AnchorPane anchorPane = fxmlLoader.load();
         PostListViewCell itemController = fxmlLoader.getController();
         itemController.setData(postList.get(i));
-        eventListView.getItems().add(anchorPane);
+        postListView.getItems().add(anchorPane);
       }
     } catch (Exception e) {
       System.out.println(e.getMessage());

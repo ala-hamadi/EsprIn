@@ -36,7 +36,7 @@ public class Dyanamic_QR {
     }
     public static void generate_qr(String image_name,String qrCodeData) {
         try {
-            String filePath = "C:\\Users\\Dell\\OneDrive\\Desktop\\ala\\EsprIN\\src\\QRCode\\"+image_name+".png";
+            String filePath = "D:\\Pidev\\src\\QRCode\\"+image_name+".png";
 
             String charset = "UTF-8"; // or "ISO-8859-1"
             Map < EncodeHintType, ErrorCorrectionLevel > hintMap = new HashMap < EncodeHintType, ErrorCorrectionLevel > ();

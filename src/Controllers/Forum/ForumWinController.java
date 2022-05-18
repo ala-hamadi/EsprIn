@@ -42,7 +42,7 @@ public class ForumWinController {
             alert.setContentText("Forum is not added !");
             alert.show();
         } else {
-            forumService.add(new Forum(1,forumTitle.getText(),forumContent.getText(), (int) CurrentUser.getInstance().getCurrentUser().getCinUser(),forumtag.getText(),State.Active));
+            forumService.add(new Forum(1,forumTitle.getText(),forumContent.getText(), (int) CurrentUser.getInstance().getCurrentUser().getCinUser(),forumtag.getText(),State.Active,0));
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");

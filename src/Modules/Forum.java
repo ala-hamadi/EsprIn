@@ -13,7 +13,7 @@ public class Forum {
     private int idOwner;
     private int nbLikes;
     private State state;
-
+    private int nbrResponseForum;
     public Forum(){
 
     }
@@ -23,13 +23,14 @@ public class Forum {
         this.content = content;
     }
 
-    public Forum(int idForum, String title, String content, int idOwner, String categoryForum, State state) {
+    public Forum(int idForum, String title, String content, int idOwner, String categoryForum, State state,int nbrResponseForum	) {
         this.idForum = idForum;
         this.title = title;
         this.content = content;
         this.idOwner = idOwner;
         this.categoryForum = categoryForum;
         this.state=state;
+        this.nbrResponseForum=nbrResponseForum;
     }
 
     public Forum(int idForum, String title, String content, Date createdAt, String categoryForum, int idOwner, int nbLikes, State state) {
@@ -119,5 +120,9 @@ public class Forum {
                 ", nbLikes=" + nbLikes +
                 ", state=" + state +
                 '}';
+    }
+
+    public int getNbrResponseForum() {
+        return nbrResponseForum;
     }
 }

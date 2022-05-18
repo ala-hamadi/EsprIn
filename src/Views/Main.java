@@ -24,7 +24,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         String url;
-        if (isUserConnected()) {
+//        url = "/Views/UI/Announcement/AnnounceMenu.fxml";
+//        Parent root = FXMLLoader.load(getClass().getResource(url));
+
+       if (isUserConnected()) {
             if (CurrentUser.getInstance().getCurrentUser().getRole().equals(Roles.Admin))
                 url = "/Views/UI/Dashboard/DashboardMain.fxml";
             else
@@ -39,6 +42,8 @@ public class Main extends Application {
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
         }
+
+
         primaryStage.setMaximized(true);
         //primaryStage.initStyle(StageStyle.UNDECORATED);
 

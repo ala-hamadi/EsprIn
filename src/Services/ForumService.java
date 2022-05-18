@@ -31,7 +31,7 @@ public class ForumService implements IServices<Forum> {
     @Override
     public void add(Forum p) {
         try {
-            String querry = "INSERT INTO `forum`(`title`, `content`, `idOwner`,`categorieForum`) VALUES ('" + p.getTitle() + "','" + p.getContent() + "','" + p.getIdOwner() + "','" + p.getCategoryForum() + "')";
+            String querry = "INSERT INTO `forum`(`title`, `content`, `idOwner`,`categorieForum`,`nbrResponseForum`) VALUES ('" + p.getTitle() + "','" + p.getContent() + "','" + p.getIdOwner() + "','" + p.getCategoryForum() + "','" + p.getNbrResponseForum() + "');";
             Statement statement = connection.createStatement();
 
             statement.executeUpdate(querry);

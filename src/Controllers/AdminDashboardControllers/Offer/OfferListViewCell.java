@@ -2,6 +2,7 @@ package Controllers.AdminDashboardControllers.Offer;
 
 import Controllers.Interfaces.DeleteListener;
 import Modules.Espritien;
+import Modules.Extern;
 import Modules.Offre;
 import Services.UserServices;
 import javafx.event.ActionEvent;
@@ -39,8 +40,8 @@ public class OfferListViewCell {
             UserServices userServices=UserServices.getInstance();
             this.deleteListener=deleteListener;
             this.offre=offre;
-            Espritien espritien=(Espritien) userServices.retrive(offre.getOfferProvider());
-            offerProvider.setText(espritien.getFirstName()+" "+espritien.getLastName());
+            Extern espritien=(Extern) userServices.retrive(offre.getOfferProvider());
+            offerProvider.setText(espritien.getEntrepriseName());
             OfferTitle.setText(offre.getTitleOffer());
             OfferCategory.setText(offre.getCategory().toString());
 

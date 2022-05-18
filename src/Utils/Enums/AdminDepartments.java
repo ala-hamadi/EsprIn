@@ -1,6 +1,6 @@
 package Utils.Enums;
 
 public enum AdminDepartments {
-    Scolarité, Stage, Examen, Financier,
+    Scolarité, Stage, Exam, Financier,
     Service_éléve, Vie_étudiante,financial
 }

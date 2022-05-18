@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="1043.0" prefWidth="1452.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Offers.OfferMenu">
     <children>
-        <VBox style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+        <VBox layoutY="1.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
             <children>
                   <Label text="Offers">
                       <font>
@@ -20,7 +20,7 @@
                   <Insets bottom="30.0" left="100.0" top="30.0" />
                </VBox.margin>
                   </Label>
-            <Button fx:id="excelBtn" mnemonicParsing="false" onAction="#exportExcel" stylesheets="@../../../../../bairem/EsprIN/src/Views/Style/DashbordStyle.css" text="Export Excel" />
+            <Button fx:id="excelBtn" mnemonicParsing="false" onAction="#exportExcel" stylesheets="@../../Style/DashbordStyle.css" text="Export Excel" />
                 <AnchorPane prefHeight="853.0" prefWidth="1452.0">
                     <children>
                         <ListView fx:id="OfferListView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />

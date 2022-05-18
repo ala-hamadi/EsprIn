@@ -35,7 +35,7 @@
         <Font name="System Bold" size="24.0" />
       </font>
     </Label>
-    <Button fx:id="deleteBtn" layoutX="149.0" layoutY="246.0" mnemonicParsing="false" onAction="#deleteAlert" prefHeight="27.0" prefWidth="121.0" stylesheets="@../../Style/FormsStyle.css" text="Delete" />
-    <Button fx:id="keepBtn" layoutX="295.0" layoutY="246.0" mnemonicParsing="false" onAction="#keepAlert" prefHeight="27.0" prefWidth="121.0" stylesheets="@../../Style/FormsStyle.css" text="Keep" />
+    <Button fx:id="deleteBtn" layoutX="149.0" layoutY="246.0" mnemonicParsing="false" onAction="#deleteAlert" prefHeight="27.0" prefWidth="121.0" stylesheets="@../Style/FormsStyle.css" text="Delete" />
+    <Button fx:id="keepBtn" layoutX="295.0" layoutY="246.0" mnemonicParsing="false" onAction="#keepAlert" prefHeight="27.0" prefWidth="121.0" stylesheets="@../Style/FormsStyle.css" text="Keep" />
   </children>
 </AnchorPane>
