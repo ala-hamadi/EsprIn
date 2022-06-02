@@ -61,7 +61,7 @@ public class AnnounceMenu implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        System.out.println("hi");
         choiceBoxFiltre.getItems().addAll(new String[]{"Show by Newer","Show by older"});
         announceListView.getItems().setAll(bind(announcementService.getList()));
         choiceBoxFiltre.getSelectionModel().selectFirst();

@@ -103,10 +103,10 @@ public class OfferCell {
             ContentOffer.setText(offre.getDescOffer());
             OfferCategorie.setText(offre.getCategory().name());
 
-         /*   if(CurrentUser.getInstance().getCurrentUser().getCinUser()!=offre.getOfferProvider()){
+           if(CurrentUser.getInstance().getCurrentUser().getCinUser()!=offre.getOfferProvider()){
                 DeleteBtn1.setVisible(false);
                 ModBtn1.setVisible(false);
-            }*/
+            }
 
         } catch (SQLException exception) {
             exception.printStackTrace();

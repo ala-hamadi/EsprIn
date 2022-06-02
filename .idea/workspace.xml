@@ -1,46 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4f3256f-a8c8-4f1a-9a61-c981b5235af1" name="Default Changelist" comment="16/04">
+    <list default="true" id="d4f3256f-a8c8-4f1a-9a61-c981b5235af1" name="Default Changelist" comment="Final integration v3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loggedUser.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/User/AddExternal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/User/AddExternal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Offre.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Offre.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/Announce/AnnounceMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/Announce/AnnounceMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/Post/PostMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/Post/PostMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/User/TemplateUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/User/TemplateUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/User/UsersMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/User/UsersMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/EventControllers/EventListViewCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/EventControllers/EventListViewCell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/HomeFXMLController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/HomeFXMLController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/HomeFXMLController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/HomeFXMLController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/Posts/PostListViewCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/Posts/PostListViewCell.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/Posts/PostMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/Posts/PostMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/RegisterInterface$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/RegisterInterface$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/RegisterInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/RegisterInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AlertProfServices$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/AlertProfServices$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/UserServices$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/UserServices$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/UserServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Services/UserServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Utils/Enums/AdminDepartments.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Utils/Enums/AdminDepartments.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Utils/Enums/Domaine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Utils/Enums/Domaine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Utils/Enums/Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Utils/Enums/Roles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Offer/OfferMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Offer/OfferMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/DeletePost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/DeletePost.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Announce/AddAnnounceWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Announce/AddAnnounceWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Dyanamic_QR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Dyanamic_QR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Offer/OfferListViewCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Offer/OfferListViewCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AnnounceUser/AnnounceListViewCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AnnounceUser/AnnounceListViewCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AnnounceUser/AnnounceMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AnnounceUser/AnnounceMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/EventControllers/EventListViewCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EventControllers/EventListViewCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Forum/ForumWinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Forum/ForumWinController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Posts/PostListViewCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Posts/PostListViewCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Posts/PostMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Posts/PostMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Forum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/Forum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ForumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ForumService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Enums/AdminDepartments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Enums/AdminDepartments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Enums/Domaine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Enums/Domaine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Templates/AnnounceCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Templates/AnnounceCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/Announcement/AnnounceMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Announcement/AnnounceMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/Offer/OfferMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Offer/OfferMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/Post/AddPost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Post/AddPost.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/DeletePost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/DeletePost.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Announce/AnnounceMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Announce/AnnounceMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Post/PostMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Post/PostMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/User/TemplateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/User/TemplateUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/Offers/OfferCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Offers/OfferCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/Templates/OfferCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Templates/OfferCell.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/UI/Post/PostMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Post/PostMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/Windows/AddOffer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/AddOffer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/Windows/ModifierOffer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/ModifierOffer.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,19 +122,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -187,7 +151,10 @@
       <workItem from="1652648088445" duration="882000" />
       <workItem from="1652736042188" duration="7672000" />
       <workItem from="1652804144710" duration="7204000" />
-      <workItem from="1652820071455" duration="12460000" />
+      <workItem from="1652820071455" duration="16476000" />
+      <workItem from="1653425934378" duration="1258000" />
+      <workItem from="1654094835097" duration="8563000" />
+      <workItem from="1654199449161" duration="1883000" />
     </task>
     <task id="LOCAL-00001" summary="Merge 2">
       <created>1646881752339</created>
@@ -210,7 +177,28 @@
       <option name="project" value="LOCAL" />
       <updated>1650068272996</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Final integration">
+      <created>1652834586673</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652834586673</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Final integration v2">
+      <created>1652834632842</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1652834632842</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Final integration v3">
+      <created>1652834656638</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1652834656638</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +220,10 @@
     <MESSAGE value="Merge 2" />
     <MESSAGE value="Merge 2.1" />
     <MESSAGE value="16/04" />
-    <option name="LAST_COMMIT_MESSAGE" value="16/04" />
+    <MESSAGE value="Final integration" />
+    <MESSAGE value="Final integration v2" />
+    <MESSAGE value="Final integration v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final integration v3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

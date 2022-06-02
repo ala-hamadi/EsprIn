@@ -86,7 +86,7 @@ public class MainController implements Initializable {
     }
 
 
-
+    @FXML
     public void showAnnounceMenu(ActionEvent actionEvent) {
         try {
             Parent menu = FXMLLoader.load(getClass().getResource("/Views/UI/Dashboard/AnnounceMenu.fxml"));
@@ -176,7 +176,18 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Admin admin=(Admin) CurrentUser.getInstance().getCurrentUser();
-       // adminAvatar.setFill(new ImagePattern(new Image(admin.getImgUrl(),false)));
+        try {
+            String url ="/Img/"+admin.getImgUrl();
+            Image image=new Image(url,false);
+            adminAvatar.setFill(new ImagePattern(image));
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+            Image image=new Image("https://www.jbrhomes.com/wp-content/uploads/blank-avatar.png",false);
+            adminAvatar.setFill(new ImagePattern(image));
+
+
+        }
         adminName.setText(admin.getFirstName());
         adminLastName.setText(admin.getLastName());
         adminNameAndLastName.setText(admin.getFirstName()+" "+admin.getLastName());

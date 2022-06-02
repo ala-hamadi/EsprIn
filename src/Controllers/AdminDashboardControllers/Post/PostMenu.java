@@ -101,6 +101,7 @@ public class PostMenu implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        System.out.println("hi");
         choiceBoxFiltre.getItems().addAll(new String[]{"Show by newer","Show by older"});
 
         PostListView.getItems().setAll(bind(postServices.getListPosts()));
