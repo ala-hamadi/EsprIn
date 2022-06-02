@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4f3256f-a8c8-4f1a-9a61-c981b5235af1" name="Default Changelist" comment="Final integration v3">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Offre.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Offre.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/Announce/AnnounceMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/Announce/AnnounceMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/Post/PostMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/Post/PostMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/User/TemplateUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/AdminDashboardControllers/User/TemplateUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/Posts/PostMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/Posts/PostMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Announce/AnnounceMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Announce/AnnounceMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Post/PostMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/Post/PostMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/User/TemplateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminDashboardControllers/User/TemplateUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Offers/OfferCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Offers/OfferCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Templates/OfferCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Templates/OfferCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/UI/Post/PostMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/UI/Post/PostMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/AddOffer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/AddOffer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Windows/ModifierOffer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Windows/ModifierOffer.fxml" afterDir="false" />
+    <list default="true" id="d4f3256f-a8c8-4f1a-9a61-c981b5235af1" name="Default Changelist" comment="add images fix bug v1">
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/Offers/OfferCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Controllers/Offers/OfferCell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/OfferCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Templates/OfferCell.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Post/PostMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/UI/Post/PostMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddOffer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/AddOffer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/ModifierOffer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test_EsprIN/Views/Windows/ModifierOffer.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +143,7 @@
       <workItem from="1652820071455" duration="16476000" />
       <workItem from="1653425934378" duration="1258000" />
       <workItem from="1654094835097" duration="8563000" />
-      <workItem from="1654199449161" duration="1883000" />
+      <workItem from="1654199449161" duration="2378000" />
     </task>
     <task id="LOCAL-00001" summary="Merge 2">
       <created>1646881752339</created>
@@ -198,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652834656638</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add images fix bug v1">
+      <created>1654206219102</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1654206219103</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +219,8 @@
     <MESSAGE value="Final integration" />
     <MESSAGE value="Final integration v2" />
     <MESSAGE value="Final integration v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final integration v3" />
+    <MESSAGE value="add images fix bug v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="add images fix bug v1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
